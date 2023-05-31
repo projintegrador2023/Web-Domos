@@ -131,38 +131,30 @@ button:hover {
 	color: #fff;
 }
 
-.btn-critico{
+.btn-baixar{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
-	background-color: #cc0000;
+	background-color: #005661;
 	color: #fff;
 	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
-}
-
-.btn-urgente{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
-	background-color: #ff6702;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
-}
-
-.btn-importante{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
-	background-color: #ffe324;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
+	width: 30%;
 	height: fit-content;
 }
 
  /*Classe para definir tamanho de tudo na tela*/
 .tamanho-geral{
-	width:45%;
+	width:99%;
+}
+ /*Classe para definir as cores da caixa de texto com o regimento interno*/
+.titulo-sub{
+    color: #0491a3;
 }
 
+.titulo{
+    font-family: 'Jost', sans-serif, bold;
+    color: #005661;
+}
+
+.descricao{
+    color: #000000;
+}

@@ -131,38 +131,77 @@ button:hover {
 	color: #fff;
 }
 
-.btn-critico{
+.btn-alimentacao{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
-	background-color: #cc0000;
+	background-color: #ff6da7;
 	color: #fff;
 	border-radius: 19px;
-	width: 22%;
+	width: 13%;
 	height: fit-content;
 }
 
-.btn-urgente{
+.btn-confemoda{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
-	background-color: #ff6702;
+	background-color: #ff6d6d;
 	color: #fff;
 	border-radius: 19px;
-	width: 22%;
+	width: 13%;
 	height: fit-content;
 }
 
-.btn-importante{
+.btn-eletronicos{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #4ad4e6;
+	color: #fff;
+	border-radius: 19px;
+	width: 13%;
+	height: fit-content;
+}
+
+.btn-beleza{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #66b73e;
+	color: #fff;
+	border-radius: 19px;
+	width: 13%;
+	height: fit-content;
+}
+
+.btn-decoracao{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #e6a545;
+	color: #fff;
+	border-radius: 19px;
+	width: 13%;
+	height: fit-content;
+}
+
+.btn-petshop{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
 	background-color: #ffe324;
 	color: #fff;
 	border-radius: 19px;
-	width: 22%;
+	width: 13%;
+	height: fit-content;
+}
+
+.btn-servicos{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #9f35cc;
+	color: #fff;
+	border-radius: 19px;
+	width: 13%;
 	height: fit-content;
 }
 
  /*Classe para definir tamanho de tudo na tela*/
 .tamanho-geral{
-	width:45%;
+	width:99%;
 }
-
