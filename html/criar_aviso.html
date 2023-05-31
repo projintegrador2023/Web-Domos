@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/criaravisoCss.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+    <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
+    <title> Criar aviso - Domos </title>
+</head>
+<body> 
+    <nav class="navbar navbar-expand-lg bg-customiza-nav">
+        <div class="container-fluid">
+            <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!--NAO COLOCAR BG-CUSTOMIZA AQUI-->
+            </button>
+            <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
+            <ul class="navbar-nav bg-customiza">
+                <li class="nav-item bg-customiza">
+                <a class="nav-link bg-customiza" aria-current="page" href="avisos.html">Avisos</a>
+                </li>
+                <li class="nav-item bg-customiza">
+                <a class="nav-link bg-customiza" href="#">Anúncios</a>
+                </li>
+                <li class="nav-item bg-customiza">
+                <a class="nav-link bg-customiza" href="#">Reserva</a>
+                </li>
+                <li class="nav-item bg-customiza">
+                <a class="nav-link bg-customiza" href="testes.html">TESTE TESTE</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="formulario">
+        <section class="title"> 
+            <h1> Criar aviso </h1>
+        </section> 
+        <br>
+        <form>
+            <div class="mb-3 form-customiza">
+              <input type="text" class="form-control form-customiza" id="titulo_aviso" placeholder="Título">
+            </div>
+            <div class="mb-3 form-customiza">
+                <textarea class="form-control form-customiza" id="descricao_aivso" placeholder="Descrição" rows="10"></textarea>
+            </div>
+            <select class="form-select select-customiza mb-3">
+                <option selected class="select-customiza">Escolha o grau de importância do aviso</option>
+                <option value="1" class="select-customiza">Crítico</option>
+                <option value="2" class="select-customiza">Urgente</option>
+                <option value="3" class="select-customiza">Importante</option>
+            </select>
+            <div class="espacamento">
+                <button type="submit" class="btn form-customiza-btn col-5">Upload de imagem</button>
+                <button type="submit" class="btn form-customiza-btn col-5">Publicar</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

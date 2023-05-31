@@ -1,0 +1,40 @@
+/* cor de fundo para seçoes  */
+.backg {
+	background-color: #005661;
+}
+
+/* arredonda a borda */
+.rborder1 {
+    border-radius: 50px;
+}
+
+.rborder2 {
+    border-radius: 25px;
+}
+
+.rborder3 {
+    border-radius: 15px;
+}
+
+.rborder4 {
+    border-radius: 10px;
+}
+
+/*tira o sublinhado quando passamos o mouse por cima*/
+.text-decoration-none:hover {
+    text-decoration: none;
+}
+
+.border-img {
+    border-color: #005661;
+	border-style: solid;
+	border-width: 0.35rem;
+}
+
+.back_form{
+    background-color: #E8E8E8;
+}
+
+.center-text {
+    text-align: center;
+}
