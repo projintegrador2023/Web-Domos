@@ -87,10 +87,9 @@ button:hover {
     position: absolute;
     border-radius: 10px;
 }
-
+ /*Classes para customizar a nav*/
 .bg-customiza-nav{
 	background:#005661;
-
 	color: #fdfdfd;
 }
 
@@ -104,6 +103,7 @@ button:hover {
 	color: #fdfdfd;
 }
 
+/*Classe para customizar select dos formulários*/
 .select-customiza{
     background-color: #fff;
 	color: #005661;
@@ -115,7 +115,23 @@ button:hover {
     padding: 1em;
 }
 
+/*Classe para fazer grid-2 dos botões*/
 .espacamento{
     display: flex;
     justify-content: space-between;
+}
+
+/*Classe para customizar a parte de busca*/
+.search-customiza{
+	color: #fff;
+}
+
+.search-btn{
+	font-size: 1.2em;
+	background-color: #005661;
+	color: #fff;
+}
+ /*Classe para definir tamanho de tudo na tela*/
+.tamanho-geral{
+	width:50%;
 }

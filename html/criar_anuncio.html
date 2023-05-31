@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/criaravisoCss.css"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
-    <title> Criar aviso - Domos </title>
+    <title> Criar anúncios - Domos </title>
 </head>
 <body> 
     <nav class="navbar navbar-expand-lg bg-customiza-nav">
@@ -37,7 +37,7 @@
     
     <section class="formulario">
         <section class="title"> 
-            <h1> Criar aviso </h1>
+            <h1> Criar anúncio </h1>
         </section> 
         <br>
         <form>
@@ -48,13 +48,17 @@
                 <textarea class="form-control form-customiza" id="descricao_aivso" placeholder="Descrição" rows="10"></textarea>
             </div>
             <select class="form-select select-customiza mb-3">
-                <option selected class="select-customiza">Escolha o grau de importância do aviso</option>
-                <option value="1" class="select-customiza">Crítico</option>
-                <option value="2" class="select-customiza">Urgente</option>
-                <option value="3" class="select-customiza">Importante</option>
+                <option selected class="select-customiza">Escolha a tag do anúncio</option>
+                <option value="1" class="select-customiza">Alimentação</option>
+                <option value="2" class="select-customiza">Confecção e moda</option>
+                <option value="3" class="select-customiza">Eletrônicos</option>
+                <option value="3" class="select-customiza">Decoração</option>
+                <option value="3" class="select-customiza">Petshop</option>
+                <option value="3" class="select-customiza">Serviços</option>
+
             </select>
             <div class="espacamento">
-                <button type="submit" class="btn form-customiza-btn col-5">Upload de imagem</button>
+                <input type="file" class="btn form-customiza-btn col-5"> 
                 <button type="submit" class="btn form-customiza-btn col-5">Publicar</button>
             </div>
         </form>

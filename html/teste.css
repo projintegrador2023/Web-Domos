@@ -147,3 +147,13 @@ button:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.search-customiza{
+	color: #fff;
+}
+
+.search-btn{
+	font-size: 1.2em;
+	background-color: #005661;
+	color: #fff;
+}
