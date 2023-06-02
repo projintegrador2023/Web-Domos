@@ -166,3 +166,27 @@ button:hover {
 	width:45%;
 }
 
+/*Classe para definir configurações gerais do cards*/
+.tamanho-card{
+    width: 12rem;
+}
+.titulo{
+    font-family: 'Jost', sans-serif, bold;
+    color: #005661;
+}
+
+.descricao{
+    color: #000000;
+}
+
+.importancia-critico{
+    background-color: #cc0000;
+}
+
+.importancia-urgente{
+    background-color: #ff6702;
+}
+
+.importancia-importante{
+    background-color: #ffe324;
+}
