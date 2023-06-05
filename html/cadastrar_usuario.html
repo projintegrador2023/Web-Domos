@@ -8,77 +8,100 @@
     <link rel="stylesheet" href="css/style_geral.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
     <title> Cadastro do morador - Domos </title>
 </head>
 
 <body>
-    
     <!-- cabeçalho da página --> 
-    <header class="d-block d-md-flex justify-content-between align-content-center p-2">
-        <!-- ícone do site --> 
-        <a href="home.html"> <img src="css/img/logo_branca.png" class="img-fluid col-6 col-md-12" alt="Domos"> </a>
-
-        <!-- menu para navegação no site, com cinco itens --> 
-        <nav class="navbar col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-5 d-md-flex align-content-center">
-            <li> <a href="home.html" class="text-white nav-link fs-4"> Home </a> </li>
-            <li> <a href="recursos.html" class="text-white nav-link fs-4"> Recursos</a> </li>
-            <li> <a href="sobre_nos.html" class="text-white nav-link fs-4"> Sobre nós </a> </li>
-            <li> <a href="contato.html" class="text-white nav-link fs-4"> Contato </a> </li>
-            <li> <a href="login.html" class="text-white nav-link fs-4"> Entrar </a> </li>
-        </nav>
+    <header class="d-flex justify-content-between p-2">
+        <!-- ícone do site -->
+        <a href="home.html"> <img src="./css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
+        <div class="d-flex position-relative justify-content-end">
+            <nav class="navbar navbar-expand-lg bg-customiza-nav navbar-dark position-relative">
+                <div class="container-fluid d-flex justify-content-end">
+                    <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span> <!--NAO COLOCAR BG-CUSTOMIZA AQUI-->
+                    </button>
+                    <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
+                    <ul class="navbar-nav bg-customiza">
+                        <li class="nav-item bg-customiza">
+                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item bg-customiza">
+                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                        </li>
+                        <li class="nav-item bg-customiza">
+                        <a class="text-end nav-link bg-customiza text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                        </li>
+                        <li class="nav-item bg-customiza">
+                        <a class="text-end nav-link bg-customiza text-white fs-4" href="contato.html">Contato</a>
+                        </li>
+                        <li class="nav-item bg-customiza">
+                        <a class="text-end nav-link bg-customiza text-white fs-4" href="login.html">Entrar</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- formulário de cadastro de usuário -->
-    <section class="formulario back_form">
-        <section class="title title_login">
-            <h1> Cadastro do Morador </h1>
+    <section class="mx-auto col-10 col-sm-8 col-lg-7 col-xl-6 d-block p-5 formulario">
+        <section>
+            <h1 class="color-0491a3 fs-1"> Cadastro do Morador </h1>
         </section>
 
         <form class="conf_formulario"> 
-            <label for="nome_usuario"> Nome </label>
-            <input class="back_form" id="nome_usuario" type="text"> 
-            <label for="cpf_usuario"> Cpf </label> 
-            <input class="back_form" id="cpf_usuario" type="text"> 
-            <label for="email_usuario"> E-mail </label> 
-            <input class="back_form" id="email_usuario" type="text">  
-            <label for="senha_usuario"> Crie sua senha</label> 
-            <input class="back_form" id="senha_usuario" type="password" > 
-            <label for="conf_senha_usuario"> Confirme sua senha</label> 
-            <input class="back_form" id="conf_senha_usuario" type="password">
-        </form>
-        
-    </section> <br> <br> 
+            <label for="nome_usuario" class="fs-4"> Nome </label>
+            <input class="bg-e8e8e8" id="nome_usuario" type="text"> 
+            <label for="cpf_usuario" class="fs-4"> Cpf </label> 
+            <input class="bg-e8e8e8" id="cpf_usuario" type="text"> 
+            <label for="email_usuario" class="fs-4"> E-mail </label> 
+            <input class="bg-e8e8e8" id="email_usuario" type="text">  
+            <label for="senha_usuario" class="fs-4"> Crie sua senha</label> 
+            <input class="bg-e8e8e8" id="senha_usuario" type="password" > 
+            <label for="conf_senha_usuario" class="fs-4"> Confirme sua senha</label> 
+            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password">
 
-    <section class="formulario back_form">
-        <section class="title title_login">
-            <h1> Informações do condomínio </h1>
+        <section>
+            <h1 class="color-0491a3 fs-1 py-5"> Informações do condomínio </h1>
         </section>
+            <label class="fs-4"> Código do condomínio </label>
+            <input class="bg-e8e8e8" type="text">  <br>
 
-        <form class="conf_formulario"> 
-            <label> Código do condomínio </label>
-            <input class="back_form" type="text">  <br>
-            <label> Nº do apto </label> <br>
-            <select class="back_form">
+            <div class="container d-flex justify-content-between p-0">
+                <div class="col-5">
+                <label class="fs-4"> Nº do apto </label> <br>
+            <select class="col-12 fs-5 p-2">
                 <option> 101 </option>
                 <option> 102 </option>
                 <option> 103 </option>
                 <option> 104 </option>
                 <option> 105 </option>
                 <option> 106 </option>
-            </select> <br> <br>  
-            <label> Bloco </label> <br>
-            <select class="back_form">
+            </select> 
+            </div>
+            <div class="col-5">
+            <label class="fs-4"> Bloco </label> <br>
+            <select class="col-12 fs-5 p-2">
                 <option> Amarelo </option>
                 <option> Azul </option>
                 <option> Roxo </option>
                 <option> Rosa </option>
                 <option> Laranja </option>
-            </select> <br>    
+            </select> <br>  
+            </div>  
         </form>
+
+
+            </div>
+            
         <br>
         
-        <div class="div_button_formulario">
-            <button class="button_formulario"> Criar </button>
+        <div class="text-end col-12">
+            <button class="button_formulario col-5 fs-3"> Criar </button>
         </div>
         
     </section>

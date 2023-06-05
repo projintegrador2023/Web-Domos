@@ -18,16 +18,10 @@ body {
 	background-image: url("img/fundo.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+	min-height: 100vh;
 }
 
-/* configurações do cabeçalho  */
-header {
-	display: flex;
-    justify-content:space-between;
-    align-items: center;
 
-	padding: 10px;
-}
 
 
 /* configurações da barra de menu */
@@ -54,6 +48,7 @@ footer {
 	text-align: center;
 
 	bottom: 0;
+
 	position: fixed;
 
 	width: 100%;
@@ -71,30 +66,13 @@ section {
 
 /* configurações dos formulários */
 .formulario {
-	display: block;
-	width: 55em;
-
-	margin-left: auto;
-	margin-right: auto;
-	padding: 3em;
-	background-color: #f1f0ef;
-	border-radius: 5px;
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.212);
-
-	
-}
-
-.formulario_login {
-	display: block;
-	width: 30em;
-
-	margin-left: auto;
-	margin-right: auto;
-	padding: 3em;
 	background-color: #E8E8E8;
 	border-radius: 5px;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.212);
+}
 
+.bg-e8e8e8{
+	background-color: #E8E8E8;
 }
 
 /* configurações dos labels dos formulários */
@@ -144,24 +122,8 @@ textarea {
 
 }
 
-/* configurações de posicionamento do botão dos formulários */
-.div_button_formulario{
-	text-align: end;
-}
-
 .div_recursos{
-	width: px;
-}
-
-/* configuração do botão nos formulários */
-.button_formulario {
-	width: 10em;
-
-	font-size: 1.5em;
-
-	margin-bottom: 0.5em;
-	margin-left: auto;
-	margin-right: auto;
+	width: 70em;
 }
 
 /* configurações do hover do botão nos formulários */
@@ -173,6 +135,16 @@ textarea {
 button{
 	background-color: #005661;
 	color: #fff;
+
+	border-style: none;
+	border-radius: 10px;
+
+	padding: 8px;
+}
+
+.button_reservas{
+	background-color: #fff;
+	color: #0491a3;
 
 	border-style: none;
 	border-radius: 10px;
@@ -242,13 +214,7 @@ button:hover {
 }
 
 /* configurações para a section title */
-.title {
-	font-size: 2em;
-	color: #0491a3;
-}
-
-.title_login {
-	font-size: 2em;
+.color-0491a3 {
 	color: #0491a3;
 }
 
@@ -385,14 +351,10 @@ configurações para a section recursos*/
 }
 
 select{
-	width: 48em;
-	height: 3.5em;
-	background-color: #ffffff;
 	color: #005661; 
 	
 	border: 1px solid #0491a3;
 	text-decoration: none;
-	padding: 1em;
 	border-radius: 10px;
 
 }

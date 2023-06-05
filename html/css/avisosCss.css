@@ -23,16 +23,6 @@ section {
 	padding: 10px;
 }
 
-/* configurações dos formulários */
-.formulario {
-	display: block;
-	width: 72%;
-
-	margin-left: auto;
-	margin-right: auto;
-	padding: 3em;
-}
-
 
 /* configurações gerais dos botões */
 button{
@@ -115,19 +105,12 @@ button:hover {
     padding: 1em;
 }
 
-/*Classe para fazer grid-2 dos botões*/
-.espacamento{
-    display: flex;
-    justify-content: space-between;
-}
-
 /*Classe para customizar a parte de busca*/
 .search-customiza{
 	color: #fff;
 }
 
 .search-btn{
-	background-color: #005661;
 	color: #fff;
 }
 
@@ -161,6 +144,10 @@ button:hover {
 	height: fit-content;
 }
 
+.filter-btn{
+	color: #fff;
+}
+
  /*Classe para definir tamanho de tudo na tela*/
 .tamanho-geral{
 	width:45%;
@@ -168,15 +155,21 @@ button:hover {
 
 /*Classe para definir configurações gerais do cards*/
 .tamanho-card{
-    width: 12rem;
+    width: 20rem;
 }
+
 .titulo{
     font-family: 'Jost', sans-serif, bold;
     color: #005661;
 }
 
+.titulo-sub{
+    color: #0491a3;
+}
+
 .descricao{
     color: #000000;
+	text-align: justify;
 }
 
 .importancia-critico{
@@ -189,4 +182,15 @@ button:hover {
 
 .importancia-importante{
     background-color: #ffe324;
+}
+
+/*Configuração - busca*/
+.search{
+	width: 100%;
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #f1f0ef;
+	color: #fff;
+	border: #f1f0ef;
+	border-radius: 16px;
 }

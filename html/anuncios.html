@@ -25,7 +25,7 @@
                 <a class="nav-link bg-customiza" href="anuncios.html">Anúncios</a>
               </li>
               <li class="nav-item bg-customiza">
-                <a class="nav-link bg-customiza" href="#">Reserva</a>
+                <a class="nav-link bg-customiza" href="reservas.html">Reservas</a>
               </li>
               <li class="nav-item bg-customiza">
                 <a class="nav-link bg-customiza " href="regimento.html" >Regimento</a>
@@ -33,25 +33,41 @@
             </ul>
           </div>
         </div>
+        <a href="home.html"> <img src="./css/img/logo_branca.png" class="img" alt="Domos"> </a>
         <a href="criar_anuncio.html"><button> Criar anuncios </button></a>
         <a href="testes.html"><button> teste</button></a>
       </nav>
 
-      <div class="espacamento input-group search-customiza m-2 tamanho-geral">
-        <input type="text" class="form-control" placeholder="Busca" >
-        <div class="input-group-append">
-          <button class="btn search-btn" type="button"><img src="css\img\icon_search.png" class="img-fluid"></button>
+      <div class="container-fluid row p-1">
+        <div class="search-customiza mt-2 m-lg-2 d-flex">
+          <input type="text" class="search col-11" placeholder="Busca">
+          <div class="input-group-append teste col-4">
+            <button class="btn search-btn col-1" type="button"><img src="./css/img/search_icon.png" class="img-fluid col-12"></button>
+          </div>
+        </div>
+
+        <div class="input-group-append mt-2 m-lg-2 tamanho-geral d-flex justify-content-between">
+          <button class="btn btn-alimentacao" type="button">Alimentação</button>
+          <button class="btn btn-confemoda" type="button">Confecção e Moda</button>
+          <button class="btn btn-eletronicos" type="button">Eletrônicos</button>
+          <button class="btn btn-beleza" type="button">Beleza</button>
+          <button class="btn btn-decoracao" type="button">Decoração</button>
+          <button class="btn btn-petshop" type="button">Petshop</button>
+          <button class="btn btn-servicos" type="button">Serviços</button>
+          <button class="btn filter-btn" type="button"><img src="css\img\icon_search.png" class="img-fluid"></button>
         </div>
       </div>
-      <div class="input-group-append espacamento m-2 tamanho-geral">
-        <button class="btn btn-alimentacao col-2" type="button">Alimentação</button>
-        <button class="btn btn-confemoda col-2" type="button">Confecção e Moda</button>
-        <button class="btn btn-eletronicos col-2" type="button">Eletrônicos</button>
-        <button class="btn btn-beleza col-2" type="button">Beleza</button>
-        <button class="btn btn-decoracao col-2" type="button">Decoração</button>
-        <button class="btn btn-petshop col-2" type="button">Petshop</button>
-        <button class="btn btn-servicos col-2" type="button">Serviços</button>
-      </div>
 
+      <div class="card mt-2 m-lg-2 tamanho-card espacamento">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item tag-alimentacao"></li>
+        </ul>
+        <img src="css/img/palha_italiana.png" class="card-img-top img-fluid">
+        <div class="card-body">
+          <h5 class="card-title titulo">Yasmin Santana</h5>
+          <h6 class="card-subtitle mb-2 titulo-sub">Apartmento: 13 - Bloco: Rosa</h6>
+          <p class="card-text descricao">Deliciosa Palha Italiana! Feita com chocolate de qualidade e leite condensado cremoso, nossa palha italiana é perfeita para adoçar seu dia. Peça já a sua e surpreenda-se com essa maravilha italiana. Pedidos: (27)999656552</p>
+        </div>
+      </div>
 </body>
 </html>
