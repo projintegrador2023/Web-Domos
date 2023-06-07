@@ -24,7 +24,7 @@ section {
 }
 
 
-/* configurações gerais dos botões */
+/* configurações gerais dos botões 
 button{
 	font-size: 1.2em;
 	background-color: #005661;
@@ -36,10 +36,10 @@ button{
 	padding: 35px;
 }
 
-/* configurações do hover geral para todos os botões*/
+/* configurações do hover geral para todos os botões
 button:hover {
 	background-color: #0491a3;
-}
+}*/
 
 .text{
 	width: 50%;
@@ -194,3 +194,5 @@ button:hover {
 	border: #f1f0ef;
 	border-radius: 16px;
 }
+
+img-config{}
