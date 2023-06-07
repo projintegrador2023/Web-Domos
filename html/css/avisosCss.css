@@ -155,7 +155,13 @@ button:hover {
 
 /*Classe para definir configurações gerais do cards*/
 .tamanho-card{
-    width: 20rem;
+    width: fit-content;
+	height: fit-content;
+}
+
+.img-cards{
+	width: 10em;
+	height: 10em;
 }
 
 .titulo{
@@ -170,6 +176,7 @@ button:hover {
 .descricao{
     color: #000000;
 	text-align: justify;
+	font-size: 0.9em;
 }
 
 .importancia-critico{
@@ -195,4 +202,10 @@ button:hover {
 	border-radius: 16px;
 }
 
-img-config{}
+/*Configuração da imagem dentro do botão de configuração*/
+.img-config{
+	background-color: #005661;
+	text-decoration: none;
+	width: 3.5em;
+	height: 3em;
+}

@@ -23,18 +23,8 @@ section {
 	padding: 10px;
 }
 
-/* configurações dos formulários */
-.formulario {
-	display: block;
-	width: 72%;
 
-	margin-left: auto;
-	margin-right: auto;
-	padding: 3em;
-}
-
-
-/* configurações gerais dos botões */
+/* configurações gerais dos botões 
 button{
 	font-size: 1.2em;
 	background-color: #005661;
@@ -46,10 +36,10 @@ button{
 	padding: 35px;
 }
 
-/* configurações do hover geral para todos os botões*/
+/* configurações do hover geral para todos os botões
 button:hover {
 	background-color: #0491a3;
-}
+}*/
 
 .text{
 	width: 50%;
@@ -87,10 +77,9 @@ button:hover {
     position: absolute;
     border-radius: 10px;
 }
-
+ /*Classes para customizar a nav*/
 .bg-customiza-nav{
 	background:#005661;
-
 	color: #fdfdfd;
 }
 
@@ -104,34 +93,7 @@ button:hover {
 	color: #fdfdfd;
 }
 
-.form-customiza{
-    font-size: 1.2em;
-	color:#005661;
-
-	border:none;
-	border-radius: 4px;
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
-
-    height: fit-content;
-
-	background-color: #fff;
-}
-
-.form-customiza-btn{
-    font-size: 1.2em;
-	background-color: #005661;
-	color: #fff;
-
-    height: fit-content;
-
-	border-style: none;
-	border-radius: 5px;
-}
-
-.form-customiza-btn:hover{
-    background-color: #0491a3;
-}
-
+/*Classe para customizar select dos formulários*/
 .select-customiza{
     background-color: #fff;
 	color: #005661;
@@ -143,17 +105,107 @@ button:hover {
     padding: 1em;
 }
 
-.espacamento{
-    display: flex;
-    justify-content: space-between;
-}
-
+/*Classe para customizar a parte de busca*/
 .search-customiza{
 	color: #fff;
 }
 
 .search-btn{
-	font-size: 1.2em;
-	background-color: #005661;
 	color: #fff;
+}
+
+.btn-critico{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #cc0000;
+	color: #fff;
+	border-radius: 19px;
+	width: 22%;
+	height: fit-content;
+}
+
+.btn-urgente{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #ff6702;
+	color: #fff;
+	border-radius: 19px;
+	width: 22%;
+	height: fit-content;
+}
+
+.btn-importante{
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #ffe324;
+	color: #fff;
+	border-radius: 19px;
+	width: 22%;
+	height: fit-content;
+}
+
+.filter-btn{
+	color: #fff;
+}
+
+ /*Classe para definir tamanho de tudo na tela*/
+.tamanho-geral{
+	width:45%;
+}
+
+/*Classe para definir configurações gerais do cards*/
+.tamanho-card{
+    width: fit-content;
+	height: fit-content;
+}
+
+
+
+.titulo{
+    font-family: 'Jost', sans-serif, bold;
+    color: #005661;
+	font-size: 1.4em;
+
+}
+
+.titulo-sub{
+    color: #0491a3;
+	font-size: 0.7em;
+}
+
+.descricao{
+    color: #000000;
+	text-align: justify;
+	font-size: 0.9em;
+}
+
+.importancia-critico{
+    background-color: #cc0000;
+}
+
+.importancia-urgente{
+    background-color: #ff6702;
+}
+
+.importancia-importante{
+    background-color: #ffe324;
+}
+
+/*Configuração - busca*/
+.search{
+	width: 100%;
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #f1f0ef;
+	color: #fff;
+	border: #f1f0ef;
+	border-radius: 16px;
+}
+
+/*Configuração da imagem dentro do botão de configuração*/
+.img-config{
+	background-color: #005661;
+	text-decoration: none;
+	width: 3.5em;
+	height: 3em;
 }
