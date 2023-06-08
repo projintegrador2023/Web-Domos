@@ -4,67 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="css/stylenovo.css">
+    <script src="script.js"> </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/teste.css">
+    <link rel="stylesheet" href="css/regimento.css"> 
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
-    <link rel="stylesheet" href="css/regimento
-    .css"> 
-    <title> Regimento Interno - Domos </title>
+    <title> Regimento - Domos </title>
 </head>
 <body>
+    <div class="grid-container">
+        <header class="header"> 
+          <input type="text" class="search ps-3 m-lg-2 w-50" placeholder="Pesquisar...">
+          <img src="css/img/search_icon.png" class="img_tamanho" class="img_tamanho img-fluid col-10"></button>
+           
+            <div class="menu-icon" onclick="openSideBar()">
+                <span class="material-icons-sharp">menu</span>
+            </div>
+
+        </header>
+
+        <aside class="sidebar gradient-custom"> 
+            <div class="sidebar-title"> <br>
+                <div class="sidebar-brand"> 
+                    <img src="css/img/logo_branca.png" class="col-10">
+                </div>
+                <span class="material-icons-outlined" onclick="closeSideBar()"></span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="avisos.html"> <img src="aviso_icon (2).png" class="img_tamanho"> Avisos </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="anuncios.html"> <img src="anuncio_icon.png" class="img_tamanho"> Anúncios </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="reservas.html"> <img src="calendario_icon.png" class="img_tamanho"> Reservas </a>
+                </li>
+                <li class="sidebar-list-item bg-customiza">
+                    <a href="regimento.html"> <img src="regimento_icon.png" class="img_tamanho"> Regimento </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#"> <img src="perfil_icon (1).png" class="img_tamanho"> Perfil </a>
+                </li>
+            </ul>
+
+        </aside>
+         
+        <main class="main-container"> 
+          <div class="card tamanho-geral m-2">
+            <div class="card-body">
+              <h5 class="card-title titulo"> Regimento Interno do Condomínio Residencial "Fictício" </h5>
+              <h6 class="card-subtitle mb-2 titulo-sub">Leia atentamente o regimento interno</h6>
+              <p class="card-text descricao">
     
-      <nav class="navbar navbar-expand-lg bg-customiza-nav">
-          <div class="container-fluid">
-            <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon bg-customiza-nav"></span>
-            </button>
-            <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
-              <ul class="navbar-nav bg-customiza">
-                <li class="nav-item bg-customiza">
-                  <a class="nav-link bg-customiza" aria-current="page" href="avisos.html">Avisos</a>
-                </li>
-                <li class="nav-item bg-customiza">
-                  <a class="nav-link bg-customiza" href="anuncios.html">Anúncios</a>
-                </li>
-                <li class="nav-item bg-customiza">
-                  <a class="nav-link bg-customiza" href="reservas.html">Reservas</a>
-                </li>
-                <li class="nav-item bg-customiza">
-                  <a class="nav-link bg-customiza" href="regimento.html">Regimento</a>
-                </li>
-              </ul>
+                Artigo 1º - O presente regimento estabelece as normas de convivência e administração do Condomínio Residencial "Fictício", visando a harmonia entre os condôminos. <br>
+                
+                Artigo 2º - É dever de todos contribuir para a conservação e limpeza das áreas comuns, respeitar o silêncio após as 22h e manter a segurança do condomínio. <br>
+                
+                Artigo 3º - O uso das áreas comuns deve ser agendado e respeitar as regras estabelecidas. É proibido o acesso de pessoas não autorizadas. <br>
+                
+                Artigo 4º - O descumprimento das normas pode resultar em advertências, multas ou suspensão temporária dos direitos de uso das áreas comuns. <br>
+                
+                Artigo 5º - Este regimento poderá ser alterado em assembleia, mediante aprovação da maioria dos condôminos presentes. <br>
+                
+                Fim do Regimento Interno do Condomínio Residencial "Fictício".</p>
             </div>
           </div>
-          <a href="home.html"> <img src="./css/img/logo_branca.png" class="img" alt="Domos"> </a>  
-          <a href="testes.html"><button> teste</button></a>
-        </nav>
-
-      <div class="espacamento input-group search-customiza mt-2 m-lg-2 tamanho-geral">
-        <input type="text" class="form-control" placeholder="Busca" > <img src="./css/img/insta_icon.png" class="img-fluid"/>
-
-      </div>
-
-      <div class="card tamanho-geral m-2">
-        <div class="card-body">
-          <h5 class="card-title titulo">Título do regimento</h5>
-          <h6 class="card-subtitle mb-2 titulo-sub">Leia abaixo o regimento interno</h6>
-          <p class="card-text descricao">Regimento Interno do Condomínio Residencial "Fictício" <br>
-
-            Artigo 1º - O presente regimento estabelece as normas de convivência e administração do Condomínio Residencial "Fictício", visando a harmonia entre os condôminos. <br>
-            
-            Artigo 2º - É dever de todos contribuir para a conservação e limpeza das áreas comuns, respeitar o silêncio após as 22h e manter a segurança do condomínio. <br>
-            
-            Artigo 3º - O uso das áreas comuns deve ser agendado e respeitar as regras estabelecidas. É proibido o acesso de pessoas não autorizadas. <br>
-            
-            Artigo 4º - O descumprimento das normas pode resultar em advertências, multas ou suspensão temporária dos direitos de uso das áreas comuns. <br>
-            
-            Artigo 5º - Este regimento poderá ser alterado em assembleia, mediante aprovação da maioria dos condôminos presentes. <br>
-            
-            Fim do Regimento Interno do Condomínio Residencial "Fictício".</p>
-        </div>
-      </div>
-
-      <div class="input-group-append espacamento tamanho-geral mt-2 m-lg-2">
-        <button class="btn btn-baixar col-2" type="button">Baixar pdf</button>
-      </div>
+              
+        </main>
+    </div>
+    
 </body>
+</html>

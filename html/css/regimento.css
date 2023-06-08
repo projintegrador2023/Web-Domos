@@ -94,8 +94,7 @@ button:hover {
 }
 
 .bg-customiza{
-	background-color:#005661;
-	color: #fdfdfd;
+	background-color:#0491a3;
 }
 
 .bg-customiza:hover{
@@ -158,4 +157,14 @@ button:hover {
 .descricao{
     color: #000000;
 	text-align: justify;
+}
+
+.search{
+	height: 40px;
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #f1f0ef;
+	color: #fff;
+	border: #f1f0ef;
+	border-radius: 16px;
 }

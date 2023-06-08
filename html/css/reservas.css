@@ -77,11 +77,6 @@ button:hover {
     position: absolute;
     border-radius: 10px;
 }
- /*Classes para customizar a nav*/
-.bg-customiza-nav{
-	background:#005661;
-	color: #fdfdfd;
-}
 
 .bg_group{
     background-color:#fdfdfd;
@@ -91,9 +86,9 @@ button:hover {
 .bg_group:hover{
     background-color: #0491a3;
 }
+
 .bg-customiza{
-	background-color:#005661;
-	color: #fdfdfd;
+	background-color:#0491a3;
 }
 
 .bg-customiza:hover{
@@ -129,36 +124,6 @@ button:hover {
 	color: #fff;
 }
 
-.btn-critico{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
-	background-color: #cc0000;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
-}
-
-.btn-urgente{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
-	background-color: #ff6702;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
-}
-
-.btn-importante{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
-	background-color: #ffe324;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
-}
-
 .filter-btn{
 	color: #fff;
 }
@@ -187,18 +152,6 @@ button:hover {
 	text-align: justify;
 }
 
-.importancia-critico{
-    background-color: #cc0000;
-}
-
-.importancia-urgente{
-    background-color: #ff6702;
-}
-
-.importancia-importante{
-    background-color: #ffe324;
-}
-
 /*Configuração - busca*/
 .formulario{
 	font-family: 'Jost', sans-serif, bold;
@@ -208,3 +161,17 @@ button:hover {
 	border: #f1f0ef;
 	border-radius: 16px;
 }
+
+.search{
+	height: 40px;
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #f1f0ef;
+	color: #fff;
+	border: #f1f0ef;
+	border-radius: 16px;
+}
+
+
+
+
