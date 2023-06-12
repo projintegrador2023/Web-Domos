@@ -158,11 +158,6 @@ button:hover {
 	height: fit-content;
 }
 
-.img-cards{
-	width: 10em;
-	height: 10em;
-}
-
 .titulo{
     font-family: 'Jost', sans-serif, bold;
     color: #005661;
@@ -199,12 +194,4 @@ button:hover {
 	color: #fff;
 	border: #f1f0ef;
 	border-radius: 16px;
-}
-
-/*Configuração da imagem dentro do botão de configuração*/
-.img-config{
-	background-color: #005661;
-	text-decoration: none;
-	width: 3.5em;
-	height: 3em;
 }

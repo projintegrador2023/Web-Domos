@@ -55,21 +55,21 @@
 
         <form class="conf_formulario"> 
             <label for="nome_usuario" class="fs-4"> Nome </label>
-            <input class="bg-e8e8e8" id="nome_usuario" type="text"> 
-            <label for="cpf_usuario" class="fs-4"> Cpf </label> 
-            <input class="bg-e8e8e8" id="cpf_usuario" type="text"> 
+            <input class="bg-e8e8e8" id="nome_usuario" type="text" required maxlength="45"> 
+            <label for="cpf_usuario" class="fs-4"> Cpf</label> 
+            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required maxlength="11"> 
             <label for="email_usuario" class="fs-4"> E-mail </label> 
-            <input class="bg-e8e8e8" id="email_usuario" type="text">  
+            <input class="bg-e8e8e8" id="email_usuario" type="email" required>  
             <label for="senha_usuario" class="fs-4"> Crie sua senha</label> 
-            <input class="bg-e8e8e8" id="senha_usuario" type="password" > 
+            <input class="bg-e8e8e8" id="senha_usuario" type="password" required> 
             <label for="conf_senha_usuario" class="fs-4"> Confirme sua senha</label> 
-            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password">
+            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password" required>
 
         <section>
             <h1 class="color-0491a3 fs-1 py-5"> Informações do condomínio </h1>
         </section>
             <label class="fs-4"> Código do condomínio </label>
-            <input class="bg-e8e8e8" type="text">  <br>
+            <input class="bg-e8e8e8" type="text" maxlength="6">  <br>
 
             <div class="container d-flex justify-content-between p-0">
                 <div class="col-5">
