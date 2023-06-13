@@ -148,19 +148,7 @@ button:hover {
 	color: #fff;
 }
 
- /*Classe para definir tamanho de tudo na tela*/
-.tamanho-geral{
-	width:45%;
-}
-
-/*Classe para definir configurações gerais do cards*/
-.tamanho-card{
-    width: fit-content;
-	height: fit-content;
-}
-
-
-
+/*Configurações gerais para cards e modal*/
 .titulo{
     font-family: 'Jost', sans-serif, bold;
     color: #005661;
@@ -208,4 +196,27 @@ button:hover {
 	text-decoration: none;
 	width: 3.5em;
 	height: 3em;
+}
+
+/*Configurações Modal*/
+.icons-white{
+	color: #fdfdfd;
+}
+
+.btn-exit, .btn-publicar, .btn-criar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.btn-criar{
+	border-radius: 6rem;
+}
+
+.btn-publicar:hover{
+	background-color: #0491a3;
+	color: #fdfdfd;
+}
+
+.btn-exit:hover{
+	background-color: #cc0000;
 }

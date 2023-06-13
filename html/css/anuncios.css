@@ -14,79 +14,10 @@ body {
 }
 
 
-/* configurações gerais de todas as sections */
-section {
-	display: flex;
-    justify-content: center;
-    align-items: center;
-
-	padding: 10px;
-}
-
-/* configurações dos formulários */
-.formulario {
-	display: block;
-	width: 72%;
-
-	margin-left: auto;
-	margin-right: auto;
-	padding: 3em;
-}
-
-
-/* configurações gerais dos botões */
-button{
-	font-size: 1.2em;
-	background-color: #005661;
-	color: #fff;
-
-	border-style: none;
-	border-radius: 10px;
-
-	padding: 35px;
-}
-
-/* configurações do hover geral para todos os botões*/
-button:hover {
-	background-color: #0491a3;
-}
-
-.text{
-	width: 50%;
-
-	margin-left: auto;
-	margin-right: auto;
-
-	color:#005661;
-
-	font-weight: 200;
-	font-size: 1.2em;
-
-	flex-direction: column;
-	justify-content: center;
-  	align-items: center;
-}
-
 .a{
 	text-decoration: none;
 }
 
-/* configurações para a section title */
-.title {
-	font-size: 2em;
-	color: #005661;
-}
-
-.title h1::after {
-	content: '';
-    display: block;
-    width: 7rem;
-    height: 0.3rem;
-    background-color: #0491a3;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
  /*Classes para customizar a nav*/
 .bg-customiza-nav{
 	background:#005661;
@@ -126,7 +57,9 @@ button:hover {
 }
 
 .search-btn{
-	color: #fff;
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
 }
 
 .btn-alimentacao{
@@ -207,10 +140,12 @@ button:hover {
 .titulo{
     font-family: 'Jost', sans-serif, bold;
     color: #005661;
+	font-size: 1.2em;
 }
 
 .titulo-sub{
     color: #0491a3;
+	font-size: 0.8em;
 }
 
 .descricao{
@@ -247,8 +182,9 @@ button:hover {
 }
 
 .filter-btn{
-	color: #fff;
-	width: 11%;
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
 }
 
  /*Classe para definir tamanho de tudo na tela*/
@@ -267,3 +203,28 @@ button:hover {
 	border-radius: 16px;
 }
 
+
+/*Configurações Modal*/
+.icons-white{
+	color: #fdfdfd;
+	font-size: 1.7rem;
+	justify-content: center;
+}
+
+.btn-exit, .btn-publicar, .btn-criar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.btn-criar{
+	border-radius: 5rem;
+}
+
+.btn-publicar:hover{
+	background-color: #0491a3;
+	color: #fdfdfd;
+}
+
+.btn-exit:hover{
+	background-color: #cc0000;
+}

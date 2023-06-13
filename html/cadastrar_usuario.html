@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+    <script src="js/script.js" defer></script>
     <title> Cadastro do morador - Domos </title>
 </head>
 
@@ -54,26 +55,28 @@
         </section>
 
         <form class="conf_formulario"> 
-            <label for="nome_usuario" class="fs-4"> Nome </label>
-            <input class="bg-e8e8e8" id="nome_usuario" type="text" required maxlength="45"> 
-            <label for="cpf_usuario" class="fs-4"> Cpf</label> 
-            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required maxlength="11"> 
-            <label for="email_usuario" class="fs-4"> E-mail </label> 
+            <label for="nome_usuario" class="fs-4"> Nome*</label>
+            <input class="bg-e8e8e8" id="nome_usuario" type="text" required maxlength="45"><br>
+            <p id="erro_nome_usuario">
+            <label for="cpf_usuario" class="fs-4"> Cpf*</label> 
+            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required maxlength="11"><br>
+            <p id="erro_cpf_usuario">
+            <label for="email_usuario" class="fs-4"> E-mail*</label> 
             <input class="bg-e8e8e8" id="email_usuario" type="email" required>  
-            <label for="senha_usuario" class="fs-4"> Crie sua senha</label> 
+            <label for="senha_usuario" class="fs-4"> Crie sua senha*</label> 
             <input class="bg-e8e8e8" id="senha_usuario" type="password" required> 
-            <label for="conf_senha_usuario" class="fs-4"> Confirme sua senha</label> 
+            <label for="conf_senha_usuario" class="fs-4"> Confirme sua senha*</label> 
             <input class="bg-e8e8e8" id="conf_senha_usuario" type="password" required>
 
         <section>
             <h1 class="color-0491a3 fs-1 py-5"> Informações do condomínio </h1>
         </section>
-            <label class="fs-4"> Código do condomínio </label>
-            <input class="bg-e8e8e8" type="text" maxlength="6">  <br>
+            <label class="fs-4"> Código do condomínio*</label>
+            <input class="bg-e8e8e8" type="text" maxlength="6" required>  <br>
 
             <div class="container d-flex justify-content-between p-0">
                 <div class="col-5">
-                <label class="fs-4"> Nº do apto </label> <br>
+                <label class="fs-4"> Nº do apto*</label> <br>
             <select class="col-12 fs-5 p-2">
                 <option> 101 </option>
                 <option> 102 </option>
@@ -84,7 +87,7 @@
             </select> 
             </div>
             <div class="col-5">
-            <label class="fs-4"> Bloco </label> <br>
+            <label class="fs-4"> Bloco*</label> <br>
             <select class="col-12 fs-5 p-2">
                 <option> Amarelo </option>
                 <option> Azul </option>
@@ -101,7 +104,7 @@
         <br>
         
         <div class="text-end col-12">
-            <button class="button_formulario col-5 fs-3"> Criar </button>
+            <button class="button_formulario col-5 fs-3" onclick="validacao_criar_usuario()"> Criar </button>
         </div>
         
     </section>

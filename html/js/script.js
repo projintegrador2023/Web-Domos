@@ -30,6 +30,10 @@ function validacao_login(){
     
 }
 
+function validacao_cadastro_usuario(){
+    
+}
+
 function verificar_ponto_cpf_cnpj(lista){
     let sem_ponto = true;
     for (let i = 0; i < lista.length; i++){
