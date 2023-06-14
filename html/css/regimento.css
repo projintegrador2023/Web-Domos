@@ -1,37 +1,28 @@
-/*Classe para definir o botao de pesquisa*/
-.search-btn{
-	justify-content: center;
-	font-size: 1.6rem;
-	color: #0491a3;
-}
-
-/*Classe para definir a cor da div no sidebar*/
+/* configurações da sidebar*/
 .bg-customiza{
 	background-color:#0491a3;
 }
 
- /*Classe para definir tamanho de tudo na tela*/
+ /* Configurações do card */
 .tamanho-geral{
 	width:99%;
 }
- /*Classe para definir o subtitulo*/
+ 
 .titulo-sub{
     color: #0491a3;
 }
 
-/*Classe para definir o titulo*/
 .titulo{
     font-family: 'Jost', sans-serif, bold;
     color: #005661;
 }
 
-/*Classe para definir a descricao*/
 .descricao{
     color: #000000;
 	text-align: justify;
 }
 
-/*Classe para definir o input de pesquisa*/
+/* Configurações de busca */
 .search{
 	height: 40px;
 	font-family: 'Jost', sans-serif, bold;
@@ -40,4 +31,10 @@
 	color: #fff;
 	border: #f1f0ef;
 	border-radius: 16px;
+}
+
+.search-btn{
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
 }

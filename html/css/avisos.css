@@ -1,44 +1,4 @@
-/* configurações do background do body */
-body {
-	background-color: #dddbda;
-}
-
-/* definindo configurações gerais */
-*  {
-	margin: 0px;
-	padding: 0px;
-
-	list-style: none;
-	font-family: 'Jost', sans-serif;
-	color: #fdfdfd;
-}
-
-.a{
-	text-decoration: none;
-}
-
-/* configurações para a section title */
-.title {
-	font-size: 2em;
-	color: #005661;
-}
-
-.title h1::after {
-	content: '';
-    display: block;
-    width: 7rem;
-    height: 0.3rem;
-    background-color: #0491a3;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
- /*Classes para customizar a nav*/
-.bg-customiza-nav{
-	background:#005661;
-	color: #fdfdfd;
-}
-
+/*Configurações da sidebar*/
 .bg-customiza{
 	background-color:#0491a3;
 }
@@ -48,7 +8,7 @@ body {
 	color: #fdfdfd;
 }
 
-/*Classe para customizar select dos formulários*/
+/*Configurações do formulario*/
 .select-customiza{
     background-color: #fff;
 	color: #005661;
@@ -60,17 +20,7 @@ body {
     padding: 1em;
 }
 
-/*Classe para customizar a parte de busca*/
-.search-customiza{
-	color: #fff;
-}
-
-.search-btn{
-	justify-content: center;
-	font-size: 1.6rem;
-	color: #0491a3;
-}
-
+/* Configurações dos botoes*/
 .btn-critico{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
@@ -101,19 +51,7 @@ body {
 	height: fit-content;
 }
 
-.filter-btn{
-	justify-content: center;
-	font-size: 1.6rem;
-	color: #0491a3;
-}
-
-
- /*Classe para definir tamanho de tudo na tela*/
-.tamanho-geral{
-	width:45%;
-}
-
-/*Classe para definir configurações gerais do cards*/
+/*Configurações dos cards*/
 .tamanho-card{
     width: fit-content;
 	height: fit-content;
@@ -136,6 +74,7 @@ body {
 	font-size: 0.9em;
 }
 
+/* Cores do footer cards*/
 .importancia-critico{
     background-color: #cc0000;
 }
@@ -148,7 +87,7 @@ body {
     background-color: #ffe324;
 }
 
-/*Configuração - busca*/
+/*Configuração de busca*/
 .search{
 	height: 40px;
 	font-family: 'Jost', sans-serif, bold;
@@ -157,6 +96,18 @@ body {
 	color: #fff;
 	border: #f1f0ef;
 	border-radius: 16px;
+}
+
+.search-btn{
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
+}
+
+.filter-btn{
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
 }
 
 /*Configurações Modal*/

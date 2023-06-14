@@ -1,15 +1,14 @@
-/*Classe para definir a div do header*/
+/*Configurações do header*/
 .bg_group{
     background-color:#fdfdfd;
 	color: #005661;
 }
 
-/*Classe para definir hover da div do header*/
 .bg_group:hover{
     background-color: #0491a3;
 }
 
-/*Classe para definir a cor da div no sidebar*/
+/*Configurações da sidebar*/
 .bg-customiza{
 	background-color:#0491a3;
 }
