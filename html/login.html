@@ -20,27 +20,27 @@
         <!-- ícone do site -->
         <a href="home.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
         <div class="d-flex position-relative justify-content-end">
-            <nav class="navbar navbar-expand-lg bg-customiza-nav navbar-dark position-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
                 <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span> <!--NAO COLOCAR BG-CUSTOMIZA AQUI-->
+                    <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
-                    <ul class="navbar-nav bg-customiza">
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="home.html">Home</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="home.html">Home</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="contato.html">Contato</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="login.html">Entrar</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
                         </li>
                     </ul>
                     </div>
@@ -58,20 +58,20 @@
         <br>
         
         <form> 
-            <label class="fs-5" for="cpf_cnpj"> CPF / CNPJ </label>
-            <input class="back_form bg-e8e8e8" id="cpf_cnpj" type="text"> <br>
+            <label class="fs-5" id="label_cpf_cnpj" for="cpf_cnpj"> CPF / CNPJ </label>
+            <input class="bg-e8e8e8" id="cpf_cnpj" type="text"> <br>
             <p id="erro_login_cpf_cnpj" class="text-danger fs-6"></p>
-            <label class="fs-5" for="senha_login"> Senha </label>
-            <input class="back_form bg-e8e8e8" id="senha_login" type="password"> <br>
+            <label class="fs-5" id="label_senha" for="senha_login"> Senha </label>
+            <input class="bg-e8e8e8" id="senha_login" type="password"> <br>
             <p id="erro_login_senha" class="text-danger fs-6"></p>
         </form>
 
-        <div class="pe-3" id="link_rec_senha">
+        <div class="pe-2 text-end">
             <a href="recuperar_senha.html" class="text"> Esqueceu sua senha? </a> 
         </div> <br> 
 
         <div class="text-end">
-            <button class="col-12 col-md-6 col-xxl-3" onclick="validacao_login()"> Entrar </button>
+            <button class="col-12 col-md-6 col-xxl-3 hover" onclick="validacao_login()"> Entrar </button>
         </div>
         
     </section>

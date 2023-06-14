@@ -68,7 +68,7 @@ section {
 .formulario {
 	background-color: #E8E8E8;
 	border-radius: 5px;
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.212);
+	box-shadow: 10px 10px 10px #00000036;
 }
 
 .bg-e8e8e8{
@@ -115,7 +115,7 @@ textarea {
 	padding-inline-start: 0.5em;	
 }
 
-.input-login-erro{
+.input-erro{
 	border:none;
 	border-bottom:2px solid #a80a0a;
 	border-radius: 0px;
@@ -123,11 +123,6 @@ textarea {
 
 .div_recursos{
 	width: 70em;
-}
-
-/* configurações do hover do botão nos formulários */
-.button_formulario:hover {
-	background-color: #0491a3;
 }
 
 /* configurações gerais dos botões */
@@ -152,7 +147,7 @@ button{
 }
 
 /* configurações do hover geral para todos os botões*/
-button:hover {
+.hover:hover {
 	background-color: #0491a3;
 }
 
@@ -195,40 +190,12 @@ button:hover {
 
 }
 
-#recup_senha {
-	text-align: justify;
-	justify-content: center;
-	font-size: 20px;
-
-}
-
-#section_recup_senha {
-	margin-left: 0;
-	width: fit-content;
-	height: fit-content;
-}
-
-#link_rec_senha {
-	text-align: end	;
-}
-
 /* configurações para a section title */
 .color-0491a3 {
 	color: #0491a3;
 }
 
-/*.title h1::after {
-	content: '';
-    display: block;
-    width: 23rem;
-    height: 0.3rem;
-    background-color: #005661;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
-
-configurações para a section recursos*/
+/*.configurações para a section recursos*/
 .recursos {
 	flex-wrap: wrap;
 
@@ -293,11 +260,6 @@ configurações para a section recursos*/
 	font-size: 1.3em;
 }
 
-/* configurações do hover para os itens da section contatos */
-.itens_contato:hover {
-	background-color: #0491a3;
-}
-
 /* configurações dos parágrafos nos itens da section contatos */
 .itens_contato p {
 	padding-left: 1em;
@@ -337,11 +299,6 @@ configurações para a section recursos*/
 	border-radius: 25px;
 
 	font-size: 1em;
-}
-
-/* configurações do hover da div com a ficha sobre integrante do grupo */
-.ficha:hover {
-	background-color: #0491a3;
 }
 
 /* configurações do título da div com a ficha sobre integrante do grupo */
@@ -450,20 +407,3 @@ option:hover{
 .a{
 	text-decoration: none;
 }
-
-/*teste
-f:hover::after {
-	background-color: blue;
-  }
-  
-.select .header select {
-  appearance: none;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
-  border-width: 0;
-  width: 100%;
-  flex: 1;
-  display: none;
-}
-CRIAR UM CSS PRA CADA PAGINA PQ AI O ESPECIFCO DA PAGINA VAI REESCREVER O RESTO*/

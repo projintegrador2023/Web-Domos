@@ -17,29 +17,29 @@
     <!-- cabeçalho da página --> 
     <header class="d-flex justify-content-between p-2">
         <!-- ícone do site -->
-        <a href="home.html"> <img src="./css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
+        <a href="home.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
         <div class="d-flex position-relative justify-content-end">
-            <nav class="navbar navbar-expand-lg bg-customiza-nav navbar-dark position-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
                 <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span> <!--NAO COLOCAR BG-CUSTOMIZA AQUI-->
+                    <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
-                    <ul class="navbar-nav bg-customiza">
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="home.html">Home</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="home.html">Home</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="contato.html">Contato</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="login.html">Entrar</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
                         </li>
                     </ul>
                     </div>
@@ -55,29 +55,33 @@
         </section>
 
         <form class="conf_formulario"> 
-            <label for="nome_usuario" class="fs-4"> Nome*</label>
+            <label id="label_nome_usuario" for="nome_usuario" class="fs-4"> Nome*</label>
             <input class="bg-e8e8e8" id="nome_usuario" type="text" required maxlength="45"><br>
-            <p id="erro_nome_usuario">
-            <label for="cpf_usuario" class="fs-4"> Cpf*</label> 
-            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required maxlength="11"><br>
-            <p id="erro_cpf_usuario">
-            <label for="email_usuario" class="fs-4"> E-mail*</label> 
-            <input class="bg-e8e8e8" id="email_usuario" type="email" required>  
-            <label for="senha_usuario" class="fs-4"> Crie sua senha*</label> 
-            <input class="bg-e8e8e8" id="senha_usuario" type="password" required> 
-            <label for="conf_senha_usuario" class="fs-4"> Confirme sua senha*</label> 
-            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password" required>
+            <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
+            <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4"> Cpf*</label> 
+            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required><br>
+            <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
+            <label id="label_email_usuario" for="email_usuario" class="fs-4"> E-mail*</label> 
+            <input class="bg-e8e8e8" id="email_usuario" type="email" required><br>
+            <p id="erro_email_usuario" class="fs-6 text-danger"></p>
+            <label id="label_senha_usuario" for="senha_usuario" class="fs-4"> Crie sua senha*</label> 
+            <input class="bg-e8e8e8" id="senha_usuario" type="password" required> <br>
+            <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
+            <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4"> Confirme sua senha*</label> 
+            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password" required><br>
+            <p id="erro_conf_senha_usuario" class="fs-6 text-danger"></p>
 
         <section>
             <h1 class="color-0491a3 fs-1 py-5"> Informações do condomínio </h1>
         </section>
-            <label class="fs-4"> Código do condomínio*</label>
-            <input class="bg-e8e8e8" type="text" maxlength="6" required>  <br>
+            <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4"> Código do condomínio*</label>
+            <input id="input_codigo_condominio" class="bg-e8e8e8" type="text" maxlength="6" required>  <br>
+            <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
 
             <div class="container d-flex justify-content-between p-0">
                 <div class="col-5">
                 <label class="fs-4"> Nº do apto*</label> <br>
-            <select class="col-12 fs-5 p-2">
+            <select id="numero_apartamento" class="col-12 fs-5 p-2">
                 <option> 101 </option>
                 <option> 102 </option>
                 <option> 103 </option>
@@ -88,7 +92,7 @@
             </div>
             <div class="col-5">
             <label class="fs-4"> Bloco*</label> <br>
-            <select class="col-12 fs-5 p-2">
+            <select id="bloco" class="col-12 fs-5 p-2">
                 <option> Amarelo </option>
                 <option> Azul </option>
                 <option> Roxo </option>
@@ -104,7 +108,7 @@
         <br>
         
         <div class="text-end col-12">
-            <button class="button_formulario col-5 fs-3" onclick="validacao_criar_usuario()"> Criar </button>
+            <button class="button_formulario col-5 fs-3 hover" onclick="validacao_cadastro_usuario()"> Criar </button>
         </div>
         
     </section>

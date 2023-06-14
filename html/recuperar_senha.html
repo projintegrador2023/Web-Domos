@@ -18,27 +18,27 @@
         <!-- ícone do site -->
         <a href="home.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
         <div class="d-flex position-relative justify-content-end">
-            <nav class="navbar navbar-expand-lg bg-customiza-nav navbar-dark position-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
                 <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler bg-customiza-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span> <!--NAO COLOCAR BG-CUSTOMIZA AQUI-->
+                    <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse bg-customiza-nav" id="navbarNav">
-                    <ul class="navbar-nav bg-customiza">
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="home.html">Home</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="home.html">Home</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="contato.html">Contato</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
                         </li>
-                        <li class="nav-item bg-customiza">
-                        <a class="text-end nav-link bg-customiza text-white fs-4" href="login.html">Entrar</a>
+                        <li class="nav-item">
+                        <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
                         </li>
                     </ul>
                     </div>
@@ -53,12 +53,12 @@
             <h1 class="fs-1 color-0491a3"> Recuperar senha </h1>
         </section>
 
-        <section class="text_senha" id="section_recup_senha">
-            <p class="color-0491a3 fs-6 m-auto text-center" id="recup_senha"> Insira o seu email e enviaremos um link para redefinir a senha. </p>
+        <section>
+            <p class="color-0491a3 fs-6 m-auto text-center"> Insira o seu email e enviaremos um link para redefinir a senha. </p>
         </section>
         
         <form>
-            <label for="input_email" class="fs-5"> E-mail </label>
+            <label for="input_email" id="label_email" class="fs-5"> E-mail </label>
             <input id="input_email" class="input_login bg-e8e8e8" type="email"> <br>
             <p id="erro_recuperar_senha_email" class="text-danger fs-6"></p>
         </form>
