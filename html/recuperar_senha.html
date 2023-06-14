@@ -18,7 +18,7 @@
         <!-- ícone do site -->
         <a href="home.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
         <div class="d-flex position-relative justify-content-end">
-            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
+            <nav class="d-flex navbar navbar-expand-lg navbar-dark position-relative">
                 <div class="container-fluid d-flex justify-content-end">
                     <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,19 +26,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="home.html">Home</a>
+                        <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                        <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.html">Recursos</a>
                         </li>
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                        <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.html">Sobre nós </a>
                         </li>
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
+                        <a class="text-end nav-link text-white fs-4 p-3" href="contato.html">Contato</a>
                         </li>
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
+                        <a class="text-end nav-link text-white fs-4 p-3" href="login.html">Entrar</a>
                         </li>
                     </ul>
                     </div>
@@ -50,27 +50,27 @@
     <!-- formulário de recuperar senha -->
     <section class="mx-auto d-block col-8 col-md-6 col-lg-5 col-xl-4 p-3 bg-e8e8e8 rborder4">
         <section class="title_login">
-            <h1 class="fs-1 color-0491a3"> Recuperar senha </h1>
+            <h1 class="text-center fs-1 color-0491a3"> Recuperar senha </h1>
         </section>
 
         <section>
-            <p class="color-0491a3 fs-6 m-auto text-center"> Insira o seu email e enviaremos um link para redefinir a senha. </p>
+            <p class="color-0491a3 fs-6 m-auto text-justify py-3"> Insira o seu email e enviaremos um link para redefinir a senha. </p>
         </section>
         
         <form>
-            <label for="input_email" id="label_email" class="fs-5"> E-mail </label>
+            <label for="input_email" id="label_email" class="fs-5 color-0491a3"> E-mail </label>
             <input id="input_email" class="input_login bg-e8e8e8" type="email"> <br>
             <p id="erro_recuperar_senha_email" class="text-danger fs-6"></p>
         </form>
 
-        <div class="div_button_formulario text-md-end text-center">
-            <button class="button_formulario col-12 col-md-5 col-xl-4" onclick="validacao_recuperar_senha()"> Enviar </button>
+        <div class="text-md-end text-center">
+            <button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-5 col-xl-4 hover-0491a3" onclick="validacao_recuperar_senha()"> Enviar </button>
         </div>
         
     </section>
 
     <!-- rodapé da página --> 
-    <footer>
+    <footer class="position-fixed text-center w-100 fixed-bottom backg">
         Todos os direitos autorais reservados.
     </footer>
     

@@ -1,6 +1,43 @@
-/* cor de fundo para seçoes  */
-.backg {
+/* cores */
+.bg-005661 {
 	background-color: #005661;
+}
+
+.bg-e8e8e8{
+	background-color: #E8E8E8;
+}
+
+.color-0491a3 {
+	color: #0491a3;
+}
+
+.color-fff {
+    color: #fff;
+}
+
+/* fontes */
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-200{
+	font-weight: 200;
+}
+
+/* configurações do hover geral para todos os botões*/
+.hover-0491a3:hover {
+	background-color: #0491a3;
+}
+
+.hover-0dc0d8:hover{
+	background-color: #0dc0d8;
+}
+
+/* configurações dos formulários */
+.formulario {
+	background-color: #E8E8E8;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px #00000036;
 }
 
 /* arredonda a borda */
@@ -30,6 +67,15 @@
 	border-style: solid;
 	border-width: 0.35rem;
 }
-.center-text {
-    text-align: center;
+
+/* configurações dos formulários */
+.formulario {
+	background-color: #E8E8E8;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px #00000036;
+}
+
+/* cores dos icons */
+.icons{
+	color: #fdfdfd;
 }

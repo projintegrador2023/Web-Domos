@@ -11,8 +11,6 @@
 	color: #ffffff;
 }
 
-
-
 /* configurações do background do body */
 body {
 	background-image: url("img/fundo.png");
@@ -21,88 +19,19 @@ body {
 	min-height: 100vh;
 }
 
-
-
-
-/* configurações da barra de menu */
-nav {
-	display: flex;
-}
-
-
-/* configurações da lista e links na barra de menu */
-nav li, .link_nav{
-	font-size: 25px;
-	text-decoration: none;
-
-	margin: 5px;
-	margin-left: 10px;
-	padding: 5px;
-}
-
-
-/* configurações do rodapé */
-footer {
-	
-	margin-top:auto; 
-	text-align: center;
-
-	bottom: 0;
-
-	position: fixed;
-
-	width: 100%;
-	background-color: #005661;
-}
-
-/* configurações gerais de todas as sections */
-section {
-	display: flex;
-    justify-content: center;
-    align-items: center;
-
-	padding: 10px;
-}
-
-/* configurações dos formulários */
-.formulario {
-	background-color: #E8E8E8;
-	border-radius: 5px;
-	box-shadow: 10px 10px 10px #00000036;
-}
-
-.bg-e8e8e8{
-	background-color: #E8E8E8;
-}
-
-/* configurações dos labels dos formulários */
-label {
-	font-size: 1.3em;
-	color: #0491a3;
-}
-
 /* configurações dos inputs dos formulários */
-input {
-	width: 98%;
-	height: fit-content;
-
-	font-size: 1.5em;
+.input-form {
 	color: #000000;
-
 	border:none;
 	border-bottom:2px solid #0491a3;
-	border-radius: 0px;
-
-	margin-bottom: 15px;
-	margin-top: 8px;	
-	padding-inline-start: 0.5em;
+	padding-inline-start: 0.5rem;
 }
 
 textarea {
 	width: 97%;
 	height: fit-content;
 
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	color:#000000;
 
 	border:none;
@@ -112,7 +41,7 @@ textarea {
 	background-color: #f1f0ef;
 	margin-bottom: 15px;
 	margin-top: 8px;	
-	padding-inline-start: 0.5em;	
+	padding-inline-start: 0.5rem;	
 }
 
 .input-erro{
@@ -125,17 +54,6 @@ textarea {
 	width: 70em;
 }
 
-/* configurações gerais dos botões */
-button{
-	background-color: #005661;
-	color: #fff;
-
-	border-style: none;
-	border-radius: 10px;
-
-	padding: 8px;
-}
-
 .button_reservas{
 	background-color: #fff;
 	color: #0491a3;
@@ -146,53 +64,9 @@ button{
 	padding: 8px;
 }
 
-/* configurações do hover geral para todos os botões*/
-.hover:hover {
-	background-color: #0491a3;
-}
-
-/* configurações para os botões da section buttons*/
-.buttons button {
-
-	margin-bottom: 0.5em;
-
-	border-radius: 15px;
-}
-
-/* configurações para os parágrafos da section buttons*/
-.buttons p {
-	font-size: 1.6em;
-
-	padding: 50px;
-}
-
-/* configurações para a section text */
-.text{
-
-	color:#005661;
-
-	font-weight: 200;
-
-	flex-direction: column;
-	justify-content: center;
-  	align-items: center;
-}
-
-.text_senha {
-	color: #0491a3;
-}
-
 /* configurações para os parágrafos da section text */
-.text p {
-	font-size: 1.5em;
-
+.text-justify {
 	text-align: justify;
-
-}
-
-/* configurações para a section title */
-.color-0491a3 {
-	color: #0491a3;
 }
 
 /*.configurações para a section recursos*/
@@ -265,17 +139,6 @@ button{
 	padding-left: 1em;
 }
 
-/* configuração da imagem da página sobre nós, que está na section de texto */
-#img_sobrenos{
-	width: 25em;
-	height: 20em;
-
-	border-radius: 25px;
-	border-color: #005661;
-	border-style: solid;
-	border-width: 0.5em;
-}
-
 .a{
 	text-decoration: none;
 }
@@ -302,9 +165,7 @@ button{
 }
 
 /* configurações do título da div com a ficha sobre integrante do grupo */
-.titulo_ficha {
-	font-weight: 400;
-}
+
 
 select{
 	color: #005661; 
@@ -325,10 +186,6 @@ option{
 	text-decoration: none;
 	padding: 1em;
 	border-radius: 10px;
-}
-
-option:hover{
-	background-color: #0dc0d8;
 }
 
 ::placeholder{

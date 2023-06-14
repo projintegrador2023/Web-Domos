@@ -51,31 +51,31 @@
     <!-- formulário de cadastro de usuário -->
     <section class="mx-auto col-10 col-sm-8 col-lg-7 col-xl-6 d-block p-5 formulario">
         <section>
-            <h1 class="color-0491a3 fs-1"> Cadastro do Morador </h1>
+            <h1 class="color-0491a3 fs-1 mb-5 text-center"> Cadastro do Morador </h1>
         </section>
 
         <form class="conf_formulario"> 
-            <label id="label_nome_usuario" for="nome_usuario" class="fs-4"> Nome*</label>
-            <input class="bg-e8e8e8" id="nome_usuario" type="text" required maxlength="45"><br>
+            <label id="label_nome_usuario" for="nome_usuario" class="fs-4 color-0491a3"> Nome*</label>
+            <input class="bg-e8e8e8 col-12 fs-4 input-form" id="nome_usuario" type="text" required maxlength="45"><br>
             <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
-            <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4"> Cpf*</label> 
-            <input class="bg-e8e8e8" id="cpf_usuario" type="text" required><br>
+            <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4 color-0491a3"> Cpf*</label> 
+            <input class="bg-e8e8e8 col-12 fs-4 input-form" id="cpf_usuario" type="text" required><br>
             <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
-            <label id="label_email_usuario" for="email_usuario" class="fs-4"> E-mail*</label> 
-            <input class="bg-e8e8e8" id="email_usuario" type="email" required><br>
+            <label id="label_email_usuario" for="email_usuario" class="fs-4 color-0491a3"> E-mail*</label> 
+            <input class="bg-e8e8e8 col-12 fs-4 input-form" id="email_usuario" type="email" required><br>
             <p id="erro_email_usuario" class="fs-6 text-danger"></p>
-            <label id="label_senha_usuario" for="senha_usuario" class="fs-4"> Crie sua senha*</label> 
-            <input class="bg-e8e8e8" id="senha_usuario" type="password" required> <br>
+            <label id="label_senha_usuario" for="senha_usuario" class="fs-4 color-0491a3"> Crie sua senha*</label> 
+            <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br>
             <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
-            <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4"> Confirme sua senha*</label> 
-            <input class="bg-e8e8e8" id="conf_senha_usuario" type="password" required><br>
+            <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4 color-0491a3"> Confirme sua senha*</label> 
+            <input class="bg-e8e8e8 col-12 fs-4 input-form" id="conf_senha_usuario" type="password" required><br>
             <p id="erro_conf_senha_usuario" class="fs-6 text-danger"></p>
 
         <section>
-            <h1 class="color-0491a3 fs-1 py-5"> Informações do condomínio </h1>
+            <h1 class="color-0491a3 fs-1 py-5 text-center"> Informações do condomínio </h1>
         </section>
-            <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4"> Código do condomínio*</label>
-            <input id="input_codigo_condominio" class="bg-e8e8e8" type="text" maxlength="6" required>  <br>
+            <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4 color-0491a3"> Código do condomínio*</label>
+            <input id="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-4 input-form" type="text" maxlength="6" required>  <br>
             <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
 
             <div class="container d-flex justify-content-between p-0">
@@ -108,13 +108,13 @@
         <br>
         
         <div class="text-end col-12">
-            <button class="button_formulario col-5 fs-3 hover" onclick="validacao_cadastro_usuario()"> Criar </button>
+            <button class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-5 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Criar </button>
         </div>
         
     </section>
 
     <!-- rodapé da página --> 
-    <footer>
+    <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
         Todos os direitos autorais reservados.
     </footer>
         

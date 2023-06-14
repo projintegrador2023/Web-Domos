@@ -34,9 +34,9 @@ body{
     box-shadow: 0 6px 7px -4px rgb(0,0,0,0.2);
 }
 
-.menu-icon{
+/*.menu-icon{
     display: none;
-}
+}*/
 
 .gradient-custom {
     /* fallback for old browsers */
@@ -52,7 +52,6 @@ body{
 .img_tamanho{
     width: 35px;
 }
-
 
 .sidebar{
     grid-area: sidebar;
