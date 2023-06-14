@@ -1,3 +1,24 @@
+/* importar fonte */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap');
+
+/* definindo configurações gerais */
+*  {
+    margin: 0px;
+	padding: 0px;
+
+	list-style: none;
+	font-family: 'Jost', sans-serif;
+	color: #ffffff;
+}
+
+/* configurações do background do body */
+body {
+	background-image: url("img/fundo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+
 /* cores */
 .bg-005661 {
 	background-color: #005661;
@@ -13,6 +34,10 @@
 
 .color-fff {
     color: #fff;
+}
+
+.color-fdfdfd{
+	color: #fdfdfd;
 }
 
 /* fontes */
@@ -40,6 +65,15 @@
 	box-shadow: 10px 10px 10px #00000036;
 }
 
+.shadow-black {
+	box-shadow: 10px 10px 10px #00000036;
+}
+
+/* justificar texto */
+.text-justify {
+	text-align: justify;
+}
+
 /* arredonda a borda */
 .rborder1 {
     border-radius: 50px;
@@ -55,6 +89,10 @@
 
 .rborder4 {
     border-radius: 10px;
+}
+
+.text-decoration-none {
+	text-decoration: none;
 }
 
 /*tira o sublinhado quando passamos o mouse por cima*/
@@ -75,7 +113,44 @@
 	box-shadow: 10px 10px 10px #00000036;
 }
 
-/* cores dos icons */
-.icons{
-	color: #fdfdfd;
+/* configurações dos inputs dos formulários */
+.input-form {
+	color: #000000;
+	border:none;
+	border-bottom:2px solid #0491a3;
+	padding-inline-start: 0.5rem;
+}
+
+.input-erro{
+	border:none;
+	border-bottom:2px solid #a80a0a;
+	border-radius: 0px;
+}
+
+/* alterar depois que o bootstrap estiver pronto */
+textarea {
+	width: 97%;
+	height: fit-content;
+
+	font-size: 1.5rem;
+	color:#000000;
+
+	border:none;
+	border-radius: 4px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
+
+	background-color: #f1f0ef;
+	margin-bottom: 15px;
+	margin-top: 8px;	
+	padding-inline-start: 0.5rem;	
+}
+
+.button_reservas{
+	background-color: #fff;
+	color: #0491a3;
+
+	border-style: none;
+	border-radius: 10px;
+
+	padding: 8px;
 }
