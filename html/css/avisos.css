@@ -25,13 +25,26 @@
 	background-color: #cc0000;
 }
 
+.btn-critico:hover{
+	background-color: #9c0000;
+}
+
 .btn-urgente{
 	background-color: #ff6702;
+}
+
+.btn-urgente:hover{
+	background-color: #ce5200;
 }
 
 .btn-importante{
 	background-color: #ffe324;
 }
+
+.btn-importante:hover{
+	background-color: #d8bf1e;
+}
+
 
 /*Configurações dos cards*/
 .tamanho-card{
@@ -101,6 +114,10 @@
 
 .btn-criar{
 	border-radius: 6rem;
+}
+
+.btn-criar:hover{
+	background-color: #0491a3;
 }
 
 .btn-publicar:hover{

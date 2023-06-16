@@ -23,9 +23,9 @@
         </div>
         
         <div class="justify-content-around d-flex w-75">
-          <button class="btn btn-critico w-25 m-2 rounded fs-5 color-fff" type="button">Crítico</button>
-          <button class="btn btn-urgente w-25 m-2 rounded fs-5 color-fff" type="button">Urgente</button>
-          <button class="btn btn-importante w-25 m-2 rounded fs-5 color-fff" type="button">Importante</button>
+          <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
+          <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
+          <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
           <button class="btn filter-btntext-start" type="button"><i class="fa-solid fa-filter filter-btn"></i></button>
         </div>
     
@@ -149,7 +149,7 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title titulo" id="staticBackdropLabel">Criar aviso</h5>
+                  <h5 class="modal-title titulo color-0491a3" id="staticBackdropLabel">Criar aviso</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body descricao">
@@ -161,13 +161,10 @@
                         <textarea class="form-control form-customiza" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
                     </div>
                     <select class="form-select select-customiza mb-3">
-                        <option selected class="select-customiza">Escolha a tag do anúncio</option>
-                        <option value="1" class="select-customiza">Alimentação</option>
-                        <option value="2" class="select-customiza">Confecção e moda</option>
-                        <option value="3" class="select-customiza">Eletrônicos</option>
-                        <option value="4" class="select-customiza">Decoração</option>
-                        <option value="5" class="select-customiza">Petshop</option>
-                        <option value="6" class="select-customiza">Serviços</option>
+                        <option selected class="select-customiza">Escolha a importância do aviso</option>
+                        <option value="1" class="select-customiza">Crítico</option>
+                        <option value="2" class="select-customiza">Urgente</option>
+                        <option value="3" class="select-customiza">Importante</option>
                     </select>
                     <input type="file" class="btn col-5"> 
                 </form>

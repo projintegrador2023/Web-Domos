@@ -8,29 +8,58 @@
 	background-color: #ff6da7;
 }
 
+.btn-alimentacao:hover{
+	background-color: #b64572;
+}
+
 .btn-confemoda{
 	background-color: #ff6d6d;
+}
+
+.btn-confemoda:hover{
+	background-color: #d33939;
 }
 
 .btn-eletronicos{
 	background-color: #4ad4e6;
 }
 
+.btn-eletronicos:hover{
+	background-color: #2599a8;
+}
+
 .btn-beleza{
 	background-color: #66b73e;
+}
+
+.btn-beleza:hover{
+	background-color: #4d922b;
 }
 
 .btn-decoracao{
 	background-color: #e6a545;
 }
 
+.btn-decoracao:hover{
+	background-color: #b47e2e;
+}
+
 .btn-petshop{
 	background-color: #ffe324;
+}
+
+.btn-petshop:hover{
+	background-color: #ceb61a;
 }
 
 .btn-servicos{
 	background-color: #9f35cc;
 }
+
+.btn-servicos:hover{
+	background-color: #6c1f8d;
+}
+
 
 
 /* .btn-servicos{
@@ -43,25 +72,6 @@
 	height: fit-content;
 }
 */
-
-
-/*Configurações dos cards*/
-.titulo{
-    font-family: 'Jost', sans-serif, bold;
-    color: #005661;
-	font-size: 1.2em;
-}
-
-.titulo-sub{
-    color: #0491a3;
-	font-size: 0.8em;
-}
-
-.descricao{
-    color: #000000;
-	text-align: justify;
-}
-
 
 /*Configurações das cores das tags*/
 .tag-alimentacao{
@@ -91,6 +101,21 @@
 .tag-servicos{
 	background-color: #9f35cc;
 }
+
+.color-titulo{
+    color: #005661;
+}
+
+.color-subtitulo{
+    color: #0491a3;
+}
+
+.color-descricao{
+    color: #000000;
+}
+
+
+
 
 .filter-btn{
 	justify-content: center;

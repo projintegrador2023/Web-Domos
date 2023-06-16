@@ -120,6 +120,12 @@
 	padding-inline-start: 0.5rem;
 }
 
+.border-select {
+	border-color: #0491a3;
+	border-style: solid;
+	border-width: 0.1rem;
+}
+
 .input-erro{
 	border:none;
 	border-bottom:2px solid #a80a0a;
