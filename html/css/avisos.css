@@ -22,33 +22,15 @@
 
 /* Configurações dos botoes*/
 .btn-critico{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #cc0000;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
 }
 
 .btn-urgente{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #ff6702;
-	color: #fff;
-	border-radius: 19px;
-	width: 22%;
-	height: fit-content;
 }
 
 .btn-importante{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #ffe324;
-	color: #fff;
-	border-radius: 19px;
-	width: 26%;
-	height: fit-content;
 }
 
 /*Configurações dos cards*/
@@ -57,21 +39,16 @@
 	height: fit-content;
 }
 
-.titulo{
-    font-family: 'Jost', sans-serif, bold;
+.color-titulo{
     color: #005661;
-	font-size: 1.2em;
 }
 
-.titulo-sub{
+.color-subtitulo{
     color: #0491a3;
-	font-size: 0.8em;
 }
 
-.descricao{
+.color-descricao{
     color: #000000;
-	text-align: justify;
-	font-size: 0.9em;
 }
 
 /* Cores do footer cards*/

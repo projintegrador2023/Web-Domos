@@ -11,8 +11,7 @@
 	color: #ffffff;
 }
 
-/* configurações do background do body */
-body {
+.fundo-imagem {
 	background-image: url("img/fundo.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -139,11 +138,15 @@ textarea {
 	border-radius: 4px;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
 
-	background-color: #f1f0ef;
 	margin-bottom: 15px;
 	margin-top: 8px;	
 	padding-inline-start: 0.5rem;	
 }
+
+.bg-f1f0ef{
+	background-color: #f1f0ef;
+}
+
 
 .button_reservas{
 	background-color: #fff;

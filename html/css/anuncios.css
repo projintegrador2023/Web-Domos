@@ -5,66 +5,35 @@
 
 /*Configurações dos botoes do filtro*/
 .btn-alimentacao{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #ff6da7;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-confemoda{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #ff6d6d;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-eletronicos{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #4ad4e6;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-beleza{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #66b73e;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-decoracao{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #e6a545;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-petshop{
-	font-family: 'Jost', sans-serif, bold;
-	font-size: 1.2em;
 	background-color: #ffe324;
-	color: #fff;
-	border-radius: 19px;
-	width: 11%;
-	height: fit-content;
 }
 
 .btn-servicos{
+	background-color: #9f35cc;
+}
+
+
+/* .btn-servicos{
 	font-family: 'Jost', sans-serif, bold;
 	font-size: 1.2em;
 	background-color: #9f35cc;
@@ -73,6 +42,7 @@
 	width: 10%;
 	height: fit-content;
 }
+*/
 
 
 /*Configurações dos cards*/
