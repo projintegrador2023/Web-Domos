@@ -12,11 +12,11 @@
 	background-color: #b64572;
 }
 
-.btn-confemoda{
+.btn-vestuario{
 	background-color: #ff6d6d;
 }
 
-.btn-confemoda:hover{
+.btn-vestuario:hover{
 	background-color: #d33939;
 }
 
@@ -73,12 +73,24 @@
 }
 */
 
+/*Configurações do formulario*/
+.select-customiza{
+    background-color: #fff;
+	color: #005661;
+
+	border:none;
+	border-radius: 4px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
+
+    padding: 1em;
+}
+
 /*Configurações das cores das tags*/
 .tag-alimentacao{
 	background-color: #ff6da7;
 }
 
-.tag-confemoda{
+.tag-vestuario{
 	background-color: #ff6d6d;
 }
 
@@ -113,8 +125,6 @@
 .color-descricao{
     color: #000000;
 }
-
-
 
 
 .filter-btn{
