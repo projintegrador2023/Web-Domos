@@ -13,10 +13,11 @@ class BuscaCest
 
     // tests
     public function buscarResultadosNaPaginaTest(AcceptanceTester $I)
-    {
-      $I->amOnPage('./html/login.html');
-      $I->fillField('cpf_cnpj', '123123123');
-      $I->click('Entrar');
-      $I->see('Digite um CPF completo.');
+    { 
+      //$I = new AcceptanceTester($scenario);
+      $I->amOnPage('/html/index.html');
+      $I->click('Sobre nós');
+      $I->seeCurrentURLEquals('/html/sobre_nos.html');
+      $I->see('Somos um time de estudantes');
     }
 }
