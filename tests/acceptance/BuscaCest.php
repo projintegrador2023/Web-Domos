@@ -15,7 +15,7 @@ class BuscaCest
     public function buscarResultadosNaPaginaTest(AcceptanceTester $I)
     {
       $I->amOnPage('/html/login.html');
-      $I->fillField('null', '123123123');
+      $I->fillField('cpf_cnpj', '123123123');
       $I->click('Entrar');
       $I->see('Digite um CPF completo.');
     }

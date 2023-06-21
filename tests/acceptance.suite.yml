@@ -8,10 +8,10 @@ actor: AcceptanceTester
 modules:
     enabled:
 #        - PhpBrowser:
-#            url: http://ifes.edu.br
+#            url: http://domos.infinityfreeapp.com/html/login.html
     enabled:
         - WebDriver:
-            url: 'http://ifes.edu.br' 
+            url: 'http://domos.infinityfreeapp.com/html/login.html' 
             browser: 'firefox' # ou 'firefox'
             host: '127.0.0.1'
             port: 4444
