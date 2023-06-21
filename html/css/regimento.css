@@ -38,3 +38,13 @@
 	font-size: 1.6rem;
 	color: #0491a3;
 }
+
+.baixar-btn{
+	background-color: #005661;
+	color: #fff;
+}
+
+.baixar-btn:hover{
+	background-color: #0491a3;
+	color: #fff;
+}
