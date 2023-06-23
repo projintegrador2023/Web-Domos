@@ -11,296 +11,298 @@
 </head>
 
 <body>
-    <!-- cabeçalho da página --> 
-    <header class="d-flex justify-content-between p-2">
-        <!-- ícone do site -->
-        <a href="index.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
-        <div class="d-flex position-relative justify-content-end">
-            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
-                <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
-                        </li>
-                    </ul>
+    <div class="fundo-imagem">
+        <!-- cabeçalho da página --> 
+        <header class="d-flex justify-content-between p-2">
+            <!-- ícone do site -->
+            <a href="index.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
+            <div class="d-flex position-relative justify-content-end">
+                <nav class="navbar navbar-expand-lg navbar-dark position-relative">
+                    <div class="container-fluid d-flex justify-content-end">
+                        <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4" aria-current="page" href="recursos.html">Recursos</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4" href="sobre_nos.html">Sobre nós </a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4" href="contato.html">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4" href="login.html">Entrar</a>
+                            </li>
+                        </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- formulário de cadastro de usuário -->
-    <section class="mx-auto col-10 col-sm-8 col-lg-7 col-xl-6 d-block p-5 formulario">
-        <section>
-            <h1 class="color-0491a3 fs-1"> Cadastro do condomínio </h1>
-        </section> 
-        <br>
-        <form>
-            <div class="conf_formulario" id="info_condominio">
-                <label for="cnpj_condominio"> CNPJ </label>
-                <input type="text" placeholder="Digite seu cnpj" id="cnpj_condominio"> 
-                <label for="nome_condominio"> Nome </label> 
-                <input type="text" placeholder="Nome do condomínio" id="nome_condominio">
+                </nav>
             </div>
-            
-            <div class="conf_formulario" id="endereco"> 
-                <label for="cep_condominio"> Cep </label>
-                <input type="text" placeholder="Cep" id="cep_condominio">
-                <label for="cidade"> Cidade </label>
-                <input type="text" placeholder="Cidade" id="cidade">
-                <label for="estado"> Estado </label>
-                <input type="text" placeholder="Estado" id="estado">
+        </header>
+
+        <!-- formulário de cadastro de usuário -->
+        <section class="mx-auto col-10 col-sm-8 col-lg-7 col-xl-6 d-block p-5 formulario">
+            <section>
+                <h1 class="color-0491a3 fs-1 text-center"> Cadastro do condomínio </h1>
+            </section> 
+            <br>
+            <form>
+                <div class="m-auto col-12" id="info_condominio">
+                    <label for="cnpj_condominio"> CNPJ </label>
+                    <input type="text" placeholder="Digite seu cnpj" id="cnpj_condominio"> 
+                    <label for="nome_condominio"> Nome </label> 
+                    <input type="text" placeholder="Nome do condomínio" id="nome_condominio">
+                </div>
                 
-                <label for="bairro"> Bairro </label>
-                <input type="text" placeholder="Bairro" id="bairro">
-                <label for="rua"> Rua </label>
-                <input type="text" placeholder="Rua" id="rua">
-                <label for="numero"> Número </label>
-                <input type="text" placeholder="Número" id="numero">
-                <label for="complemento"> Complemento </label>
-                <input type="text" placeholder="Complemento" id="complemento">
-            </div>  <br>
-            <label> Tipo de moradia</label> <br> 
-            <select>
-                <option> Apartamento </option>
-                <option> Casas </option>
-                <option> Apartamentos e casas  </option>
-            </select> <br> <br>  
-            <label> Quantidade de moradores  </label> <br>
-            <select>
-                <option> 0 - 100  </option>
-                <option> 100 - 500 </option>
-                <option> 500 - 1000 </option>
-                <option> 1000 + </option>
-            </select> <br>  
-        </form>
-        
-    </section>
-    <br> <br>
-    
-    <section class="formulario">
-        <form> 
-            <p> De qual maneira está dividido o seu condomínio? </p> 
+                <div class="conf_formulario" id="endereco"> 
+                    <label for="cep_condominio"> Cep </label>
+                    <input type="text" placeholder="Cep" id="cep_condominio">
+                    <label for="cidade"> Cidade </label>
+                    <input type="text" placeholder="Cidade" id="cidade">
+                    <label for="estado"> Estado </label>
+                    <input type="text" placeholder="Estado" id="estado">
+                    
+                    <label for="bairro"> Bairro </label>
+                    <input type="text" placeholder="Bairro" id="bairro">
+                    <label for="rua"> Rua </label>
+                    <input type="text" placeholder="Rua" id="rua">
+                    <label for="numero"> Número </label>
+                    <input type="text" placeholder="Número" id="numero">
+                    <label for="complemento"> Complemento </label>
+                    <input type="text" placeholder="Complemento" id="complemento">
+                </div>  <br>
+                <label> Tipo de moradia</label> <br> 
+                <select>
+                    <option> Apartamento </option>
+                    <option> Casas </option>
+                    <option> Apartamentos e casas  </option>
+                </select> <br> <br>  
+                <label> Quantidade de moradores  </label> <br>
+                <select>
+                    <option> 0 - 100  </option>
+                    <option> 100 - 500 </option>
+                    <option> 500 - 1000 </option>
+                    <option> 1000 + </option>
+                </select> <br>  
             
-            <input class="check" type="checkbox"> <label> Setor </label>
-            <input class="check" id="torres" type="checkbox"> <label for="torres"> Torres</label>
-            <input class="check" id="andar" type="checkbox"> <label for="andar"> Andar </label>
-            <input class="check" id="blocos" type="checkbox" > <label for="blocos"> Blocos </label> <br>
-
-            <label> Quantidade das divisões  </label> <br>
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-            </select> <br>  
-
-        </form>
-        
-    </section> <br> <br> 
-
-    <section class="formulario">
-        <form> 
-            <p> De que forma são nomeadas essas divisões? </p>
-
-            <input type="checkbox" class="check"> <label> Letras </label>
-            <input type="checkbox" class="check"> <label> Número</label>
-            <input type="checkbox" class="check"> <label> Cor </label>
-            <input type="checkbox" class="check"> <input class="check_outros" type="text" placeholder="Outros"> <br>
-
-            <label> Escreva abaixo os nomes dessas divisões  </label>
-            <input type="textarea">
             
-
-        </form>
-        
-    </section> <br> <br> 
-
-    
-    <section class="formulario">
-        <section class="title">
-            <h1> Divisão dos apartamentos </h1>
         </section>
-        <form> 
-            <input type="text" placeholder="Qts de aptos por divisão">
-            <label>   Digite uma lista dos números de apto </label>
-            <input type="textarea">
-        </form>
-    
-    </section> <br> <br>
+        <br> <br>
+        
+        <section class="formulario">
+             
+                <p> De qual maneira está dividido o seu condomínio? </p> 
+                
+                <input class="check" type="checkbox"> <label> Setor </label>
+                <input class="check" id="torres" type="checkbox"> <label for="torres"> Torres</label>
+                <input class="check" id="andar" type="checkbox"> <label for="andar"> Andar </label>
+                <input class="check" id="blocos" type="checkbox" > <label for="blocos"> Blocos </label> <br>
 
-    <section class="formulario">
-        <section class="title">
-            <h1> Divisão das casas </h1>
+                <label> Quantidade das divisões  </label> <br>
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                </select> <br>  
+
+            
+            
+        </section> <br> <br> 
+
+        <section class="formulario">
+            
+                <p> De que forma são nomeadas essas divisões? </p>
+
+                <input type="checkbox" class="check"> <label> Letras </label>
+                <input type="checkbox" class="check"> <label> Número</label>
+                <input type="checkbox" class="check"> <label> Cor </label>
+                <input type="checkbox" class="check"> <input class="check_outros" type="text" placeholder="Outros"> <br>
+
+                <label> Escreva abaixo os nomes dessas divisões  </label>
+                <input type="textarea">
+                
+
+            
+            
+        </section> <br> <br> 
+
+        
+        <section class="formulario">
+            <section class="title">
+                <h1> Divisão dos apartamentos </h1>
+            </section>
+            
+                <input type="text" placeholder="Qts de aptos por divisão">
+                <label>   Digite uma lista dos números de apto </label>
+                <input type="textarea">
+            
+        
+        </section> <br> <br>
+
+        <section class="formulario">
+            <section class="title">
+                <h1> Divisão das casas </h1>
+            </section>
+              
+                <input type="text" placeholder="Qts de casas por divisão">
+                <label> Digite uma lista dos números de casas </label>
+                <input type="textarea">
+            
+            
+        </section> <br> <br>
+
+        <section class="formulario">
+            
+                <label> Salão de festas </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Churrasqueira </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Quadra</label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Sauna </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Sala de jogos </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Espaço Gourmet </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <label> Espaço Kids </label>
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+                <input type="text" placeholder="+ Adicionar mais opções">
+            
+            
+        </section> <br> <br> 
+
+        <section class="formulario">
+            
+                <input type="checkbox" class="checkbox_class">
+                <input type="text">
+                <input type="checkbox" class="checkbox_class">
+                <select>
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3</option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10+ </option>
+                </select>
+            
+        
+        </section> <br> <br>
+
+        <section class="formulario">
+            
+                <label> Insira o regimento interno do seu condomínio abaixo: </label>
+                <input type="file"> 
+            
+            
+            <a href="cadastrar_condominio.html"> </a>
+            <div class="div_button_formulario">
+                <button class="button_formulario"> Concluir </button>
+                <label> Código do condomínio será enviado para o e-mail do síndico. </label>
+            </form>
+            </div> 
+
         </section>
-        <form>  
-            <input type="text" placeholder="Qts de casas por divisão">
-            <label> Digite uma lista dos números de casas </label>
-            <input type="textarea">
-        </form>
-        
-    </section> <br> <br>
 
-    <section class="formulario">
-        <form> 
-            <label> Salão de festas </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Churrasqueira </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Quadra</label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Sauna </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Sala de jogos </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Espaço Gourmet </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <label> Espaço Kids </label>
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-            <input type="text" placeholder="+ Adicionar mais opções">
-        </form>
-        
-    </section> <br> <br> 
-
-    <section class="formulario">
-        <form>
-            <input type="checkbox" class="checkbox_class">
-            <input type="text">
-            <input type="checkbox" class="checkbox_class">
-            <select>
-                <option> 1 </option>
-                <option> 2 </option>
-                <option> 3</option>
-                <option> 4 </option>
-                <option> 5 </option>
-                <option> 6 </option>
-                <option> 7 </option>
-                <option> 8 </option>
-                <option> 9 </option>
-                <option> 10+ </option>
-            </select>
-        </form>
-    
-    </section> <br> <br>
-
-    <section class="formulario">
-        <form>
-            <label> Insira o regimento interno do seu condomínio abaixo: </label>
-            <input type="file"> 
-        </form>
-        
-        <a href="cadastrar_condominio.html"> </a>
-        <div class="div_button_formulario">
-            <button class="button_formulario"> Concluir </button>
-            <label> Código do condomínio será enviado para o e-mail do síndico. </label>
-        </div> 
-
-    </section>
-
-    <!-- rodapé da página --> 
-    <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
-        Todos os direitos autorais reservados.
-    </footer>
-        
+        <!-- rodapé da página --> 
+        <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
+            Todos os direitos autorais reservados.
+        </footer>
+    </div>
 </body>
 </html>  
