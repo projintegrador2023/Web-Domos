@@ -11,7 +11,7 @@ modules:
 #            url: http://domos.infinityfreeapp.com/html/login.html
     enabled:
         - WebDriver:
-            url: 'http://domos.infinityfreeapp.com/html/login.html' 
+            url: 'http://domos.infinityfreeapp.com/' 
             browser: 'firefox' # ou 'firefox'
             host: '127.0.0.1'
             port: 4444

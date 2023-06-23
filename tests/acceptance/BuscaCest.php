@@ -15,9 +15,9 @@ class BuscaCest
     public function buscarResultadosNaPaginaTest(AcceptanceTester $I)
     { 
       //$I = new AcceptanceTester($scenario);
-      $I->amOnPage('./html/index.html');
+      $I->amOnPage('/html/index.html');
       $I->click('Entrar');
-      $I->seeCurrentURLEquals('./html/login.html');
+      $I->seeCurrentURLEquals('/html/login.html');
       $I->see('CPF / CNPJ');
     }
 }
