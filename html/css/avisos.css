@@ -25,24 +25,12 @@
 	background-color: #cc0000;
 }
 
-.btn-critico:hover{
-	background-color: #9c0000;
-}
-
 .btn-urgente{
-	background-color: #ff6702;
-}
-
-.btn-urgente:hover{
-	background-color: #ce5200;
+	background-color: #F7D74A;
 }
 
 .btn-importante{
-	background-color: #ffe324;
-}
-
-.btn-importante:hover{
-	background-color: #d8bf1e;
+	background-color: #0E7500;
 }
 
 
@@ -70,11 +58,11 @@
 }
 
 .importancia-urgente{
-    background-color: #ff6702;
+    background-color: #F7D74A;
 }
 
 .importancia-importante{
-    background-color: #ffe324;
+    background-color: #0E7500;
 }
 
 /*Configuração de busca*/
