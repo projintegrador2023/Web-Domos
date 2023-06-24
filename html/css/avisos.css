@@ -25,12 +25,25 @@
 	background-color: #cc0000;
 }
 
+.btn-critico:hover{
+	background-color: #710000;
+}
+
+
 .btn-urgente{
 	background-color: #F7D74A;
 }
 
+.btn-urgente:hover{
+	background-color: #c4aa34;
+}
+
 .btn-importante{
-	background-color: #0E7500;
+	background-color: #90ee90;
+}
+
+.btn-importante:hover{
+	background-color: #53c853;
 }
 
 
@@ -62,7 +75,7 @@
 }
 
 .importancia-importante{
-    background-color: #0E7500;
+    background-color: #90ee90;
 }
 
 /*Configuração de busca*/
