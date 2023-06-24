@@ -94,7 +94,7 @@
 
                 <div class="formulario m-auto col-5 p-5">
                     <h1 class="color-0491a3 fw-400 text-center mb-5">Informações sobre o condomínio</h1>
-                    <label class="color-0491a3 fs-4 fw-400 col-5 d-block">Faixa de moradores*
+                    <p class="color-0491a3 fs-4 fw-400 col-5 d-block">Faixa de moradores*
                         <select id="faixa_qtd_moradores" class="form-select d-block fs-4 p-2 color-0491a3 col-12 mb-5">
                             <option value="default" class="text-black">Escolha uma opção</option>
                             <option value="0-99" class="text-black">0-100</option>
@@ -104,8 +104,8 @@
                             <option value="750-999" class="text-black">750-999</option>
                             <option value="1000+" class="text-black">1000+</option>
                         </select>
-                    </label>
-                    <div class="d-flex justify-content-between">
+                    </p>
+                    <div class="d-flex justify-content-between mb-5">
                         <div class="col-7">
                             <h4 class="color-0491a3 fs-4 fw-400 col-12 d-block">Tipo de divisão*</h4>
                             <input type="radio" name="divisao" id="numeros" class="">
@@ -114,8 +114,12 @@
                             <label for="cores" class="text-black fs-4">Cores</label><br>
                             <input type="radio" name="divisao" id="letras" class="">
                             <label for="letras" class="text-black fs-4">Letras</label><br>
-                            <input type="radio" name="divisao" id="outro" class=""> 
-                            <input type="text" placeholder="Outro" id="outra_divisao" class="input-form bg-e8e8e8 text-black p-0 fs-4">
+                            <input type="radio" name="divisao" id="outro" class="">
+                            <label for="letras" class="text-black fs-4">Nenhum</label><br>
+                            <input type="radio" name="divisao" id="outro" class="">  
+                            <label for="outro" class="text-black fs-4">Outro:</label>
+                            <input type="text" id="outra_divisao" class="input-form bg-e8e8e8 text-black p-0 fs-4">
+                            
                         </div>
                         <div class="col-6">
                             <h4 class="color-0491a3 fs-4 fw-400 col-12 d-block">Tipo de moradia*</h4>
@@ -126,8 +130,75 @@
                             <input type="radio" name="moradia" id="casas_e_apartamentos" class="">
                             <label for="casas_e_apartamentos" class="text-black fs-4">Casas e Apartamentos</label><br>
                         </div>
+                        
                     </div>
-                    
+                    <div class="mb-5">
+                        <label for="nome_divisao" class="form-label color-0491a3 fs-4">Digite os nomes das divisões separados por ponto e vírgula (;)*:</label>
+                        <textarea class="form-control p-3 fs-4" id="nome_divisao" placeholder="Exemplo: A;B;C;D" rows="3"></textarea>
+                    </div>
+                    <div class="mb-5">
+                        <label for="nome_divisao" class="form-label color-0491a3 fs-4">Digite os números das casas / apartamentos separados por ponto e vírgula (;)*:</label>
+                        <textarea class="form-control p-3 fs-4" id="nome_divisao" placeholder="Exemplo: 101;102;103;104;201;202;203;204" rows="3"></textarea>
+                    </div>
+                    <div class="mb-5">
+                      <label for="" class="form-label color-0491a3 fs-4">Insira o pdf de regimento interno (opcional):</label>
+                      <input type="file" class="form-control" id="regimento_interno">
+                    </div>
+                    <h3 class="color-0491a3 text-center fs-3 mb-4">Informações dos espaços públicos (opcional)</h3>
+                    <div class="form-check mb-5">
+                        <input class="form-check-input" type="checkbox" value="saloes_de_festas" id="saloes_de_festas">
+                        <label class="form-check-label color-0491a3 fs-4" for="saloes_de_festas">
+                            Salões de festas
+                        </label><br>
+                        <label for="desc_saloes_de_festas" class="form-label color-0491a3 fs-5"> Nomes dos salões de festa separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" placeholder="Exemplo: Salão 1; Salão 2; Salão Especial" id="desc_saloes_de_festas" rows="1"></textarea>
+                        
+                        <input class="form-check-input" type="checkbox" value="churrasqueiras" id="churrasqueiras">
+                        <label class="form-check-label color-0491a3 fs-4" for="churrasqueiras">
+                        Churrasqueiras
+                        </label><br>
+                        <label for="desc_churrasqueiras" class="form-label color-0491a3 fs-5"> Nomes das churrasqueiras separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" id="desc_churrasqueiras" placeholder="Exemplo: Churrasqueira bloco 1; Churrasqueira bloco 2; Churrasqueira premium" rows="1"></textarea>
+
+                        <input class="form-check-input" type="checkbox" value="quadras" id="quadras">
+                        <label class="form-check-label color-0491a3 fs-4" for="quadras">
+                        Quadras
+                        </label><br>
+                        <label for="desc_churrasqueiras" class="form-label color-0491a3 fs-5"> Nomes das quadras separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" id="desc_quadras" placeholder="Exemplo: Quadra de tênis; Quadra de vôlei; Quadra de futsal" rows="1"></textarea>
+
+                        <input class="form-check-input" type="checkbox" value="saunas" id="saunas">
+                        <label class="form-check-label color-0491a3 fs-4" for="saunas">
+                        Saunas
+                        </label><br>
+                        <label for="desc_saunas" class="form-label color-0491a3 fs-5"> Nomes das saunas separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" id="desc_saunas" placeholder="Exemplo: Sauna grande; Sauna pequena" rows="1"></textarea>
+
+                        <input class="form-check-input" type="checkbox" value="sala_de_jogos" id="sala_de_jogos">
+                        <label class="form-check-label color-0491a3 fs-4" for="sala_de_jogos">
+                        Salas de jogos
+                        </label><br>
+                        <label for="desc_sala_de_jogos" class="form-label color-0491a3 fs-5"> Nomes das salas de jogos separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" placeholder="Exemplo: Salão do térreo; Salão de sinuca" id="desc_sala_de_jogos" rows="1"></textarea>
+
+                        <input class="form-check-input" type="checkbox" value="espaco_gourmet" id="espaco_gourmet">
+                        <label class="form-check-label color-0491a3 fs-4" for="espaco_gourmet">
+                        Espaços gourmet
+                        </label><br>
+                        <label for="desc_espaco_gourmet" class="form-label color-0491a3 fs-5"> Nomes dos espaços gourmet separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" id="desc_espaco_gourmet" placeholder="Exemplo: Espaço gourmet térreo; Espaço gourmet cobertura; Espaço gourmet piscina" rows="1"></textarea>
+
+                        <input class="form-check-input" type="checkbox" value="espaco_kids" id="espaco_kids">
+                        <label class="form-check-label color-0491a3 fs-4" for="espaco_kids">
+                        Espaços kids
+                        </label><br>
+                        <label for="desc_espaco_kids" class="form-label color-0491a3 fs-5"> Nomes dos espaços kids separados por ponto e vírgula(;):</label>
+                        <textarea class="form-control" id="desc_espaco_kids" placeholder="Exemplo: Espaço kids 0-3 anos; Espaço kids 3-6 anos; Espaço kids 6-12 anos" rows="1"></textarea>
+                    </div>
+
+                    <div class="text-end col-12">
+                        <button class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-5 fs-3 hover-0491a3"> Cadastrar </button>
+                    </div>
                 </div>
             </form>
         </div>
