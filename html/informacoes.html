@@ -41,60 +41,46 @@
                 </li> 
             </ul>
         </aside>
-        <main container class="main-container m-2">
-            <div class="">
-                <p class="color-titulo fs-3">Condomínio Residencial Vila Serena</p>
-            </div>
-            <div class="d-flex">
-                <p class="color-subtitulo fs-4 p-1">37.647.184/0001-59
-                </p>
-                <p class="color-subtitulo fs-4 p-1">12345-678, Serra - Avenida das Flores, 123</p>
-            </div>
-            <div>
-                <p class="color-subtitulo fs-4 p-1">condominioficticio@gmail.com</p>
-            </div>
-            <div class="d-flex">
-                <p class="color-subtitulo fs-4 p-1">Tipo de divisão: Blocos - Cores</p>
-                <p class="color-subtitulo fs-4 p-1">Tipo de moradia: Apartamentos</p>
-            </div>
-            <div>
-                <p class="color-subtitulo fs-4 p-1">Alterar regimento interno:</p>
-                <input type="file" class="form-control p-1" id="regimento_interno">
-            </div>
-            <div class="d-flex">
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/morador3.jpeg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-sindico">Síndico</p></div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo">Gabriel Frinhani</p></div>
-                                <p class="color-descricao">gabrielfrinhani@gmail.com - 777.888.999-00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/moradora1.jpeg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-administrador">Administrador</p></div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo">Letícia Teixeira</p></div>
-                                <p class="color-descricao">leticiateixeira@gmail.com - 789.654.321-00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <main container class="main-container">
+            <div class="table-responsive">
+                <table class="table align-middle table-striped-columns bg-fdfdfd">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="w-25"><i class="fa-solid fa-city color-titulo fs-1"></i></th>
+                            <th scope="col"><p class="fs-3 color-titulo">Condomínio Residencial Vila Serena</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><p class="color-subtitulo">Cnpj</p></th>
+                            <td class="color-descricao">37.647.184/0001-59</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p class="color-subtitulo">Endereço</p></th>
+                            <td class="color-descricao">12345-678, Serra - Avenida das Flores, 123</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>Email</p></th>
+                            <td class="color-descricao">condominioficticio@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row " class="color-subtitulo">Tipo das divisões</th>
+                            <td class="color-descricao">Blocos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row " class="color-subtitulo">Nome das divisões</th>
+                            <td class="color-descricao">Cores</td>
+                        </tr>
+                        <tr>
+                            <th scope="row " class="color-subtitulo">Tipo de divisões</th>
+                            <td class="color-descricao">Apartamentos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row " class="color-subtitulo">Espaços para reserva</th>
+                            <td class="color-descricao">Churrasqueira; Quadra; Área</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
 </body>
