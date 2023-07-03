@@ -1,7 +1,8 @@
 // SIDEBAR TOGGLE
 
-var sidebarOpen = false;
-var sidebar = document.getElementById("sidebar");
+let sidebarOpen = false;
+const sidebar = document.getElementById("sidebar");
+// console.log(sidebar)
 
 function openSidebar() {
   if(!sidebarOpen) {
