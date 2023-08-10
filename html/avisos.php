@@ -43,20 +43,20 @@
       <!-- Lista de itens da sidebar--> 
       <ul class="sidebar-list">
           <li class="sidebar-list-item bg-customiza">
-              <a href="avisos.html"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
+              <a href="avisos.php"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
           </li>
           <li class="sidebar-list-item">
-              <a href="anuncios.html"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
+              <a href="anuncios.php"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
           </li>
           <li class="sidebar-list-item">
-              <a href="reservas.html"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
+              <a href="reservas.php"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
           </li>
           <li class="sidebar-list-item">
-              <a href="regimento.html"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
+              <a href="regimento.php"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
           </li>
           <!-- Será utilizado posteriormente -->
           <li class="sidebar-list-item">
-            <a href="informacoes.html"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
+            <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
           </li>
       </ul>
     </aside>
@@ -271,7 +271,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
-                <a href="avisos.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
+                <a href="avisos.php"><button type="button" class="btn btn-publicar">Publicar</button></a>
               </div>
 
             </div>

@@ -31,7 +31,7 @@
                 <a href="#" class="btn bg_group"> Salão de festas </a>
                 <a href="#" class="btn bg_group"> Sauna </a>
                 <a href="#" class="btn bg_group"> Quadra </a> 
-                <!-- <a href="testes.html" class="btn bg_group"> Testes </a> (sera utilizado no proximo trabalho)-->
+                <!-- <a href="testes.php" class="btn bg_group"> Testes </a> (sera utilizado no proximo trabalho)-->
             </div>
         </header>
 
@@ -46,20 +46,20 @@
              <!-- Lista de itens da sidebar--> 
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
-                    <a href="avisos.html"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
+                    <a href="avisos.php"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="anuncios.html"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
+                    <a href="anuncios.php"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
                 </li>
                 <li class="sidebar-list-item  bg-customiza">
-                    <a href="reservas.html"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
+                    <a href="reservas.php"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="regimento.html"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
+                    <a href="regimento.php"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
                 </li>
                 <!-- Será utilizado posteriormente -->
                 <li class="sidebar-list-item">
-                    <a href="informacoes.html"> <div><i class="fa-solid fa-gear col-2"></i>Configurações </div></a>
+                    <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i>Configurações </div></a>
                 </li>
             </ul>
           </aside>

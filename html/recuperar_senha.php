@@ -16,7 +16,7 @@
         <header class="d-flex justify-content-between p-2">
 
             <!-- Ícone do site -->
-            <a href="index.html"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
+            <a href="index.php"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
             <div class="d-flex position-relative justify-content-end">
 
                 <!-- Menu -->
@@ -28,19 +28,19 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.html">Home</a>
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.html">Recursos</a>
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.php">Recursos</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.html">Sobre nós </a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="contato.html">Contato</a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="contato.php">Contato</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="login.html">Entrar</a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="login.php">Entrar</a>
                             </li>
                         </ul>
                         </div>
