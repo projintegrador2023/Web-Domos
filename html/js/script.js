@@ -49,7 +49,7 @@ function validacao_login(){
                 erro_senha.innerHTML = "A senha precisa ter no mínimo 8 caracteres.";
             }
             else {
-                window.location.href = "./avisos.php";
+                window.location.href = "./avisos.html";
             }
         }
         else {
@@ -223,7 +223,7 @@ function validacao_recuperar_senha(){
     // verifica se os dados foram preenchidos corretamente
     if (email.match(arroba) != null && email.match(final_email) != null){
         alert("Cheque sua caixa de email para alterar sua senha.");
-        window.location.href = "./login.php";
+        window.location.href = "./login.html";
     }
     else{
         label_email.classList.add("text-danger");

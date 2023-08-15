@@ -50,9 +50,9 @@
             </div>
         </header>
 
-        <div class="col-12 d-flex justify-content-between">
+        <div class="col-12">
             <form>
-                <div class="formulario col-5 p-5 mb-5">
+                <div class="formulario m-auto col-5 p-5 mb-5">
                     <h1 class="color-0491a3 fw-400 text-center mb-5">Cadastro do Condomínio</h1>
                     <label for="cnpj_condominio" class="text-start color-0491a3 fw-400 fs-4">CNPJ*</label>
                     <input type="text" id="cnpj_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-4 text-black">
@@ -65,7 +65,7 @@
 
                 </div>
 
-                <div class="formulario col-5 p-5 mb-5">
+                <div class="formulario m-auto col-5 p-5 mb-5">
                     <h1 class="color-0491a3 fw-400 text-center mb-5">Endereço</h1>
                     <label for="cep_condominio" class="text-start color-0491a3 fw-400 fs-4 d-block">CEP*</label>
                     <input type="text" id="cep_condominio" class="col-4 input-form bg-e8e8e8 fs-4 p-2 mb-3 text-black d-block">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="formulario col-5 p-5">
+                <div class="formulario m-auto col-5 p-5">
                     <h1 class="color-0491a3 fw-400 text-center mb-5">Informações sobre o condomínio</h1>
                     <p class="color-0491a3 fs-4 fw-400 col-5 d-block">Faixa de moradores*
                         <select id="faixa_qtd_moradores" class="form-select d-block fs-4 p-2 color-0491a3 col-12 mb-5">
@@ -114,8 +114,8 @@
                             <label for="cores" class="text-black fs-4">Cores</label><br>
                             <input type="radio" name="divisao" id="letras" class="">
                             <label for="letras" class="text-black fs-4">Letras</label><br>
-                            <input type="radio" name="divisao" id="nenhum" class="">
-                            <label for="nenhum" class="text-black fs-4">Nenhum</label><br>
+                            <input type="radio" name="divisao" id="outro" class="">
+                            <label for="letras" class="text-black fs-4">Nenhum</label><br>
                             <input type="radio" name="divisao" id="outro" class="">  
                             <label for="outro" class="text-black fs-4">Outro:</label>
                             <input type="text" id="outra_divisao" class="input-form bg-e8e8e8 text-black p-0 fs-4">

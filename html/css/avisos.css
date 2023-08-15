@@ -112,15 +112,21 @@
 	background-color: #005661;
 	color: #fdfdfd;
 }
-
+/**/
 .btn-criar{
-	border-radius: 6rem;
+	position: fixed;
+}
+
+.absolute {
+	position: absolute;
+	bottom: 5rem;
+	right: 5rem;
 }
 
 .btn-criar:hover{
 	background-color: #0491a3;
 }
-
+/**/
 .btn-publicar:hover{
 	background-color: #0491a3;
 	color: #fdfdfd;

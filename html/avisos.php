@@ -56,8 +56,11 @@
           </li>
           <!-- Será utilizado posteriormente -->
           <li class="sidebar-list-item">
+
             <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
           </li>
+
+
       </ul>
     </aside>
 
@@ -235,6 +238,9 @@
       <!-- Modal (pop up)-->
       <div class="d-flex justify-content-end m-5">
         <button type="button" class="btn btn-criar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus icons-white"></i></button>
+        <div class="absolute" style="overflow-y: auto;">
+          <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus icons-white"></i></button>
+        </div>
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           
           <div class="modal-dialog modal-dialog-centered">

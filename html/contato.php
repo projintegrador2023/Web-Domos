@@ -84,36 +84,8 @@
         </section>
     
         <!-- Rodapé da página --> 
-        <footer class="bg-005661">
-            <div class="bg-005661 d-flex  align-items-center ms-2 p-3">
-                <a class="btn"
-                    style="background-color: #dd4b39;"
-                    href="#!"
-                    role="button"
-                    ><i class="fab fa-google"></i
-                    ></a>
-                <p class="m-0 ps-2 fs-4 fw-200"> projintegrador.domos@gmail.com </p> 
-            </div>
-
-            <div class="bg-005661 d-flex align-items-center  ms-2 p-3">
-                <a class="btn"
-                    style="background-color: #25d366;"
-                    href="#!"
-                    role="button"
-                    ><i class="fab fa-whatsapp"></i
-                    ></a>
-                <p class="m-0 ps-2 fs-4 fw-200"> (27)996517829</p> 
-            </div>
-
-            <div class="bg-005661 d-flex align-items-center  ms-2 p-3">
-                <a class="btn"
-                    style="background-color: #ac2bac;"
-                    href="#!"
-                    role="button"
-                    ><i class="fab fa-instagram"></i
-                    ></a>
-                <p class="m-0 ps-2 fw-200 fs-4"> @domosoficial</p>
-            </div>
+        <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
+            Todos os direitos autorais reservados.
         </footer>
     </div>   
 </body>

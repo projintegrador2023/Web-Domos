@@ -76,7 +76,7 @@
 
             <!-- Botão de entrar com validação -->
             <div class="text-end">
-                <button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_login()"> Entrar </button>
+                <a href="avisos.php"><button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_login()"> Entrar </button></a>
             </div>   
         </section>
 

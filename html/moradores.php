@@ -132,37 +132,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/morador3.jpeg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-titulo">Gabriel Frinhani - 777.888.999-00</p></div>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo"> gabrielfrinhani@gmail.com</p></div>
-                                <p class="color-titulo">Bloco: Azul<br>Número: 106</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                
+                </div>    
             </div>
         </main>
     </div>
