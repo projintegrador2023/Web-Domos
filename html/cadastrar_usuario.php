@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
+                            <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
@@ -49,68 +49,60 @@
         </header>
 
         <!-- formulário de cadastro de usuário -->
-        <section class="mx-auto col-10 col-sm-8 col-lg-7 col-xl-6 d-block p-5 formulario">
-            <section>
-                <h1 class="color-0491a3 fs-1 mb-5 text-center"> Cadastro do Morador </h1>
-            </section>
-
-            <form class="conf_formulario"> 
-                <label id="label_nome_usuario" for="nome_usuario" class="fs-4 color-0491a3"> Nome*</label>
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="nome_usuario" type="text" required maxlength="45"><br>
-                <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
-                <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4 color-0491a3"> Cpf*</label> 
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="cpf_usuario" type="text" required><br>
-                <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
-                <label id="label_email_usuario" for="email_usuario" class="fs-4 color-0491a3"> E-mail*</label> 
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="email_usuario" type="email" required><br>
-                <p id="erro_email_usuario" class="fs-6 text-danger"></p>
-                <label id="label_senha_usuario" for="senha_usuario" class="fs-4 color-0491a3"> Crie sua senha*</label> 
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
-                <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
-                <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4 color-0491a3"> Confirme sua senha*</label> 
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="conf_senha_usuario" type="password" required><br>
-                <p id="erro_conf_senha_usuario" class="fs-6 text-danger"></p>
-
-                <section>
-                    <h1 class="color-0491a3 fs-1 py-5 text-center"> Informações do condomínio </h1>
+        <section class="mx-auto col-lg-12 col-md-6 col-10 d-block">
+            <form class="d-lg-flex justify-content-around">
+                <section class="formulario p-5 col-lg-5 col-md-12 mb-lg-0 mb-5">
+                    <h1 class="color-0491a3 fs-1 mb-5 text-center"> Cadastro do Morador </h1>
+                    <label id="label_nome_usuario" for="nome_usuario" class="fs-4 color-0491a3"> Nome*</label>
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="nome_usuario" type="text" required maxlength="45"><br>
+                    <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
+                    <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4 color-0491a3"> Cpf*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="cpf_usuario" type="text" required><br>
+                    <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
+                    <label id="label_email_usuario" for="email_usuario" class="fs-4 color-0491a3"> E-mail*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="email_usuario" type="email" required><br>
+                    <p id="erro_email_usuario" class="fs-6 text-danger"></p>
+                    <label id="label_senha_usuario" for="senha_usuario" class="fs-4 color-0491a3"> Crie sua senha*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br>
+                    <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
+                    <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4 color-0491a3"> Confirme sua senha*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="conf_senha_usuario" type="password" required><br>
+                    <p id="erro_conf_senha_usuario" class="fs-6 text-danger"></p>
                 </section>
-                <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4 color-0491a3"> Código do condomínio*</label>
-                <input id="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-4 input-form" type="text" maxlength="6" required>  <br>
-                <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
+                <section class="formulario p-5 align-items-center col-lg-5 col-md-12">
+                    <h1 class="color-0491a3 fs-1 text-center mb-5"> Informações do condomínio </h1>
+                    <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4 color-0491a3"> Código do condomínio*</label>
+                    <input id="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-4 input-form mb-4" type="text" maxlength="6" required>  <br>
+                    <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
 
-                <div class="container d-flex justify-content-between p-0">
-                    <div class="col-5">
-                    <label class="fs-4 color-0491a3"> Nº do apto*</label> <br>
-                    <select id="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded">
-                        <option class="text-black"> 101 </option>
-                        <option class="text-black"> 102 </option>
-                        <option class="text-black"> 103 </option>
-                        <option class="text-black"> 104 </option>
-                        <option class="text-black"> 105 </option>
-                        <option class="text-black"> 106 </option><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
-                    </select> 
-                </div>
-                <div class="col-5">
-                    <label class="fs-4 color-0491a3"> Bloco*</label> <br>
-                    <select id="bloco" class="col-12 fs-5 p-2 border-select text-black rounded">
-                        <option class="text-black"> Amarelo </option>
-                        <option class="text-black"> Azul </option>
-                        <option class="text-black"> Roxo </option>
-                        <option class="text-black"> Rosa </option>
-                        <option class="text-black"> Laranja </option> <!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
-                    </select> <br>  
-                </div>  
+                    <div class="container d-flex justify-content-between p-0">
+                        <div class="col-12">
+                            <label class="fs-4 color-0491a3"> Nº do apto*</label> <br>
+                            <select id="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded mb-4">
+                                <option class="text-black"> 101 </option>
+                                <option class="text-black"> 102 </option>
+                                <option class="text-black"> 103 </option>
+                                <option class="text-black"> 104 </option>
+                                <option class="text-black"> 105 </option>
+                                <option class="text-black"> 106 </option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="fs-4 color-0491a3"> Bloco*</label> <br>
+                        <select id="bloco" class="col-12 fs-5 p-2 border-select text-black rounded mb-5">
+                            <option class="text-black"> Amarelo </option>
+                            <option class="text-black"> Azul </option>
+                            <option class="text-black"> Roxo </option>
+                            <option class="text-black"> Rosa </option>
+                            <option class="text-black"> Laranja </option>
+                        </select> <br>  
+                    </div>
+                    <div class="text-center col-12 mt-4">
+                        <button class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-11 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
+                    </div> 
+                </section>
             </form>
-
-
-            </div>
-                
-            <br>
-            
-            <div class="text-end col-12">
-                <button class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-5 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
-            </div>
-            
         </section>
 
         <!-- rodapé da página --> 

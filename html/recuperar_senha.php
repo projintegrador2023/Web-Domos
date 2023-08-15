@@ -22,7 +22,7 @@
                 <!-- Menu -->
                 <nav class="d-flex navbar navbar-expand-lg navbar-dark position-relative">
                     <div class="container-fluid d-flex justify-content-end">
-                        <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,7 +50,7 @@
         </header>
         
         <!-- Formulário de recuperar senha -->
-        <section class="mx-auto d-block col-8 col-md-6 col-lg-5 col-xl-4 p-3 bg-e8e8e8 rborder4">
+        <section class="mx-auto d-block col-8 col-md-6 col-lg-5 col-xl-4 p-4 bg-e8e8e8 rborder4">
             <section class="title_login">
                 <h1 class="text-center fs-1 color-0491a3"> Recuperar senha </h1>
             </section>

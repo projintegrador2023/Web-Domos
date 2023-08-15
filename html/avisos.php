@@ -56,13 +56,8 @@
           </li>
           <!-- Será utilizado posteriormente -->
           <li class="sidebar-list-item">
-<<<<<<< Updated upstream:html/avisos.php
             <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
           </li>
-=======
-            <a href="informacoes.html"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
-        </li>
->>>>>>> Stashed changes:html/avisos.html
       </ul>
     </aside>
 
