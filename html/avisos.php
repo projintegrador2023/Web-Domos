@@ -237,7 +237,6 @@
         
       <!-- Modal (pop up)-->
       <div class="d-flex justify-content-end m-5">
-        <button type="button" class="btn btn-criar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus icons-white"></i></button>
         <div class="absolute" style="overflow-y: auto;">
           <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus icons-white"></i></button>
         </div>
