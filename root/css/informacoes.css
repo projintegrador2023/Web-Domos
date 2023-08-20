@@ -1,0 +1,44 @@
+
+.color-titulo{
+    color: #005661;
+}
+
+.color-subtitulo{
+    color: #0491a3;
+}
+
+.color-descricao{
+    color: #000000;
+}
+
+.color-sindico{
+    color: #9550B7;
+}
+
+.color-administrador{
+    color: #5AA800;
+}
+
+
+/*Configurações da busca*/
+.search{
+	height: 40px;
+	font-family: 'Jost', sans-serif, bold;
+	font-size: 1.2em;
+	background-color: #f1f0ef;
+	color: #fff;
+	border: #f1f0ef;
+	border-radius: 16px;
+}
+
+.search-btn{
+	justify-content: center;
+	font-size: 1.6rem;
+	color: #0491a3;
+}
+
+/*Tamanho das fotos nos cards*/
+.img-size-card{
+	width: 10rem;
+	height: 10rem;
+}
