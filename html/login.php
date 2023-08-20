@@ -34,16 +34,10 @@
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.php">Recursos</a>
-                            </li>
-                            <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="contato.php">Contato</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="login.php">Entrar</a>
+                            <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
                             </li>
                         </ul>
                         </div>
@@ -78,13 +72,7 @@
             <div class="text-end">
                 <a href="avisos.php"><button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_login()"> Entrar </button></a>
             </div>   
-        </section>
-
-        <!-- Rodapé da página --> 
-        <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
-            Todos os direitos autorais reservados.
-        </footer>
-    </div>   
+        </section>  
 
 </body>
 </html>

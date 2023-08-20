@@ -10,12 +10,22 @@
 	font-family: 'Jost', sans-serif;
 	color: #ffffff;
 }
-
 .fundo-imagem {
-	background-image: url("img/fundo.png");
-	background-size: cover;
-	background-repeat: no-repeat;
+    background-image: url("img/fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 	min-height: 100vh;
+}
+
+/* configurações de recursos */
+.circle{
+    height: 10rem;
+    width: 10rem;
+}
+
+.tam{
+    width: 50% !important;
+    height: 50% !important;
 }
 
 /* cores */
@@ -25,6 +35,14 @@
 
 .bg-e8e8e8{
 	background-color: #E8E8E8;
+}
+
+.bg-0491a3{
+	background-color: #0491a3;
+}
+
+.bg-0dc0d8{
+	background-color: #0dc0d8;
 }
 
 .color-0491a3 {

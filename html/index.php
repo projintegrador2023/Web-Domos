@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Home - Domos </title>
@@ -33,16 +34,10 @@
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.php">Recursos</a>
-                            </li>
-                            <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="contato.php">Contato</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="login.php">Entrar</a>
+                            <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
                             </li>
                         </ul>
                         </div>
@@ -70,16 +65,83 @@
                 agendar espaços com tranquilidade e segurança. A plataforma é uma verdadeira aliada para uma gestão mais eficiente e 
                 organizada do seu condomínio. 
             </p>
-            <br>
-            <h2 class="text-center fs-2 text-white"> Venha se tornar Domos! </h2>
 
             <br>
         </section>
+
+        <!-- Div recursos --> 
+        <div class="bg-005661 p-4"> 
+        <div class=" d-flex  justify-content-center mb-4 fs-1"> <h1> Funcionalidades <h1> </div> 
+        <div class=" d-flex flex-column flex-md-row align-items-center h-25 justify-content-evenly"> 
+                <div class="h-100 w-100 d-block align-items-center text-center"> 
+                    <button class="rounded-circle circle bg-0491a3 border-0"> 
+                    <i class="fa-solid fa-bell color-fdfdfd" style="font-size:8vh"></i>  
+                    </button> 
+                    <p class="fs-4 mt-3"> Avisos </p>
+                </div>
+                <div class="h-100 w-100 d-block align-items-center text-center"> 
+                    <button class="rounded-circle circle bg-0491a3 border-0 text-center"> 
+                        <i class="fa-solid fa-cart-shopping color-fdfdfd" style="font-size:8vh"></i>  
+                    </button>
+                    <p class="fs-4 mt-3"> Anúncios </p>
+                </div> 
+                <div class="h-100 w-100 d-block align-items-center text-center"> 
+                    <button class="rounded-circle circle bg-0491a3 border-0"> 
+                        <i class="fa-solid fa-calendar-days color-fdfdfd" style="font-size:8vh"> </i>  
+                    </button> 
+                    <p class="fs-4 mt-3"> Reservas </p>
+                </div>
+                <div class="h-100 w-100 d-block align-items-center text-center"> 
+                    <button class="rounded-circle circle bg-0491a3 border-0"> 
+                        <i class="fa-solid fa-note-sticky color-fdfdfd" style="font-size:8vh"></i>  
+                    </button> 
+                    <p class="fs-4 mt-3"> Regimento </p>
+                </div>
+        </div>
+        </div>
+
+        <br>
+        <!-- Sobre nós --> 
+        <div class="d-flex justify-content-evenly"> 
+            <img class="w-25 img-fluid col-12 col-md-10 col-lg-8 col-xl-5 border-0" src="css/img/foto_quemsomos.png" alt="Foto da equipe"> <br>
+            <p class="fs-3 fw-200 m-auto col-12 col-lg-6 col-xl-6 text-justify"> Sobre nós -
+                Somos um time de estudantes de informática 
+                para internet do Ifes Campus Serra que desenvolvem a Domos!</p>
+        </div>
         
+        <br> <br> 
+
         <!-- Rodapé da página --> 
-        <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
-            Todos os direitos autorais reservados.
-        </footer>
-    </div>            
+        <footer class="bg-005661 position-absolute w-100">
+        <div class="row p-4">
+        <div class="col col-md-4 p-2">
+            <h1 class="ps-2 text-center fs-1"> Contatos </h1>
+            <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
+            <button tyfe="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-regular fa-envelope fs-3"></i> </button>
+            <p class="m-0 ps-2 fs-4 fw-200"> Projintegrador.domos@gmail.com </p>
+        </div>
+
+        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-whatsapp color-fdfdfd fs-2"></i> </button> 
+            <p class="m-0 ps-2 fs-4 fw-200"> (27)996517829 </p>
+        </div>
+
+        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-instagram color-fdfdfd fs-2"></i> </button> 
+            <p class="m-0 ps-2 fs-4 fw-200"> @domosoficial </p>
+        </div>
+        </div>
+
+        <div class="col-5 d-none d-sm-flex col-md-4 align-items-center p-2">
+            <img class="w-50 mx-auto d-block img-fluid" src="css/img/logo.png">  
+        </div>
+
+        <div class="col col-md-4">
+            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl> 
+            <img class="w-75 h-75 f-2 mx-auto d-block img-fluid" src="css/img/ifes.png">
+        </div> <br>
+        </div>
+            
+        </footer>            
 </body>
 </html>

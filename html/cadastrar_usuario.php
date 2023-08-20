@@ -28,20 +28,14 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
-                            </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="recursos.php">Recursos</a>
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="contato.php">Contato</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="login.php">Entrar</a>
+                            <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
                             </li>
                         </ul>
                         </div>
@@ -117,9 +111,37 @@
         </section>
 
         <!-- rodapé da página --> 
-        <footer class="position-fixed text-center col-12 fixed-bottom bg-005661">
-            Todos os direitos autorais reservados.
-        </footer>
+        <footer class="bg-005661 position-absolute w-100">
+        <div class="row p-4">
+        <div class="col col-md-4 p-2">
+            <h1 class="ps-2 text-center fs-1"> Contatos </h1>
+            <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
+            <button tyfe="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-regular fa-envelope fs-3"></i> </button>
+            <p class="m-0 ps-2 fs-4 fw-200"> Projintegrador.domos@gmail.com </p>
+        </div>
+
+        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-whatsapp color-fdfdfd fs-2"></i> </button> 
+            <p class="m-0 ps-2 fs-4 fw-200"> (27)996517829 </p>
+        </div>
+
+        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-instagram color-fdfdfd fs-2"></i> </button> 
+            <p class="m-0 ps-2 fs-4 fw-200"> @domosoficial </p>
+        </div>
+        </div>
+
+        <div class="col-5 d-none d-sm-flex col-md-4 align-items-center p-2">
+            <img class="w-50 mx-auto d-block img-fluid" src="css/img/logo.png">  
+        </div>
+
+        <div class="col col-md-4">
+            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl> 
+            <img class="w-75 h-75 f-2 mx-auto d-block img-fluid" src="css/img/ifes.png">
+        </div> <br>
+        </div>
+            
+        </footer>  
     </div>
 </body>
 </html>
