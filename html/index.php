@@ -45,8 +45,9 @@
                 </nav>
             </div>
         </header>
- 
-        <!-- Título da página --> 
+
+        <div class="m-5">
+            <!-- Título da página --> 
         <section class = "d-flex justify-content-center align-items-center mb-5 px-2 px-sm-0"> 
             <h1 class="center-text fs-1 text-white px-0"> Bem vindo ao seu site de condomínio, Domos! </h1>
         </section>
@@ -59,15 +60,17 @@
         </section>
         
         <!-- Texto (conteúdo) da página --> 
-        <section class = "d-block justify-content-center align-items-center text text-justify fs-4 m-auto col-10 col-lg-8 col-xl-7"> 
+        <section class = "d-block justify-content-center align-items-center text text-justify fs-4 m-auto mb-5 col-10 col-lg-8 col-xl-7"> 
             <p class="text-white fw-200">A aplicação Domos oferece uma solução completa e eficiente para a comunicação e organização em condomínios. 
                 Com ela, os moradores poderão ter acesso a informações importantes de forma rápida e fácil, além de poderem 
                 agendar espaços com tranquilidade e segurança. A plataforma é uma verdadeira aliada para uma gestão mais eficiente e 
                 organizada do seu condomínio. 
+                <br><br><br><br><br><br><br>
             </p>
 
             <br>
         </section>
+        </div>
 
         <!-- Div recursos --> 
         <div class="bg-005661 p-4"> 
@@ -102,43 +105,50 @@
 
         <br>
         <!-- Sobre nós --> 
-        <div class="d-flex justify-content-evenly"> 
-            <img class="w-25 img-fluid col-12 col-md-10 col-lg-8 col-xl-5 border-0" src="css/img/foto_quemsomos.png" alt="Foto da equipe"> <br>
-            <p class="fs-3 fw-200 m-auto col-12 col-lg-6 col-xl-6 text-justify"> Sobre nós -
-                Somos um time de estudantes de informática 
-                para internet do Ifes Campus Serra que desenvolvem a Domos!</p>
+        <div class="d-flex justify-content-center col-12"> 
+            <div class="d-flex col-10"> 
+                <img class="w-25 img-fluid col-md-10 col-lg-8 col-xl-5 border-0 my-5 ms-5" src="css/img/foto_quemsomos.png" alt="Foto da equipe"> 
+            
+                <div class="ms-5">
+                    <h1 class="mt-5 mb-3"> Sobre nós </h1> 
+                
+                    <p class="fs-3 fw-200 text-justify">
+                    Somos um time de estudantes de informática 
+                    para internet do Ifes Campus Serra que desenvolvem a Domos!</p>
+                </div>
+            </div>
         </div>
         
         <br> <br> 
 
         <!-- Rodapé da página --> 
         <footer class="bg-005661 position-absolute w-100">
-        <div class="row p-4">
-        <div class="col col-md-4 p-2">
+        <div class="d-flex justify-content-between">
+        <div class="p-2">
             <h1 class="ps-2 text-center fs-1"> Contatos </h1>
             <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
-            <button tyfe="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-regular fa-envelope fs-3"></i> </button>
-            <p class="m-0 ps-2 fs-4 fw-200"> Projintegrador.domos@gmail.com </p>
+            <i class="fa-regular fa-envelope fs-3"></i> 
+            <p class="m-0 p-2 fs-4 fw-200"> projintegrador.domos@gmail.com </p>
         </div>
 
         <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-whatsapp color-fdfdfd fs-2"></i> </button> 
-            <p class="m-0 ps-2 fs-4 fw-200"> (27)996517829 </p>
+            <i class="fa-brands fa-whatsapp color-fdfdfd fs-3"></i>  
+            <p class="m-0 p-2 fs-4 fw-200"> (27)996517829 </p>
         </div>
 
         <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-instagram color-fdfdfd fs-2"></i> </button> 
-            <p class="m-0 ps-2 fs-4 fw-200"> @domosoficial </p>
+            <i class="fa-brands fa-instagram color-fdfdfd fs-3"></i>  
+            <p class="m-0 p-2 fs-4 fw-200"> @domosoficial </p>
         </div>
         </div>
 
-        <div class="col-5 d-none d-sm-flex col-md-4 align-items-center p-2">
-            <img class="w-50 mx-auto d-block img-fluid" src="css/img/logo.png">  
-        </div>
-
-        <div class="col col-md-4">
-            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl> 
-            <img class="w-75 h-75 f-2 mx-auto d-block img-fluid" src="css/img/ifes.png">
+        <div class="">
+            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
+            <div class="d-flex">
+            <img class="w-50 h-75 f-2 mx-auto mt-5 d-block img-fluid" src="css/img/ifes.png">
+            <img class="w-25 h-75 f-2 mx-auto mt-5 d-block img-fluid" src="css/img/inovaserra.png">
+            </div> 
+            
         </div> <br>
         </div>
             
