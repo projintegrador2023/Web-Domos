@@ -105,12 +105,14 @@
 
         <br>
         <!-- Sobre nós --> 
-        <div class="d-flex justify-content-center col-12"> 
-            <div class="d-flex col-10"> 
-                <img class="w-25 img-fluid col-md-10 col-lg-8 col-xl-5 border-0 my-5 ms-5" src="css/img/foto_quemsomos.png" alt="Foto da equipe"> 
+        <div class="d-flex justify-content-center col-12 text-md-justify text-center"> 
+            <div class="d-md-flex d-block col-10"> 
+                <div class="col-10 col-md-5 my-md-5 ms-md-5 m-auto">
+                    <img src="css/img/foto_quemsomos.png" alt="Foto da equipe" style="width:75%">
+                </div> 
             
-                <div class="ms-5">
-                    <h1 class="mt-5 mb-3"> Sobre nós </h1> 
+                <div class="ms-md-5">
+                    <h1 class="mt-5 mb-3 text-md-left"> Sobre nós </h1> 
                 
                     <p class="fs-3 fw-200 text-justify">
                     Somos um time de estudantes de informática 
@@ -123,33 +125,40 @@
 
         <!-- Rodapé da página --> 
         <footer class="bg-005661 position-absolute w-100">
-        <div class="d-flex justify-content-between">
-        <div class="p-2">
-            <h1 class="ps-2 text-center fs-1"> Contatos </h1>
-            <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
-            <i class="fa-regular fa-envelope fs-3"></i> 
-            <p class="m-0 p-2 fs-4 fw-200"> projintegrador.domos@gmail.com </p>
-        </div>
+        <div class="d-md-flex d-block justify-content-around col-12 pt-3">
+            <div class="p-2 col-md-6 col-12">
 
-        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <i class="fa-brands fa-whatsapp color-fdfdfd fs-3"></i>  
-            <p class="m-0 p-2 fs-4 fw-200"> (27)996517829 </p>
-        </div>
+                <h1 class="ps-2 text-center fs-1"> Contatos </h1>
+                <div class="col-10 m-auto"> 
+                    <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
+                        <i class="fa-regular fa-envelope fs-3"></i> 
+                        <p class="m-0 p-2 fs-4 fw-200"> projintegrador.domos@gmail.com </p>
+                    </div>
 
-        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <i class="fa-brands fa-instagram color-fdfdfd fs-3"></i>  
-            <p class="m-0 p-2 fs-4 fw-200"> @domosoficial </p>
-        </div>
-        </div>
+                    <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+                        <i class="fa-brands fa-whatsapp color-fdfdfd fs-3"></i>  
+                        <p class="m-0 p-2 fs-4 fw-200"> (27)996517829 </p>
+                    </div>
 
-        <div class="">
-            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
-            <div class="d-flex">
-            <img class="w-50 h-75 f-2 mx-auto mt-5 d-block img-fluid" src="css/img/ifes.png">
-            <img class="w-25 h-75 f-2 mx-auto mt-5 d-block img-fluid" src="css/img/inovaserra.png">
-            </div> 
-            
-        </div> <br>
+                    <div class="bg-005661 d-flex align-items-center ms-2 p-3">
+                        <i class="fa-brands fa-instagram color-fdfdfd fs-3"></i>  
+                        <p class="m-0 p-2 fs-4 fw-200"> @domosoficial </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+
+                <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
+
+                <div class="d-flex flex-md-row flex-column align-items-center col-6 m-auto">
+                    <img class="img-responsive w-50 col-3 f-2 mx-auto mt-5" src="css/img/ifes.png">
+                    <img class="img-responsive col-3 f-2 mx-auto mt-5" src="css/img/inovaserra.png">
+                </div> 
+
+            </div>
+
+            <br>
         </div>
             
         </footer>            
