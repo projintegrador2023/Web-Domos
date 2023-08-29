@@ -61,11 +61,16 @@
         
         <!-- Texto (conteúdo) da página --> 
         <section class = "d-block justify-content-center align-items-center text text-justify fs-4 m-auto mb-5 col-10 col-lg-8 col-xl-7"> 
-            <p class="text-white fw-200">A aplicação Domos oferece uma solução completa e eficiente para a comunicação e organização em condomínios. 
-                Com ela, os moradores poderão ter acesso a informações importantes de forma rápida e fácil, além de poderem 
-                agendar espaços com tranquilidade e segurança. A plataforma é uma verdadeira aliada para uma gestão mais eficiente e 
-                organizada do seu condomínio. 
-                <br><br><br><br><br><br><br>
+            <p class="text-white fw-200">
+                A aplicação Domos tem se destacado como uma solução eficiente, atendendo às complexidades da comunicação e organização dentro de condomínios. 
+                Por meio de sua plataforma intuitiva e recursos abrangentes, a Domos visa aprimorar a experiência dos 
+                moradores e otimizar a gestão condominial. 
+                Uma das principais vantagens oferecidas pela Domos é o acesso rápido e simplificado a informações relevantes. 
+                A era digital trouxe consigo a necessidade de uma comunicação mais ágil e centralizada, e a Domos preenche 
+                essa lacuna ao disponibilizar anúncios importantes e avisos essenciais diretamente 
+                nos dispositivos dos moradores. Isso elimina a dependência de murais físicos garantindo que 
+                todos os residentes estejam informados sobre os acontecimentos relevantes do condomínio. 
+        
             </p>
 
             <br>
@@ -105,18 +110,22 @@
 
         <br>
         <!-- Sobre nós --> 
-        <div class="d-flex justify-content-center col-12 text-md-justify text-center"> 
-            <div class="d-md-flex d-block col-10"> 
-                <div class="col-10 col-md-5 my-md-5 ms-md-5 m-auto">
-                    <img src="css/img/foto_quemsomos.png" alt="Foto da equipe" style="width:75%">
+        <div class="d-flex justify-content-center col-12 text-lg-justify text-center"> 
+            <div class="d-lg-flex d-block col-10"> 
+                <div class="col-10 col-lg-5 my-lg-5 ms-lg-5 m-auto">
+                    <img src="css/img/foto_quemsomos.png" alt="Foto da equipe" style="width:70%">
                 </div> 
             
-                <div class="ms-md-5">
-                    <h1 class="mt-5 mb-3 text-md-left"> Sobre nós </h1> 
+                <div class="ms-lg-5">
+                    <h1 class="mt-5 mb-3 text-lg-left"> Sobre nós </h1> 
                 
                     <p class="fs-3 fw-200 text-justify">
                     Somos um time de estudantes de informática 
-                    para internet do Ifes Campus Serra que desenvolvem a Domos!</p>
+                    para internet do Ifes Campus Serra formado por Camila Egydio, Davi Nunes, 
+                    Isabelly Andrades e Yasmin Santana. <br>
+                    Estamos no último ano do curso, realizando o Projeto Integrador que 
+                    abrange tudo que aprendemos ao longo desses três anos. Ficaremos felizes
+                    com a utilização da aplicação, facilitando a vida em condomínio.</p>
                 </div>
             </div>
         </div>
@@ -128,21 +137,21 @@
         <div class="d-md-flex d-block justify-content-around col-12 pt-3">
             <div class="p-2 col-md-6 col-12">
 
-                <h1 class="ps-2 text-center fs-1"> Contatos </h1>
-                <div class="col-10 m-auto"> 
-                    <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
-                        <i class="fa-regular fa-envelope fs-3"></i> 
-                        <p class="m-0 p-2 fs-4 fw-200"> projintegrador.domos@gmail.com </p>
+                <h1 class="ps-md-2 text-center fs-1"> Contatos </h1>
+                <div class="col-md-10 m-auto align-items-center"> 
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                    <button class="rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-regular fa-envelope"></i> </button>
+                        <p class="m-0 p-2 fw-200"> projintegrador.domos@gmail.com </p>
                     </div>
 
-                    <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-                        <i class="fa-brands fa-whatsapp color-fdfdfd fs-3"></i>  
-                        <p class="m-0 p-2 fs-4 fw-200"> (27)996517829 </p>
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-brands fa-whatsapp color-fdfdfd"></i> </button>
+                        <p class="m-0 p-2 fw-200"> (27)996517829 </p>
                     </div>
 
-                    <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-                        <i class="fa-brands fa-instagram color-fdfdfd fs-3"></i>  
-                        <p class="m-0 p-2 fs-4 fw-200"> @domosoficial </p>
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-brands fa-instagram color-fdfdfd"></i> </button> 
+                        <p class="m-0 p-2 fw-200"> @domosoficial </p>
                     </div>
                 </div>
             </div>
