@@ -14,33 +14,52 @@
     <link rel="stylesheet" href="css/informacoes.css"> 
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/sidebar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Informações - Domos</title>
 </head>
 <body>
     <div class="grid-container">
-        <aside class="sidebar gradient-custom"> 
-            <div class="sidebar-title">
-                <div class="sidebar-brand"> 
-                    <a href="avisos.php"><img src="css/img/logo_branca_icon.png" class="col-12"></a>
-                </div>
+        <!--Cabeçalho-->
+        <header class="header d-flex align-items-center justify-content-between m-3"> 
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
             </div>
-            
+        </header>
+
+      <!-- Navegação em abas pela barra lateral (sidebar) --> 
+        <aside id="sidebar" class="sidebar gradient-custom">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
+                </div>
+                <span class="" onclick="closeSidebar()"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+
             <ul class="sidebar-list">
-                <li class="sidebar-list-item bg-customiza">
-                    <a href="informacoes.php"> <div><i class="fa-solid fa-circle-info col-2"></i> Informações </div></a>
+                <li class="sidebar-list-item">
+                    <a href="informacoes.php">
+                        <div><i class="fa-solid fa-circle-info col-2"></i> Informações </div>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="moradores.php"> <div><i class="fa-solid fa-people-roof col-2"></i> Moradores </div></a>
+                    <a href="moradores.php">
+                        <div><i class="fa-solid fa-people-roof col-2"></i> Moradores </div>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="areas_reservadas.php"> <div><i class="fa-solid fa-calendar-check col-2"></i>Espaços reservados </div></a>
+                    <a href="reservas.php">
+                        <div><i class="fa-solid fa-calendar-check col-2"></i> Espaços reservados </div>
+                    </a>
                 </li>
-                <li class="sidebar-list-item" id="encerrar">
-                    <a href="index.php"> <div><i class="fa-solid fa-right-from-bracket col-2"></i>Encerrar sessão </div></a>
-                </li> 
+                <li class="sidebar-list-item">
+                    <a href="regimento.php">
+                        <div><i class="fa-solid fa-right-from-bracket col-2"></i> Encerrar sessão </div>
+                    </a>
+                </li>
             </ul>
         </aside>
+            
         <main container class="main-container">
             <div class="table-responsive">
                 <table class="table table-striped-columns align-middle">

@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/reservas.css">
-    <script src="js/reservas.js" defer></script> </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/sidebar.js" defer></script> </script>
+
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Reservas - Domos </title>
 </head>
@@ -23,6 +26,9 @@
     <div class="grid-container">
         <!--Cabeçalho de pesquisa e filtros-->
         <header class="header m-2">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+            </div>
             <div class="btn-group bg_group w-100 m-2">
                 <a href="#" class="btn bg_group"> Churrasqueira </a>
                 <a href="#" class="btn bg_group"> Espaço Gourmet </a>
@@ -36,33 +42,42 @@
         </header>
 
         <!-- Navegação em abas pela barra lateral (sidebar) -->
-        <aside class="sidebar gradient-custom"> 
+        <aside id="sidebar" class="sidebar gradient-custom">
             <div class="sidebar-title">
-                <div class="sidebar-brand"> 
-                    <img src="css/img/logo_branca_icon.png" class="col-12">
+                <div class="sidebar-brand">
+                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
                 </div>
+                <span class="" onclick="closeSidebar()"><i class="fa-solid fa-xmark"></i></span>
             </div>
-    
-             <!-- Lista de itens da sidebar--> 
+
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
-                    <a href="avisos.php"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
+                    <a href="avisos.php">
+                        <div><i class="fa-solid fa-bell col-2"></i> Avisos </div>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="anuncios.php"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
-                </li>
-                <li class="sidebar-list-item  bg-customiza">
-                    <a href="reservas.php"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
+                    <a href="anuncios.php">
+                        <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="regimento.php"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
+                    <a href="reservas.php">
+                    <div><i class="fa-solid fa-calendar-days col-2"></i> Reservas </div>
+                    </a>
                 </li>
-                <!-- Será utilizado posteriormente -->
                 <li class="sidebar-list-item">
-                    <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i>Configurações </div></a>
+                    <a href="regimento.php">
+                        <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="informacoes.php">
+                        <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div>
+                    </a>
                 </li>
             </ul>
-          </aside>
+        </aside>
 
         <!-- Main principal (container)-->  
         <main class="main-container"> 

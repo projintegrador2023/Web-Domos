@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/avisos.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/sidebar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Avisos - Domos </title>
 </head>
@@ -18,51 +19,70 @@
   <!-- Container -->
   <div class="grid-container">
     <!--Cabeçalho de pesquisa e filtros-->  
-    <header class="header d-flex align-items-center justify-content-between m-3"> 
+    <header class="header d-flex align-items-center justify-content-between m-3">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+        </div>
         <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
+          <input type="text" class="search ps-2 m-2 w-100" placeholder="Pesquisar...">
         </div>
         
-        <div class="justify-content-around d-flex w-75">
+        <div class="justify-content-around w-75 btns-geral" id="btns_geral">
           <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
           <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
           <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
-          <button class="btn filter-btntext-start" type="button"><i class="fa-solid fa-filter filter-btn"></i></button>
+          <button class="btn filter-btn" type="button"><i class="fa-solid fa-filter filter-btn"></i></button>
         </div>
-      </header>
+
+        <div class=""> 
+          <select name="" id="" class="select-customiza">
+            <option selected class="">Filtros</option>
+            <option value="critico" id="btn_critico" class="importancia-critico">Crítico</option>
+            <option value="urgente" id="btn_urgente" class="importancia-urgente">Urgente</option>
+            <option value="importante" id="btn_importante" class="importancia-importante">Importante</option>
+          </select>
+        </div>
+
+    </header>
     
     <!-- Navegação em abas pela barra lateral (sidebar) -->
-    <aside class="sidebar gradient-custom"> 
-      <div class="sidebar-title">
-          <div class="sidebar-brand"> 
-              <img src="css/img/logo_branca_icon.png" class="col-12">
+      <aside id="sidebar" class="sidebar gradient-custom">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
           </div>
-      </div>
+          <span class="" onclick="closeSidebar()"><i class="fa-solid fa-xmark"></i></span>
+        </div>
 
-      <!-- Lista de itens da sidebar--> 
-      <ul class="sidebar-list">
-          <li class="sidebar-list-item bg-customiza">
-              <a href="avisos.php"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="avisos.php">
+                <div><i class="fa-solid fa-bell col-2"></i> Avisos </div>
+            </a>
           </li>
           <li class="sidebar-list-item">
-              <a href="anuncios.php"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
+            <a href="anuncios.php">
+                <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div>
+            </a>
           </li>
           <li class="sidebar-list-item">
-              <a href="reservas.php"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
+            <a href="reservas.php">
+              <div><i class="fa-solid fa-calendar-days col-2"></i> Reservas </div>
+            </a>
           </li>
           <li class="sidebar-list-item">
-              <a href="regimento.php"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
+            <a href="regimento.php">
+                <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
+            </a>
           </li>
-          <!-- Será utilizado posteriormente -->
           <li class="sidebar-list-item">
-
-            <a href="informacoes.php"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
+            <a href="informacoes.php">
+                <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div>
+            </a>
           </li>
-
-
-      </ul>
-    </aside>
+        </ul>
+      </aside>
 
     <!-- Main principal (container)--> 
     <main class="main-container m-2">
@@ -263,11 +283,11 @@
                       <textarea class="form-control form-customiza" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
                   </div>
 
-                  <select class="form-select select-customiza mb-3">
-                      <option selected class="select-customiza">Escolha a importância do aviso</option>
-                      <option value="1" class="select-customiza">Crítico</option>
-                      <option value="2" class="select-customiza">Urgente</option>
-                      <option value="3" class="select-customiza">Importante</option>
+                  <select class="form-select select-modal mb-3">
+                      <option selected class="">Escolha a importância do aviso</option>
+                      <option value="critico" id="btn_critico" class="importancia-critico">Crítico</option>
+                      <option value="urgente" id="btn_urgente" class="importancia-urgente">Urgente</option>
+                      <option value="importante" id="btn_importante" class="importancia-importante">Importante</option>
                   </select>
                   <input type="file" class="btn col-5"> 
               </form>
