@@ -32,9 +32,11 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="#contatos">Contatos</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="#sobre_nos">Sobre nós </a>
                             </li>
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
@@ -56,7 +58,7 @@
         <section class = "d-flex justify-content-center align-items-center m-auto mb-5">
             <a class="text-center" href="cadastrar_usuario.php"><button class="bg-005661 color-fff p-3 rounded border-0 fs-4 col-10 col-sm-8 col-lg-10 hover-0491a3"> Cadastro do Morador </button></a>
             <p class="fs-4 col-1 p-0 text-center ms-0 ps-1 ps-sm-3 ps-lg-3 me-sm-0"> OU </p> 
-            <a class="text-center" href="cadastro_condominio.php"> <button class=" bg-005661 color-fff p-3 rounded border-0 fs-4 col-9 col-sm-7 col-lg-9 hover-0491a3"> Cadastro do Condomínio </button> </a>
+            <a class="text-center" href="cadastro_condominio.php"> <button class=" bg-005661 color-fff p-3 rounded border-0 col-10 col-sm-8 col-lg-10 hover-0491a3 fs-4"> Cadastro do Condomínio </button> </a>
         </section>
         
         <!-- Texto (conteúdo) da página --> 
@@ -110,9 +112,9 @@
 
         <br>
         <!-- Sobre nós --> 
-        <div class="d-flex justify-content-center col-12 text-lg-justify text-center"> 
+        <div class="d-flex justify-content-center col-12 text-lg-justify text-center" id="sobre_nos"> 
             <div class="d-lg-flex d-block col-10"> 
-                <div class="col-10 col-lg-5 my-lg-5 ms-lg-5 m-auto">
+                <div class="col-10 col-lg-5 my-4 my-lg-5 ms-lg-5 m-auto">
                     <img src="css/img/foto_quemsomos.png" alt="Foto da equipe" style="width:70%">
                 </div> 
             
@@ -134,29 +136,29 @@
 
         <!-- Rodapé da página --> 
         <footer class="bg-005661 position-absolute w-100">
-        <div class="d-md-flex d-block justify-content-around col-12 pt-3">
-            <div class="p-2 col-md-6 col-12">
+        <div class="d-md-flex d-block justify-content-around col-12 pt-3" id="contatos">
+            <div class="p-2 col-md-7 col-12">
 
                 <h1 class="ps-md-2 text-center fs-1"> Contatos </h1>
                 <div class="col-md-10 m-auto align-items-center"> 
                     <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
-                    <button class="rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-regular fa-envelope"></i> </button>
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-regular fa-envelope"></i> </button>
                         <p class="m-0 p-2 fw-200"> projintegrador.domos@gmail.com </p>
                     </div>
 
                     <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
-                        <button class="rounded-circle rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-brands fa-whatsapp color-fdfdfd"></i> </button>
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-whatsapp color-fdfdfd"></i> </button>
                         <p class="m-0 p-2 fw-200"> (27)996517829 </p>
                     </div>
 
                     <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
-                        <button class="rounded-circle rounded-circle circlebutton border-0 bg-0491a3"> <i class="fa-brands fa-instagram color-fdfdfd"></i> </button> 
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-instagram color-fdfdfd"></i> </button> 
                         <p class="m-0 p-2 fw-200"> @domosoficial </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-5 col-12">
 
                 <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
 

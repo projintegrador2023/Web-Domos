@@ -32,9 +32,11 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="#contatos">Contatos</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="index.php#sobre_nos">Sobre nós </a>
                             </li>
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
@@ -65,8 +67,10 @@
                 </div>
 
                 <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-4 p-5 mb-5 d-none" id="div_cadastro_endereco">
-                <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                    <h1 class="color-0491a3 fw-400 text-center mb-5">Endereço</h1>
+                <div class="d-flex p-3">
+                    <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
+                    <h1 class="color-0491a3 fw-400 text-center m-auto">Endereço</h1>
+                </div>
                     <label for="cep_condominio" class="text-start color-0491a3 fw-400 fs-4 d-block">CEP*</label>
                     <input type="text" id="cep_condominio" class="col-4 input-form bg-e8e8e8 fs-4 p-2 mb-3 text-black d-block">
                     <div class="d-flex col-12 justify-content-between mb-3">
@@ -91,13 +95,15 @@
                         </label>
                     </div>
                     <div class="text-end col-12 mt-5">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-4 fs-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
+                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-4 fs-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
                     </div>
                 </div>
 
                 <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-4 p-5 d-none" id="div_cadastro_informacoes">
-                    <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                    <h1 class="color-0491a3 fw-400 text-center mb-5">Informações sobre o condomínio</h1>
+                    <div class="d-flex p-3">
+                        <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
+                        <h1 class="color-0491a3 fw-400 text-center mb-5">Informações sobre o condomínio</h1>
+                    </div>
                     <p class="color-0491a3 fs-4 fw-400 col-12 d-block">Faixa de moradores*
                         <select id="faixa_qtd_moradores" class="form-select d-block fs-4 p-2 color-0491a3 col-12 mb-5">
                             <option value="default" class="text-black">Escolha uma opção</option>
@@ -154,8 +160,10 @@
                 </div>
 
                 <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-4 p-5 d-none" id="div_cadastro_informacoes_opcionais">
-                    <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                    <h1 class="color-0491a3 text-center fs-3 mb-4">Informações dos espaços públicos (opcional)</h1>
+                    <div class="d-flex p-3">
+                        <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
+                        <h1 class="color-0491a3 text-center fs-3 mb-4">Informações dos espaços públicos (opcional)</h1>
+                    </div>
                     <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="saloes_de_festas" id="saloes_de_festas">
                         <label class="form-check-label color-0491a3 fs-4" for="saloes_de_festas">
@@ -208,7 +216,7 @@
                     </div>
 
                     <div class="text-end col-12">
-                        <button class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-4 fs-3 hover-0491a3"> Cadastrar </button>
+                        <button class="bg-005661 color-fff p-2 rounded border-0 col-4 fs-3 hover-0491a3"> Cadastrar </button>
                     </div>
                 </div>
             </form>
@@ -216,34 +224,42 @@
 
     </div>
 
+    <!-- Rodapé da página --> 
     <footer class="bg-005661 position-absolute w-100">
-        <div class="row p-4">
-        <div class="col col-md-4 p-2">
-            <h1 class="ps-2 text-center fs-1"> Contatos </h1>
-            <div class="bg-eB5661 d-flex align-items-center ms-2 p-3">
-            <button tyfe="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-regular fa-envelope fs-3"></i> </button>
-            <p class="m-0 ps-2 fs-4 fw-200"> Projintegrador.domos@gmail.com </p>
-        </div>
+        <div class="d-md-flex d-block justify-content-around col-12 pt-3" id="contatos">
+            <div class="p-2 col-md-7 col-12">
 
-        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-whatsapp color-fdfdfd fs-2"></i> </button> 
-            <p class="m-0 ps-2 fs-4 fw-200"> (27)996517829 </p>
-        </div>
+                <h1 class="ps-md-2 text-center fs-1"> Contatos </h1>
+                <div class="col-md-10 m-auto align-items-center"> 
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-regular fa-envelope"></i> </button>
+                        <p class="m-0 p-2 fw-200"> projintegrador.domos@gmail.com </p>
+                    </div>
 
-        <div class="bg-005661 d-flex align-items-center ms-2 p-3">
-            <button type ="button" class="btn bg-0491a3 rounded-circle"> <i class="fa-brands fa-instagram color-fdfdfd fs-2"></i> </button> 
-            <p class="m-0 ps-2 fs-4 fw-200"> @domosoficial </p>
-        </div>
-        </div>
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-whatsapp color-fdfdfd"></i> </button>
+                        <p class="m-0 p-2 fw-200"> (27)996517829 </p>
+                    </div>
 
-        <div class="col-5 d-none d-sm-flex col-md-4 align-items-center p-2">
-            <img class="w-50 mx-auto d-block img-fluid" src="css/img/logo.png">  
-        </div>
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-instagram color-fdfdfd"></i> </button> 
+                        <p class="m-0 p-2 fw-200"> @domosoficial </p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="col col-md-4">
-            <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl> 
-            <img class="w-75 h-75 f-2 mx-auto d-block img-fluid" src="css/img/ifes.png">
-        </div> <br>
+            <div class="col-md-5 col-12">
+
+                <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
+
+                <div class="d-flex flex-md-row flex-column align-items-center col-6 m-auto">
+                    <img class="img-responsive w-50 col-3 f-2 mx-auto mt-5" src="css/img/ifes.png">
+                    <img class="img-responsive col-3 f-2 mx-auto mt-5" src="css/img/inovaserra.png">
+                </div> 
+
+            </div>
+
+            <br>
         </div>
             
         </footer>  

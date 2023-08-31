@@ -14,27 +14,29 @@
 </head>
 
 <body>
-    <div class="fundo-imagem">
+    <div class="fundo-imagem pb-5">
         <!-- Cabeçalho da página --> 
         <header class="d-flex justify-content-between p-2">
-            
+
             <!-- Ícone do site -->
             <a href="index.php"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
             <div class="d-flex position-relative justify-content-end">
-                
-                <!-- Menu -->
+
+                 <!-- Menu -->
                 <nav class="d-flex navbar navbar-expand-lg navbar-dark position-relative">
                     <div class="container-fluid d-flex justify-content-end">
-                        <button class="navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
+                            <li class="nav-item">
+                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="#contatos">Contatos</a>
                             </li>
                             <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="sobre_nos.php">Sobre nós </a>
+                            <a class="text-end nav-link text-white fs-4 p-3" href="index.php#sobre_nos">Sobre nós </a>
                             </li>
                             <li class="nav-item">
                             <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
@@ -47,7 +49,7 @@
         </header>
         
         <!-- Formulário de login --> 
-        <section class="d-block mx-auto col-8 col-md-6 col-lg-5 col-xl-4 p-4 rborder4 formulario">
+        <div class="d-block m-auto col-8 col-md-6 col-lg-5 col-xl-4 p-5 rborder4 formulario">
             <section class="color-0491a3">
                 <h1 class="text-center fs-1"> Login </h1>
             </section> <br>
@@ -71,8 +73,49 @@
             <!-- Botão de entrar com validação -->
             <div class="text-end">
                 <a href="avisos.php"><button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_login()"> Entrar </button></a>
-            </div>   
-        </section>  
+            </div>  
+        </div>
+ 
+
+        <!-- Rodapé da página --> 
+        <footer class="bg-005661 position-absolute w-100" style="bottom:0;">
+        <div class="d-md-flex d-block justify-content-around col-12 pt-3" id="contatos">
+            <div class="p-2 col-md-7 col-12">
+
+                <h1 class="ps-md-2 text-center fs-1"> Contatos </h1>
+                <div class="col-md-10 m-auto align-items-center"> 
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-regular fa-envelope"></i> </button>
+                        <p class="m-0 p-2 fw-200"> projintegrador.domos@gmail.com </p>
+                    </div>
+
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-whatsapp color-fdfdfd"></i> </button>
+                        <p class="m-0 p-2 fw-200"> (27)996517829 </p>
+                    </div>
+
+                    <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
+                        <button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-brands fa-instagram color-fdfdfd"></i> </button> 
+                        <p class="m-0 p-2 fw-200"> @domosoficial </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-12">
+
+                <h1 class="ps-2 text-center fs-1 p-2"> Colaboração </hl>
+
+                <div class="d-flex flex-md-row flex-column align-items-center col-6 m-auto">
+                    <img class="img-responsive w-50 col-3 f-2 mx-auto mt-5" src="css/img/ifes.png">
+                    <img class="img-responsive col-3 f-2 mx-auto mt-5" src="css/img/inovaserra.png">
+                </div> 
+
+            </div>
+
+            <br>
+        </div>
+            
+        </footer> 
 
 </body>
 </html>
