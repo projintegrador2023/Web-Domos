@@ -19,10 +19,15 @@
 <body>
     <div class="grid-container">
         <aside class="sidebar gradient-custom"> 
-            <div class="sidebar-title">
-                <div class="sidebar-brand"> 
-                    <img src="css/img/logo_branca_icon.png" class="col-12">
+            <div class="sidebar-title d-flex p-3 flex-column align-items-end">
+                <span class="pt-3 px-3" onclick="closeSidebar()">
+                    <i class="fa-solid fa-xmark fs-1"></i>
+                </span>
+
+                <div class="sidebar-brand">
+                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
                 </div>
+            
             </div>
             
             <ul class="sidebar-list">

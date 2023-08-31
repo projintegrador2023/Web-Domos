@@ -114,7 +114,7 @@
                         </div> 
                     </div> 
                     <div class="text-end col-12 pt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-4 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
+                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-4 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
                     </div>
                 </div>
             </form>
