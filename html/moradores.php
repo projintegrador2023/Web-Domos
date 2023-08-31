@@ -50,90 +50,26 @@
         </aside>
 
         <main class="main-container m-1"> 
-            <div class="row">
-                <!--Cards com as informações principais dos moradores-->
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/morada2.jpg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-titulo">Zelma Regina - 123.456.789-00</p></div>
-                                    <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo">zelmaregina@gmail.com</p></div>
-                                <p class="color-titulo">Bloco: Amarelo<br>Número: 203</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/moradora1.jpeg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-titulo">Letícia Teixeira - 789.654.321-00</p></div>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo"> leticiateixeira@gmail.com</p></div>
-                                <p class="color-titulo">Bloco: Azul<br>Número: 105</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-0 m-1" style="max-width: 35rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="css/img/moradora4.jpeg" alt="" class="img-thumbnail img-size-card rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="fs-5 d-flex">
-                                    <div class="flex-grow-1"><p class="color-titulo">Camila Egydio - 999.111.222-00</p></div>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                        <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-subtitle fs-6"><p class="color-subtitulo"> camilaegydio@gmail.com</p></div>
-                                <p class="color-titulo">Bloco: Amarelo<br>Número: 205</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
+        <section class="rounded d-flex flex-column col-8">
+            <div class="bg-0dc0d8 d-flex roundend"> 
+                <p class="m-2 col-2"> Nome: </p>
+                <p class="m-2 col-4"> Bloco: </p>
+                <p class="m-2 col-6"> Número: </p>
+            <div class="col-8 dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
+                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
+                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
+                </ul>
+            </div>  </div>
+            <div class="bg-0491a3">
+                <p class="col-2"> Cpf: </p>
+                <p> E-mail: </p>
             </div>
+        </section>
         </main>
     </div>
 </body>
