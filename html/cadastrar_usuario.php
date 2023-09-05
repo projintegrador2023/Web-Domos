@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,39 +16,7 @@
 
 <body>
     <div class="fundo-imagem pb-5">
-        <!-- Cabeçalho da página --> 
-        <header class="d-flex justify-content-between p-2">
-
-            <!-- Ícone do site -->
-            <a href="index.php"> <img src="css/img/logo_branca.png" class="img-fluid col-10 col-md-12 position-relative justify-content-start" alt="Domos"> </a>
-            <div class="d-flex position-relative justify-content-end">
-
-                 <!-- Menu -->
-                <nav class="d-flex navbar navbar-expand-lg navbar-dark position-relative">
-                    <div class="container-fluid d-flex justify-content-end">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="#contatos">Contatos</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3" href="index.php#sobre_nos">Sobre nós </a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="text-end nav-link text-white fs-4 p-3 bg-0491a3 hover-0dc0d8 rounded" href="login.php">Entrar</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-
+    <?php include('header.php'); ?>
         <!-- formulário de cadastro de usuário -->
         <section class="mx-auto col-12 col-sm-8 col-lg-7 col-xl-4 d-block p-5">
             <form class="">
@@ -65,7 +33,7 @@
                     <input class="bg-e8e8e8 col-12 fs-4 input-form" id="email_usuario" type="email" required><br>
                     <p id="erro_email_usuario" class="fs-6 text-danger"></p>
                     <label id="label_senha_usuario" for="senha_usuario" class="fs-4 color-0491a3"> Crie sua senha*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br><!--oiiiiiiiiiiiiiiiii ass: Kauâ-->
+                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br>
                     <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
                     <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4 color-0491a3"> Confirme sua senha*</label> 
                     <input class="bg-e8e8e8 col-12 fs-4 input-form" id="conf_senha_usuario" type="password" required><br>
