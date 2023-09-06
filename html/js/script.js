@@ -57,7 +57,8 @@ function validacao_login(){
             label_cpf_cnpj.classList.add("text-danger");
             erro_cpf_cnpj.innerHTML = "Digite apenas números.";
         }    
-    }   
+    }  
+
 }
 
 function validacao_cadastro_usuario(){

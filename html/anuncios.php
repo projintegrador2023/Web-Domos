@@ -10,21 +10,25 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/anuncios.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/sidebar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Anúncios - Domos</title>
 </head>
 
-<body>
+<body> 
   <!-- Container -->
   <div class="grid-container">
       <!--Cabeçalho de pesquisa e filtros-->
       <header class="header d-flex align-items-center justify-content-between m-3"> 
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+        </div>
         <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
           <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
         </div>
 
-        <div class="justify-content-around d-flex w-75">
+        <div class="justify-content-around w-75 btns-geral" id="btns_filtro">
           <button class="btn btn-alimentacao w-25 m-2 rounded-5 fs-5 color-fff" type="button">Alimentação</button>
           <button class="btn btn-vestuario w-25 m-2 rounded-5 fs-5 color-fff" type="button">Vestuário</button>
           <button class="btn btn-eletronicos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Eletrônicos</button>
@@ -32,44 +36,70 @@
           <button class="btn btn-decoracao w-25 m-2 rounded-5 fs-5 color-fff" type="button">Decoração</button>
           <button class="btn btn-petshop w-25 m-2 rounded-5 fs-5 color-fff" type="button">Petshop</button>
           <button class="btn btn-servicos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Serviços</button>
-          <button class="btn text-start" type="button"><i class="fa-solid fa-filter filter-btn"></i></button>
-        </div>   
+          <button class="btn text-start" type="button" onclick="MostarFiltro(btns_filtro)"><i class="fa-solid fa-filter filter-btn"></i></button>
+        </div> 
+        
+        <div class=""> 
+          <select name="" id="" class="select-customiza">
+            <option selected class="">Filtros</option>
+            <option value="alimentacao" class="tag-alimentacao">Alimentação</option>
+            <option value="vestuario" class="tag-vestuario">Vestuário</option>
+            <option value="eletronicos" class="tag-eletronicos">Eletrônicos</option>
+            <option value="beleza" class="tag-beleza">Beleza</option>
+            <option value="decoracao" class="tag-decoracao">Decoração</option>
+            <option value="petshop" class="tag-petshop">Petshop</option>
+            <option value="servicos" class="tag-servicos">Serviços</option>
+          </select>
+        </div>
+
       </header>
 
       <!-- Navegação em abas pela barra lateral (sidebar) --> 
-      <aside class="sidebar gradient-custom"> 
-        <div class="sidebar-title">
-            <div class="sidebar-brand"> 
-                <img src="css/img/logo_branca_icon.png" class="col-12">
-            </div>
-        </div>
+      <aside id="sidebar" class="sidebar gradient-custom">
+        <div class="sidebar-title d-flex p-3 flex-column align-items-end">
+          <span class="pt-3 px-3" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark fs-1"></i>
+          </span>
 
-        <!-- Lista de itens da sidebar--> 
+          <div class="sidebar-brand">
+            <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
+          </div>
+          
+        </div>
         <ul class="sidebar-list">
-            <li class="sidebar-list-item">
-                <a href="avisos.html"> <div><i class="fa-solid fa-bell col-2"></i> Avisos </div></a>
-            </li>
-            <li class="sidebar-list-item  bg-customiza">
-                <a href="anuncios.html"> <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div></a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="reservas.html"> <div><i class="fa-solid fa-calendar-days col-2"></i>Reservas </div></a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="regimento.html"> <div><i class="fa-solid fa-note-sticky col-2"></i>Regimento </div></a>
-            </li>
-            <!-- Será utilizado posteriormente -->
-            <li class="sidebar-list-item">
-                <a href="informacoes.html"> <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div></a>
-            </li>
+          <li class="sidebar-list-item">
+            <a href="avisos.php">
+                <div><i class="fa-solid fa-bell col-2"></i> Avisos </div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="anuncios.php">
+                <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="reservas.php">
+              <div><i class="fa-solid fa-calendar-days col-2"></i> Reservas </div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="regimento.php">
+                <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="informacoes.php">
+                <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div>
+            </a>
+          </li>
         </ul>
       </aside>
          
       <!-- Main principal (container)--> 
-      <main class="main-container m-2 "> 
+      <main class="main-container m-2"> 
           
         <!-- Div contendo os cards -->
-        <div class="row">
+        <div class="row justify-content-between">
           <!-- Cards -->  
           <div class="card mt-2 m-lg-2 mb-3 p-0"  style="max-width: 25rem;">
             <div class="card-header bg-transparent">
@@ -158,7 +188,7 @@
           <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Gabriel Frinhani</p></div>
+                <div class="flex-grow-1"><p class="color-titulo">Raynan Silva</p></div>
                 <div class="dropdown">
                   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
