@@ -61,6 +61,11 @@
                         <div><i class="fa-solid fa-right-from-bracket col-2"></i> Encerrar sessão </div>
                     </a>
                 </li>
+                <li class="sidebar-list-item">
+                    <a href="perfil_morador.php">
+                        <div> PERFIL MORADOR TESTE </div>
+                    </a>
+                </li>
             </ul>
         </aside>
             

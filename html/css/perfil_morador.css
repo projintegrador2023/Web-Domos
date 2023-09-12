@@ -1,0 +1,20 @@
+.foto{
+    width: 14rem; 
+    height: 14rem;
+}
+
+.btn-editar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.bg-cinza{
+    background-color: #E8E8E8;
+}
+
+.caixa-texto{
+    background-color: #fdfdfd;
+    color: #005661;
+    border-radius: 15px;
+    padding: 5px;
+}
