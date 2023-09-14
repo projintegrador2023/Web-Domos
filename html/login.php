@@ -1,3 +1,90 @@
+<?php 
+    if (isset($_POST['cpf_cnpj']) || isset($_POST['senha_login'])){
+        if (strlen($_POST['cpf_cnpj']) == 0){
+            echo "Preencha seu CPF ou CNPJ";
+        } else if (strlen($_POST['senha_login']) == 0){
+            echo "Preencha sua senha";
+        } else if(validaCPF($_POST['cpf_cnpj']) || validar_cnpj($_POST['cpf_cnpj'])){
+            if (!isset($_SESSION)){
+                session_start();
+            }
+    
+            $_SESSION['id'] = filter_var($_POST['cpf_cnpj'], FILTER_SANITIZE_NUMBER_INT);
+            $_SESSION['senha'] = $_POST['senha_login'];
+    
+            header("Location: avisos.php");
+            
+        }  else {
+            echo "Insira um CPF ou CNPJ válido";
+        }
+    }
+
+    function validaCPF($cpf) {
+ 
+        // Extrai somente os números
+        $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
+         
+        // Verifica se foi informado todos os digitos corretamente
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+    
+        // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
+        if (preg_match('/(\d)\1{10}/', $cpf)) {
+            return false;
+        }
+    
+        // Faz o calculo para validar o CPF
+        for ($t = 9; $t < 11; $t++) {
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) {
+                return false;
+            }
+        }
+        return true;
+    
+    }
+
+    function validar_cnpj($cnpj)
+{
+	$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+	
+	// Valida tamanho
+	if (strlen($cnpj) != 14)
+		return false;
+
+	// Verifica se todos os digitos são iguais
+	if (preg_match('/(\d)\1{13}/', $cnpj))
+		return false;	
+
+	// Valida primeiro dígito verificador
+	for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
+	{
+		$soma += $cnpj[$i] * $j;
+		$j = ($j == 2) ? 9 : $j - 1;
+	}
+
+	$resto = $soma % 11;
+
+	if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
+		return false;
+
+	// Valida segundo dígito verificador
+	for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
+	{
+		$soma += $cnpj[$i] * $j;
+		$j = ($j == 2) ? 9 : $j - 1;
+	}
+
+	$resto = $soma % 11;
+
+	return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +110,14 @@
                 <h1 class="text-center fs-1"> Login </h1>
             </section> <br>
             
-            <form method="POST" action="login_sessao.php"> 
-                <label class="fs-5 color-0491a3" id="label_cpf_cnpj" for="cpf_cnpj"> CPF / CNPJ </label>
+            <form method="POST" action=""> 
+                <label class="fs-5 color-0491a3" id="label_cpf_cnpj" name="label_cpf_cnpj" for="cpf_cnpj"> CPF / CNPJ </label>
                 <input class="bg-e8e8e8 col-12 fs-4 input-form" name="cpf_cnpj" id="cpf_cnpj" type="text"> <br>
 
                 <p id="erro_login_cpf_cnpj" class="text-danger fs-6"></p>
 
                 <label class="fs-5 color-0491a3" id="label_senha" for="senha_login"> Senha </label>
-                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_login" type="password"> <br>
+                <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_login" name="senha_login" type="password"> <br>
 
                 <p id="erro_login_senha" class="text-danger fs-6"></p>
                 <div class="pe-2 text-end">
@@ -39,7 +126,7 @@
 
                 <!-- Botão de entrar com validação -->
                 <div class="text-end">
-                    <a href="avisos.php"><input type="submit" value="Entrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_login()"></input></a>
+                    <a href="avisos.php"><input type="submit" value="Entrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input></a>
                 </div>  
             </form>  
         </div>
