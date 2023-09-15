@@ -1,10 +1,17 @@
 <?php 
+    $_ERRO_LOGIN = 0;
+
     if (isset($_POST['cpf_cnpj']) || isset($_POST['senha_login'])){
-        if (strlen($_POST['cpf_cnpj']) == 0){
-            echo "Preencha seu CPF ou CNPJ";
-        } else if (strlen($_POST['senha_login']) == 0){
-            echo "Preencha sua senha";
+        if (strlen($_POST['cpf_cnpj']) == 0 && strlen($_POST['senha_login']) == 0){
+            $_ERRO_LOGIN = 1;
+        } else if (strlen($_POST['cpf_cnpj']) == 0 && strlen($_POST['senha_login']) != 0){
+            $_ERRO_LOGIN = 2;
+        } else if (strlen($_POST['cpf_cnpj']) != 0 && strlen($_POST['senha_login']) == 0){
+            $_ERRO_LOGIN = 3;
+        } else if (strlen($_POST['cpf_cnpj']) != 0 && strlen($_POST['senha_login']) != 0 && !validaCPF($_POST['cpf_cnpj']) && !validar_cnpj($_POST['cpf_cnpj'])){
+            $_ERRO_LOGIN = 4;
         } else if(validaCPF($_POST['cpf_cnpj']) || validar_cnpj($_POST['cpf_cnpj'])){
+            $_ERRO_LOGIN = 0;   
             if (!isset($_SESSION)){
                 session_start();
             }
@@ -13,17 +20,14 @@
             $_SESSION['senha'] = $_POST['senha_login'];
     
             header("Location: avisos.php");
-            
-        }  else {
-            echo "Insira um CPF ou CNPJ válido";
         }
     }
 
     function validaCPF($cpf) {
- 
+
         // Extrai somente os números
         $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
-         
+        
         // Verifica se foi informado todos os digitos corretamente
         if (strlen($cpf) != 11) {
             return false;
@@ -50,38 +54,38 @@
 
     function validar_cnpj($cnpj)
 {
-	$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
-	
-	// Valida tamanho
-	if (strlen($cnpj) != 14)
-		return false;
+    $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+    
+    // Valida tamanho
+    if (strlen($cnpj) != 14)
+        return false;
 
-	// Verifica se todos os digitos são iguais
-	if (preg_match('/(\d)\1{13}/', $cnpj))
-		return false;	
+    // Verifica se todos os digitos são iguais
+    if (preg_match('/(\d)\1{13}/', $cnpj))
+        return false;	
 
-	// Valida primeiro dígito verificador
-	for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
-	{
-		$soma += $cnpj[$i] * $j;
-		$j = ($j == 2) ? 9 : $j - 1;
-	}
+    // Valida primeiro dígito verificador
+    for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
+    {
+        $soma += $cnpj[$i] * $j;
+        $j = ($j == 2) ? 9 : $j - 1;
+    }
 
-	$resto = $soma % 11;
+    $resto = $soma % 11;
 
-	if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
-		return false;
+    if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
+        return false;
 
-	// Valida segundo dígito verificador
-	for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
-	{
-		$soma += $cnpj[$i] * $j;
-		$j = ($j == 2) ? 9 : $j - 1;
-	}
+    // Valida segundo dígito verificador
+    for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
+    {
+        $soma += $cnpj[$i] * $j;
+        $j = ($j == 2) ? 9 : $j - 1;
+    }
 
-	$resto = $soma % 11;
+    $resto = $soma % 11;
 
-	return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
+    return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
 }
 ?>
 
@@ -114,14 +118,29 @@
                 <label class="fs-5 color-0491a3" id="label_cpf_cnpj" name="label_cpf_cnpj" for="cpf_cnpj"> CPF / CNPJ </label>
                 <input class="bg-e8e8e8 col-12 fs-4 input-form" name="cpf_cnpj" id="cpf_cnpj" type="text"> <br>
 
-                <p id="erro_login_cpf_cnpj" class="text-danger fs-6"></p>
+                <?php 
+                    if ($_ERRO_LOGIN == 1){
+                        echo "<p class='text-danger fs-6 text-start mb-0'>Preencha seu CPF ou CNPJ</p>";
+                    } else if ($_ERRO_LOGIN == 2){
+                        echo "<p class='text-danger fs-6 text-start mb-0'>Preencha seu CPF ou CNPJ</p>";
+                    } else if ($_ERRO_LOGIN == 4){
+                        echo "<p class='text-danger fs-6 text-start mb-0'>Insira um CPF ou CNPJ válido</p>";
+                    }
+                ?>
 
-                <label class="fs-5 color-0491a3" id="label_senha" for="senha_login"> Senha </label>
+                <label class="fs-5 color-0491a3 mt-4" id="label_senha" for="senha_login"> Senha </label>
                 <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_login" name="senha_login" type="password"> <br>
+                <?php
+                    if ($_ERRO_LOGIN == 1){
+                        echo "<p class='text-danger fs-6 text-start mb-0'>Preencha sua senha</p>";
+                    } else if ($_ERRO_LOGIN == 3){
+                        echo "<p class='text-danger fs-6 text-start mb-0'>Preencha sua senha</p>";
+                    }
+                ?>
 
                 <p id="erro_login_senha" class="text-danger fs-6"></p>
                 <div class="pe-2 text-end">
-                <a href="recuperar_senha.php" class="color-0491a3"> Esqueceu sua senha? </a> 
+                <a href="recuperar_senha.php" class="color-0491a3"> Esqueceu sua senha? </a> <br> 
                 </div> <br> 
 
                 <!-- Botão de entrar com validação -->

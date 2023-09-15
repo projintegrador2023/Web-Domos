@@ -12,7 +12,7 @@
                 <h1 class="ps-md-2 text-center fs-1"> Contatos </h1>
                 <div class="col-md-10 m-auto align-items-center"> 
                     <div class="bg-eB5661 d-flex flex-md-row flex-column align-items-center ms-2 p-3 fs-5 fs-md-3">
-                        <a style="text-decoration: none;" href="mailto:projintegrador.domos@gmail.com"><button class="bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-regular fa-envelope"></i> </button></a>
+                        <a style="text-decoration: none;" href="mailto:projintegrador.domos@gmail.com"><button class="rounded-circle border-0 bg-0491a3" style="width:2.5rem; height:2.5rem;"> <i class="fa-regular fa-envelope"></i> </button></a>
                         <a style="text-decoration: none;" href="mailto:projintegrador.domos@gmail.com"><p class="m-0 p-2 fw-200"> projintegrador.domos@gmail.com </p></a>
                     </div>
 
