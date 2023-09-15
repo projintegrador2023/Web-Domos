@@ -1,6 +1,6 @@
-.foto{
-    width: 14rem; 
-    height: 14rem;
+.perfil-foto{
+    width: 12.5rem; 
+    height: 12.5rem;
 }
 
 .btn-editar{
@@ -8,8 +8,8 @@
 	color: #fdfdfd;
 }
 
-.bg-cinza{
-    background-color: #E8E8E8;
+.cor-estrela{
+    color: #ffc000;
 }
 
 .caixa-texto{
@@ -17,4 +17,23 @@
     color: #005661;
     border-radius: 15px;
     padding: 5px;
+}
+
+.btn-confirmar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.btn-confirmar:hover{
+	background-color: #0491a3;
+	color: #fdfdfd;
+}
+
+.btn-exit{
+	background-color: #cc0000;
+    color: #fdfdfd;
+} 
+
+.btn-exit:hover{
+    background-color: #b22222;
 }
