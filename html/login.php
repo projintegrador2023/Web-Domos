@@ -16,7 +16,7 @@
                 session_start();
             }
     
-            $_SESSION['id'] = filter_var($_POST['cpf_cnpj'], FILTER_SANITIZE_NUMBER_INT);
+            $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);;
             $_SESSION['senha'] = $_POST['senha_login'];
     
             header("Location: avisos.php");
@@ -26,7 +26,7 @@
     function validaCPF($cpf) {
 
         // Extrai somente os números
-        $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
+        $cpf = preg_replace( '/[^0-9]/', '', $cpf );
         
         // Verifica se foi informado todos os digitos corretamente
         if (strlen($cpf) != 11) {
