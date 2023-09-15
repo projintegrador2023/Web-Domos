@@ -61,14 +61,19 @@
                 <div><i class="fa-solid fa-calendar-days col-2"></i> Reservas </div>
                 </a>
             </li>
-            <li class="sidebar-list-item">
+            <li class="sidebar-list-item bg-customiza">
                 <a href="regimento.php">
                     <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
                 </a>
             </li>
             <li class="sidebar-list-item">
+              <a href="perfil_morador.php">
+                  <div> <i class="fa-solid fa-user col-2" style="color: #ffffff;"></i> Perfil </div>
+              </a>
+          </li>
+            <li class="sidebar-list-item">
                 <a href="informacoes.php">
-                    <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div>
+                    <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
                 </a>
             </li>
             </ul>

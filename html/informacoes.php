@@ -41,7 +41,7 @@
             </div>
 
             <ul class="sidebar-list">
-                <li class="sidebar-list-item">
+                <li class="sidebar-list-item bg-customiza">
                     <a href="informacoes.php">
                         <div><i class="fa-solid fa-circle-info col-2"></i> Informações </div>
                     </a>
@@ -52,18 +52,13 @@
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="reservas.php">
-                        <div><i class="fa-solid fa-calendar-check col-2"></i> Espaços reservados </div>
+                    <a href="areas_reservadas.php">
+                        <div><i class="fa-solid fa-calendar-check col-2"></i> Reservas </div>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
                     <a href="index.php">
                         <div><i class="fa-solid fa-right-from-bracket col-2"></i> Encerrar sessão </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="perfil_morador.php">
-                        <div> PERFIL MORADOR TESTE </div>
                     </a>
                 </li>
             </ul>

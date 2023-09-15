@@ -73,14 +73,14 @@
         </div>
 
         <ul class="sidebar-list">
-          <li class="sidebar-list-item">
+          <li class="sidebar-list-item bg-customiza">
             <a href="avisos.php">
                 <div><i class="fa-solid fa-bell col-2"></i> Avisos </div>
             </a>
           </li>
           <li class="sidebar-list-item">
             <a href="anuncios.php">
-                <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div>
+                <div><i class="fa-solid fa-bag-shopping col-2" style="color: #ffffff;"></i> Anúncios </div>
             </a>
           </li>
           <li class="sidebar-list-item">
@@ -94,10 +94,16 @@
             </a>
           </li>
           <li class="sidebar-list-item">
+              <a href="perfil_morador.php">
+                  <div> <i class="fa-solid fa-user col-2" style="color: #ffffff;"></i> Perfil </div>
+              </a>
+          </li>
+          <li class="sidebar-list-item">
             <a href="informacoes.php">
-                <div><i class="fa-solid fa-gear col-2"></i></i>Configurações </div>
+                <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
             </a>
           </li>
+          
         </ul>
       </aside>
 

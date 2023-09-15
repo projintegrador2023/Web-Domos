@@ -1,20 +1,3 @@
-
-.color-titulo{
-    color: #005661;
-}
-
-.color-subtitulo{
-    color: #0491a3;
-}
-
-.color-descricao{
-    color: #000000;
-}
-
-.icons{
-    color: #005661;
-}
-
 /*Configurações da busca*/
 .search{
 	height: 40px;
@@ -30,10 +13,4 @@
 	justify-content: center;
 	font-size: 1.6rem;
 	color: #0491a3;
-}
-
-/*Tamanho das fotos no card*/
-.img-size-card{
-	width: 10rem;
-	height: 10rem;
 }

@@ -17,9 +17,9 @@
 <body>
     <div class="grid-container">
         <header class="header d-flex align-items-center justify-content-between m-3"> 
-            <div class="d-flex w-100">
-              <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-              <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
+            <div class="d-flex w-50 ">
+            <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
+            <input type="text" class="search ps-2 m-2 w-100" placeholder="Pesquisar...">
             </div>
         </header>
 
@@ -38,7 +38,7 @@
                     <a href="moradores.php"> <div><i class="fa-solid fa-people-roof col-2"></i> Moradores </div></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="areas_reservadas.php"> <div><i class="fa-solid fa-calendar-check col-2"></i>Espaços reservados </div></a>
+                    <a href="areas_reservadas.php"> <div><i class="fa-solid fa-calendar-check col-2"></i> Reservas </div></a>
                 </li>
                 <li class="sidebar-list-item" id="encerrar">
                     <a href="index.php"> <div><i class="fa-solid fa-right-from-bracket col-2"></i>Encerrar sessão </div></a>
@@ -61,7 +61,7 @@
                     </ul>
                 </div>  
             </div>
-            <div class="bg-0491a3">
+            <div class="bg-74ccd8 rounded-bottom">
                 <p class="m-2"> Bloco: </p>
                 <p class="m-2"> Número: </p>
                 <p class="m-2"> Cpf: </p>
@@ -82,7 +82,7 @@
                     </ul>
                 </div>  
             </div>
-            <div class="bg-0491a3">
+            <div class="bg-74ccd8 rounded-bottom">
                 <p class="m-2"> Bloco: </p>
                 <p class="m-2"> Número: </p>
                 <p class="m-2"> Cpf: </p>

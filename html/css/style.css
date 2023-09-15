@@ -17,6 +17,7 @@
 	min-height: 100vh;
 }
 
+
 /* configurações de recursos */
 .circle{
     height: 10rem;
@@ -43,6 +44,10 @@
 
 .bg-0dc0d8{
 	background-color: #0dc0d8;
+}
+
+.bg-74ccd8{
+	background-color: #74ccd8;
 }
 
 .color-0491a3 {
