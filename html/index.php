@@ -60,7 +60,7 @@
                 </div>
                 <div class="h-100 w-100 d-block align-items-center text-center"> 
                     <button class="rounded-circle circle bg-0491a3 border-0 text-center"> 
-                        <i class="fa-solid fa-cart-shopping color-fdfdfd" style="font-size:8vh"></i>  
+                        <i class="fa-solid fa-bag-shopping color-fdfdfd" style="font-size:8vh"></i>  
                     </button>
                     <p class="fs-4 mt-3"> Anúncios </p>
                 </div> 

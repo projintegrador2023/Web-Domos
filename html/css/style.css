@@ -62,10 +62,6 @@
 	color: #fdfdfd;
 }
 
-.color-005661{
-	color: #005661;
-}
-
 /* fontes */
 .fw-400 {
 	font-weight: 400;
@@ -184,6 +180,7 @@ textarea {
 .bg-customiza{
 	background-color:#0491a3;
 }
+
 
 .button_reservas{
 	background-color: #fff;

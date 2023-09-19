@@ -163,13 +163,18 @@
 	justify-content: center;
 }
 
-.btn-exit{
-	background-color: #cc0000;
+.btn-exit, .btn-publicar, .btn-criar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.btn-publicar:hover{
+	background-color: #0491a3;
 	color: #fdfdfd;
 }
 
 .btn-exit:hover{
-	background-color: #b22222;
+	background-color: #cc0000;
 }
   
 /* configurações do container */

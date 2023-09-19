@@ -16,7 +16,7 @@
                 session_start();
             }
     
-            $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);;
+            $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);
             $_SESSION['senha'] = $_POST['senha_login'];
     
             header("Location: avisos.php");

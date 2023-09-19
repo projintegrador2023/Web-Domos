@@ -18,49 +18,49 @@
     <div class="fundo-imagem pb-5">
     <?php include('header.php'); ?>
         <!-- formulário de cadastro de usuário -->
-        <section class="mx-auto col-12 col-sm-8 col-lg-7 col-xl-4 d-block p-5">
+        <section class="mx-auto mt-4 col-12 col-sm-8 col-lg-7 col-xl-5 d-block">
             <form class="">
-                <div class="formulario p-5" id="div_cadastro_morador">
+                <div class="formulario mx-3 px-5 py-4" id="div_cadastro_morador">
                     
-                    <h1 class="color-0491a3 fs-1 mb-5 text-center"> Cadastro do Morador </h1>
-                    <label id="label_nome_usuario" for="nome_usuario" class="fs-4 color-0491a3"> Nome*</label>
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="nome_usuario" type="text" required maxlength="45"><br>
+                    <h1 class="color-0491a3 fs-2 mb-4 mt-3 text-center"> Cadastro do Morador </h1>
+                    <label id="label_nome_usuario" for="nome_usuario" class="fs-5 color-0491a3"> Nome*</label>
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="nome_usuario" type="text" required maxlength="45"><br>
                     <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
-                    <label id="label_cpf_usuario" for="cpf_usuario" class="fs-4 color-0491a3"> Cpf*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="cpf_usuario" type="text" required><br>
+                    <label id="label_cpf_usuario" for="cpf_usuario" class="fs-5 color-0491a3"> Cpf*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="cpf_usuario" type="text" required><br>
                     <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
-                    <label id="label_email_usuario" for="email_usuario" class="fs-4 color-0491a3"> E-mail*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="email_usuario" type="email" required><br>
+                    <label id="label_email_usuario" for="email_usuario" class="fs-5 color-0491a3"> E-mail*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="email_usuario" type="email" required><br>
                     <p id="erro_email_usuario" class="fs-6 text-danger"></p>
-                    <label id="label_senha_usuario" for="senha_usuario" class="fs-4 color-0491a3"> Crie sua senha*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="senha_usuario" type="password" required> <br>
+                    <label id="label_senha_usuario" for="senha_usuario" class="fs-5 color-0491a3"> Crie sua senha*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="senha_usuario" type="password" required> <br>
                     <p id="erro_senha_usuario" class="fs-6 text-danger"></p>
-                    <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-4 color-0491a3"> Confirme sua senha*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-4 input-form" id="conf_senha_usuario" type="password" required><br>
+                    <label id="label_conf_senha_usuario" for="conf_senha_usuario" class="fs-5 color-0491a3"> Confirme sua senha*</label> 
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="conf_senha_usuario" type="password" required><br>
                     <p id="erro_conf_senha_usuario" class="fs-6 text-danger"></p>
 
                     <div class="text-end col-12 pt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-lg-5 col-xl-4 fs-3 hover-0491a3" onclick="trocar_formulario_usuario()"> Continuar </button>
+                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario_usuario()"> Continuar </button>
                     </div>
                 </div>
 
-                <div class="formulario p-5 d-none" id="div_informacoes_condominio">
-                    <div class="d-flex p-3">
+                <div class="formulario mx-3 px-5 py-4 d-none" id="div_informacoes_condominio">
+                    <div class="d-flex align-items-center">
                         <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario_usuario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                        <h1 class="color-0491a3 fs-1 text-center"> Informações do condomínio </h1>
+                        <h1 class="color-0491a3 ms-4 fs-2 text-center"> Informações do condomínio </h1>
                     </div>
 
 
-                    <div class="p-3 pt-0">
-                        <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-4 color-0491a3"> Código do condomínio*</label>
-                        <input id="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-4 input-form" type="text" maxlength="6" required>  <br>
+                    <div class="my-3">
+                        <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-5 color-0491a3"> Código do condomínio*</label>
+                        <input id="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-5 input-form" type="text" maxlength="6" required>  <br>
                         <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
                     </div>
 
                     
-                    <div class="container d-flex justify-content-between pb-3">
+                    <div class="container d-flex justify-content-between p-0 mt-4">
                             <div class="col-5">
-                            <label class="fs-4 color-0491a3"> Nº do apto*</label> <br>
+                            <label class="fs-5 color-0491a3"> Nº do apto*</label> <br>
                             <select id="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded">
                                 <option class="text-black"> 101 </option>
                                 <option class="text-black"> 102 </option>
@@ -71,7 +71,7 @@
                             </select> 
                         </div>
                         <div class="col-5">
-                            <label class="fs-4 color-0491a3"> Bloco*</label> <br>
+                            <label class="fs-5 color-0491a3"> Bloco*</label> <br>
                             <select id="bloco" class="col-12 fs-5 p-2 border-select text-black rounded">
                                 <option class="text-black"> Amarelo </option>
                                 <option class="text-black"> Azul </option>
@@ -82,7 +82,7 @@
                         </div> 
                     </div> 
                     <div class="text-end col-12 pt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 button_formulario col-4 fs-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
+                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="validacao_cadastro_usuario()"> Cadastrar </button>
                     </div>
                 </div>
             </form>

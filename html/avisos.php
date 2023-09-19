@@ -1,14 +1,5 @@
 <?php 
-
-  include("protect.php");
-  if (!isset($_SESSION)){
-    session_start();
-  }
-
-  echo "Usuário: " , $_SESSION['id'];
-  echo "<p>
-  <a href='logout.php'>Sair</a>
-  </p>";
+  include("iniciar_sessao.php");
 ?>
 
 <!DOCTYPE html>
@@ -93,16 +84,18 @@
                 <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
             </a>
           </li>
-          <li class="sidebar-list-item">
-              <a href="perfil_morador.php">
-                  <div> <i class="fa-solid fa-user col-2" style="color: #ffffff;"></i> Perfil </div>
-              </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="informacoes.php">
-                <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
+          <?php 
+            echo "<li class='sidebar-list-item'>
+            <a href='perfil_morador.php'>
+                <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
             </a>
-          </li>
+        </li>";
+          ?>
+          <!--li class="sidebar-list-item">
+                    <a href="informacoes.php">
+                        <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
+                    </a>
+                </li-->
           
         </ul>
       </aside>

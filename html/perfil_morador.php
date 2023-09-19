@@ -1,3 +1,7 @@
+<?php 
+  include("iniciar_sessao.php");
+?>
+
 <!-- NÃO UTILIZADO NESSE TRABALHO -->
 
 
@@ -49,7 +53,7 @@
                 </li>
                 <li class="sidebar-list-item">
                     <a href="anuncios.php">
-                        <div><i class="fa-solid fa-cart-shopping col-2"></i> Anúncios </div>
+                        <div><i class="fa-solid fa-bag-shopping col-2" style="color: #ffffff;"></i> Anúncios </div>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
@@ -62,16 +66,18 @@
                         <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
                     </a>
                 </li>
-                <li class="sidebar-list-item bg-customiza">
-                <a href="perfil_morador.php">
-                    <div> <i class="fa-solid fa-user col-2" style="color: #ffffff;"></i> Perfil </div>
-                </a>
-            </li>
-                <li class="sidebar-list-item">
+                <?php 
+                    echo "<li class='sidebar-list-item'>
+                            <a href='perfil_morador.php'>
+                                <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
+                            </a>
+                        </li>";
+                ?>
+                <!--li class="sidebar-list-item">
                     <a href="informacoes.php">
                         <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
                     </a>
-                </li>
+                </li-->
             </ul>
         </aside>
 
@@ -80,7 +86,10 @@
                 <div class="col-4 d-flex flex-column align-items-end mx-4">
                     <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle perfil-foto">
                     <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 w-50 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações </button>
-                    <button class="btn bg-005661 hover-0dc0d8 mt-3 mx-2 w-50 text-white"> <i class="fa-solid fa-right-from-bracket flex-grow-1"></i> Encerrar sessão </button> 
+
+                    <?php 
+                        echo "<a href='logout.php' class='btn bg-005661  hover-0dc0d8 mt-3 mx-2 w-50 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar Sessão</a>";
+                    ?>
                 </div>
                 
                 <div class="col-7 my-auto d-flex flex-column align-items-start mx-4">
@@ -114,7 +123,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn bg-005661 hover-0dc0d8 color-fff">Confirmar</button>
+                                        <button type="button" class="btn btn-confirmar">Confirmar</button>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +161,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
-                                        <a href="anuncios.html"><button type="button" class="btn bg-005661 hover-0dc0d8 color-fff">Publicar</button></a>
+                                        <a href="anuncios.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
                                     </div>
                                 </div>
                             </div>
