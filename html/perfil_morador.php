@@ -74,7 +74,7 @@
         <main container class="main-container">
             <div class="d-flex justify-content-center flex-row m-1 col-12 ">
                 <div class="col-4 d-flex flex-column align-items-end mx-4">
-                    <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle perfil-foto">
+                    <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle perfil-foto img-fluid">
                     <button class="btn btn-editar hover-0491a3 mt-3 mx-2"><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações</button>
                 </div>
                 
@@ -154,10 +154,7 @@
                             </div>
                         </div>
 
-
-                        <button id="estrela" estado="vazia" class="btn"><i class="fa-regular fa-star cor-estrela p-1" onclick="estrela()"></i><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;"></i></button>
-                        <button id="estrela" estado="cheia" class="btn"><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;"></i></button>
-
+                        <button id="estrela" class="btn"><i class="fa-regular fa-star cor-estrela p-1" onclick="estrela()" estado="vazia"></i><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;" estado="cheia"></i></button>
                     </div>
               </div>
               <div>
