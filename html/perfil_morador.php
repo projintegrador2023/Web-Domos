@@ -1,7 +1,3 @@
-<?php 
-  include("iniciar_sessao.php");
-?>
-
 <!-- NÃO UTILIZADO NESSE TRABALHO -->
 
 
@@ -15,11 +11,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="css/perfil_morador.css"> 
     <link rel="stylesheet" href="css/anuncios.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil_morador.css"> 
     <script src="js/sidebar.js" defer></script>
+    <script src="js/perfil_morador.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Perfil - Domos</title>
 </head>
@@ -48,48 +45,37 @@
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
                     <a href="avisos.php">
-                        <div><i class="fa-solid fa-bell col-2"></i> Avisos </div>
+                        <div><i class="fa-solid fa-circle-info col-2"></i> TESTE - AVISOS </div>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="anuncios.php">
-                        <div><i class="fa-solid fa-bag-shopping col-2" style="color: #ffffff;"></i> Anúncios </div>
+                    <a href="informacoes.php">
+                        <div><i class="fa-solid fa-people-roof col-2"></i> TESTE - INFO</div>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
                     <a href="reservas.php">
-                    <div><i class="fa-solid fa-calendar-days col-2"></i> Reservas </div>
+                        <div><i class="fa-solid fa-calendar-check col-2"></i> TESTE </div>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="regimento.php">
-                        <div><i class="fa-solid fa-note-sticky col-2"></i> Regimento </div>
+                    <a href="index.php">
+                        <div><i class="fa-solid fa-right-from-bracket col-2"></i> TESTE </div>
                     </a>
                 </li>
-                <?php 
-                    echo "<li class='sidebar-list-item'>
-                            <a href='perfil_morador.php'>
-                                <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
-                            </a>
-                        </li>";
-                ?>
-                <!--li class="sidebar-list-item">
-                    <a href="informacoes.php">
-                        <div><i class="fa-solid fa-gear col-2"></i></i> Configurações </div>
+                <li class="sidebar-list-item">
+                    <a href="perfil_morador.php">
+                        <div> PERFIL MORADOR TESTE </div>
                     </a>
-                </li-->
+                </li>
             </ul>
         </aside>
 
         <main container class="main-container">
-            <div class="d-flex justify-content-center flex-row m-1 col-12">
+            <div class="d-flex justify-content-center flex-row m-1 col-12 ">
                 <div class="col-4 d-flex flex-column align-items-end mx-4">
                     <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle perfil-foto">
-                    <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 w-50 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações </button>
-
-                    <?php 
-                        echo "<a href='logout.php' class='btn bg-005661  hover-0dc0d8 mt-3 mx-2 w-50 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar Sessão</a>";
-                    ?>
+                    <button class="btn btn-editar hover-0491a3 mt-3 mx-2"><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações</button>
                 </div>
                 
                 <div class="col-7 my-auto d-flex flex-column align-items-start mx-4">
@@ -102,10 +88,11 @@
                         <p class="caixa-texto col-5">Num bloco</p>
                         <p class="caixa-texto col-5">Nome Bloco</p>
                     </div>
+
                     </div>
                     
                 </div>
-            </div> <br>
+            </div>
 
             <div class="card mt-4 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
@@ -122,7 +109,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Cancelar</button>
                                         <button type="button" class="btn btn-confirmar">Confirmar</button>
                                     </div>
                                 </div>
@@ -160,7 +147,7 @@
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
+                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Voltar</button>
                                         <a href="anuncios.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
                                     </div>
                                 </div>
@@ -168,8 +155,10 @@
                         </div>
 
 
-                        <a href="#"><i class="fa-solid fa-star cor-estrela p-1"></i></a>
-                    </div> 
+                        <button id="estrela" estado="vazia" class="btn"><i class="fa-regular fa-star cor-estrela p-1" onclick="estrela()"></i><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;"></i></button>
+                        <button id="estrela" estado="cheia" class="btn"><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;"></i></button>
+
+                    </div>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
@@ -185,6 +174,10 @@
             </div>
             <div class="card-footer tag-alimentacao"></div>
           </div>
+
+
+
+
 
           <!-- Button trigger modal -->
             

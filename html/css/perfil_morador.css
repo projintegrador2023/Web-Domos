@@ -3,6 +3,10 @@
     height: 12.5rem;
 }
 
+.btn-editar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
 
 .cor-estrela{
     color: #ffc000;
@@ -13,4 +17,23 @@
     color: #005661;
     border-radius: 15px;
     padding: 5px;
+}
+
+.btn-confirmar{
+	background-color: #005661;
+	color: #fdfdfd;
+}
+
+.btn-confirmar:hover{
+	background-color: #0491a3;
+	color: #fdfdfd;
+}
+
+.btn-saida{
+	background-color: #cc0000;
+    color: #fdfdfd;
+} 
+
+.btn-saida:hover{
+    background-color: #b22222;
 }
