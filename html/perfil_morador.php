@@ -29,7 +29,7 @@
             </div>
         </header>
 
-      <!-- Navegação em abas pela barra lateral (sidebar)-->
+      <!-- Navegação em abas pela barra lateral (sidebar)>
         <aside id="sidebar" class="sidebar gradient-custom">
             <div class="sidebar-title d-flex p-3 flex-column align-items-end">
                 <span class="pt-3 px-3" onclick="closeSidebar()">
@@ -69,18 +69,27 @@
                     </a>
                 </li>
             </ul>
-        </aside>
+        </aside-->
+        <?php
+            $_SELECTED = 5; 
+            include("aside.php");
+        ?>
 
         <main container class="main-container">
             <div class="d-flex justify-content-center flex-row m-1 col-12 ">
-                <div class="col-4 d-flex flex-column align-items-end mx-4">
-                    <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle perfil-foto img-fluid">
-                    <button class="btn btn-editar hover-0491a3 mt-3 mx-2"><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações</button>
+            <div class="col-4 d-flex flex-column align-items-end mx-4">
+                    <div class="col-5 d-flex align-items-end justify-content-center h-50">
+                        <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle col-12 h-100">
+                    </div>
+                    <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-5 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar Informações </button>
+                    <?php 
+                        echo "<a href='logout.php' class='btn bg-005661  hover-0dc0d8 mt-3 mx-2 col-5 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar Sessão</a>";
+                    ?>
                 </div>
                 
-                <div class="col-7 my-auto d-flex flex-column align-items-start mx-4">
+                <div class="col-7 my-auto d-flex flex-row align-items-center">
 
-                    <div class="col-8 bg-e8e8e8 p-4 rborder3">
+                    <div class="col-9 bg-e8e8e8 p-4 rborder3">
                     <p class="caixa-texto">Camila Fraga Egydio</p>
                     <p class="caixa-texto">12345678900</p>
                     <p class="caixa-texto">testetes@gmail.com</p>
