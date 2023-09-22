@@ -59,10 +59,10 @@
     <main class="main-container m-2">
 
       <!-- Div contendo os cards -->  
-      <div class="row justify-content-center">
-
+      <div class="row justify-content-center col-12">
+    
         <!-- Cards --> 
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Pia quebrada </p> </div>
@@ -90,7 +90,7 @@
           <div class="card-footer importancia-critico"></div>
         </div> 
       
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Inauguração do Espaço Kids </p> </div>
@@ -117,7 +117,7 @@
           <div class="card-footer importancia-urgente"></div>
         </div>
 
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Reforma quadra </p> </div>
@@ -144,7 +144,7 @@
           <div class="card-footer importancia-importante"></div>
         </div>
 
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Excesso de água </p> </div>
@@ -171,7 +171,7 @@
           <div class="card-footer importancia-urgente"></div>
         </div>
 
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Horário do salão de festa </p> </div>
@@ -197,7 +197,7 @@
           <div class="card-footer importancia-critico"></div>
         </div>
 
-        <div class="card m-2 p-0" style="max-width: 20rem;">
+        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Feira cultural </p> </div>

@@ -67,9 +67,9 @@
       <main class="main-container m-2"> 
           
         <!-- Div contendo os cards -->
-        <div class="row justify-content-between">
+        <div class="row justify-content-center col-12">
           <!-- Cards -->  
-          <div class="card mt-2 m-lg-2 mb-3 p-0"  style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
@@ -93,7 +93,7 @@
                 nossa palha italiana é perfeita para adoçar seu dia. Peça já a sua e surpreenda-se com essa maravilha italiana. 
                 Pedidos: (27)999656552
               </p>
-              <img src="css/img/palha_italiana.png" class="img-fluid card-img"> 
+              <img src="css/img/palha_italiana.png" class="w-100 col-lg-5 col-xl-3 col-8"> 
             </div>
             <div class="card-footer tag-alimentacao"></div>
           </div> 
@@ -121,7 +121,7 @@
               <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
                 nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
                 Ligue 30660633 para pedir!</p> 
-              <img src="css/img/pipoca_doce.png" class="img-fluid card-img">      
+              <img src="css/img/pipoca_doce.png" class="w-100 col-lg-5 col-xl-3 col-8">      
             </div>
             <div class="card-footer tag-alimentacao"></div>
           </div>
@@ -148,7 +148,7 @@
               <h6 class="card-subtitle fs-5 color-titulo">Revendedora Natura</h6>
               <p class="card-text fs-9 text-justify color-descricao"> Encontre os melhores produtos da marca com a nossa revendedora autorizada. 
                 Cuidados com a pele, perfumes, maquiagem e muito mais. Agende agora mesmo uma demonstração e experimente a qualidade Natura.</p>             
-              <img src="css/img/natura.png" class="img-fluid card-img">  
+              <img src="css/img/natura.png" class="w-100 col-lg-5 col-xl-3 col-8">  
             </div>
             <div class="card-footer tag-beleza"></div>
           </div>
