@@ -90,7 +90,7 @@
                 <div class="ms-lg-5">
                     <h1 class="mt-5 mb-3 text-lg-left"> Sobre nós </h1> 
                 
-                    <p class="fs-3 fw-200 text-justify">
+                    <p class="fs-4 fw-200 text-justify">
                     Somos um time de estudantes de informática 
                     para internet do Ifes Campus Serra formado por Camila Egydio, Davi Nunes, 
                     Isabelly Andrades e Yasmin Santana. <br>

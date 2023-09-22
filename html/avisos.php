@@ -59,7 +59,7 @@
     <main class="main-container m-2">
 
       <!-- Div contendo os cards -->  
-      <div class="row justify-content-between">
+      <div class="row justify-content-center">
 
         <!-- Cards --> 
         <div class="card m-2 p-0" style="max-width: 20rem;">
