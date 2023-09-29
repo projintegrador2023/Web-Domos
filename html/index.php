@@ -1,3 +1,7 @@
+<?php 
+    $_INDEX_PAGE = true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

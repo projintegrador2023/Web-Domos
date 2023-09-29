@@ -20,7 +20,7 @@
                         <li class="nav-item">
                         <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="index.php">Home</a>
                         <li class="nav-item">
-                        <a class="text-end nav-link text-white fs-4 p-3" href="#sobre_nos">Sobre nós </a>
+                        <a class="text-end nav-link text-white fs-4 p-3" href="index.php#sobre_nos">Sobre nós </a>
                         </li>
                         <li class="nav-item">
                         <a class="text-end nav-link text-white fs-4 p-3" aria-current="page" href="#contatos">Contatos</a>

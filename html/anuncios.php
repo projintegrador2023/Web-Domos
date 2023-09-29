@@ -46,13 +46,13 @@
         <div class=""> 
           <select name="" id="" class="select-customiza">
             <option selected class="">Filtros</option>
-            <option value="alimentacao" class="tag-alimentacao">Alimentação</option>
-            <option value="vestuario" class="tag-vestuario">Vestuário</option>
-            <option value="eletronicos" class="tag-eletronicos">Eletrônicos</option>
-            <option value="beleza" class="tag-beleza">Beleza</option>
-            <option value="decoracao" class="tag-decoracao">Decoração</option>
-            <option value="petshop" class="tag-petshop">Petshop</option>
-            <option value="servicos" class="tag-servicos">Serviços</option>
+            <option value="alimentacao" class="color-alimentacao">Alimentação</option>
+            <option value="vestuario" class="color-vestuario">Vestuário</option>
+            <option value="eletronicos" class="color-eletronicos">Eletrônicos</option>
+            <option value="beleza" class="color-beleza">Beleza</option>
+            <option value="decoracao" class="color-decoracao">Decoração</option>
+            <option value="petshop" class="color-petshop">Petshop</option>
+            <option value="servicos" class="color-servicos">Serviços</option>
           </select>
         </div>
 
@@ -93,12 +93,12 @@
                 nossa palha italiana é perfeita para adoçar seu dia. Peça já a sua e surpreenda-se com essa maravilha italiana. 
                 Pedidos: (27)999656552
               </p>
-              <img src="css/img/palha_italiana.png" class="w-100 col-lg-5 col-xl-3 col-8"> 
+              <img src="css/img/palha_italiana.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8"> 
             </div>
             <div class="card-footer tag-alimentacao"></div>
           </div> 
         
-          <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
@@ -121,12 +121,12 @@
               <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
                 nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
                 Ligue 30660633 para pedir!</p> 
-              <img src="css/img/pipoca_doce.png" class="w-100 col-lg-5 col-xl-3 col-8">      
+              <img src="css/img/pipoca_doce.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">      
             </div>
             <div class="card-footer tag-alimentacao"></div>
           </div>
   
-          <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Letícia Teixeira</p></div>
@@ -148,12 +148,12 @@
               <h6 class="card-subtitle fs-5 color-titulo">Revendedora Natura</h6>
               <p class="card-text fs-9 text-justify color-descricao"> Encontre os melhores produtos da marca com a nossa revendedora autorizada. 
                 Cuidados com a pele, perfumes, maquiagem e muito mais. Agende agora mesmo uma demonstração e experimente a qualidade Natura.</p>             
-              <img src="css/img/natura.png" class="w-100 col-lg-5 col-xl-3 col-8">  
+              <img src="css/img/natura.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">  
             </div>
             <div class="card-footer tag-beleza"></div>
           </div>
   
-          <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Raynan Silva</p></div>
@@ -176,12 +176,12 @@
               <p class="card-text fs-9 text-justify color-descricao">Vendo iPhone XR vermelho, usado por 1 ano. Excelente estado, sem arranhões. 
                 Desbloqueado e pronto para uso. Inclui carregador original. Preço negociável. Entre em contato para mais informações.
               </p> 
-              <img src="css/img/iphoneXR.png" class="img-fluid card-img">               
+              <img src="css/img/iphoneXR.png" class="img-fluid w-100 h-50 card-img">               
             </div>
             <div class="card-footer tag-eletronicos"></div>
           </div>
   
-          <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Lorena Torres</p></div>
@@ -204,12 +204,12 @@
               <p class="card-text fs-9 text-justify color-descricao">Destaque-se em qualquer ocasião com penteados criativos como esse! 
                 Combinando tranças e coques, esse estilo é perfeito para o carnaval ou festas temáticas. Experimente e surpreenda! Agende já seu horário: 27999663344.
               </p> 
-              <img src="css/img/penteado.png" class="img-fluid card-img"> 
+              <img src="css/img/penteado.png" class="img-fluid w-100 h-50 card-img"> 
             </div>
             <div class="card-footer tag-servicos"></div>
           </div>
 
-          <div class="card mt-2 m-lg-2 mb-3 p-0" style="max-width: 25rem;">
+          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Camila Egydio</p></div>
@@ -232,7 +232,7 @@
               <p class="card-text fs-9 text-justify color-descricao">Renove sua decoração com o Kit de 4 capas para almofadas folhas branco.
                   Confeccionadas em tecido macio e resistente, combinam com diversos estilos de ambientes. Aproveite a promoção e adquira já o seu!
               </p>
-              <img src="css/img/almofada.png" class="img-fluid card-img">
+              <img src="css/img/almofada.png" class="img-fluid w-100 h-50 card-img">
             </div>
             <div class="card-footer tag-decoracao"></div>
           </div>

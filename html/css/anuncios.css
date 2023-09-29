@@ -91,44 +91,44 @@
 }
 
 /*Configurações das cores das tags*/
-.tag-alimentacao{
-	background-color: #ff6da7;
+.color-alimentacao{
+	color: #ff6da7;
 }
 
-.tag-vestuario{
-	background-color: #ff6d6d;
+.color-vestuario{
+	color: #ff6d6d;
 }
 
-.tag-eletronicos{
-	background-color: #4ad4e6;
+.color-eletronicos{
+	color: #4ad4e6;
 }
 
-.tag-beleza{
-	background-color: #66b73e;
+.color-beleza{
+	color: #66b73e;
 }
 
-.tag-decoracao{
-	background-color: #e6a545;
+.color-decoracao{
+	color: #e6a545;
 }
 
-.tag-petshop{
-	background-color: #ffe324;
+.color-petshop{
+	color: #ffe324;
 }
 
-.tag-servicos{
-	background-color: #9f35cc;
+.color-servicos{
+	color: #9f35cc;
 }
 
 .color-titulo{
-    color: #005661;
+  color: #005661;
 }
 
 .color-subtitulo{
-    color: #0491a3;
+  color: #0491a3;
 }
 
 .color-descricao{
-    color: #000000;
+  color: #000000;
 }
 
 
