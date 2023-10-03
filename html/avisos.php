@@ -68,7 +68,7 @@
               <div class="flex-grow-1"> <p class="color-titulo"> Pia quebrada </p> </div>
               <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -95,7 +95,7 @@
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Inauguração do Espaço Kids </p> </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -122,7 +122,7 @@
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Reforma quadra </p> </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -149,7 +149,7 @@
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Excesso de água </p> </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -176,7 +176,7 @@
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Horário do salão de festa </p> </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -202,7 +202,7 @@
             <div class="fs-5 color-titulo d-flex">
               <div class="flex-grow-1"> <p class="color-titulo"> Feira cultural </p> </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                 </button>
                 <ul class="dropdown-menu">

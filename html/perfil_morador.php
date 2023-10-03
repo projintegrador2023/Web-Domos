@@ -87,7 +87,7 @@
                     ?>
                 </div>
                 
-                <div class="col-9 col-lg-7 my-auto d-flex row align-items-center justify-content-center">
+                <div class="col-9 col-lg-7 my-auto d-flex row align-items-center justify-content-start">
 
                     <div class="col-9 bg-e8e8e8 p-4 rborder3">
                         <p class="caixa-texto">Camila Fraga Egydio</p>

@@ -75,7 +75,7 @@
                 <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
                 <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -87,7 +87,7 @@
                 <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
               </div>
             </div>
-            <div class="card-body text-success">
+            <div class="card-body d-flex row text-success">
               <h6 class="card-subtitle fs-5 color-titulo">Palha italiana</h6>
               <p class="card-text fs-9 text-justify color-descricao">Feita com chocolate de qualidade e leite condensado cremoso, 
                 nossa palha italiana é perfeita para adoçar seu dia. Peça já a sua e surpreenda-se com essa maravilha italiana. 
@@ -103,7 +103,7 @@
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -116,7 +116,7 @@
               </div>
             </div>
   
-            <div class="card-body text-success">
+            <div class="card-body d-flex row text-success">
               <h6 class="card-subtitle fs-5 color-titulo">Pipoca doce</h6>
               <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
                 nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
@@ -131,7 +131,7 @@
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Letícia Teixeira</p></div>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -158,7 +158,7 @@
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Raynan Silva</p></div>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -186,7 +186,7 @@
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Lorena Torres</p></div>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -214,7 +214,7 @@
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Camila Egydio</p></div>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -289,7 +289,6 @@
           </div>
         </div>-->
     </main>
-  </div>
- 
+  </div> 
 </body>
 </html>
