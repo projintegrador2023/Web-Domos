@@ -52,14 +52,14 @@
             </div>
         </header>
 
-        <?php
-      $_SELECTED = 3; 
-      include("aside.php");
-    ?>
+		<?php
+		$_SELECTED = 3; 
+		include("aside.php");
+		?>
 
         <!-- Main principal (container)-->  
         <main class="main-container"> 
-		<div class="container">
+		<div class="container m-auto">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="content w-100">
@@ -118,7 +118,7 @@
 				            <label class="form-label" id="valueFromMyButton" for="count">Quantidade de convidados</label>
 				            <input class="input" type="number" id="count" min="0" max="10000" maxlength="7">
 				            <input type="button" value="Cancel" class="button" id="cancel-button">
-				            <input type="button" value="OK" class="button button-white" id="ok-button">
+				            <input type="button" value="Confirmar" class="button button-white" id="ok-button">
 				          </div>
 				        </form>
 				      </div>

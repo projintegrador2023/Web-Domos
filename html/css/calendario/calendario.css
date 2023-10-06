@@ -8393,7 +8393,7 @@ h1, h2, h3, h4, h5,
   color: #000; }
 
 .month:hover {
-  color: #cd4dcc; }
+  color: #0491a3; }
 
 /*  Dates table */
 .table-date {
@@ -8439,7 +8439,7 @@ h1, h2, h3, h4, h5,
 /* input dialog */
 .dialog {
   z-index: 5;
-  background: #000;
+  background: #c8c8c8;
   position: absolute;
   width: 50%;
   height: 500px;
@@ -8484,4 +8484,4 @@ h1, h2, h3, h4, h5,
   border-color: #fff; }
 
 .error-input {
-  border-color: #cd4dcc; }
+  border-color: #0dc0d8; }
