@@ -17,8 +17,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/reservas.css">
+    <link rel="stylesheet" href="css/calendario/reservas.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/calendario/calendario.css">
+    <script src="js/calendario/jquery.min.js"></script>
+    <script src="js/calendario/popper.js"></script>
+    <script src="js/calendario/bootstrap.min.js"></script>
+    <script src="js/calendario/main.js"></script>
+
     <script src="js/sidebar.js" defer></script> </script>
 
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
@@ -52,26 +59,74 @@
 
         <!-- Main principal (container)-->  
         <main class="main-container"> 
-            
-            <!-- Calendário --> 
-            <form>
-                <div class="row form-group">
-                    <div class="col-sm-4">
-                        <div class="input-group date" id="datepicker">
-                            <input type="text" class="form-control">
-                            <span class="input-group-append">
-                                <span class="input-group-text bg-white d-block">
-                                    <i class="fa fa-calendar"></i>
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </form>  
-            
-            <p> Página em desenvolvimento</p>
-
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content w-100">
+				    <div class="calendar-container">
+				      <div class="calendar"> 
+				        <div class="year-header"> 
+				          <span class="left-button fa fa-chevron-left" id="prev"> </span> 
+				          <span class="year" id="label"></span> 
+				          <span class="right-button fa fa-chevron-right" id="next"> </span>
+				        </div> 
+				        <table class="months-table w-100"> 
+				          <tbody>
+				            <tr class="months-row">
+				              <td class="month">Jan</td> 
+				              <td class="month">Fev</td> 
+				              <td class="month">Mar</td> 
+				              <td class="month">Abr</td> 
+				              <td class="month">Mai</td> 
+				              <td class="month">Jun</td> 
+				              <td class="month">Jul</td>
+				              <td class="month">Ago</td> 
+				              <td class="month">Set</td> 
+				              <td class="month">Out</td>          
+				              <td class="month">Nov</td>
+				              <td class="month">Dez</td>
+				            </tr>
+				          </tbody>
+				        </table> 
+				        
+				        <table class="days-table w-100"> 
+				          <td class="day">Dom</td> 
+				          <td class="day">Seg</td> 
+				          <td class="day">Ter</td> 
+				          <td class="day">Qua</td> 
+				          <td class="day">Qui</td> 
+				          <td class="day">Sex</td> 
+				          <td class="day">Sab</td>
+				        </table> 
+				        <div class="frame"> 
+				          <table class="dates-table w-100"> 
+			              <tbody class="tbody">             
+			              </tbody> 
+				          </table>
+				        </div> 
+				        <button class="button" id="add-button">Adicionar evento</button>
+				      </div>
+				    </div>
+				    <div class="events-container">
+				    </div>
+				    <div class="dialog" id="dialog">
+				        <h2 class="dialog-header"> Adicionar novo evento </h2>
+				        <form class="form" id="form">
+				          <div class="form-container" align="center">
+				            <label class="form-label" id="valueFromMyButton" for="name">Nome do evento</label>
+				            <input class="input" type="text" id="name" maxlength="36">
+				            <label class="form-label" id="valueFromMyButton" for="count">Quantidade de convidados</label>
+				            <input class="input" type="number" id="count" min="0" max="10000" maxlength="7">
+				            <input type="button" value="Cancel" class="button" id="cancel-button">
+				            <input type="button" value="OK" class="button button-white" id="ok-button">
+				          </div>
+				        </form>
+				      </div>
+				  </div>
+				</div>
+			</div>
+		</div>
         </main>
     </div>
-
+   
 </html>
