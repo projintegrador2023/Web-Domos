@@ -45,6 +45,15 @@
 	background-color: #53c853;
 }
 
+.btn-favoritos{
+	background-color: #ffc000;
+}
+
+.btn-favoritos:hover{
+	background-color: #b68b0a;
+}
+
+
 /*Configurações do formulario*/
 .select-customiza{
   color: #005661;
@@ -65,19 +74,6 @@
   border-radius: 4px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
   padding: 0.6rem;
-}
-
-/* Cores do footer cards*/
-.importancia-critico{
-    background-color: #cc0000;
-}
-
-.importancia-urgente{
-    background-color: #F7D74A;
-}
-
-.importancia-importante{
-    background-color: #90ee90;
 }
 
 .color-titulo{
@@ -122,7 +118,7 @@
 	justify-content: center;
 }
 
-.btn-exit, .btn-publicar, .btn-criar{
+.btn-publicar, .btn-criar{
 	background-color: #005661;
 	color: #fdfdfd;
 }
@@ -132,9 +128,14 @@
 	color: #fdfdfd;
 }
 
-.btn-exit:hover{
+.btn-exit{
 	background-color: #cc0000;
+    color: #fdfdfd;
 } 
+
+.btn-exit:hover{
+    background-color: #b22222;
+}
 
 /*botão + fixo na tela*/
 .btn-criar{

@@ -163,7 +163,7 @@
 	justify-content: center;
 }
 
-.btn-exit, .btn-publicar, .btn-criar{
+.btn-publicar, .btn-criar{
 	background-color: #005661;
 	color: #fdfdfd;
 }
@@ -173,8 +173,28 @@
 	color: #fdfdfd;
 }
 
-.btn-exit:hover{
+.btn-exit{
 	background-color: #cc0000;
+    color: #fdfdfd;
+} 
+
+.btn-exit:hover{
+    background-color: #b22222;
+}
+
+/*botão + fixo na tela*/
+.btn-criar{
+	position: fixed;
+}
+
+.absolute {
+	position: absolute;
+	bottom: 5rem;
+	right: 5rem;
+}
+
+.btn-criar:hover{
+	background-color: #0491a3;
 }
   
 /* configurações do container */

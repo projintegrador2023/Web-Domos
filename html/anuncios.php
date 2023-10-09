@@ -40,19 +40,18 @@
           <button class="btn btn-decoracao w-25 m-2 rounded-5 fs-5 color-fff" type="button">Decoração</button>
           <button class="btn btn-petshop w-25 m-2 rounded-5 fs-5 color-fff" type="button">Petshop</button>
           <button class="btn btn-servicos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Serviços</button>
-          <button class="btn text-start" type="button" onclick="MostarFiltro(btns_filtro)"><i class="fa-solid fa-filter filter-btn"></i></button>
         </div> 
         
         <div class=""> 
           <select name="" id="" class="select-customiza">
             <option selected class="">Filtros</option>
-            <option value="alimentacao" class="color-alimentacao">Alimentação</option>
-            <option value="vestuario" class="color-vestuario">Vestuário</option>
-            <option value="eletronicos" class="color-eletronicos">Eletrônicos</option>
-            <option value="beleza" class="color-beleza">Beleza</option>
-            <option value="decoracao" class="color-decoracao">Decoração</option>
-            <option value="petshop" class="color-petshop">Petshop</option>
-            <option value="servicos" class="color-servicos">Serviços</option>
+            <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
+            <option value="vestuario" class="btn-vestuario">Vestuário</option>
+            <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>
+            <option value="beleza" class="btn-beleza">Beleza</option>
+            <option value="decoracao" class="btn-decoracao">Decoração</option>
+            <option value="petshop" class="btn-petshop">Petshop</option>
+            <option value="servicos" class="btn-servicos">Serviços</option>
           </select>
         </div>
 
@@ -95,7 +94,7 @@
               </p>
               <img src="css/img/palha_italiana.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8"> 
             </div>
-            <div class="card-footer tag-alimentacao"></div>
+            <div class="card-footer btn-alimentacao"></div>
           </div> 
         
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
@@ -123,7 +122,7 @@
                 Ligue 30660633 para pedir!</p> 
               <img src="css/img/pipoca_doce.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">      
             </div>
-            <div class="card-footer tag-alimentacao"></div>
+            <div class="card-footer btn-alimentacao"></div>
           </div>
   
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
@@ -150,7 +149,7 @@
                 Cuidados com a pele, perfumes, maquiagem e muito mais. Agende agora mesmo uma demonstração e experimente a qualidade Natura.</p>             
               <img src="css/img/natura.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">  
             </div>
-            <div class="card-footer tag-beleza"></div>
+            <div class="card-footer btn-beleza"></div>
           </div>
   
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
@@ -178,7 +177,7 @@
               </p> 
               <img src="css/img/iphoneXR.png" class="img-fluid w-100 h-50 card-img">               
             </div>
-            <div class="card-footer tag-eletronicos"></div>
+            <div class="card-footer btn-eletronicos"></div>
           </div>
   
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
@@ -206,7 +205,7 @@
               </p> 
               <img src="css/img/penteado.png" class="img-fluid w-100 h-50 card-img"> 
             </div>
-            <div class="card-footer tag-servicos"></div>
+            <div class="card-footer btn-servicos"></div>
           </div>
 
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
@@ -234,27 +233,29 @@
               </p>
               <img src="css/img/almofada.png" class="img-fluid w-100 h-50 card-img">
             </div>
-            <div class="card-footer tag-decoracao"></div>
+            <div class="card-footer btn-decoracao"></div>
           </div>
         </div>
 
         <!-- Modal (pop up)-->
-        <!--<div class="d-flex justify-content-end m-5">
-          <button type="button" class="btn btn-criar rounded-circle" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fs-3 fa-solid fa-plus icons-white align-content-center" aria-hidden="true"></i></button>
+        <div class="d-flex justify-content-end m-5">
+          <div class="absolute" style="overflow-y: auto;">
+            <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
+          </div>
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
 
-                - Header do modal
+                <!-- - Header do modal -->
                 <div class="modal-header">
                   <h5 class="modal-title color-0491a3" id="staticBackdropLabel">Criar anúncio</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
-                - Body do modal 
+                <!-- - Body do modal  -->
                 <div class="modal-body">  
-                  - Formulário de criar anúncio 
+                  <!-- - Formulário de criar anúncio  -->
                   <form>
                     <div class="mb-3">
                       <input type="text" class="form-control" id="titulo_aviso" placeholder="Título">
@@ -266,28 +267,29 @@
 
                     <select class="form-select select-customiza mb-3">
                         <option selected class="select-customiza">Escolha a tag do anúncio</option>
-                        <option value="1" class="select-customiza">Alimentação</option>
-                        <option value="2" class="select-customiza">Vestuário</option>
-                        <option value="3" class="select-customiza">Eletrônicos</option>
-                        <option value="4" class="select-customiza">Decoração</option>
-                        <option value="5" class="select-customiza">Petshop</option>
-                        <option value="6" class="select-customiza">Serviços</option>
+                        <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
+                        <option value="vestuario" class="btn-vestuario">Vestuário</option>
+                        <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>
+                        <option value="beleza" class="btn-beleza">Beleza</option>
+                        <option value="decoracao" class="btn-decoracao">Decoração</option>
+                        <option value="petshop" class="btn-petshop">Petshop</option>
+                        <option value="servicos" class="btn-servicos">Serviços</option>
                     </select>
                     <input type="file" class="btn col-5"> 
 
                   </form>
                 </div>
                 
-                - Footer do modal 
+                <!-- - Footer do modal  -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
-                  <a href="anuncios.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
+                  <a href="avisos.php"><button type="button" class="btn btn-publicar">Publicar</button></a>
                 </div>
 
               </div>
             </div>
           </div>
-        </div>-->
+        </div>
     </main>
   </div> 
 </body>

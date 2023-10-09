@@ -7,7 +7,7 @@ body{
     box-sizing: border-box;
     background-color: #f1f0ef;
     color: rgb(70, 71, 81);
-    font-family: 'Jost', sans-serif;;
+    font-family: 'Jost', sans-serif;
 }
 
 .material-icons-outlined{
@@ -93,7 +93,7 @@ body{
 }
 
 .sidebar-responsive{
-    display: inline !important;
+    display: inline;
     position: absolute;
 }
 

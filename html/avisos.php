@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/avisos.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
+    <script src="js/avisos.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Avisos - Domos </title>
 </head>
@@ -36,15 +37,16 @@
           <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
           <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
           <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
-          <button class="btn filter-btn" type="button"><i class="fa-solid fa-filter filter-btn"></i></button>
+          <button class="btn btn-favoritos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Favoritos<i class="ms-2 fa-regular fa-star p-1" onclick="estrela()" estado="vazia"></i><i class="ms-2 fa-solid fa-star p-1"  style="display: none;" estado="cheia"></i></button>
         </div>
 
         <div class=""> 
           <select name="" id="" class="select-customiza">
             <option selected class="">Filtros</option>
-            <option value="critico" id="btn_critico" class="importancia-critico">Crítico</option>
-            <option value="urgente" id="btn_urgente" class="importancia-urgente">Urgente</option>
-            <option value="importante" id="btn_importante" class="importancia-importante">Importante</option>
+            <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
+            <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
+            <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
+            <option value="importante" id="btn_importante" class="btn-favoritos">Favoritos</option>
           </select>
         </div>
 

@@ -83,7 +83,7 @@
                         </div>
                     <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar perfil </button>
                     <?php 
-                        echo "<a href='logout.php' class='btn bg-005661  hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
+                        echo "<a href='logout.php' class='btn btn-saida mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
                     ?>
                 </div>
                 
