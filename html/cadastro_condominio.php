@@ -123,12 +123,12 @@
                       <label for="" class="form-label color-0491a3 fs-6">Insira o pdf de regimento interno (opcional):</label>
                       <input type="file" class="form-control" id="regimento_interno">
                     </div>
-                    <div class="text-end col-12 mt-5">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
+                    <div class="text-end col-12">
+                        <input type="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
                     </div>
                 </div>
 
-                <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-none" id="div_cadastro_informacoes_opcionais">
+                <!--div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-none" id="div_cadastro_informacoes_opcionais">
                     <div class="d-flex p-3">
                         <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
                         <h2 class="color-0491a3 m-auto fs-2 text-center">Áreas para reserva (opcional)</h2>
@@ -183,11 +183,7 @@
                         <label for="desc_espaco_kids" class="form-label color-0491a3 fs-6"> Nomes dos espaços kids separados por ponto e vírgula(;):</label>
                         <textarea class="form-control" id="desc_espaco_kids" placeholder="Exemplo: Espaço kids 0-3 anos; Espaço kids 3-6 anos; Espaço kids 6-12 anos" rows="1"></textarea>
                     </div>
-
-                    <div class="text-end col-12">
-                        <button class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"> Cadastrar </button>
-                    </div>
-                </div>
+                </div-->
             </form>
         </div>
 
