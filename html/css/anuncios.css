@@ -68,14 +68,6 @@
 	background-color: #6c1f8d;
 }
 
-.btn-favoritos{
-	background: #ffc000;
-}
-
-.btn-favoritos:hover{
-	background: #b68b0a;
-}
-
 /*Configurações do formulario*/
 .select-customiza{
   color: #005661;

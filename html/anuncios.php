@@ -40,7 +40,6 @@
           <button class="btn btn-decoracao w-25 m-2 rounded-5 fs-5 color-fff" type="button">Decoração</button>
           <button class="btn btn-petshop w-25 m-2 rounded-5 fs-5 color-fff" type="button">Petshop</button>
           <button class="btn btn-servicos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Serviços</button>
-          <button class="btn btn-favoritos w-25 m-2 rounded-5 fs-5 color-fff d-flex" type="button">Favoritos<i class="ms-2 mt-1 fa-solid fa-star"></i></button>
         </div> 
         
         <div class=""> 
@@ -53,7 +52,6 @@
             <option value="decoracao" class="btn-decoracao">Decoração</option>
             <option value="petshop" class="btn-petshop">Petshop</option>
             <option value="servicos" class="btn-servicos">Serviços</option>
-            <option value="importante" id="btn_importante" class="btn-favoritos">Favoritos</option>
           </select>
         </div>
 
@@ -267,8 +265,8 @@
                         <textarea class="form-control" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
                     </div>
 
-                    <select class="form-select select-modal mb-3">
-                        <option selected class="select-modal">Escolha a tag do anúncio</option>
+                    <select class="form-select select-customiza mb-3">
+                        <option selected class="select-customiza">Escolha a tag do anúncio</option>
                         <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
                         <option value="vestuario" class="btn-vestuario">Vestuário</option>
                         <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>

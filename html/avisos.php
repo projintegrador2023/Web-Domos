@@ -37,7 +37,7 @@
           <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
           <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
           <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
-          <button class="btn btn-favoritos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Favoritos<i class="ms-2 fa-solid fa-star"></i></button>
+          <button class="btn btn-favoritos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Favoritos<i class="ms-2 fa-regular fa-star p-1" onclick="estrela()" estado="vazia"></i><i class="ms-2 fa-solid fa-star p-1"  style="display: none;" estado="cheia"></i></button>
         </div>
 
         <div class=""> 
@@ -89,7 +89,7 @@
               Pedimos a todos que evitem utilizar o local temporariamente até que a manutenção seja concluída. 
               Contamos com a compreensão e colaboração de todos para a resolução rápida desse inconveniente. Obrigado.</p>
           </div>
-          <div class="card-footer btn-critico"></div>
+          <div class="card-footer importancia-critico"></div>
         </div> 
       
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
@@ -116,7 +116,7 @@
               inaugurado no dia 17 de junho de 2023. O espaço contará com diversas brincadeiras e atividades para as crianças se divertirem. 
               Contamos com a presença de todos para celebrar essa conquista!</p> 
           </div>
-          <div class="card-footer btn-urgente"></div>
+          <div class="card-footer importancia-urgente"></div>
         </div>
 
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
@@ -143,7 +143,7 @@
               Pedimos que respeitem as sinalizações de segurança e mantenham as crianças afastadas do local. 
               Agradecemos a compreensão e colaboração de todos nesse momento importante para o condomínio.</p>
           </div>
-          <div class="card-footer btn-importante"></div>
+          <div class="card-footer importancia-importante"></div>
         </div>
 
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
@@ -170,7 +170,7 @@
               de todos para evitar o desperdício, com medidas simples como fechar a torneira enquanto escova os dentes ou reduzir o tempo no banho. 
               Juntos, podemos preservar o meio ambiente.</p>
           </div>
-          <div class="card-footer btn-urgente"></div>
+          <div class="card-footer importancia-urgente"></div>
         </div>
 
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
@@ -196,7 +196,7 @@
             <p class="card-text fs-9 text-justify color-descricao">Por favor, respeite o horário do salão de festa para evitar atrasos e inconvenientes para outros eventos. 
               O horário de encerramento é rigoroso e multas podem ser aplicadas por violação.</p>
           </div>
-          <div class="card-footer btn-critico"></div>
+          <div class="card-footer importancia-critico"></div>
         </div>
 
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
@@ -223,7 +223,7 @@
               cada moraodr poderá participar com suas artes ou comidas. Faça sua inscrição na portaria. Contamos com a ajuda e colaboração de todos!
             </p>
           </div>
-          <div class="card-footer btn-importante"></div>
+          <div class="card-footer importancia-importante"></div>
         </div>
 
       </div>
@@ -258,9 +258,9 @@
 
                   <select class="form-select select-modal mb-3">
                       <option selected class="">Escolha a importância do aviso</option>
-                      <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
-                      <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
-                      <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
+                      <option value="critico" id="btn_critico" class="importancia-critico">Crítico</option>
+                      <option value="urgente" id="btn_urgente" class="importancia-urgente">Urgente</option>
+                      <option value="importante" id="btn_importante" class="importancia-importante">Importante</option>
                   </select>
                   <input type="file" class="btn col-5"> 
               </form>
