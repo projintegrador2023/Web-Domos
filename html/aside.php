@@ -38,11 +38,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -211,6 +216,116 @@
         
     </ul>
 </aside>";
-    }         
+    }        
+    else if ($_SELECTED == 6){
+        echo "<ul class='sidebar-list'>
+        <li class='sidebar-list-item'>
+            <a href='avisos.php'>
+                <div><i class='fa-solid fa-bell col-2'></i> Avisos </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='anuncios.php'>
+                <div><i class='fa-solid fa-bag-shopping col-2' style='color: #ffffff;'></i> Anúncios </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='regimento.php'>
+                <div><i class='fa-solid fa-note-sticky col-2'></i> Regimento </div>
+            </a>
+        </li>";
+
+        echo "<li class='sidebar-list-item'>
+        <a href='perfil_morador.php'>
+            <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
+        </a>
+        </li>";
+        
+        echo "
+        <!--li class='sidebar-list-item bg-customiza'>
+                    <a href='informacoes.php'>
+                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
+                    </a>
+                </li-->
+        
+    </ul>
+</aside>";
+    }      
+    if ($_SELECTED == 7){
+        echo "<ul class='sidebar-list'>
+        <li class='sidebar-list-item'>
+            <a href='avisos.php'>
+                <div><i class='fa-solid fa-bell col-2'></i> Avisos </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='anuncios.php'>
+                <div><i class='fa-solid fa-bag-shopping col-2' style='color: #ffffff;'></i> Anúncios </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='regimento.php'>
+                <div><i class='fa-solid fa-note-sticky col-2'></i> Regimento </div>
+            </a>
+        </li>";
+
+        echo "<li class='sidebar-list-item'>
+        <a href='perfil_morador.php'>
+            <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
+        </a>
+        </li>";
+        
+        echo "
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
+        
+    </ul>
+</aside>"; }
+    if ($_SELECTED == 8){
+        echo "<ul class='sidebar-list'>
+        <li class='sidebar-list-item'>
+            <a href='avisos.php'>
+                <div><i class='fa-solid fa-bell col-2'></i> Avisos </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='anuncios.php'>
+                <div><i class='fa-solid fa-bag-shopping col-2' style='color: #ffffff;'></i> Anúncios </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item'>
+            <a href='regimento.php'>
+                <div><i class='fa-solid fa-note-sticky col-2'></i> Regimento </div>
+            </a>
+        </li>";
+
+        echo "<li class='sidebar-list-item'>
+        <a href='perfil_morador.php'>
+            <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>", $_SESSION['id'],  "</div>
+        </a>
+        </li>";
+        
+        echo "
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
+        
+    </ul>
+    </aside>"; }
 
 ?>

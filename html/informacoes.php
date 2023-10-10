@@ -28,41 +28,10 @@
         </header>
 
       <!-- Navegação em abas pela barra lateral (sidebar) --> 
-        <aside id="sidebar" class="sidebar gradient-custom">
-            <div class="sidebar-title d-flex p-3 flex-column align-items-end">
-                <span class="pt-3 px-3" onclick="closeSidebar()">
-                    <i class="fa-solid fa-xmark fs-1"></i>
-                </span>
-
-                <div class="sidebar-brand">
-                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
-                </div>
-            
-            </div>
-
-            <ul class="sidebar-list">
-                <li class="sidebar-list-item bg-customiza">
-                    <a href="informacoes.php">
-                        <div><i class="fa-solid fa-circle-info col-2"></i> Informações </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="moradores.php">
-                        <div><i class="fa-solid fa-people-roof col-2"></i> Moradores </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="areas_reservadas.php">
-                        <div><i class="fa-solid fa-calendar-check col-2"></i> Reservas </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="index.php">
-                        <div><i class="fa-solid fa-right-from-bracket col-2"></i> Encerrar sessão </div>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+      <?php
+            $_SELECTED = 7; 
+            include("aside.php");
+        ?>
             
         <main container class="main-container">
             <div class="table-responsive">

@@ -22,35 +22,35 @@
 }
 
 .btn-critico{
-	background: #cc0000;
+	background-color: #cc0000;
 }
 
 .btn-critico:hover{
-	background: #710000;
+	background-color: #710000;
 }
 
 .btn-urgente{
-	background: #F7D74A;
+	background-color: #F7D74A;
 }
 
 .btn-urgente:hover{
-	background: #c4aa34;
+	background-color: #c4aa34;
 }
 
 .btn-importante{
-	background: #90ee90;
+	background-color: #90ee90;
 }
 
 .btn-importante:hover{
-	background: #53c853;
+	background-color: #53c853;
 }
 
 .btn-favoritos{
-	background: #ffc000;
+	background-color: #ffc000;
 }
 
 .btn-favoritos:hover{
-	background: #b68b0a;
+	background-color: #b68b0a;
 }
 
 
