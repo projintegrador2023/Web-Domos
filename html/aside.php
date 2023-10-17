@@ -76,11 +76,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -109,11 +114,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -142,11 +152,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -175,11 +190,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -208,11 +228,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item bg-customiza'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
@@ -242,11 +267,16 @@
         </li>";
         
         echo "
-        <!--li class='sidebar-list-item bg-customiza'>
-                    <a href='informacoes.php'>
-                        <div><i class='fa-solid fa-gear col-2'></i></i> Configurações </div>
-                    </a>
-                </li-->
+        <li class='sidebar-list-item'>
+            <a href='informacoes.php'>
+                <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
+            </a>
+        </li>
+        <li class='sidebar-list-item  bg-customiza'>
+            <a href='moradores.php'>
+                <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
+            </a>
+        </li>
         
     </ul>
 </aside>";
