@@ -81,7 +81,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
@@ -119,7 +119,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
@@ -157,7 +157,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
@@ -195,7 +195,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
@@ -233,7 +233,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
@@ -272,7 +272,7 @@
                 <div><i class='fa-solid fa-circle-info col-2'></i></i> Informações </div>
             </a>
         </li>
-        <li class='sidebar-list-item  bg-customiza'>
+        <li class='sidebar-list-item'>
             <a href='moradores.php'>
                 <div><i class='fa-solid fa-people-roof col-2'></i></i> Moradores </div>
             </a>
