@@ -43,7 +43,7 @@
                                 <div class="flex-grow-1">
                                     <th scope="col">
                                         <p class="fs-3 color-titulo">Condomínio Residencial Vila Serena 
-                                        <a href="editar_informacoes.php"><button class="btn"><i class="fa-solid fa-pen color-005661 fs-4"></i></button></p></a>
+                                        <button class="btn"><i class="fa-solid fa-pen color-005661 fs-4"></i></button></p>
                                     </th>
                                 </div>
                             </div>
@@ -52,40 +52,44 @@
                     <tbody>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Cnpj</p></th>
-                            <td class="color-descricao">37.647.184/0001-59</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Cnpj: "></td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Endereço</p></th>
-                            <td class="color-descricao">12345-678, Serra - Avenida das Flores, 123</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Endereço: "></td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Email</p></th>
-                            <td class="color-descricao">condominioficticio@gmail.com</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Email: "></td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Tipo de divisões</p></th>
-                            <td class="color-descricao">Blocos</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Tipo de divisões: "></td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Nome das divisões</p></th>
-                            <td class="color-descricao">Cores</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Nome das divisões: "></td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Tipo de moradia</p></th>
-                            <td class="color-descricao">Apartamentos</td>
+                            <td class="color-descricao">                                
+                                <select name="" id="" class="select-customiza form-control">
+                                    <option selected class="">Escolha o tipo de moradia</option>
+                                    <option value="" id="" class="">Casas</option>
+                                    <option value="" id="" class="">Apartamentos</option>
+                                    <option value="" id="" class="">Casas e apartamentos</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-subtitulo">Espaços para reservas</p></th>
-                            <td class="color-descricao">Churrasqueira; Quadra; Área</td>
+                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Ex: Quadra;Churrasqueira;"></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-sindico">Síndico(a)</p></th>
-                            <td class="color-descricao">Zelma Regina - zelmaregina@gmail.com</td>
+                            <th scope="row"><p class="color-subtitulo">Regimento interno</p></th>
+                            <td class="color-descricao"><input type="file" class="form-control" id="regimento_interno"></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-administrador">Administrador(a)</p></th>
-                            <td class="color-descricao">Camila Egydio - camilaegydio@gmail.com</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
