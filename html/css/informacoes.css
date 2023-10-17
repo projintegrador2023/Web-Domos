@@ -19,6 +19,17 @@
   color: #5AA800;
 }
 
+.select-customiza{
+  color: #4d5455;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
+  padding: 0.4rem;
+}
+
+option{
+  color: #005661;
+}
 
 /* configurações do container */
 .grid-container{
