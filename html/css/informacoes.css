@@ -205,3 +205,16 @@ display: grid;
   width: 11.5rem;
 }
 }
+
+.accordion-cabecalho {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.accordion-conteudo {
+  display: none;
+}
+
+.active, .accordion-cabecalho:hover {
+  background-color: #0dc0d8;
+}

@@ -47,6 +47,10 @@
 	background-color: #0dc0d8;
 }
 
+.bg-ffffff {
+	background-color: #ffffff;
+}
+
 .color-0491a3 {
 	color: #0491a3;
 }
@@ -191,4 +195,8 @@ textarea {
 	border-radius: 10px;
 
 	padding: 8px;
+}
+
+.border-bottom{
+	border-bottom: solid 1px;
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/informacoes.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
+    <script src="js/script.js" defer></script>
     <script src="js/sidebar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Moradores - Domos</title>
@@ -32,93 +33,81 @@
 
         <main class="main-container m-1">
             <div class="row justify-content-center col-12">
-                <section class="rounded col-5 d-flex flex-column m-1">
-                    <div class="bg-005661 d-flex justify-content-between"> 
-                        <p class="m-2"> Nome: </p>
-                        <div class="dropdown">
-                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                            </ul>
-                        </div>  
+                <div class="col-lg-5 col-xl-3 col-8 px-0"> 
+                    <div class="rounded col-12 d-flex flex-column my-0 mx-1">
+                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
+                            <p class="m-2"> Nome: </p>
+                            <div class="dropdown">
+                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                        <div class=" bg-ffffff accordion-conteudo">
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
+                        </div>
                     </div>
-                    <div class="rounded-bottom bg-0491a3">
-                        <p class="m-2"> Bloco: </p>
-                        <p class="m-2"> Número: </p>
-                        <p class="m-2"> Cpf: </p>
-                        <p class="m-2"> E-mail: </p>
+                
+
+                </div>
+                <div class="col-lg-5 col-xl-3 col-8 px-0"> 
+                    <div class="rounded col-12 d-flex flex-column my-0 mx-1">
+                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
+                            <p class="m-2"> Nome: </p>
+                            <div class="dropdown">
+                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                        <div class=" bg-ffffff accordion-conteudo">
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
+                        </div>
                     </div>
-                </section>
-                <section class="rounded col-5 d-flex flex-column m-1">
-                    <div class="bg-005661 d-flex justify-content-between"> 
-                        <p class="m-2"> Nome: </p>
-                        <div class="dropdown">
-                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                            </ul>
-                        </div>  
-                    </div>
-                    <div class="bg-74ccd8 rounded-bottom bg-0491a3">
-                        <p class="m-2"> Bloco: </p>
-                        <p class="m-2"> Número: </p>
-                        <p class="m-2"> Cpf: </p>
-                        <p class="m-2"> E-mail: </p>
-                    </div>
-                </section>
-                <section class="rounded col-5 d-flex flex-column m-1">
-                    <div class="bg-005661 d-flex justify-content-between"> 
-                        <p class="m-2"> Nome: </p>
-                        <div class="dropdown">
-                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                            </ul>
-                        </div>  
-                    </div>
-                    <div class="bg-74ccd8 rounded-bottom bg-0491a3">
-                        <p class="m-2"> Bloco: </p>
-                        <p class="m-2"> Número: </p>
-                        <p class="m-2"> Cpf: </p>
-                        <p class="m-2"> E-mail: </p>
-                    </div>
-                </section>
-                <section class="rounded col-5 d-flex flex-column m-1">
-                    <div class="bg-005661 d-flex justify-content-between"> 
-                        <p class="m-2"> Nome: </p>
-                        <div class="dropdown">
-                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                            <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                            </ul>
-                        </div>  
-                    </div>
-                    <div class="bg-74ccd8 rounded-bottom bg-0491a3">
-                        <p class="m-2"> Bloco: </p>
-                        <p class="m-2"> Número: </p>
-                        <p class="m-2"> Cpf: </p>
-                        <p class="m-2"> E-mail: </p>
-                    </div>
-                </section>
+                
+
+                </div>
+
+            
+            
             </div>
-        
         </main>
+        <script>
+              var acc = document.getElementsByClassName("accordion-cabecalho");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+  
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+        </script>
     </div>
 </body>
 </html>
