@@ -53,7 +53,7 @@
     }
 
     function validar_cnpj($cnpj)
-{
+{ // essa identaçao ta fora do padrao hein
     $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
     
     // Valida tamanho

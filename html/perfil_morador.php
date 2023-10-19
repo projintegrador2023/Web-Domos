@@ -76,7 +76,7 @@
         ?>
 
         <main container class="main-container">
-            <div class="d-lg-flex justify-content-center m-lg-1 m-auto col-12">
+            <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
                             <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle col-12 h-100">
