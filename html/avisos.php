@@ -258,16 +258,11 @@
 
                   <select class="form-select select-modal mb-3">
                       <option selected class="">Escolha a importância do aviso</option>
-                      <option value="critico" id="btn_critico" class="btn
-          -critico">Crítico</option>
-                      <option value="urgente" id="btn_urgente" class="btn
-          -urgente">Urgente</option>
-                      <option value="importante" id="btn_importante" class="btn
-          -importante">Importante</option>
+                      <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
+                      <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
+                      <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
                   </select>
-                  <input type="file" class="btn col-5"> 
               </form>
-
               <!-- Footer do modal-->
               </div>
               <div class="modal-footer">
