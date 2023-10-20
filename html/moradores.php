@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/informacoes.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <script src="js/script.js" defer></script>
     <script src="js/sidebar.js" defer></script>
+    <script src="js/script.js" defer></script>
+    
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Moradores - Domos</title>
 </head>
@@ -25,16 +26,18 @@
                 <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
             </div>
         </header>
-        
+
         <?php
-            $_SELECTED = 8; 
+            $_SELECTED = 7; 
             include("aside.php");
         ?>
 
-        <main class="main-container m-1">
+        <main class="main-container">
+
             <div class="row justify-content-center col-12">
-                <div class="col-lg-5 col-xl-3 col-8 px-0"> 
-                    <div class="rounded col-12 d-flex flex-column my-0 mx-1">
+
+                <div class="col-lg-10 col-xl-5 col-11 px-0 m-1"> 
+                    <div class="rounded col-12 d-flex flex-column my-2">
                         <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
                             <p class="m-2"> Nome: </p>
                             <div class="dropdown">
@@ -48,18 +51,15 @@
                                 </ul>
                             </div>  
                         </div>
-                        <div class=" bg-ffffff accordion-conteudo">
+                        <div id="lista" class="bg-ffffff accordion-conteudo">
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
                         </div>
                     </div>
-                
 
-                </div>
-                <div class="col-lg-5 col-xl-3 col-8 px-0"> 
-                    <div class="rounded col-12 d-flex flex-column my-0 mx-1">
+                    <div class="rounded col-12 d-flex flex-column my-2">
                         <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
                             <p class="m-2"> Nome: </p>
                             <div class="dropdown">
@@ -73,41 +73,90 @@
                                 </ul>
                             </div>  
                         </div>
-                        <div class=" bg-ffffff accordion-conteudo">
+                        <div id="lista" class="bg-ffffff accordion-conteudo">
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
                         </div>
                     </div>
-                
-
                 </div>
 
-            
-            
+                <div class="col-lg-10 col-xl-5 col-11 px-0 m-1"> 
+                    <div class="rounded col-12 d-flex flex-column my-2">
+                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
+                            <p class="m-2"> Nome: </p>
+                            <div class="dropdown">
+                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                        <div id="lista" class="bg-ffffff accordion-conteudo">
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
+                        </div>
+                    </div>
+
+                    <div class="rounded col-12 d-flex flex-column my-2">
+                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
+                            <p class="m-2"> Nome: </p>
+                            <div class="dropdown">
+                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
+                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                        <div id="lista" class="bg-ffffff accordion-conteudo">
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
+                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
             </div>
+
         </main>
-        <script>
-              var acc = document.getElementsByClassName("accordion-cabecalho");
-  var i;
-  
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      /* Toggle between adding and removing the "active" class,
-      to highlight the button that controls the panel */
-      this.classList.toggle("active");
-  
-      /* Toggle between hiding and showing the active panel */
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
-        </script>
+    
     </div>
+
+
+
+        <script>
+        var acc = document.getElementsByClassName("accordion-cabecalho");
+            var i;
+                
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
+                
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+                });
+            }
+        </script>
+
 </body>
 </html>
