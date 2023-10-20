@@ -27,7 +27,7 @@
         <div class="menu-icon" onclick="openSidebar()">
           <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
         </div>
-        <div class="d-flex w-50 ">
+        <div class="d-flex w-25 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
           <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
         </div>
@@ -40,6 +40,7 @@
           <button class="btn btn-decoracao w-25 m-2 rounded-5 fs-5 color-fff" type="button">Decoração</button>
           <button class="btn btn-petshop w-25 m-2 rounded-5 fs-5 color-fff" type="button">Petshop</button>
           <button class="btn btn-servicos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Serviços</button>
+          <button class="btn bg-0dc0d8 hover-0491a3 w-25 m-2 rounded-5 fs-5 color-fff" type="button">Salvos<i class="fa-solid fa-bookmark ms-2"></i></i></button>
         </div> 
         
         <div class=""> 
@@ -52,6 +53,7 @@
             <option value="decoracao" class="btn-decoracao">Decoração</option>
             <option value="petshop" class="btn-petshop">Petshop</option>
             <option value="servicos" class="btn-servicos">Serviços</option>
+            <option value="salvos" id="btn_salvos" class="bg-0dc0d8 hover-0491a3">Favoritos</option>
           </select>
         </div>
 
@@ -265,8 +267,8 @@
                         <textarea class="form-control" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
                     </div>
 
-                    <select class="form-select select-customiza mb-3">
-                        <option selected class="select-customiza">Escolha a tag do anúncio</option>
+                    <select class="form-select select-modal mb-3">
+                        <option selected class="select-modal">Escolha a tag do anúncio</option>
                         <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
                         <option value="vestuario" class="btn-vestuario">Vestuário</option>
                         <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>

@@ -37,7 +37,7 @@
           <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
           <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
           <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
-          <button class="btn btn-favoritos w-25 m-2 rounded-5 fs-5 color-fff" type="button">Favoritos<i class="ms-2 fa-regular fa-star p-1" onclick="estrela()" estado="vazia"></i><i class="ms-2 fa-solid fa-star p-1"  style="display: none;" estado="cheia"></i></button>
+          <button class="btn bg-0dc0d8 hover-0491a3 w-25 m-2 rounded-5 fs-5 color-fff" type="button">Salvos<i class="fa-solid fa-bookmark p-1 ms-2"></i></i></button>
         </div>
 
         <div class=""> 
@@ -46,7 +46,7 @@
             <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
             <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
             <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
-            <option value="importante" id="btn_importante" class="btn-favoritos">Favoritos</option>
+            <option value="salvos" id="btn_salvos" class="bg-0dc0d8 hover-0491a3">Favoritos</option>
           </select>
         </div>
 

@@ -165,7 +165,7 @@
                             </div>
                         </div>
 
-                        <button id="estrela" class="btn"><i class="fa-regular fa-star cor-estrela p-1" onclick="estrela()" estado="vazia"></i><i class="fa-solid fa-star cor-estrela p-1"  style="display: none;" estado="cheia"></i></button>
+                        <button id="estrela" class="btn"><i class="fa-regular fa-bookmark color-0491a3" onclick="estrela()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
                     </div>
               </div>
               <div>
