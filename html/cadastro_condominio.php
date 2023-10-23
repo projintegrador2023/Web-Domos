@@ -29,6 +29,8 @@
                     <input type="email" id="email_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
                     <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Senha*</label>
                     <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Confirmar senha*</label>
+                    <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
                     <div class="text-end col-12 mt-4">
                         <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
                     </div>

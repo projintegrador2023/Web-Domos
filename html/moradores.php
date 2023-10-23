@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="css/informacoes.css"> 
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/moradores.css"> 
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
     <script src="js/script.js" defer></script>
     
@@ -24,6 +24,10 @@
         <header class="header d-flex align-items-center justify-content-between m-3"> 
             <div class="menu-icon" onclick="openSidebar()">
                 <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+            </div>
+            <div class="d-flex w-100">
+                <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
+                <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
             </div>
         </header>
 

@@ -23,7 +23,7 @@
         <!--Cabeçalho-->
         <header class="header d-flex align-items-center justify-content-between"> 
             <div class="menu-icon" onclick="openSidebar()">
-                <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+                <span class=""><i class="fa-solid fa-bars color-0491a3"></i></span>
             </div>
         </header>
 
@@ -38,53 +38,47 @@
                 <table class="table table-striped-columns align-middle">
                     <thead>
                         <tr>
-                            <th scope="col" class="w-25"><i class="fa-solid fa-city color-titulo fs-1"></i></th>
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <th scope="col">
-                                        <p class="fs-3 color-titulo">Condomínio Residencial Vila Serena 
-                                        <a href="editar_informacoes.php"><button class="btn"><i class="fa-solid fa-pen color-005661 fs-4"></i></button></p></a>
-                                    </th>
+                            <th scope="col" class="w-25"><i class="fa-solid fa-city color-005661 fs-1"></i></th>
+                            <th scope="col">
+                                <div clsss="d-flex">
+                                    <p class="fs-3 color-005661">Condomínio Residencial Vila Serena
+                                    <a href="editar_informacoes.php"><button class="btn bg-0491a3 rounded-circle"><i class="fa-solid fa-pen color-005661 fs-4 mt-1"></i></button></p></a>
                                 </div>
-                            </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Cnpj</p></th>
-                            <td class="color-descricao">37.647.184/0001-59</td>
+                            <th scope="row"><p class="color-0491a3">Cnpj</p></th>
+                            <td class="text-black">37.647.184/0001-59</td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Endereço</p></th>
-                            <td class="color-descricao">12345-678, Serra - Avenida das Flores, 123</td>
+                            <th scope="row"><p class="color-0491a3">Endereço</p></th>
+                            <td class="text-black">12345-678, Serra - Avenida das Flores, 123</td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Email</p></th>
-                            <td class="color-descricao">condominioficticio@gmail.com</td>
+                            <th scope="row"><p class="color-0491a3">Email</p></th>
+                            <td class="text-black">condominioficticio@gmail.com</td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Tipo de divisões</p></th>
-                            <td class="color-descricao">Blocos</td>
+                            <th scope="row"><p class="color-0491a3">Tipo de divisões</p></th>
+                            <td class="text-black">Blocos</td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Nome das divisões</p></th>
-                            <td class="color-descricao">Cores</td>
+                            <th scope="row"><p class="color-0491a3">Nome das divisões</p></th>
+                            <td class="text-black">Cores</td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Tipo de moradia</p></th>
-                            <td class="color-descricao">Apartamentos</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><p class="color-subtitulo">Espaços para reservas</p></th>
-                            <td class="color-descricao">Churrasqueira; Quadra; Área</td>
+                            <th scope="row"><p class="color-0491a3">Tipo de moradia</p></th>
+                            <td class="text-black">Apartamentos</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-sindico">Síndico(a)</p></th>
-                            <td class="color-descricao">Zelma Regina - zelmaregina@gmail.com</td>
+                            <td class="text-black">Zelma Regina - zelmaregina@gmail.com</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-administrador">Administrador(a)</p></th>
-                            <td class="color-descricao">Camila Egydio - camilaegydio@gmail.com</td>
+                            <td class="text-black">Camila Egydio - camilaegydio@gmail.com</td>
                         </tr>
                     </tbody>
                 </table>

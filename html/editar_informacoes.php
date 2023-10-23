@@ -23,7 +23,7 @@
         <!--Cabeçalho-->
         <header class="header d-flex align-items-center justify-content-between"> 
             <div class="menu-icon" onclick="openSidebar()">
-                <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
+                <span class=""><i class="fa-solid fa-bars color-0491a3"></i></span>
             </div>
         </header>
 
@@ -38,12 +38,11 @@
                 <table class="table table-striped-columns align-middle">
                     <thead>
                         <tr>
-                            <th scope="col" class="w-25"><i class="fa-solid fa-city color-titulo fs-1"></i></th>
+                            <th scope="col" class="w-25"><i class="fa-solid fa-city color-005661 fs-1"></i></th>
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <th scope="col">
-                                        <p class="fs-3 color-titulo">Condomínio Residencial Vila Serena 
-                                        <button class="btn"><i class="fa-solid fa-pen color-005661 fs-4"></i></button></p>
+                                        <p class="fs-3 color-005661">Condomínio Residencial Vila Serena 
                                     </th>
                                 </div>
                             </div>
@@ -51,28 +50,28 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Cnpj</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Cnpj: "></td>
+                            <th scope="row"><p class="color-0491a3">Cnpj</p></th>
+                            <td class="text-black"><input type="text" class="form-control" placeholder="Cnpj: "></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Endereço</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Endereço: "></td>
+                            <th scope="row"><p class="color-0491a3">Endereço</p></th>
+                            <td class="text-black"><input type="text" class="form-control" placeholder="Endereço: "></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Email</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Email: "></td>
+                            <th scope="row"><p class="color-0491a3">Email</p></th>
+                            <td class="text-black"><input type="text" class="form-control" placeholder="Email: "></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Tipo de divisões</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Tipo de divisões: "></td>
+                            <th scope="row"><p class="color-0491a3">Tipo de divisões</p></th>
+                            <td class="text-black"><input type="text" class="form-control" placeholder="Tipo de divisões: "></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Nome das divisões</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Nome das divisões: "></td>
+                            <th scope="row"><p class="color-0491a3">Nome das divisões</p></th>
+                            <td class="text-black"><input type="text" class="form-control" placeholder="Nome das divisões: "></td>
                         </tr>
                         <tr>
-                            <th scope="row"><p class="color-subtitulo">Tipo de moradia</p></th>
-                            <td class="color-descricao">                                
+                            <th scope="row"><p class="color-0491a3">Tipo de moradia</p></th>
+                            <td class="text-black">                                
                                 <select name="" id="" class="select-customiza form-control">
                                     <option selected class="">Escolha o tipo de moradia</option>
                                     <option value="" id="" class="">Casas</option>
@@ -81,13 +80,9 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row"><p class="color-subtitulo">Espaços para reservas</p></th>
-                            <td class="color-descricao"><input type="text" class="form-control" placeholder="Ex: Quadra;Churrasqueira;"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><p class="color-subtitulo">Regimento interno</p></th>
-                            <td class="color-descricao"><input type="file" class="form-control" id="regimento_interno"></td>
+                                               <tr>
+                            <th scope="row"><p class="color-0491a3">Regimento interno</p></th>
+                            <td class="text-black"><input type="file" class="form-control" id="regimento_interno"></td>
                         </tr>
                         <tr>
                     </tbody>
