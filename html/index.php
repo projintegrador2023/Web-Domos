@@ -88,7 +88,7 @@
         <div class="d-flex justify-content-center col-12 text-lg-justify text-center" id="sobre_nos"> 
             <div class="d-lg-flex d-block col-10"> 
                 <div class="col-10 col-lg-5 my-4 my-lg-5 ms-lg-5 m-auto">
-                    <img src="css/img/grupooficial.png" alt="Foto da equipe" style="width:70%">
+                    <img src="css/img/fotogrupo.jpeg" alt="Foto da equipe" style="width:70%">
                 </div> 
             
                 <div class="ms-lg-5">
