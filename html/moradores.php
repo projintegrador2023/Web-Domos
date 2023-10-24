@@ -32,7 +32,7 @@
         </header>
 
         <?php
-            $_SELECTED = 7; 
+            $_SELECTED = 8; 
             include("aside.php");
         ?>
 

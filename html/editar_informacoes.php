@@ -41,9 +41,7 @@
                             <th scope="col" class="w-25"><i class="fa-solid fa-city color-005661 fs-1"></i></th>
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <th scope="col">
-                                        <p class="fs-3 color-005661">Condomínio Residencial Vila Serena 
-                                    </th>
+                                    <td class="text-black"><input type="text" class="form-control" placeholder="Nome Condomínio: "></td>
                                 </div>
                             </div>
                         </tr>
@@ -87,6 +85,9 @@
                         <tr>
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-end col-12">
+                    <a href="informacoes.php" class="btn bg-0491a3 hover-0dc0d8 col-3 text-white">Salvar Alterações</a>
+                </div>
             </div>
         </main>
     </div>

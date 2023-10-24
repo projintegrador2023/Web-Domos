@@ -42,7 +42,7 @@
                             <th scope="col">
                                 <div clsss="d-flex">
                                     <p class="fs-3 color-005661">Condomínio Residencial Vila Serena
-                                    <a href="editar_informacoes.php"><button class="btn bg-0491a3 rounded-circle"><i class="fa-solid fa-pen color-005661 fs-4 mt-1"></i></button></p></a>
+                                    <a href="editar_informacoes.php"><button class="btn bg-0491a3 rounded-circle"><i class="fa-solid fa-pen white fs-4 mt-1"></i></button></p></a>
                                 </div>
                             </th>
                         </tr>
