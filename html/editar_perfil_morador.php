@@ -18,7 +18,7 @@
     <script src="js/sidebar.js" defer></script>
     <script src="js/perfil_morador.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
-    <title> Perfil - Domos</title>
+    <title> Editar perfil - Domos</title>
 </head>
 <body>
     <div class="grid-container">
@@ -81,7 +81,7 @@
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
                             <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle col-12 h-100">
                         </div>
-                    <a href="editar_perfil_morador.php"><button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar perfil </button></a>
+                    <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
                     <?php 
                         echo "<a href='logout.php' class='btn btn-saida mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
                     ?>
@@ -90,13 +90,12 @@
                 <div class="col-10 col-lg-7 my-auto d-flex row align-items-center justify-content-lg-start justify-content-center">
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
-                        <p class="caixa-texto">Camila Fraga Egydio</p>
-                        <p class="caixa-texto">12345678900</p>
-                        <p class="caixa-texto">testetes@gmail.com</p>
-                        <div class="d-flex justify-content-between">
-                            <p class="caixa-texto col-5">Num bloco</p>
-                            <p class="caixa-texto col-5">Nome Bloco</p>
-                        </div>
+                        <input type="text" class="form-control mb-1" placeholder="Nome: ">
+                        <input type="text" class="form-control mb-1" placeholder="Senha: ">
+                        <input type="text" class="form-control mb-1" placeholder="Confirmar senha: ">
+                        <input type="text" class="form-control mb-1" placeholder="Email: ">
+                        <input type="text" class="form-control col-5 mb-1" placeholder="Num do ap: ">
+                        <input type="text" class="form-control col-5" placeholder="Nome do bloco: ">
                     </div>
                     
                 </div>

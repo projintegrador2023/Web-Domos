@@ -78,6 +78,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
@@ -105,6 +106,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-5"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
@@ -132,6 +134,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
@@ -159,6 +162,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
@@ -186,6 +190,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-5"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
@@ -212,6 +217,7 @@
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </div>
+              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
             </div> 
             <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>

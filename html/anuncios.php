@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/anuncios.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
+    <script src="js/anuncios.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Anúncios - Domos</title>
 </head>
@@ -83,6 +84,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
                 <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
@@ -111,6 +113,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
@@ -139,6 +142,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 105 - Bloco Azul</h5>
@@ -166,6 +170,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 107 - Bloco Azul</h5>
@@ -194,6 +199,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 105 - Bloco Roxo</h5>
@@ -222,6 +228,7 @@
                     <li><a class="dropdown-item" href="#">Excluir</a></li>
                   </ul>
                 </div>
+                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
               </div>
               <div>
               <h5 class="card-subtitle fs-6 color-subtitulo">Apto 304 - Bloco Roxo</h5>
