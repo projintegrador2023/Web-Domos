@@ -80,7 +80,7 @@
                         </div> 
                     </div> 
                     <div class="text-end col-12 pt-4">
-                        <input type="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
+                        <input type="submit" name="botao_cadastrar" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
                     </div>
                 </div>
             </form>
