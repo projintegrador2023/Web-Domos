@@ -46,7 +46,7 @@
             <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
             <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
             <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
-            <option value="salvos" id="btn_salvos" class="bg-0dc0d8 hover-0491a3">Favoritos</option>
+            <option value="salvos" id="btn_salvos" class="bg-0dc0d8 hover-0491a3">Salvos</option>
           </select>
         </div>
 
