@@ -15,7 +15,6 @@
                     if (preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']) == $consulta[0] && $_POST['senha_login'] == $consulta[3]){
                         session_start();
                         $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);
-                        $_SESSION['senha'] = $_POST['senha_login'];
                         $_SESSION['tipo_usuario'] = 1;
                         header("Location: avisos.php");
                     } else{
