@@ -1,7 +1,19 @@
 <?php
 	//Classe de usuario
 	include_once '30_DB_usuario.php';
+	$nome;
+	$cpf;
+	$email;
+	$senha;
+	$conf_senha;
+	$codigo_condominio;
+	$nivel_permissao = 3;
+	//verifica se o botao de trocar formulario foi acionado
+	if (isset($_POST['submit1'])){
+		if (validacao_nome($_POST['nome_usuario']) && validaCPF($_POST['cpf_usuario']) && $_POST['senha_usuario'] == $_POST['conf_senha_usuario'] && valida_codigo_condominio($_POST['input_codigo_condominio'])){
 
+		}
+	}
 	//verifica se o botão cadastrar foi acionado
 	if(isset($_POST['botao_cadastrar'])){
 		//sanitiza os campos do formulário
@@ -11,7 +23,6 @@
 		$senha = $_POST['senha_usuario'];
 		$conf_senha = $_POST['conf_senha_usuario'];
 		$codigo_condominio = $_POST['input_codigo_condominio'];
-		$nivel_permissao = 3;
 
 
 		//instancia o usuario
@@ -37,5 +48,19 @@
 		} else{
 			header('Location: ../index.php');
 		}
+	}
+
+	function validacao_nome($nome){
+		if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)){
+			echo "<script> 
+			alert('O nome contém caracteres inválidos');
+			</script>";
+			return false;
+		} 
+		return true;
+	}
+
+	function valida_codigo_condominio($codigo_condominio){
+
 	}
 ?>

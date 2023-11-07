@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="text-end col-12 pt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario_usuario()"> Continuar </button>
+                        <input type="submit" value="Continuar" name="submit1" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3">
                     </div>
                 </div>
 
@@ -60,6 +60,7 @@
                             <div class="col-5">
                             <label class="fs-5 color-0491a3"> Nº do apto*</label> <br>
                             <select id="numero_apartamento" name="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded">
+                                <option class="text-black"> Escolha uma opção </option>
                                 <option class="text-black"> 101 </option>
                                 <option class="text-black"> 102 </option>
                                 <option class="text-black"> 103 </option>
@@ -71,6 +72,7 @@
                         <div class="col-5">
                             <label class="fs-5 color-0491a3"> Bloco*</label> <br>
                             <select id="bloco" name="bloco" class="col-12 fs-5 p-2 border-select text-black rounded">
+                                <option class="text-black"> Escolha uma opção </option>
                                 <option class="text-black"> Amarelo </option>
                                 <option class="text-black"> Azul </option>
                                 <option class="text-black"> Roxo </option>
