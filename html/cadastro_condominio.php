@@ -98,9 +98,28 @@
                             <input type="radio" name="divisao" id="nenhum" class="">
                             <label for="nenhum" class="text-black fs-6">Nenhum</label><br>
                             <input type="radio" name="divisao" id="outro" class="">  
-                            <label for="outro" class="text-black fs-6">Outro:</label>
-                            <input type="text" id="outra_divisao" class="input-form bg-e8e8e8 text-black p-0 fs-6">
-                            
+                            <label for="outro" id="outro"class="text-black fs-6" onclick=a()>Outro:</label>
+                            <input type="text" id="outra_divisao" class="d_none input-form bg-e8e8e8 text-black p-0 fs-6">
+                            <script>
+                                function a(){
+                                    var input = document.getElementById('outra_divisao');
+                                    var outro = document.getElementById('outro');
+                                
+                                        if(outro.checked == true) {
+                                        input.classList.remove(d_none);
+                                        input.classList.add(d_block);
+                                        input.focus();
+                                        } else {
+                                        input.classList.remove(d_block);
+                                        input.classList.add(d_none);
+                                        input.value='';
+                                        }
+                                    }
+                                
+                                
+    
+                                
+                            </script>
                         </div>
                         <div class="col-6">
                             <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Tipo de moradia*</h4>
@@ -114,12 +133,45 @@
                         
                     </div>
                     <div class="mb-5">
-                        <label for="nome_divisao" class="form-label color-0491a3 fs-6">Digite os nomes das divisões separados por ponto e vírgula (;)*:</label>
-                        <textarea class="form-control p-3 fs-6" id="nome_divisao" placeholder="Exemplo: A;B;C;D" rows="3"></textarea>
+                        <label for="nome_divisao" class="form-label color-0491a3 fs-6">Digite os nomes das divisões:</label>
+
+                        <div id="divisaodiv">
+                            <input type="text" name="divisao" id="divisao" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>
+                        </div>
+                        
+                        <input type="button" onclick=adicionarDivisao() value="Adicionar mais uma divisão" class="justify-content-center bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
+                        
+                        <script>
+                            function adicionarDivisao(){
+                                
+                                let a = document.createElement("div");
+                                let b = '<input type="text" name="divisao" id="divisao" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>'
+
+                                a.innerHTML = b;
+                                document.getElementById("divisaodiv").appendChild(a);
+
+                            }
+                        </script>
                     </div>
                     <div class="mb-5">
-                        <label for="numero_casa" class="form-label color-0491a3 fs-6">Digite os números das casas / apartamentos separados por ponto e vírgula (;)*:</label>
-                        <textarea class="form-control p-3 fs-6" id="numero_casa" placeholder="Exemplo: 101;102;103;104;201;202;203;204" rows="3"></textarea>
+                        <label for="numero_casa" class="form-label color-0491a3 fs-6">Digite os números das casas / apartamentos:</label>
+                        <div id="numdiv">
+                            <input type="text" name="num" id="num" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>
+                        </div>
+                        
+                        <input type="button" onclick=adicionarNum() value="Adicionar mais um numero" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
+                        
+                        <script>
+                            function adicionarNum(){
+                                
+                                let a = document.createElement("div");
+                                let b = '<input type="text" name="num" id="num" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>'
+
+                                a.innerHTML = b;
+                                document.getElementById("numdiv").appendChild(a);
+
+                            }
+                        </script>
                     </div>
                     <div class="mb-5">
                       <label for="" class="form-label color-0491a3 fs-6">Insira o pdf de regimento interno (opcional):</label>
@@ -194,5 +246,6 @@
     <?php 
         include('footer.php');
     ?>
+
 </body>
 </html>
