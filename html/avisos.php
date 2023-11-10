@@ -93,7 +93,7 @@
               Contamos com a compreensão e colaboração de todos para a resolução rápida desse inconveniente. Obrigado.</p>
           </div>
           <div class="card-footer btn-critico"></div>
-        </div> 
+        </div>
       
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
