@@ -20,29 +20,16 @@
 .btns-geral{
   display: flex;
 }
-
 .btn-critico{
-	background-color: #cc0000;
-}
-
-.btn-critico:hover{
-	background-color: #710000;
+	color: #cc0000;
 }
 
 .btn-urgente{
 	background-color: #F7D74A;
 }
 
-.btn-urgente:hover{
-	background-color: #c4aa34;
-}
-
 .btn-importante{
 	background-color: #90ee90;
-}
-
-.btn-importante:hover{
-	background-color: #53c853;
 }
 
 

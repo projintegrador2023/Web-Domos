@@ -16,57 +16,34 @@
 
 }
 
-.btn-alimentacao:hover{
-	background-color: #b64572;
-}
-
 .btn-vestuario{
 	background-color: #ff6d6d;
 }
 
-.btn-vestuario:hover{
-	background-color: #d33939;
-}
 
 .btn-eletronicos{
 	background-color: #89f1ff;
-}
-
-.btn-eletronicos:hover{
-	background-color: #7cc6cf;
 }
 
 .btn-beleza{
 	background-color: #66b73e;
 }
 
-.btn-beleza:hover{
-	background-color: #4d922b;
-}
 
 .btn-decoracao{
 	background-color: #e6a545;
 }
 
-.btn-decoracao:hover{
-	background-color: #b47e2e;
-}
 
 .btn-petshop{
 	background-color: #ffe324;
 }
 
-.btn-petshop:hover{
-	background-color: #ceb61a;
-}
 
 .btn-servicos{
 	background-color: #9f35cc;
 }
 
-.btn-servicos:hover{
-	background-color: #6c1f8d;
-}
 
 .select-modal{
   color: #005661;
