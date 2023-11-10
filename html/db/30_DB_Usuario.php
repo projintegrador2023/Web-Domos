@@ -1,30 +1,7 @@
 <?php
 
 require_once '30_DB_crud.php';
-
-/*************************************************************
-Objetivo: Classe responsável por representar todas as operações com o cliente do negócio.
-
-
-Atributos:
-$nome- nome do cliente
-$cpf - cpf do cliente
-$email - email do cliente
-$senha - senha do cliente
-
-Métodos:
-insert - insere um cliente na tabela cliente
-update - atualiza um cliente na tabela cliente
-
-setNome - Atribui um nome ao cliente
-getNome - Retorna o nome do cliente
-setcpf - Atribui um cpf ao cliente
-getcpf - Retorna o cpf ao cliente
-setEmail - Atribui um email ao cliente
-getEmail - Retorna o email do cliente
-setsenha - Atribui uma senha ao cliente
-getsenha - Retorn a senha do cliente
-*************************************************************/
+require_once 'password.php';
 
 class Usuario extends CRUD{
 	protected $table ='USUARIO';
@@ -57,7 +34,7 @@ class Usuario extends CRUD{
 		return $this->email;
 	}
 	public function setSenha($senha){
-		$this->senha = $senha;
+		$this->senha = password_hash($senha, PASSWORD_DEFAULT);
 	}
 	
 	public function getSenha(){
@@ -126,7 +103,13 @@ class Usuario extends CRUD{
 		return $stmt->execute();
 	}
 	
-	
+	public function find($id){
+		$sql = "SELECT * FROM $this->table WHERE cpf = :id";
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetch(PDO::FETCH_BOTH);
+	}
 	
 	
 		

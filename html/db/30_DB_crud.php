@@ -31,7 +31,7 @@ delete - exclui um registro pelo id
 		Parâmetro de saída: Retorna o registro da tabela. Em caso de falha na consulta ou não existir o registro, retorna falso.
 		***************/
 		public function  find($id){
-			$sql = "SELECT * FROM $this->table WHERE cpf = :id";
+			$sql = "SELECT * FROM $this->table WHERE id = :id";
 			$stmt = Database::prepare($sql);
 			$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 			$stmt->execute();

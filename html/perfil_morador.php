@@ -1,5 +1,17 @@
 <!-- NÃO UTILIZADO NESSE TRABALHO -->
-
+<?php 
+    require_once("db/30_DB_Usuario.php");
+    include("iniciar_sessao.php");
+    $usuario = new Usuario();
+    $dados = $usuario->find($_SESSION['id']);
+    $cpf = $dados[0];
+    $nome = $dados[1];
+	$email = $dados[2];
+	$senha = $dados[3];
+	$codigo_condominio = $dados[4]; 
+	$nivel_permissao = $dados[5];
+	$codigo_moradia = $dados[6];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,9 +91,9 @@
             <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle col-12 h-100">
+                            <img src="images/icon_perfil_padrao.png" alt="Foto de Perfil" class="rounded-circle col-12 h-100">
                         </div>
-                    <a href="editar_perfil_morador.php"><button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-user-pen flex-grow-1"></i> Editar perfil </button></a>
+                    <a href="editar_perfil_morador.php" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white"><i class="fa-solid fa-user-pen flex-grow-1 me-2"></i> Editar perfil</a>
                     <?php 
                         echo "<a href='logout.php' class='btn btn-saida mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
                     ?>
@@ -90,13 +102,16 @@
                 <div class="col-10 col-lg-7 my-auto d-flex row align-items-center justify-content-lg-start justify-content-center">
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
-                        <p class="caixa-texto">Camila Fraga Egydio</p>
-                        <p class="caixa-texto">12345678900</p>
-                        <p class="caixa-texto">testetes@gmail.com</p>
-                        <div class="d-flex justify-content-between">
+                        <?php
+                            echo '<p class="caixa-texto">', $nome, '</p>';
+                            echo '<p class="caixa-texto">', $cpf, '</p>';
+                            echo '<p class="caixa-texto">', $email, '</p>';
+                            echo '<div class="d-flex justify-content-between">
                             <p class="caixa-texto col-5">Num bloco</p>
                             <p class="caixa-texto col-5">Nome Bloco</p>
-                        </div>
+                        </div>';
+
+                        ?>
                     </div>
                     
                 </div>

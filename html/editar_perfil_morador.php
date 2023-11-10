@@ -1,5 +1,17 @@
 <!-- NÃO UTILIZADO NESSE TRABALHO -->
-
+<?php 
+    require_once("db/30_DB_Usuario.php");
+    include("iniciar_sessao.php");
+    $usuario = new Usuario();
+    $dados = $usuario->find($_SESSION['id']);
+    $cpf = $dados[0];
+    $nome = $dados[1];
+	$email = $dados[2];
+	$senha = $dados[3];
+	$codigo_condominio = $dados[4]; 
+	$nivel_permissao = $dados[5];
+	$codigo_moradia = $dados[6];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,65 +35,23 @@
 <body>
     <div class="grid-container">
         <!--Cabeçalho-->
-        <header class="header d-flex align-items-center justify-content-between m-3"> 
+        <header class="header d-flex align-items-center justify-content-between m-3">
             <div class="menu-icon" onclick="openSidebar()">
                 <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
             </div>
         </header>
-
-      <!-- Navegação em abas pela barra lateral (sidebar)>
-        <aside id="sidebar" class="sidebar gradient-custom">
-            <div class="sidebar-title d-flex p-3 flex-column align-items-end">
-                <span class="pt-3 px-3" onclick="closeSidebar()">
-                    <i class="fa-solid fa-xmark fs-1"></i>
-                </span>
-
-                <div class="sidebar-brand">
-                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
-                </div>
-            
-            </div>
-
-            <ul class="sidebar-list">
-                <li class="sidebar-list-item">
-                    <a href="avisos.php">
-                        <div><i class="fa-solid fa-circle-info col-2"></i> TESTE - AVISOS </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="informacoes.php">
-                        <div><i class="fa-solid fa-people-roof col-2"></i> TESTE - INFO</div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="reservas.php">
-                        <div><i class="fa-solid fa-calendar-check col-2"></i> TESTE </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="index.php">
-                        <div><i class="fa-solid fa-right-from-bracket col-2"></i> TESTE </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="perfil_morador.php">
-                        <div> PERFIL MORADOR TESTE </div>
-                    </a>
-                </li>
-            </ul>
-        </aside-->
         <?php
-            $_SELECTED = 5; 
+            $_SELECTED = 5;
             include("aside.php");
         ?>
 
         <main container class="main-container">
-            <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
+            <form action="db/DB_update_usuario.php" method="POST" class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="css/img/moradora4.jpeg" alt="moradora 4" class="rounded-circle col-12 h-100">
+                            <img src="images/icon_perfil_padrao.png" alt="Foto de perfil" class="rounded-circle col-12 h-100">
                         </div>
-                    <button class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
+                    <button type="submit" name="salvar" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
                     <?php 
                         echo "<a href='logout.php' class='btn btn-saida mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
                     ?>
@@ -90,17 +60,17 @@
                 <div class="col-10 col-lg-7 my-auto d-flex row align-items-center justify-content-lg-start justify-content-center">
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
-                        <input type="text" class="form-control mb-1" placeholder="Nome: ">
-                        <input type="text" class="form-control mb-1" placeholder="Senha: ">
-                        <input type="text" class="form-control mb-1" placeholder="Confirmar senha: ">
-                        <input type="text" class="form-control mb-1" placeholder="Email: ">
-                        <input type="text" class="form-control col-5 mb-1" placeholder="Num do ap: ">
-                        <input type="text" class="form-control col-5" placeholder="Nome do bloco: ">
+                        <?php
+                            echo '<input type="text" name="nome" class="form-control mb-1" value="', $nome, '">';
+                            echo '<input type="password" name="senha" class="form-control mb-1" placeholder="Senha: ">
+                            <input type="password" name="conf_senha" class="form-control mb-1" placeholder="Confirmar senha: ">';
+                            echo '<input type="text" name="email" class="form-control mb-1" value="', $email, '">';
+                            echo '<input type="text" class="form-control col-5 mb-1" placeholder="Num do ap: ">
+                            <input type="text" class="form-control col-5" placeholder="Nome do bloco: ">';
+                        ?>
                     </div>
-                    
                 </div>
-
-            </div>
+            </form>
 
         <div class = "col-12 d-flex row justify-content-center my-5"> <!-- Div postagens -->
 
