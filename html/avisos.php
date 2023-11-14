@@ -24,31 +24,29 @@
   <!-- Container -->
   <div class="grid-container">
     <!--Cabeçalho de pesquisa e filtros-->  
-    <header class="header d-flex align-items-center justify-content-between m-3"> 
-
+    <header class="header d-flex align-items-center justify-content-between m-3">
         <div class="menu-icon" onclick="openSidebar()">
           <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
         </div>
-
-        <div class="d-flex me-3 col-sm-5">
+        <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="text" class="search ps-3 m-lg-2 col-12" placeholder="Pesquisar...">
+          <input type="text" class="search ps-2 m-2 w-100" placeholder="Pesquisar...">
         </div>
         
-        <!--div class="justify-content-end align-content-center col-xl-9 btns-geral" id="btns_geral">
-          <button class="btn btn-critico col-2 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
-          <button class="btn btn-urgente col-2 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
-          <button class="btn btn-importante col-2 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
-          <button class="btn bg-0dc0d8 hover-0491a3 col-2 m-2 rounded-5 fs-5 color-fff" type="button">Salvos<i class="fa-solid fa-bookmark p-1 ms-2"></i></i></button>
-        </div-->
+        <div class="justify-content-around w-75 btns-geral" id="btns_geral">
+          <button class="btn btn-critico w-25 m-2 rounded-5 fs-5 color-fff" type="button">Crítico</button>
+          <button class="btn btn-urgente w-25 m-2 rounded-5 fs-5 color-fff" type="button">Urgente</button>
+          <button class="btn btn-importante w-25 m-2 rounded-5 fs-5 color-fff" type="button">Importante</button>
+          <button class="btn bg-0dc0d8 hover-0491a3 w-25 m-2 rounded-5 fs-5 color-fff" type="button">Salvos<i class="fa-solid fa-bookmark p-1 ms-2"></i></i></button>
+        </div>
 
-        <div class="justify-content-around mt-2 col-sm-6 col-10" id="btns_filtro">
-          <select class="form-select select-modal mb-3">
-            <option selected style="color: #0491a3">Filtros</option>
-            <option value="critico" id="btn_critico" style="color: #cc0000">Crítico</option>
-            <option value="urgente" id="btn_urgente" style="color: #c4aa34">Urgente</option>
-            <option value="importante" id="btn_importante" style="color: #53c853">Importante</option>
-            <option value="salvos" id="btn_salvos" style="color: #0dc0d8">Salvos</option>
+        <div class=""> 
+          <select name="" id="" class="select-customiza">
+            <option selected class="">Filtros</option>
+            <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
+            <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
+            <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
+            <option value="salvos" id="btn_salvos" class="bg-0dc0d8 hover-0491a3">Salvos</option>
           </select>
         </div>
 

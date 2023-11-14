@@ -25,27 +25,25 @@
   <div class="grid-container">
       <!--Cabeçalho de pesquisa e filtros-->
       <header class="header d-flex align-items-center justify-content-between m-3"> 
-
         <div class="menu-icon" onclick="openSidebar()">
           <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
         </div>
-
-        <div class="d-flex me-3 col-sm-5">
+        <div class="d-flex w-25 me-3">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="text" class="search ps-3 m-lg-2 col-12" placeholder="Pesquisar...">
+          <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
         </div>
 
-        <div class="justify-content-around mt-2 col-sm-6 col-10" id="btns_filtro">
-          <select class="form-select select-modal mb-3 ">
-            <option selected style="color: #0491a3">Filtros</option>
-            <option value="alimentacao" style="color: #ff6da7">Alimentação</option>
-            <option value="vestuario" style="color: #d33939">Vestuário</option>
-            <option value="eletronicos" style="color: #7cc6cf">Eletrônicos</option>
-            <option value="beleza" style="color: #66b73e">Beleza</option>
-            <option value="decoracao" style="color: #e6a545">Decoração</option>
-            <option value="petshop" style="color: #ceb61a">Petshop</option>
-            <option value="servicos" style="color: #9f35cc">Serviços</option>
-            <option value="salvos" id="btn-salvos" style="color: #0dc0d8">Salvos</option>
+        <div class="justify-content-around w-75 mt-2" id="btns_filtro">
+          <select class="form-select select-modal mb-3">
+            <option selected class="select-modal">Filtros</option>
+            <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
+            <option value="vestuario" class="btn-vestuario">Vestuário</option>
+            <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>
+            <option value="beleza" class="btn-beleza">Beleza</option>
+            <option value="decoracao" class="btn-decoracao">Decoração</option>
+            <option value="petshop" class="btn-petshop">Petshop</option>
+            <option value="servicos" class="btn-servicos">Serviços</option>
+            <option value="salvos" id="btn-salvos" class="bg-0dc0d8 hover-0491a3">Salvos</option>
           </select>
         </div> 
 
