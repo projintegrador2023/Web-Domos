@@ -90,15 +90,15 @@ class Usuario extends CRUD{
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	***************/
 	public function update($id){
-		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha,  WHERE cpf = :cpf ";
+		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha  WHERE cpf = :cpf ";
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':cpf', $this->cpf);
 		$stmt->bindParam(':email', $this->email);
 		$stmt->bindParam(':senha', $this->senha);
-		$stmt->bindParam(':codigo_condominio', $this->codigo_condominio);
-		$stmt->bindParam(':nivel_permissao', $this->nivel_permissao);
-		$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);
+		//$stmt->bindParam(':codigo_condominio', $this->codigo_condominio);
+		//$stmt->bindParam(':nivel_permissao', $this->nivel_permissao);
+		//$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);
 		// $stmt->bindParam(':tipocliente', 1, PDO::PARAM_INT);
 		return $stmt->execute();
 	}
