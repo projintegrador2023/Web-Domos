@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
     <script src="js/avisos.js" defer></script>
+    <script src="js/pesquisar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Avisos - Domos </title>
 </head>
@@ -30,7 +31,7 @@
         </div>
         <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="text" class="search ps-2 m-2 w-100 text-dark" placeholder="Pesquisar...">
+          <input type="search" class="search ps-2 m-2 w-100 text-dark" placeholder="Pesquisar...">
         </div>
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
@@ -42,9 +43,6 @@
             <option value="salvos" id="btn_salvos" style="font-weight: bold; color:#0dc0d8;">Salvos</option>
         </select>
         </div>
-                    
-  
-
     </header>
     
     <?php
