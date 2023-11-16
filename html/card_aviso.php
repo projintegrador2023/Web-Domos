@@ -2,7 +2,7 @@
 <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
     <div class="card-header bg-transparent">
         <div class="fs-5 color-titulo d-flex">
-            <div class="flex-grow-1"><p class="color-titulo"></p></div> <!--Usuario-->
+            <!--div class="flex-grow-1"><p class="color-titulo"></p></div> <Usuario-->
             <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
             <div class="dropdown">
                 <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,11 +19,11 @@
     </div>
             
     <div class="card-body d-flex row text-success">
-        <h6 class="card-subtitle fs-5 color-titulo"></h6> <!--titulo-->
-        <p class="card-text fs-9 text-justify color-descricao"> </p> <!--descricao-->
+        <h6 class="titulo card-subtitle fs-5 color-titulo"></h6> <!--titulo-->
+        <p class="descricao card-text fs-9 text-justify color-descricao"> </p> <!--descricao-->
     </div>
     
-    <div class="card-footer btn-alimentacao"></div>
+    <div class="filtro card-footer"></div>
 
 <!--CARD AVISO-->
 <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
