@@ -1,3 +1,57 @@
+<?php 
+    function continuar1() {
+        if (validacao_nome($_POST['nome_usuario']) && validaCNPJ(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario'])) && $_POST['senha_usuario'] == $_POST['conf_senha_usuario'] && valida_codigo_condominio($_POST['input_codigo_condominio'])){
+			$condominio->setCNPJ($_POST['cnpj_condominio']); 
+			$condominio->setNome($_POST['nome_condominio']);
+			$condominio->setEmail($_POST['email_condominio']);
+			$condominio->setSenha($_POST['senha_condominio']);
+
+            // Parte criar endereço
+
+            $condominio->setTipo_moradia($_POST['tipo_moradia']);
+            $condominio->setFaixa_qtd_moradores($_POST['faixa_qtd_moradores']);
+            $condominio->setRegimento($_POST['regimento_interno']);
+            
+		}
+    }
+
+    function validar_cnpj($cnpj)
+    { // essa identaçao ta fora do padrao hein
+        $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+        
+        // Valida tamanho
+        if (strlen($cnpj) != 14)
+            return false;
+    
+        // Verifica se todos os digitos são iguais
+        if (preg_match('/(\d)\1{13}/', $cnpj))
+            return false;	
+    
+        // Valida primeiro dígito verificador
+        for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
+        {
+            $soma += $cnpj[$i] * $j;
+            $j = ($j == 2) ? 9 : $j - 1;
+        }
+    
+        $resto = $soma % 11;
+    
+        if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
+            return false;
+    
+        // Valida segundo dígito verificador
+        for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
+        {
+            $soma += $cnpj[$i] * $j;
+            $j = ($j == 2) ? 9 : $j - 1;
+        }
+    
+        $resto = $soma % 11;
+    
+        return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,30 +72,32 @@
     <?php include('header.php'); ?>
     
         <div class="col-12">
-            <form>
+            <form class="" action="" method="POST">
+            <div class="">
                 <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-block" id="div_cadastro_condominio">
+
                     <h2 class="color-0491a3 fw-400 text-center mt-3 mb-4">Cadastro do Condomínio</h2>
+
                     <label for="cnpj_condominio" class="text-start color-0491a3 fw-400 fs-5" >CNPJ*</label>
                     <input type="text" id="cnpj_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+
                     <label for="nome_condominio" class="text-start color-0491a3 fw-400 fs-5">Nome*</label>
                     <input type="text" id="nome_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+
                     <label for="email_condominio" class="text-start color-0491a3 fw-400 fs-5">E-mail*</label>
                     <input type="email" id="email_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+
                     <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Senha*</label>
                     <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+
                     <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Confirmar senha*</label>
                     <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
-                    <div class="text-end col-12 mt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
+
                     </div>
 
-                </div>
+                    <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4" id="div_cadastro_endereco">
+                    <h2 class="color-0491a3 fw-400 text-center mt-3 mb-4"> Cadastro do Endereço</h2>
 
-                <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-none" id="div_cadastro_endereco">
-                <div class="d-flex align-items-center">
-                    <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                    <h2 class="color-0491a3 m-auto fs-2 text-center">Endereço</h2>
-                </div>
                     <label for="cep_condominio" class="text-start color-0491a3 fw-400 fs-5 d-block mt-3">CEP*</label>
                     <input type="text" id="cep_condominio" class="col-4 input-form bg-e8e8e8 fs-6 p-2 mb-3 text-black d-block">
                     <div class="d-flex col-12 justify-content-between mb-3">
@@ -65,18 +121,16 @@
                             <input type="text" id="complemento" class="col-12 fs-6 p-2 text-black input-form bg-e8e8e8 d-block">
                         </label>
                     </div>
-                    <div class="text-end col-12 mt-4">
-                        <button type="button" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3" onclick="trocar_formulario()"> Continuar </button>
-                    </div>
                 </div>
+            </div>
+                
+            <div> </div>
 
-                <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-none" id="div_cadastro_informacoes">
-                    <div class="d-flex p-3">
-                        <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                        <h2 class="color-0491a3 m-auto fs-2 text-center">Informações do condomínio</h2>
-                    </div>
-                    <p class="color-0491a3 fs-6 fw-400 col-12 d-block">Faixa de moradores*
-                        <select id="faixa_qtd_moradores" class="form-select d-block fs-6 p-2 color-0491a3 col-12 mb-5">
+                <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4" id="div_cadastro_informacoes">
+                    <h2 class="color-0491a3 fw-400 text-center mt-3 mb-4">Informações do condomínio</h2>
+
+                    <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Faixa de Moradores*</h4>
+                        <select for="faixa_qtd_moradores" id="faixa_qtd_moradores" class="form-select d-block fs-6 p-2 color-0491a3 col-12 mb-5">
                             <option value="default" class="text-black">Escolha uma opção</option>
                             <option value="0-99" class="text-black">0-100</option>
                             <option value="100-249" class="text-black">100-249</option>
@@ -85,7 +139,15 @@
                             <option value="750-999" class="text-black">750-999</option>
                             <option value="1000+" class="text-black">1000+</option>
                         </select>
-                    </p>
+                    
+                    <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Tipo de moradia*</h4>
+                            <select for="tipo_moradia" id="tipo_moradia" class="form-select d-block fs-6 p-2 color-0491a3 col-12 mb-5">
+                                <option value="default" class="text-black">Escolha uma opção</option>
+                                <option value="default" class="text-black">Casas</option>
+                                <option value="default" class="text-black">Apartamentos</option>
+                                <option value="default" class="text-black">Casas e Apartamentos</option>
+                            </select>
+
                     <div class="d-flex justify-content-between mb-5">
                         <div class="col-7">
                             <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Tipo de divisão*</h4>
@@ -122,13 +184,13 @@
                             </script>
                         </div>
                         <div class="col-6">
-                            <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Tipo de moradia*</h4>
-                            <input type="radio" name="moradia" id="casas" class="">
-                            <label for="casas" class="text-black fs-6">Casas</label><br>
+                            
+                            <!--input type="radio" name="moradia" id="casas" class="">
+                            <label for="tipo_moradia" class="text-black fs-6">Casas</label><br>
                             <input type="radio" name="moradia" id="apartamentos" class="">
-                            <label for="apartamentos" class="text-black fs-6">Apartamentos</label><br>
+                            <label for="tipo_moradia" class="text-black fs-6">Apartamentos</label><br>
                             <input type="radio" name="moradia" id="casas_e_apartamentos" class="">
-                            <label for="casas_e_apartamentos" class="text-black fs-6">Casas e Apartamentos</label><br>
+                            <label for="tipo_moradia" class="text-black fs-6">Casas e Apartamentos</label><br-->
                         </div>
                         
                     </div>
@@ -175,7 +237,7 @@
                     </div>
                     <div class="mb-5">
                       <label for="" class="form-label color-0491a3 fs-6">Insira o pdf de regimento interno (opcional):</label>
-                      <input type="file" class="form-control" id="regimento_interno">
+                      <input for="regimento_interno" type="file" class="form-control" id="regimento_interno">
                     </div>
                     <div class="text-end col-12">
                         <input type="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
