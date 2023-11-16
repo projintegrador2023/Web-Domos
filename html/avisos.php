@@ -57,26 +57,26 @@
 
       <!-- Div contendo os cards -->  
       <div class="row justify-content-center col-12">
-    
         <!-- Cards --> 
+        <!-- INICIO DO CARD -->
         <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
           <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Pia quebrada </p> </div>
+            <div class="d-flex">
+              <h4 class="flex-grow-1 sticky-top color-titulo card-title">Pia quebrada</h4>
               <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
+                <div class="d-flex sticky-top">
+                  <button id="salvo" class="btn"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical text-dark"></i></button>
+                  <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Editar</a></li>
+                      <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div> 
             <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
+              <h6 class="card-subtitle color-subtitulo">18/06/2023 - 14:31</h6>
             </div>
           </div>
 
@@ -87,147 +87,8 @@
           </div>
           <div class="card-footer btn-critico"></div>
         </div>
-      
-        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-          <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Inauguração do Espaço Kids </p> </div>
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-5"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
-            <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
-            </div>
-          </div>
-
-          <div class="card-body text-success pt-2">
-            <p class="card-text fs-9 text-justify color-descricao">Inauguração do Espaço Kids do condomínio! É com grande alegria que informamos que o Espaço Kids será 
-              inaugurado no dia 17 de junho de 2023. O espaço contará com diversas brincadeiras e atividades para as crianças se divertirem. 
-              Contamos com a presença de todos para celebrar essa conquista!</p> 
-          </div>
-          <div class="card-footer btn-urgente"></div>
-        </div>
-
-        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-          <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Reforma quadra </p> </div>
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
-            <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
-            </div>
-          </div>
-
-          <div class="card-body text-success pt-2">
-            <p class="card-text fs-9 text-justify color-descricao">Reforma da quadra do condomínio! A partir de hoje, a quadra estará interditada devido à obra que durará cerca de 60 dias. 
-              Pedimos que respeitem as sinalizações de segurança e mantenham as crianças afastadas do local. 
-              Agradecemos a compreensão e colaboração de todos nesse momento importante para o condomínio.</p>
-          </div>
-          <div class="card-footer btn-importante"></div>
-        </div>
-
-        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-          <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Excesso de água </p> </div>
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
-            <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
-            </div>
-          </div>
-
-          <div class="card-body text-success pt-2">
-            <p class="card-text fs-9 text-justify color-descricao">O consumo excessivo de água no condomínio está levando à escassez desse recurso finito. Pedimos a colaboração 
-              de todos para evitar o desperdício, com medidas simples como fechar a torneira enquanto escova os dentes ou reduzir o tempo no banho. 
-              Juntos, podemos preservar o meio ambiente.</p>
-          </div>
-          <div class="card-footer btn-urgente"></div>
-        </div>
-
-        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-          <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Horário do salão de festa </p> </div>
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-5"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
-            <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
-            </div>
-          </div>
-
-          <div class="card-body text-success pt-2">
-            <p class="card-text fs-9 text-justify color-descricao">Por favor, respeite o horário do salão de festa para evitar atrasos e inconvenientes para outros eventos. 
-              O horário de encerramento é rigoroso e multas podem ser aplicadas por violação.</p>
-          </div>
-          <div class="card-footer btn-critico"></div>
-        </div>
-
-        <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-          <div class="card-header bg-transparent">
-            <div class="fs-5 color-titulo d-flex">
-              <div class="flex-grow-1"> <p class="color-titulo"> Feira cultural </p> </div>
-              <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-              <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-            </div> 
-            <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">18/06/2023 - 14:31</h5>
-            </div>
-          </div>
-
-          <div class="card-body text-success pt-2">
-            <p class="card-text fs-9 text-justify color-descricao"> Moradores, estaremos promovendo uma feira de festa junina nos dias 12 e 13/06,
-              cada moraodr poderá participar com suas artes ou comidas. Faça sua inscrição na portaria. Contamos com a ajuda e colaboração de todos!
-            </p>
-          </div>
-          <div class="card-footer btn-importante"></div>
-        </div>
-
-      </div>
+        <!-- FIM DO CARD -->
+        
         
       <!-- Modal (pop up)-->
       <div class="d-flex justify-content-end m-5">

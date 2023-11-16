@@ -59,24 +59,25 @@
           
         <!-- Div contendo os cards -->
         <div class="row justify-content-center col-12">
-          <!-- Cards -->  
+          <!-- Cards --> 
+          <!-- INICIO CARD  -->
           <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
             <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
+              <div class="d-flex">
+                <h4 class="flex-grow-1 sticky-top color-titulo card-title">Nome Morador</h4>
                 <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
+                  <div class="d-flex sticky-top">
+                    <button id="salvo" class="btn"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical text-dark"></i></button>
+                    <div class="dropdown">
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Excluir</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> 
               <div>
-                <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
+                <h6 class="card-subtitle color-subtitulo">Apto num - numbloco</h6>
               </div>
             </div>
             <div class="card-body d-flex row text-success">
@@ -89,8 +90,9 @@
             </div>
             <div class="card-footer btn-alimentacao"></div>
           </div> 
+          <!-- FIM DO CARD -->
         
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
+          <!-- <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
             <div class="card-header bg-transparent">
               <div class="fs-5 color-titulo d-flex">
                 <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
@@ -233,7 +235,7 @@
             </div>
             <div class="card-footer btn-decoracao"></div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Modal (pop up)-->
         <div class="d-flex justify-content-end m-5">
