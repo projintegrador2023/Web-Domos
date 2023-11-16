@@ -1,5 +1,6 @@
 <?php 
     require_once('db/30_DB_Usuario.php');
+    require_once('db/password.php');
     
     $_ERRO_LOGIN = 0;
 
@@ -12,7 +13,7 @@
                 if (validaCPF($_POST['cpf_cnpj'])){
                     $usuario = new Usuario();
                     $consulta = $usuario->find($_POST['cpf_cnpj']);
-                    if (preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']) == $consulta[0] && $_POST['senha_login'] == $consulta[3]){
+                    if (preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']) == $consulta[0]  && password_verify($_POST['senha_login'], $consulta[3]) == 1){
                         session_start();
                         $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);
                         $_SESSION['tipo_usuario'] = 1;

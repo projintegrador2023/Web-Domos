@@ -111,7 +111,12 @@ class Usuario extends CRUD{
 		return $stmt->fetch(PDO::FETCH_BOTH);
 	}
 	
-	
+	public function delete($id){
+		$sql = "DELETE FROM $this->table WHERE cpf = :id";
+		$stmt = Database::prepare($sql);
+		$stmt ->bindParam(':id', $id);
+		return $stmt->execute();
+	}
 		
 	
 }

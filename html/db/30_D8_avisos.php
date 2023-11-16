@@ -15,7 +15,7 @@ class Postagem extends CRUD{
 	}
 	public function getTitulo(){
 		return $this->titulo;
-	}
+	}   
 	public function setDescricao($descricao){
 		$this->descricao = $descricao;
 	}
@@ -35,29 +35,6 @@ class Postagem extends CRUD{
 	
 	public function getUsuario(){
 		return $this->usuario;
-	}
-	
-	public function setCodigoCondominio($codigo_condominio){
-		$this->codigo_condominio = $codigo_condominio;
-	}
-	
-	public function getCodigoCondominio(){
-		return $this->codigo_condominio;
-	}
-	public function setNivelPermissao($nivel_permissao){
-		$this->nivel_permissao = $nivel_permissao;
-	}
-	
-	public function getNivelPermissao(){
-		return $this->nivel_permissao;
-	}
-
-	public function setCodigoMoradia($codigo_moradia){
-		$this->codigo_moradia = $codigo_moradia;
-	}
-	
-	public function getCodigoMoradia(){
-		return $this->codigo_moradia;
 	}
 	/********Fim dos métodos sets e gets*********/
 	

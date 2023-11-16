@@ -2,21 +2,22 @@
     require_once("30_DB_Usuario.php");
     include("../iniciar_sessao.php");
     $usuario = new Usuario();
-    $dados = $usuario->find($_POST['id']);
+    $dados = $usuario->find($_SESSION['id']);
     if (isset($_POST['salvar'])){
         $nome = $_POST['nome'];
         $senha = $_POST['senha'];
         $conf_senha = $_POST['conf_senha'];
         $email = $_POST['email'];
         if ($senha == $conf_senha){
-            $usuario->setCpf($_POST['id']);
+            $usuario->setCpf($_SESSION['id']);
             $usuario->setNome($nome);
             $usuario->setSenha($senha);
             $usuario->setEmail($email);
             $usuario->setCodigoCondominio($dados[4]);
             $usuario->setNivelPermissao(3);
-
-            $usuario->update($_POST['id']);
+            
+            $usuario->update($_SESSION['id']);
+            header('Location: ../perfil_morador.php');
         }
     }
 
