@@ -91,7 +91,7 @@
             <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="images/icon_perfil_padrao.png" alt="Foto de Perfil" class="rounded-circle col-12 h-100">
+                            <img src="css/img/logoperfil.png" alt="Foto de Perfil" class="rounded-circle col-12">
                         </div>
                     <a href="editar_perfil_morador.php" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white"><i class="fa-solid fa-user-pen flex-grow-1 me-2"></i> Editar perfil</a>
                     <?php 
@@ -107,8 +107,8 @@
                             echo '<p class="caixa-texto">', $cpf, '</p>';
                             echo '<p class="caixa-texto">', $email, '</p>';
                             echo '<div class="d-flex justify-content-between">
-                            <p class="caixa-texto col-5">Num bloco</p>
-                            <p class="caixa-texto col-5">Nome Bloco</p>
+                            <p class="caixa-texto col-5"> Número do apto </p>
+                            <p class="caixa-texto col-5"> Nome do bloco</p>
                         </div>';
 
                         ?>
