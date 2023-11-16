@@ -2,9 +2,8 @@
 	//Classe de usuario
 	include_once 'db/30_DB_usuario.php';
 	$usuario = new Usuario();
-    
-	//verifica se o botao de cadastrar
-	if (isset($_POST['botao_continuar'])){
+	//verifica se o botao de trocar formulario foi acionado
+	if (isset($_POST['submit1'])){
 		//valida os dados do primeiro formulario
 		if (validacao_nome($_POST['nome_usuario']) && validaCPF(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario'])) && $_POST['senha_usuario'] == $_POST['conf_senha_usuario'] && valida_codigo_condominio($_POST['input_codigo_condominio'])){
 			$usuario->setNome($_POST['nome_usuario']); 
@@ -13,19 +12,23 @@
 			$usuario->setSenha($_POST['senha_usuario']);
 			$usuario->setCodigoCondominio($_POST['input_codigo_condominio']);
 			$usuario->setNivelPermissao(3);
-			$usuario->setCodigoMoradia(null);
+		}
+	}
+	//verifica se o botão cadastrar foi acionado
+	if(isset($_POST['botao_cadastrar'])){
+		$usuario->setCodigoMoradia(null);
 
-            if (!isset($_SESSION)){
-                session_start();
-                $_SESSION['usuario'] = $usuario;
-            }
-            
-            header('Location: cadastrar_usuario2.php');
-		} else {
-            echo '<script>
-                    alert("Dados inválidos, verifique novamente.");
-                </script>';
-        }
+		//insere o usuario
+		if($usuario->insert()){
+			if (!isset($_SESSION)){
+				session_start();
+				$_SESSION['id'] = $usuario->getCpf();
+				$_SESSION['tipo_usuario'] = 1;
+				header("Location: ../avisos.php");
+			}
+		} else{
+			header('Location: ../index.php');
+		}
 	}
 
 	function validacao_nome($nome){
@@ -114,8 +117,45 @@
                         <input id="input_codigo_condominio" name="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-5 input-form" type="text" maxlength="6" required>  <br>
                         <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
                     </div>
+
                     <div class="text-end col-12 pt-4">
-                        <input type="submit" name="botao_continuar" value="Continuar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
+                        <button type="submit" onclick="" name="submit1" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3">Continuar</button>
+                    </div>
+                </div>
+
+                <div class="formulario mx-3 px-5 py-4 d-none" id="div_informacoes_condominio">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario_usuario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
+                        <h1 class="color-0491a3 ms-4 fs-2 text-center"> Cadastro da moradia </h1>
+                    </div>
+
+                    <div class="container d-flex justify-content-between p-0 mt-4">
+                            <div class="col-5">
+                            <label class="fs-5 color-0491a3"> Nº do apto*</label> <br>
+                            <select id="numero_apartamento" name="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded">
+                                <option class="text-black"> Escolha uma opção </option>
+                                <option class="text-black"> 101 </option>
+                                <option class="text-black"> 102 </option>
+                                <option class="text-black"> 103 </option>
+                                <option class="text-black"> 104 </option>
+                                <option class="text-black"> 105 </option>
+                                <option class="text-black"> 106 </option>
+                            </select> 
+                        </div>
+                        <div class="col-5">
+                            <label class="fs-5 color-0491a3"> Bloco*</label> <br>
+                            <select id="bloco" name="bloco" class="col-12 fs-5 p-2 border-select text-black rounded">
+                                <option class="text-black"> Escolha uma opção </option>
+                                <option class="text-black"> Amarelo </option>
+                                <option class="text-black"> Azul </option>
+                                <option class="text-black"> Roxo </option>
+                                <option class="text-black"> Rosa </option>
+                                <option class="text-black"> Laranja </option> 
+                            </select> <br>  
+                        </div> 
+                    </div> 
+                    <div class="text-end col-12 pt-4">
+                        <input type="submit" name="botao_cadastrar" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
                     </div>
                 </div>
             </form>

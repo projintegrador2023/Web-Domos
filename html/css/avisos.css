@@ -21,29 +21,29 @@
   display: flex;
 }
 
+.color-critico{
+  color:#cc0000;
+}
+
 .btn-critico{
 	background-color: #cc0000;
 }
 
-.btn-critico:hover{
-	background-color: #710000;
+.color-urgente{
+  color:#F7D74A;
 }
-
 .btn-urgente{
 	background-color: #F7D74A;
 }
 
-.btn-urgente:hover{
-	background-color: #c4aa34;
+.color-importante{
+  color: #53c853;
 }
 
 .btn-importante{
 	background-color: #90ee90;
 }
 
-.btn-importante:hover{
-	background-color: #53c853;
-}
 
 
 /*Configurações do formulario*/

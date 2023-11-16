@@ -13,59 +13,29 @@
 
 .btn-alimentacao{
 	background-color: #ff6da7;
-
-}
-
-.btn-alimentacao:hover{
-	background-color: #b64572;
 }
 
 .btn-vestuario{
 	background-color: #ff6d6d;
 }
 
-.btn-vestuario:hover{
-	background-color: #d33939;
-}
-
 .btn-eletronicos{
-	background-color: #89f1ff;
+	background-color: #76E3CE;
 }
-
-.btn-eletronicos:hover{
-	background-color: #7cc6cf;
-}
-
 .btn-beleza{
 	background-color: #66b73e;
-}
-
-.btn-beleza:hover{
-	background-color: #4d922b;
 }
 
 .btn-decoracao{
 	background-color: #e6a545;
 }
 
-.btn-decoracao:hover{
-	background-color: #b47e2e;
-}
-
 .btn-petshop{
-	background-color: #ffe324;
-}
-
-.btn-petshop:hover{
-	background-color: #ceb61a;
-}
-
-.btn-servicos{
 	background-color: #9f35cc;
 }
 
-.btn-servicos:hover{
-	background-color: #6c1f8d;
+.btn-servicos{
+	background-color: #86AFEA;
 }
 
 .select-modal{
@@ -79,30 +49,37 @@
 /*Configurações das cores das tags*/
 .color-alimentacao{
 	color: #ff6da7;
+  font-weight: bold;
 }
 
 .color-vestuario{
 	color: #ff6d6d;
+  font-weight: bold;
 }
 
 .color-eletronicos{
-	color: #89f1ff;
+	color: #76E3CE;
+  font-weight: bold;
 }
 
 .color-beleza{
 	color: #66b73e;
+  font-weight: bold;
 }
 
 .color-decoracao{
 	color: #e6a545;
+  font-weight: bold;
 }
 
 .color-petshop{
-	color: #ffe324;
+	color: #9f35cc;
+  font-weight: bold;
 }
 
 .color-servicos{
-	color: #9f35cc;
+	color: #86AFEA;
+  font-weight: bold;
 }
 
 .color-titulo{

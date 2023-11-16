@@ -65,7 +65,7 @@
                             echo '<input type="password" name="senha" class="form-control mb-1" placeholder="Senha: ">
                             <input type="password" name="conf_senha" class="form-control mb-1" placeholder="Confirmar senha: ">';
                             echo '<input type="text" name="email" class="form-control mb-1" value="', $email, '">';
-                            echo '<input type="text" class="form-control col-5 mb-1" placeholder="Num do ap: ">
+                            echo '<input type="text" class="form-control col-5 mb-1" placeholder="Número do apto: ">
                             <input type="text" class="form-control col-5" placeholder="Nome do bloco: ">';
                         ?>
                     </div>

@@ -28,7 +28,7 @@
             </div>
             <div class="d-flex w-75 ">
               <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-              <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
+              <input type="text" class="search ps-3 m-lg-2 w-75 text-dark" placeholder="Pesquisar...">
             </div>
             
             <div class="justify-content-around d-flex w-25">

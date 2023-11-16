@@ -28,22 +28,22 @@
         <div class="menu-icon" onclick="openSidebar()">
           <span class=""><i class="fa-solid fa-bars color-subtitulo"></i></span>
         </div>
-        <div class="d-flex w-25 me-3">
+        <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="text" class="search ps-3 m-lg-2 w-100" placeholder="Pesquisar...">
+          <input type="text" class="search ps-2 m-2 w-100 text-dark" placeholder="Pesquisar...">
         </div>
 
-        <div class="justify-content-around w-75 mt-2" id="btns_filtro">
-          <select class="form-select select-modal mb-3">
-            <option selected class="select-modal">Filtros</option>
-            <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
-            <option value="vestuario" class="btn-vestuario">Vestuário</option>
-            <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>
-            <option value="beleza" class="btn-beleza">Beleza</option>
-            <option value="decoracao" class="btn-decoracao">Decoração</option>
-            <option value="petshop" class="btn-petshop">Petshop</option>
-            <option value="servicos" class="btn-servicos">Serviços</option>
-            <option value="salvos" id="btn-salvos" class="bg-0dc0d8 hover-0491a3">Salvos</option>
+        <div class="justify-content-around col-4 mt-2" id="btns_filtro">
+          <select class="color-subtitulo form-select select-modal mb-3">
+            <option selected class="color-subtitulo select-modal">Filtre as tags conforme as cores</option>
+            <option value="alimentacao" style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
+            <option value="vestuario" style="font-weight: bold;" class="color-vestuario">Vestuário</option>
+            <option value="eletronicos" style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
+            <option value="beleza" style="font-weight: bold;" class="color-beleza">Beleza</option>
+            <option value="decoracao" style="font-weight: bold;" class="color-decoracao">Decoração</option>
+            <option value="petshop" style="font-weight: bold;" class="color-petshop">Petshop</option>
+            <option value="servicos" style="font-weight: bold;" class="color-servicos">Serviços</option>
+            <option value="salvos" id="btn-salvos" style="color:#0dc0d8; font-weight: bold;">Salvos</option>
           </select>
         </div> 
 
@@ -247,7 +247,7 @@
 
                 <!-- - Header do modal -->
                 <div class="modal-header">
-                  <h5 class="modal-title color-0491a3" id="staticBackdropLabel">Criar anúncio</h5>
+                  <h5 class="modal-title color-subtitulo" id="staticBackdropLabel">Criar anúncio</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
@@ -264,14 +264,15 @@
                     </div>
 
                     <select class="form-select select-modal mb-3">
-                        <option selected class="select-modal">Escolha a tag do anúncio</option>
-                        <option value="alimentacao" class="btn-alimentacao">Alimentação</option>
-                        <option value="vestuario" class="btn-vestuario">Vestuário</option>
-                        <option value="eletronicos" class="btn-eletronicos">Eletrônicos</option>
-                        <option value="beleza" class="btn-beleza">Beleza</option>
-                        <option value="decoracao" class="btn-decoracao">Decoração</option>
-                        <option value="petshop" class="btn-petshop">Petshop</option>
-                        <option value="servicos" class="btn-servicos">Serviços</option>
+                      <option selected class="color-subtitulo select-modal">Escolha a tag conforme o anúncio</option>
+                      <option value="alimentacao" style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
+                      <option value="vestuario" style="font-weight: bold;" class="color-vestuario">Vestuário</option>
+                      <option value="eletronicos" style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
+                      <option value="beleza" style="font-weight: bold;" class="color-beleza">Beleza</option>
+                      <option value="decoracao" style="font-weight: bold;" class="color-decoracao">Decoração</option>
+                      <option value="petshop" style="font-weight: bold;" class="color-petshop">Petshop</option>
+                      <option value="servicos" style="font-weight: bold;" class="color-servicos">Serviços</option>
+                      <option value="salvos" id="btn-salvos" style="color:#0dc0d8; font-weight: bold;">Salvos</option>
                     </select>
                     <input type="file" class="btn col-5"> 
 
