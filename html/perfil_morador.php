@@ -1,7 +1,6 @@
-<!-- NÃO UTILIZADO NESSE TRABALHO -->
 <?php 
-    require_once("db/30_DB_Usuario.php");
     include("iniciar_sessao.php");
+    require_once("db/30_DB_Usuario.php");
     $usuario = new Usuario();
     $dados = $usuario->find($_SESSION['id']);
     $cpf = $dados[0];
