@@ -49,7 +49,7 @@
             <form action="db/DB_update_usuario.php" method="POST" class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="images/icon_perfil_padrao.png" alt="Foto de perfil" class="rounded-circle col-12 h-100">
+                            <img src="css/img/logodeperfil.png" alt="Foto de perfil" class="rounded-circle col-12 h-100">
                         </div>
                     <button type="submit" name="salvar" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
                     <?php 

@@ -36,12 +36,12 @@
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
           <select class="color-subtitulo form-select select-modal mb-3">
-            <option selected class="color-subtitulo"> Filtre conforme a importância</option>
+            <option selected class="color-subtitulo"> Escolha conforme a importância</option>
             <option value="critico" id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
             <option value="urgente" id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
             <option value="importante" id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
             <option value="salvos" id="btn_salvos" style="font-weight: bold; color:#0dc0d8;">Salvos</option>
-        </select>
+          </select>
         </div>
     </header>
     
@@ -91,11 +91,11 @@
                       <textarea class="form-control form-customiza" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
                   </div>
 
-                  <select class="form-select select-modal mb-3">
-                      <option selected class="">Escolha a importância do aviso</option>
-                      <option value="critico" id="btn_critico" class="btn-critico">Crítico</option>
-                      <option value="urgente" id="btn_urgente" class="btn-urgente">Urgente</option>
-                      <option value="importante" id="btn_importante" class="btn-importante">Importante</option>
+                  <select class="color-subtitulo form-select select-modal mb-3">
+                    <option selected class="color-subtitulo"> Escolha conforme a importância</option>
+                    <option value="critico" id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
+                    <option value="urgente" id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
+                    <option value="importante" id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
                   </select>
               </form>
               <!-- Footer do modal-->

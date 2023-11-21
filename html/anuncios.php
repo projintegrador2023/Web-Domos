@@ -35,7 +35,7 @@
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
           <select class="color-subtitulo form-select select-modal mb-3">
-            <option selected class="color-subtitulo select-modal">Filtre as tags conforme as cores</option>
+            <option selected class="color-subtitulo select-modal">Escolha as tags conforme as cores</option>
             <option value="alimentacao" style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
             <option value="vestuario" style="font-weight: bold;" class="color-vestuario">Vestuário</option>
             <option value="eletronicos" style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>

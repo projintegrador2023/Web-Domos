@@ -40,47 +40,6 @@
             </div>
         </header>
 
-      <!-- Navegação em abas pela barra lateral (sidebar)>
-        <aside id="sidebar" class="sidebar gradient-custom">
-            <div class="sidebar-title d-flex p-3 flex-column align-items-end">
-                <span class="pt-3 px-3" onclick="closeSidebar()">
-                    <i class="fa-solid fa-xmark fs-1"></i>
-                </span>
-
-                <div class="sidebar-brand">
-                    <img src="css/img/logo_branca_icon.png" class="img-fluid" style="height: 14rem; width: 14rem;">
-                </div>
-            
-            </div>
-
-            <ul class="sidebar-list">
-                <li class="sidebar-list-item">
-                    <a href="avisos.php">
-                        <div><i class="fa-solid fa-circle-info col-2"></i> TESTE - AVISOS </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="informacoes.php">
-                        <div><i class="fa-solid fa-people-roof col-2"></i> TESTE - INFO</div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="reservas.php">
-                        <div><i class="fa-solid fa-calendar-check col-2"></i> TESTE </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="index.php">
-                        <div><i class="fa-solid fa-right-from-bracket col-2"></i> TESTE </div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="perfil_morador.php">
-                        <div> PERFIL MORADOR TESTE </div>
-                    </a>
-                </li>
-            </ul>
-        </aside-->
         <?php
             $_SELECTED = 5; 
             include("aside.php");
@@ -90,7 +49,7 @@
             <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="css/img/logoperfil.png" alt="Foto de Perfil" class="rounded-circle col-12">
+                            <img src="css/img/logodeperfil.png" alt="Foto de Perfil" class="rounded-circle col-12">
                         </div>
                     <a href="editar_perfil_morador.php" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white"><i class="fa-solid fa-user-pen flex-grow-1 me-2"></i> Editar perfil</a>
                     <?php 
