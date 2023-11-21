@@ -4,24 +4,24 @@
     
     $_ERRO_LOGIN = 0;
 
-    if (isset($_POST['cpf_cnpj']) || isset($_POST['senha_login'])){
-        if (strlen($_POST['cpf_cnpj']) == 0 || strlen($_POST['senha_login']) == 0){
-            $_ERRO_LOGIN = 1;
-        } else if(validaCPF($_POST['cpf_cnpj'])){
-            $_ERRO_LOGIN = 0;   
+    if (isset($_POST['cpf_cnpj']) || isset($_POST['senha_login'])){ // se os dados foram preenchidos
+        if (strlen($_POST['cpf_cnpj']) == 0 || strlen($_POST['senha_login']) == 0){ // se os campos estao vazios
+            $_ERRO_LOGIN = 1; // avisa ao php ue o erro é do tipo 1
+        } else if(validaCPF($_POST['cpf_cnpj'])){ // valida o cpf
+            $_ERRO_LOGIN = 0;  // avisa que não há erro 
             if (!isset($_SESSION)){
-                if (validaCPF($_POST['cpf_cnpj'])){
-                    $usuario = new Usuario();
-                    $consulta = $usuario->find($_POST['cpf_cnpj']);
-                    if (preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']) == $consulta[0]  && password_verify($_POST['senha_login'], $consulta[3]) == 1){
+                if (validaCPF($_POST['cpf_cnpj'])){ // verifica se é cpf ou cnpj
+                    $usuario = new Usuario(); // cria novo objeto de usuario pra guardar os dados
+                    $consulta = $usuario->find($_POST['cpf_cnpj']); // pega os dados do banco onde o cpf bate
+                    if (preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']) == $consulta[0]  && password_verify($_POST['senha_login'], $consulta[3]) == 1){ // verifica se o cpf e a senha batem
                         session_start();
-                        $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']);
+                        $_SESSION['id'] = preg_replace( '/[^0-9]/', '', $_POST['cpf_cnpj']); // faz o login e entra no aplicativo
                         $_SESSION['tipo_usuario'] = 1;
                         header("Location: avisos.php");
                     } else{
-                        $_ERRO_LOGIN = 2;
+                        $_ERRO_LOGIN = 2; // avisa ao php debaixo que o erro é o tipo 2
                     }
-                } else if(validar_cnpj($_POST['cpf_cnpj'])){
+                } else if(validar_cnpj($_POST['cpf_cnpj'])){ // se for cnpj E for válido
                     
                 }
             }

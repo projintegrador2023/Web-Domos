@@ -1,9 +1,9 @@
-<!-- NÃO UTILIZADO NESSE TRABALHO -->
 <?php 
     require_once("db/30_DB_Usuario.php");
     include("iniciar_sessao.php");
     $usuario = new Usuario();
-    $dados = $usuario->find($_SESSION['id']);
+    $dados = $usuario->find($_SESSION['id']); // puxa os dados do banco onde o cpf é igual ao cpf id da sessão
+    // salva os dados em variaveis
     $cpf = $dados[0];
     $nome = $dados[1];
 	$email = $dados[2];
@@ -61,6 +61,7 @@
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
                         <?php
+                        // puxa os dados do banco para facilitar a visualização
                             echo '<input type="text" name="nome" class="form-control mb-1" value="', $nome, '">';
                             echo '<input type="password" name="senha" class="form-control mb-1" placeholder="Senha: ">
                             <input type="password" name="conf_senha" class="form-control mb-1" placeholder="Confirmar senha: ">';

@@ -1,19 +1,34 @@
 <?php 
-//insere o usuario
-    
-
-    if($usuario->insert()){
-        if (!isset($_SESSION)){
-            session_start();
-            $_SESSION['id'] = $usuario->getCpf();
-            $_SESSION['tipo_usuario'] = 1;
-            header("Location: ../avisos.php");
-        }
-    } else{
-        echo '<script>
-            alert("Algo deu errado, verifique seus dados novamente.");
-        </script>';
+//recebe o usuario meio preenchido da ultima pagina
+    require_once("db/30_DB_Usuario.php");
+    require_once("db/DB_Condominio.php");
+    if(!isset($_SESSION)){
+        session_start();
     }
+
+    if (isset($_POST['botao_cadastrar'])){
+        $usuario = $_SESSION['usuario']; // recebe o usuario da sessao de cadastro 1
+        session_destroy(); // reseta a sessao pra nao guardar o objeto do usuario
+
+        $usuario->setCodigoMoradia(null);
+        // variaveis da moradia $_POST['numero_apartamento'], $_POST['bloco'];
+        try{
+            $usuario->insert(); // insere o usuario no banco
+            if (!isset($_SESSION)){
+                session_start(); // inicia a sessao e efetua o login, redirecionando pra dentro da aplicação
+                $_SESSION['id'] = $usuario->getCpf();
+                $_SESSION['tipo_usuario'] = 1;
+                header("Location: ./avisos.php");
+            }
+        } catch (Exception $e) { // se algo der errado, mostra um alerta js para reinserir os dados
+            echo '<script>  
+                alert("Algo deu errado, verifique seus dados e tente novamente.");
+            </script>';
+        }
+            
+        
+    }
+    
 ?>
 
 <!DOCTYPE html>

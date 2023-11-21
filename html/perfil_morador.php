@@ -2,7 +2,8 @@
     include("iniciar_sessao.php");
     require_once("db/30_DB_Usuario.php");
     $usuario = new Usuario();
-    $dados = $usuario->find($_SESSION['id']);
+    $dados = $usuario->find($_SESSION['id']);// puxa os dados do banco onde o cpf é igual ao cpf id da sessão
+    // salva os dados em variaveis
     $cpf = $dados[0];
     $nome = $dados[1];
 	$email = $dados[2];
@@ -60,7 +61,7 @@
                 <div class="col-10 col-lg-7 my-auto d-flex row align-items-center justify-content-lg-start justify-content-center">
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
-                        <?php
+                        <?php // cria partes para mostrar os dados do perfil de usuario
                             echo '<p class="caixa-texto">', $nome, '</p>';
                             echo '<p class="caixa-texto">', $cpf, '</p>';
                             echo '<p class="caixa-texto">', $email, '</p>';
