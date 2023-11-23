@@ -52,6 +52,5 @@
 			//obtêm uma instância do banco de dados aberta e já prepara para executar uma consulta a qualquer tabela.
 			return self::getInstance()->prepare($sql);
 		}
-		
 	}
 ?>
