@@ -1,7 +1,7 @@
 <?php
 	//Configurações do banco de dados.
-	define('DB_HOST','silly.db.elephantsql.com');
-	define('DB_NAME','pooicvjw');
-	define('DB_USER','pooicvjw');
-	define('DB_PASS','N6d1EaH1tQzgx8kQ5m_G_7uJYrZqT6Cq');
+	define('DB_HOST','isabelle.db.elephantsql.com');
+	define('DB_NAME','dvxnujdk');
+	define('DB_USER','dvxnujdk');
+	define('DB_PASS','FQ9RPWcdQJyp1i1UWtPt9_wgu-j7j4ea');
 ?>

@@ -1,5 +1,6 @@
 <?php 
     require_once "30_DB_crud.php";
+    require_once "password.php";
 
     class Condominio extends CRUD{
         protected $table = 'CONDOMINIO';
@@ -32,7 +33,7 @@
             return $this->codigo_condominio;
         }
         public function setSenha($senha){
-            $this->senha = $senha;
+            $this->senha = password_hash($senha, PASSWORD_DEFAULT);
         }
         public function getSenha(){
             return $this->senha;

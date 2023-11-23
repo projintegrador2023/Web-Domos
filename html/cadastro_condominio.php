@@ -1,22 +1,38 @@
 <?php 
-    function continuar1() {
-        if (validacao_nome($_POST['nome_usuario']) && validaCNPJ(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario'])) && $_POST['senha_usuario'] == $_POST['conf_senha_usuario'] && valida_codigo_condominio($_POST['input_codigo_condominio'])){
-			$condominio->setCNPJ($_POST['cnpj_condominio']); 
-			$condominio->setNome($_POST['nome_condominio']);
-			$condominio->setEmail($_POST['email_condominio']);
-			$condominio->setSenha($_POST['senha_condominio']);
+    require_once('db/DB_Condominio.php');
+    $condominio = new Condominio();
 
-            // Parte criar endereço
-
-            $condominio->setTipo_moradia($_POST['tipo_moradia']);
-            $condominio->setFaixa_qtd_moradores($_POST['faixa_qtd_moradores']);
-            $condominio->setRegimento($_POST['regimento_interno']);
-            
-		}
+    if (isset($_POST['submit'])){
+        if (validar_cnpj($_POST['cnpj_condominio']) && validacao_nome($_POST['nome_condominio'])){
+            if ($_POST['senha_condominio'] == $_POST['conf_senha_condominio']){
+                
+            }
+            else {
+                echo "<script> 
+                alert('As senhas não coincidem.');
+                </script>";
+            }
+        }
     }
-
-    function validar_cnpj($cnpj)
-    { // essa identaçao ta fora do padrao hein
+   
+    function validacao_nome($nome){
+		if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)){
+			echo "<script> 
+			alert('O nome contém caracteres inválidos');
+			</script>";
+			return false;
+		} 
+		return true;
+	}
+    function validacao_cep($cep){
+        if(!preg_match('/^[0-9]{5,5}([- ]?[0-9]{3,3})?$/', $cep)) {
+            echo "<script> 
+            alert('Cep inválido');
+            </script>";
+            return false;
+        } else return true;
+    }
+    function validar_cnpj($cnpj){
         $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
         
         // Valida tamanho
@@ -79,19 +95,19 @@
                     <h2 class="color-0491a3 fw-400 text-center mt-3 mb-4">Cadastro do Condomínio</h2>
 
                     <label for="cnpj_condominio" class="text-start color-0491a3 fw-400 fs-5" >CNPJ*</label>
-                    <input type="text" id="cnpj_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <input type="text" required id="cnpj_condominio" name="cnpj_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
 
                     <label for="nome_condominio" class="text-start color-0491a3 fw-400 fs-5">Nome*</label>
-                    <input type="text" id="nome_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <input type="text" required id="nome_condominio" name="nome_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
 
                     <label for="email_condominio" class="text-start color-0491a3 fw-400 fs-5">E-mail*</label>
-                    <input type="email" id="email_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <input type="email" required id="email_condominio" name="email_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
 
                     <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Senha*</label>
-                    <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <input type="password" required id="senha_condominio" name="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
 
                     <label for="senha_condominio" class="text-start color-0491a3 fw-400 fs-5">Confirmar senha*</label>
-                    <input type="password" id="senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
+                    <input type="password" required id="conf_senha_condominio" name="conf_senha_condominio" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black">
 
                     </div>
 
@@ -99,13 +115,18 @@
                     <h2 class="color-0491a3 fw-400 text-center mt-3 mb-4"> Cadastro do Endereço</h2>
 
                     <label for="cep_condominio" class="text-start color-0491a3 fw-400 fs-5 d-block mt-3">CEP*</label>
-                    <input type="text" id="cep_condominio" class="col-4 input-form bg-e8e8e8 fs-6 p-2 mb-3 text-black d-block">
+                    <input type="text" id="cep_condominio" name="cep_condominio" class="col-4 input-form bg-e8e8e8 fs-6 p-2 mb-3 text-black d-block">
                     <div class="d-flex col-12 justify-content-between mb-3">
                         <label class="text-start color-0491a3 fw-400 fs-5 d-block col-5">Cidade*
-                            <input type="text" id="cidade_condominio" class="col-12 input-form bg-e8e8e8 fs-6 p-2 text-black d-block">
+                            <input type="text" id="cidade_condominio" name="cidade_condominio" class="col-12 input-form bg-e8e8e8 fs-6 p-2 text-black d-block">
                         </label>
                         <label class="text-start color-0491a3 fw-400 fs-5 d-block col-5">Estado*
-                            <input type="text" id="estado_condominio" class="col-12 input-form bg-e8e8e8 fs-6 p-2 text-black d-block">
+                            <!--input type="text" id="estado_condominio" name="estado_condominio" class="col-12 input-form bg-e8e8e8 fs-6 p-2 text-black d-block"-->
+                            <select id="estado_condominio" name="estado_condominio" class="col-12 form-select d-block fs-6 p-2 color-0491a3">
+                                <?php 
+                                    // codigo pra puxar os estados do bd
+                                ?>
+                            </select>
                         </label>
                     </div>
                     <label for="nome_condominio" class="text-start color-0491a3 fw-400 fs-5">Bairro*</label>
@@ -145,63 +166,17 @@
                                 <option value="default" class="text-black">Escolha uma opção</option>
                                 <option value="default" class="text-black">Casas</option>
                                 <option value="default" class="text-black">Apartamentos</option>
-                                <option value="default" class="text-black">Casas e Apartamentos</option>
                             </select>
 
-                    <div class="d-flex justify-content-between mb-5">
-                        <div class="col-7">
-                            <h4 class="color-0491a3 fs-6 fw-400 col-12 d-block">Tipo de divisão*</h4>
-                            <input type="radio" name="divisao" id="numeros" class="">
-                            <label for="numeros" class="text-black fs-6">Números</label><br>
-                            <input type="radio" name="divisao" id="cores" class="">
-                            <label for="cores" class="text-black fs-6">Cores</label><br>
-                            <input type="radio" name="divisao" id="letras" class="">
-                            <label for="letras" class="text-black fs-6">Letras</label><br>
-                            <input type="radio" name="divisao" id="nenhum" class="">
-                            <label for="nenhum" class="text-black fs-6">Nenhum</label><br>
-                            <input type="radio" name="divisao" id="outro" class="">  
-                            <label for="outro" id="outro"class="text-black fs-6" onclick=a()>Outro:</label>
-                            <input type="text" id="outra_divisao" class="d_none input-form bg-e8e8e8 text-black p-0 fs-6">
-                            <script>
-                                function a(){
-                                    var input = document.getElementById('outra_divisao');
-                                    var outro = document.getElementById('outro');
-                                
-                                        if(outro.checked == true) {
-                                        input.classList.remove(d_none);
-                                        input.classList.add(d_block);
-                                        input.focus();
-                                        } else {
-                                        input.classList.remove(d_block);
-                                        input.classList.add(d_none);
-                                        input.value='';
-                                        }
-                                    }
-                                
-                                
-    
-                                
-                            </script>
-                        </div>
-                        <div class="col-6">
-                            
-                            <!--input type="radio" name="moradia" id="casas" class="">
-                            <label for="tipo_moradia" class="text-black fs-6">Casas</label><br>
-                            <input type="radio" name="moradia" id="apartamentos" class="">
-                            <label for="tipo_moradia" class="text-black fs-6">Apartamentos</label><br>
-                            <input type="radio" name="moradia" id="casas_e_apartamentos" class="">
-                            <label for="tipo_moradia" class="text-black fs-6">Casas e Apartamentos</label><br-->
-                        </div>
-                        
-                    </div>
+                    
                     <div class="mb-5">
-                        <label for="nome_divisao" class="form-label color-0491a3 fs-6">Digite os nomes das divisões:</label>
+                        <label for="nome_divisao" class="form-label color-0491a3 fs-6">Digite os números / nomes dos blocos:</label>
 
                         <div id="divisaodiv">
                             <input type="text" name="divisao" id="divisao" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>
                         </div>
                         
-                        <input type="button" onclick=adicionarDivisao() value="Adicionar mais uma divisão" class="justify-content-center bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
+                        <input type="button" onclick=adicionarDivisao() value="Adicionar mais um bloco" class="justify-content-center bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
                         
                         <script>
                             function adicionarDivisao(){
@@ -221,7 +196,7 @@
                             <input type="text" name="num" id="num" class="col-12 p-2 mb-3 input-form bg-e8e8e8 fs-6 text-black"><br>
                         </div>
                         
-                        <input type="button" onclick=adicionarNum() value="Adicionar mais um numero" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
+                        <input type="button" onclick=adicionarNum() value="Adicionar mais um número" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-9 col-xxl-6 hover-0491a3"></input>
                         
                         <script>
                             function adicionarNum(){
@@ -237,69 +212,12 @@
                     </div>
                     <div class="mb-5">
                       <label for="" class="form-label color-0491a3 fs-6">Insira o pdf de regimento interno (opcional):</label>
-                      <input for="regimento_interno" type="file" class="form-control" id="regimento_interno">
+                      <input name="regimento_interno" accept="application/pdf" type="file" class="form-control" id="regimento_interno">
                     </div>
                     <div class="text-end col-12">
-                        <input type="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
+                        <input type="submit" name="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
                     </div>
                 </div>
-
-                <!--div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-none" id="div_cadastro_informacoes_opcionais">
-                    <div class="d-flex p-3">
-                        <button type="button" class="rounded-5 border-0 fs-1 bg-e8e8e8" onclick="voltar_formulario()"><i class="fa-solid fa-circle-arrow-left color-0491a3"></i></button>
-                        <h2 class="color-0491a3 m-auto fs-2 text-center">Áreas para reserva (opcional)</h2>
-                    </div>
-                    <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="saloes_de_festas" id="saloes_de_festas">
-                        <label class="form-check-label color-0491a3 fs-6" for="saloes_de_festas">
-                            Salões de festas
-                        </label><br>
-                        <label for="desc_saloes_de_festas" class="form-label color-0491a3 fs-6"> Nomes dos salões de festa separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" placeholder="Exemplo: Salão 1; Salão 2; Salão Especial" id="desc_saloes_de_festas" rows="1"></textarea>
-                        
-                        <input class="form-check-input" type="checkbox" value="churrasqueiras" id="churrasqueiras">
-                        <label class="form-check-label color-0491a3 fs-6" for="churrasqueiras">
-                        Churrasqueiras
-                        </label><br>
-                        <label for="desc_churrasqueiras" class="form-label color-0491a3 fs-6"> Nomes das churrasqueiras separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" id="desc_churrasqueiras" placeholder="Exemplo: Churrasqueira bloco 1; Churrasqueira bloco 2; Churrasqueira premium" rows="1"></textarea>
-
-                        <input class="form-check-input" type="checkbox" value="quadras" id="quadras">
-                        <label class="form-check-label color-0491a3 fs-6" for="quadras">
-                        Quadras
-                        </label><br>
-                        <label for="desc_churrasqueiras" class="form-label color-0491a3 fs-6"> Nomes das quadras separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" id="desc_quadras" placeholder="Exemplo: Quadra de tênis; Quadra de vôlei; Quadra de futsal" rows="1"></textarea>
-
-                        <input class="form-check-input" type="checkbox" value="saunas" id="saunas">
-                        <label class="form-check-label color-0491a3 fs-6" for="saunas">
-                        Saunas
-                        </label><br>
-                        <label for="desc_saunas" class="form-label color-0491a3 fs-6"> Nomes das saunas separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" id="desc_saunas" placeholder="Exemplo: Sauna grande; Sauna pequena" rows="1"></textarea>
-
-                        <input class="form-check-input" type="checkbox" value="sala_de_jogos" id="sala_de_jogos">
-                        <label class="form-check-label color-0491a3 fs-6" for="sala_de_jogos">
-                        Salas de jogos
-                        </label><br>
-                        <label for="desc_sala_de_jogos" class="form-label color-0491a3 fs-6"> Nomes das salas de jogos separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" placeholder="Exemplo: Salão do térreo; Salão de sinuca" id="desc_sala_de_jogos" rows="1"></textarea>
-
-                        <input class="form-check-input" type="checkbox" value="espaco_gourmet" id="espaco_gourmet">
-                        <label class="form-check-label color-0491a3 fs-6" for="espaco_gourmet">
-                        Espaços gourmet
-                        </label><br>
-                        <label for="desc_espaco_gourmet" class="form-label color-0491a3 fs-6"> Nomes dos espaços gourmet separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" id="desc_espaco_gourmet" placeholder="Exemplo: Espaço gourmet térreo; Espaço gourmet cobertura; Espaço gourmet piscina" rows="1"></textarea>
-
-                        <input class="form-check-input" type="checkbox" value="espaco_kids" id="espaco_kids">
-                        <label class="form-check-label color-0491a3 fs-6" for="espaco_kids">
-                        Espaços kids
-                        </label><br>
-                        <label for="desc_espaco_kids" class="form-label color-0491a3 fs-6"> Nomes dos espaços kids separados por ponto e vírgula(;):</label>
-                        <textarea class="form-control" id="desc_espaco_kids" placeholder="Exemplo: Espaço kids 0-3 anos; Espaço kids 3-6 anos; Espaço kids 6-12 anos" rows="1"></textarea>
-                    </div>
-                </div-->
             </form>
         </div>
 
