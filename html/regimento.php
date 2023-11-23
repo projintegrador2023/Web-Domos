@@ -24,14 +24,9 @@
         <!--Cabeçalho de pesquisa e filtros-->
         <header class="header d-flex align-items-center justify-content-between m-3"> 
             <div class="menu-icon" onclick="openSidebar()">
-            <span class=""><i class="fa-solid fa-bars titulo-sub"></i></span>
+              <span class=""><i class="fa-solid fa-bars titulo-sub"></i></span>
             </div>
-            <div class="d-flex w-75 ">
-              <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-              <input type="text" class="search ps-3 m-lg-2 w-75 text-dark" placeholder="Pesquisar...">
-            </div>
-            
-            <div class="justify-content-around d-flex w-25">
+            <div class="d-flex w-25">
               <button class="btn baixar-btn rounded-5 w-75 m-2 fs-6" type="button">Baixar PDF</button>
             </div>
         </header>

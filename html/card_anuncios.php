@@ -1,7 +1,6 @@
 <?php 
     echo '
-    <!-- INICIO CARD  -->
-    <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
+    <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8 cards-pesquisa">
       <div class="card-header bg-transparent">
         <div class="d-flex">
           <h4 class="flex-grow-1 sticky-top color-titulo card-title">Nome Morador</h4>
@@ -30,6 +29,5 @@
       </div>
       <div class="card-footer btn-alimentacao"></div>
     </div> 
-    <!-- FIM DO CARD -->
     '
 ?>
