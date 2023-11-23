@@ -31,7 +31,7 @@
         </div>
         <div class="d-flex w-50 ">
           <button class="btn"><i class="fa-solid fa-magnifying-glass search-btn"></i></button>
-          <input type="search" class="search ps-2 m-2 w-100 text-dark" placeholder="Pesquisar...">
+          <input type="search" class="search ps-2 m-2 w-100 text-dark" placeholder="Pesquisar..." onkeyup="search()" id="pesquisar">
         </div>
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
