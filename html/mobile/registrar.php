@@ -11,24 +11,23 @@ require_once('conexao_db.php');
 $resposta = array();
  
 // verifica se todos os campos necessários foram enviados ao servidor
-if (isset($_POST['nome_usuario']) && isset($_POST['cpf_usuario']) && isset($_POST['email_usuario']) && isset($_POST['senha_usuario']) 
-&& isset($_POST['codigo_condominio']) && isset($_POST['codigo_moradia']) ) {
+if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['codigo_condominio']) && isset($_POST['numero_apartamento']) && isset($_POST['divisao'])) {
  
     // o método trim elimina caracteres especiais/ocultos da string
-	$nome_usuario = trim($_POST['nome_usuario']);
-	$cpf_usuario = trim($_POST['cpf_usuario']);
-    $email_usuario = trim($_POST['email_usuario']);
-	$senha_usuario = trim($_POST['senha_usuario']);
-    $codigo_condominio = trim($_POST['codigo_condominio']);
-	$codigo_moradia = trim($_POST['codigo_moradia']);
-	
+	$cpf = trim($_POST['cpf']);
+	$nome = trim($_POST['nome']);
+	$email = trim($_POST['email']);
+	$senha = trim($_POST['senha']);
+	$codigo_condominio = trim($_POST['codigo_condominio']);
+	$numero_apartamento = trim($_POST['numero_apartamento']);
+	$divisao = trim($_POST['divisao']);
 	// o bd não armazena diretamente a senha do usuário, mas sim 
 	// um código hash que é gerado a partir da senha.
-	$token = password_hash($senha_usuario, PASSWORD_DEFAULT);
+	$token = password_hash($senha, PASSWORD_DEFAULT);
 	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
-	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM USUARIO WHERE cpf='$cpf_usuario'");
+	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuarios WHERE cpf='$cpf'");
 	$consulta_usuario_existe->execute();
 	if ($consulta_usuario_existe->rowCount() > 0) { 
 		// se já existe um usuario para login
@@ -39,7 +38,8 @@ if (isset($_POST['nome_usuario']) && isset($_POST['cpf_usuario']) && isset($_POS
 	}
 	else {
 		// se o usuário ainda não existe, inserimos ele no bd.
-		$consulta = $db_con->prepare("INSERT INTO USUARIO(cpf, nome, email, senha, FK_CONDOMINIO_codigo_condominio,FK_NIVEL_PERMISSAO_codigo_nivel_permissao , FK_MORADIA_codigo_moradia ) VALUES( '$cpf_usuario', '$nome_usuario', '$email_usuario', '$token', '$codigo_condominio', '1' , '$codigo_moradia')");
+		$consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, codigo_condominio, FK_MORADIA_codigo_moradia, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_IMAGEM_codigo_imagem) 
+																			VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio', '$codigo_moradia', 3, null)");
 	 
 		if ($consulta->execute()) {
 			// se a consulta deu certo, indicamos sucesso na operação.

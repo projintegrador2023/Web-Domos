@@ -14,9 +14,6 @@ require_once('autenticacao.php');
 // array de resposta
 $resposta = array();
 
-//fuso horario de sao paulo
-$timezone = new DateTimeZone('America/Sao_Paulo');
-
 // verifica se o usuário conseguiu autenticar
 if(autenticar($db_con)) {
 	
@@ -26,17 +23,15 @@ if(autenticar($db_con)) {
 	// preco - preco do produto
 	// descricao - descricao do produto
 	// img - imagem do produto
-	if (isset($_POST['descricao']) && isset($_POST['titulo'])  && isset($_POST['tag']) && isset($_FILES['img'])) {
+	if (isset($_POST['nome']) && isset($_POST['preco']) && isset($_POST['descricao']) && isset($_FILES['img'])) {
 		
 		// Aqui sao obtidos os parametros
+		$nome = $_POST['nome'];
+		$preco = $_POST['preco'];
 		$descricao = $_POST['descricao'];
-		$titulo = $_POST['titulo'];
-		$tag = $_POST['tag'];
-		//pega a hora do post no fuso horario de sao paulo
-		$data_hora_postagem = new DateTime('now', $timezone);
 		
 		$filename = $_FILES['img']['tmp_name'];
-		$client_id="ce5d3a656e2aa51"; //mudar pra nossa conta do imgur
+		$client_id="ce5d3a656e2aa51";
 		$handle = fopen($filename, "r");
 		$data = fread($handle, filesize($filename));
 		$pvars   = array('image' => base64_encode($data));
@@ -53,31 +48,14 @@ if(autenticar($db_con)) {
 		$pms = json_decode($out,true);
 		$img_url=$pms['data']['link'];
 		
-		
-		// A proxima linha insere um novo produto no BD.
-		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
-		$consulta = $db_con->prepare("INSERT INTO IMAGEM(link) VALUES('$img_url')");
-		if ($consulta->execute()) {
-			// Se o produto foi inserido corretamente no servidor, o cliente 
-			// recebe a chave "sucesso" com valor 1
-			$resposta["sucesso"] = 1;
-			
-		} else {
-			// Se o produto nao foi inserido corretamente no servidor, o cliente 
-			// recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
-			// motivo da falha.
-			$resposta["sucesso"] = 0;
-			$resposta["erro"] = "Erro ao salvar imagem no BD: " . $consulta->error;
-		}
 
 		// A proxima linha insere um novo produto no BD.
 		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
-		$consulta = $db_con->prepare("INSERT INTO POSTAGEM(data_hora_postagem, descricao , titulo , FK_USUARIO_cpf) VALUES('$data_hora_postagem', '$descricao', '$titulo', '$login')");
+		$consulta = $db_con->prepare("INSERT INTO produtos(nome, preco, descricao, img, usuarios_login) VALUES('$nome', '$preco', '$descricao', '$img_url', '$login')");
 		if ($consulta->execute()) {
 			// Se o produto foi inserido corretamente no servidor, o cliente 
 			// recebe a chave "sucesso" com valor 1
 			$resposta["sucesso"] = 1;
-			
 		} else {
 			// Se o produto nao foi inserido corretamente no servidor, o cliente 
 			// recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
