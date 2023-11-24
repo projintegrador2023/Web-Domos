@@ -78,8 +78,21 @@ class Endereco extends CRUD{
 		$stmt->bindParam(':numero', $this->numero);
 		$stmt->bindParam(':complemento', $this->complemento);
 		$stmt->bindParam(':bairro', $bairro, PDO::PARAM_INT);
+		if ($stmt->execute()){
+			$sql_endereco = "SELECT codigo_endereco FROM ENDERECO WHERE cep = :cep AND numero = :numero AND desc_logradouro = :rua AND complemento = :complemento AND fk_bairro_codigo_bairro = :bairro";
+			$stmt = Database::prepare($sql_endereco);
+			$stmt->bindParam(':cep', $this->cep);
+			$stmt->bindParam(':rua', $this->rua);
+			$stmt->bindParam(':numero', $this->numero);
+			$stmt->bindParam(':complemento', $this->complemento);
+			$stmt->bindParam(':bairro', $bairro, PDO::PARAM_INT);
+			$stmt->execute();
+			$dados = $stmt->fetch(PDO::FETCH_BOTH);
+			return $dados[0];
+		} else{
+			return null;
+		}
 		
-		return $stmt->execute();
 	}
 
 	public function insert_cidade(){
@@ -88,20 +101,19 @@ class Endereco extends CRUD{
 		$stmt_cidade->bindParam(':cidade', $this->cidade);
 		$stmt_cidade->bindParam(':estado', $this->estado, PDO::PARAM_INT);
 		$stmt_cidade->execute();
-		$dados = $stmt_cidade->fetch(PDO::FETCH_BOTH);
-		if (count($dados) > 0){
-			return $dados;
+		if ($stmt_cidade->rowCount() > 0){
+			$dados = $stmt_cidade->fetch(PDO::FETCH_BOTH);
+			return $dados[0];
 		} else{
 			$sql = "INSERT INTO CIDADE (nome, FK_ESTADO_codigo_estado) VALUES (:cidade, :estado);";
 			$stmt = Database::prepare($sql);
 			$stmt->bindParam(':estado', $this->estado, PDO::PARAM_INT);
 			$stmt->bindParam(':cidade', $this->cidade);
 			$stmt->execute();
-			$codigo_cidade = $stmt_cidade->fetch(PDO::FETCH_BOTH);
-			return $codigo_cidade;
+			$stmt_cidade->execute();
+			$dados = $stmt_cidade->fetch(PDO::FETCH_BOTH);
+			return $dados[0];
 		}
-
-		
 	}
 	public function insert_bairro(){
 		$codigo_cidade = $this->insert_cidade();
@@ -110,9 +122,9 @@ class Endereco extends CRUD{
 		$stmt_bairro->bindParam(':bairro', $this->bairro);
 		$stmt_bairro->bindParam(':cidade', $codigo_cidade, PDO::PARAM_INT);
 		$stmt_bairro->execute();
-		$dados = $stmt_bairro->fetch(PDO::FETCH_BOTH);
-		if (count($dados) > 0){
-			return $dados;
+		if ($stmt_bairro->rowCount() > 0){
+			$dados = $stmt_bairro->fetch(PDO::FETCH_BOTH);
+			return $dados[0];
 		} else {
 			$sql = "INSERT INTO BAIRRO (nome, FK_CIDADE_codigo_cidade) VALUES (:bairro, :cidade)";
 			$stmt = Database::prepare($sql);
@@ -121,8 +133,8 @@ class Endereco extends CRUD{
 			$stmt->execute();
 
 			$stmt_bairro->execute();
-			$codigo_bairro = $dados = $stmt_bairro->fetch(PDO::FETCH_BOTH);
-			return $codigo_bairro;
+			$dados = $stmt_bairro->fetch(PDO::FETCH_BOTH);
+			return $dados[0];
 		}
 	}
 	
