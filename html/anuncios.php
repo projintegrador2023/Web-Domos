@@ -1,5 +1,44 @@
 <?php 
   include("iniciar_sessao.php");
+  require_once('db/DB_Anuncio.php');
+  $cpf = $_SESSION['id'];
+  $anuncio = new Anuncio();
+
+  if (isset($_POST['submit'])){
+    if (!empty($_POST['titulo_aviso']) && !empty($_POST['descricao_aviso']) && $_POST['tag'] != 'Escolha a tag conforme o anúncio'){
+      $anuncio->setTitulo($_POST['titulo_aviso']);
+      $anuncio->setDescricao($_POST['descricao_aviso']);
+      $timezone = new DateTimeZone('America/Sao_Paulo');
+      $data_hora = new DateTime('now', $timezone);
+      $data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
+      $anuncio->setDataHoraPostagem($data_hora_formatada);
+      $anuncio->setFKUsuarioCpf($cpf);
+
+      $sql = "SELECT codigo_tag FROM TAG WHERE desc_tag = :tag";
+      $stmt = Database::prepare($sql);
+      $stmt->bindParam(':tag', $_POST['tag']);
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_tag = $dados[0];
+      $anuncio->setFKTagCodigoTag($codigo_tag);
+      
+      if(empty($_POST['file'])){
+        try{
+          $anuncio->insert();
+          header('Location: anuncios.php');
+        } catch(PDOException $e) {
+          echo '<script>  
+                      alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
+                  </script>';
+                  echo $e;
+        }
+      } else {
+        // codigo pra inserir a imagem no banco e linkar com o anuncio
+      }
+      
+    }
+    
+  }
 ?>
 
 <!DOCTYPE html>
@@ -225,41 +264,39 @@
                   <h5 class="modal-title color-subtitulo" id="staticBackdropLabel">Criar anúncio</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
-                <!-- - Body do modal  -->
-                <div class="modal-body">  
-                  <!-- - Formulário de criar anúncio  -->
-                  <form>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="titulo_aviso" placeholder="Título">
-                    </div>
+                <!-- - Formulário de criar anúncio  -->
+                <form action="" method="POST">
+                  <!-- - Body do modal  -->
+                  <div class="modal-body">  
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="titulo_aviso" name="titulo_aviso" placeholder="Título">
+                      </div>
 
-                    <div class="mb-3">
-                        <textarea class="form-control" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
-                    </div>
+                      <div class="mb-3">
+                          <textarea class="form-control" id="descricao_aviso" name="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
+                      </div>
 
-                    <select class="form-select select-modal mb-3">
-                      <option selected class="color-subtitulo select-modal">Escolha a tag conforme o anúncio</option>
-                      <option value="alimentacao" style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
-                      <option value="vestuario" style="font-weight: bold;" class="color-vestuario">Vestuário</option>
-                      <option value="eletronicos" style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
-                      <option value="beleza" style="font-weight: bold;" class="color-beleza">Beleza</option>
-                      <option value="decoracao" style="font-weight: bold;" class="color-decoracao">Decoração</option>
-                      <option value="petshop" style="font-weight: bold;" class="color-petshop">Petshop</option>
-                      <option value="servicos" style="font-weight: bold;" class="color-servicos">Serviços</option>
-                      <option value="salvos" id="btn-salvos" style="color:#0dc0d8; font-weight: bold;">Salvos</option>
-                    </select>
-                    <input type="file" class="btn col-5"> 
+                      <select name="tag" class="form-select select-modal mb-3">
+                        <option class="color-subtitulo select-modal">Escolha a tag conforme o anúncio</option>
+                        <option style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
+                        <option style="font-weight: bold;" class="color-vestuario">Vestuário</option>
+                        <option style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
+                        <option style="font-weight: bold;" class="color-beleza">Beleza</option>
+                        <option style="font-weight: bold;" class="color-decoracao">Decoração</option>
+                        <option style="font-weight: bold;" class="color-petshop">Petshop</option>
+                        <option style="font-weight: bold;" class="color-servicos">Serviços</option>
+                      </select>
+                      <input type="file" name="file" class="btn col-5"> 
 
-                  </form>
-                </div>
-                
-                <!-- - Footer do modal  -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
-                  <a href="avisos.php"><button type="button" class="btn btn-publicar">Publicar</button></a>
-                </div>
-
+                    
+                  </div>
+                  
+                  <!-- - Footer do modal  -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
+                    <input type="submit" name="submit" value="Publicar" class="btn btn-publicar">
+                  </div>
+                </form>
               </div>
             </div>
           </div>

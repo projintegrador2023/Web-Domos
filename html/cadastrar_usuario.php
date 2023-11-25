@@ -90,7 +90,7 @@
                     <input class="bg-e8e8e8 col-12 fs-5 input-form" id="nome_usuario" name="nome_usuario" type="text" required maxlength="45"><br>
                     <p id="erro_nome_usuario" class="fs-6 text-danger"></p>
                     <label id="label_cpf_usuario" for="cpf_usuario" class="fs-5 color-0491a3"> Cpf*</label> 
-                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="cpf_usuario" name="cpf_usuario" type="text" required><br>
+                    <input class="bg-e8e8e8 col-12 fs-5 input-form" id="cpf_usuario" name="cpf_usuario" type="number" required><br>
                     <p id="erro_cpf_usuario" class="fs-6 text-danger"></p>
                     <label id="label_email_usuario" for="email_usuario" class="fs-5 color-0491a3"> E-mail*</label> 
                     <input class="bg-e8e8e8 col-12 fs-5 input-form" id="email_usuario" name="email_usuario" type="email" required><br>
@@ -104,7 +104,7 @@
 
                     <div class="my-3">
                         <label for="input_codigo_condominio" id="label_codigo_condominio" class="fs-5 color-0491a3"> Código do condomínio*</label>
-                        <input id="input_codigo_condominio" name="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-5 input-form" type="text" maxlength="6" required>  <br>
+                        <input id="input_codigo_condominio" name="input_codigo_condominio" class="bg-e8e8e8 col-12 fs-5 input-form" type="number" maxlength="6" required>  <br>
                         <p id="erro_codigo_condominio" class="fs-6 text-danger"></p>
                     </div>
 

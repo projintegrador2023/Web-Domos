@@ -8,25 +8,40 @@
 
     if (isset($_POST['botao_cadastrar'])){
         $usuario = $_SESSION['usuario']; // recebe o usuario da sessao de cadastro 1
-        session_destroy(); // reseta a sessao pra nao guardar o objeto do usuario
 
-        $usuario->setCodigoMoradia(null);
-        // variaveis da moradia $_POST['numero_apartamento'], $_POST['bloco'];
-        try{
-            $usuario->insert(); // insere o usuario no banco
-            if (!isset($_SESSION)){
-                session_start(); // inicia a sessao e efetua o login, redirecionando pra dentro da aplicação
+        if ($_POST['numero_apartamento'] != 'Escolha uma opção' && $_POST['bloco'] != 'Escolha uma opção'){
+            $sql_bloco = "SELECT codigo_divisao FROM DIVISAO WHERE desc_divisao = :divisao";
+            $stmt = Database::prepare($sql_bloco);
+            $stmt->bindParam(':divisao', $_POST['bloco']);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $codigo_divisao = $dados[0][0];
+            echo $codigo_divisao;
+
+            $sql_moradia = "SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = :numero AND fk_divisao_codigo_divisao = :codigo_divisao";
+            $stmt = Database::prepare($sql_moradia);
+            $stmt->bindParam(":numero", $_POST["numero_apartamento"]);
+            $stmt->bindParam(':codigo_divisao', $codigo_divisao, PDO::PARAM_INT);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $codigo_moradia = $dados[0][0];
+
+            $usuario->setCodigoMoradia($codigo_moradia);
+            try{
+                $usuario->insert(); // insere o usuario no banco
                 $_SESSION['id'] = $usuario->getCpf();
                 $_SESSION['tipo_usuario'] = 1;
                 header("Location: ./avisos.php");
+            } catch (Exception $e) { // se algo der errado, mostra um alerta js para reinserir os dados
+                echo '<script>  
+                    alert("Algo deu errado, verifique seus dados e tente novamente.");
+                </script>';
             }
-        } catch (Exception $e) { // se algo der errado, mostra um alerta js para reinserir os dados
+        } else{
             echo '<script>  
-                alert("Algo deu errado, verifique seus dados e tente novamente.");
-            </script>';
-        }
-            
-        
+                    alert("Escolha uma moradia válida.");
+                </script>';
+        } 
     }
     
 ?>
@@ -64,23 +79,50 @@
                             <label class="fs-5 color-0491a3"> Nº do apto*</label> <br>
                             <select id="numero_apartamento" name="numero_apartamento" class="col-12 fs-5 p-2 border-select text-black rounded">
                                 <option class="text-black"> Escolha uma opção </option>
-                                <option class="text-black"> 101 </option>
-                                <option class="text-black"> 102 </option>
-                                <option class="text-black"> 103 </option>
-                                <option class="text-black"> 104 </option>
-                                <option class="text-black"> 105 </option>
-                                <option class="text-black"> 106 </option>
+                                <?php 
+                                    $usuario = $_SESSION['usuario'];
+                                    $codigo_condominio = $usuario->getCodigoCondominio();
+                                    $sql = "SELECT numero_moradia FROM MORADIA WHERE fk_condominio_codigo_condominio = :codigo_condominio";
+                                    $stmt = Database::prepare($sql);
+                                    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                                    $stmt->execute();
+                                    $numeros = $stmt->fetchAll(PDO::FETCH_BOTH);
+                                    
+                                    echo "<option class='text-black'>"; 
+                                    echo $numeros[0][0];
+                                    echo "</option>";
+
+                                    $i = 1;
+                                    while ($numeros[$i][0] != $numeros[0][0]){
+                                        echo "<option class='text-black'>"; 
+                                        echo $numeros[$i][0];
+                                        echo "</option>";
+                                        $i++;
+                                    }
+                                ?>
                             </select> 
                         </div>
                         <div class="col-5">
                             <label class="fs-5 color-0491a3"> Bloco*</label> <br>
                             <select id="bloco" name="bloco" class="col-12 fs-5 p-2 border-select text-black rounded">
                                 <option class="text-black"> Escolha uma opção </option>
-                                <option class="text-black"> Amarelo </option>
-                                <option class="text-black"> Azul </option>
-                                <option class="text-black"> Roxo </option>
-                                <option class="text-black"> Rosa </option>
-                                <option class="text-black"> Laranja </option> 
+                                <?php 
+                                    if (!isset($_SESSION)){
+                                        session_start();
+                                    }
+                                    $usuario = $_SESSION['usuario'];
+                                    $codigo_condominio = $usuario->getCodigoCondominio();
+                                    $sql = "SELECT desc_divisao FROM divisao WHERE fk_condominio_codigo_condominio = :codigo_condominio";
+                                    $stmt = Database::prepare($sql);
+                                    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                                    $stmt->execute();
+                                    $divisoes = $stmt->fetchAll(PDO::FETCH_BOTH);
+                                    for ($i = 0; $i < $stmt->rowCount(); $i++){
+                                        echo "<option class='text-black'>"; 
+                                        echo $divisoes[$i][0];
+                                        echo "</option>";
+                                    }
+                                ?>
                             </select> <br>  
                         </div> 
                     </div> 
