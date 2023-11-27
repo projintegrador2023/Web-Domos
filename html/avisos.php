@@ -1,5 +1,44 @@
 <?php 
   include("iniciar_sessao.php");
+  require_once('db/DB_Aviso.php');
+  $cpf = $_SESSION['id'];
+  $aviso = new Aviso();
+
+  if (isset($_POST['submit'])){
+    if (!empty($_POST['titulo_aviso']) && !empty($_POST['descricao_aviso']) && $_POST['importancia'] != 'Escolha a importancia conforme o aviso'){
+      $aviso->setTitulo($_POST['titulo_aviso']);
+      $aviso->setDescricao($_POST['descricao_aviso']);
+      $timezone = new DateTimeZone('America/Sao_Paulo');
+      $data_hora = new DateTime('now', $timezone);
+      $data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
+      $aviso->setDataHoraPostagem($data_hora_formatada);
+      $aviso->setFKUsuarioCpf($cpf);
+
+      $sql = "SELECT codigo_importancia FROM IMPORTANCIA WHERE desc_importancia = :importancia";
+      $stmt = Database::prepare($sql);
+      $stmt->bindParam(':importancia', $_POST['importancia']);
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_importancia = $dados[0];
+      $aviso->setFKimportanciaCodigoimportancia($codigo_importancia);
+      
+      if(empty($_POST['file'])){
+        try{
+          $aviso->insert();
+          header('Location: avisos.php');
+        } catch(PDOException $e) {
+          echo '<script>  
+                      alert("Algo deu errado, verifique as informações do aviso e tente novamente.");
+                  </script>';
+                  echo $e;
+        }
+      } else {
+        // codigo pra inserir a imagem no banco e linkar com o aviso
+      }
+      
+    }
+    
+  }
 ?>
 
 <!DOCTYPE html>
