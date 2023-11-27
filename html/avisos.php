@@ -4,6 +4,8 @@
   $cpf = $_SESSION['id'];
   $aviso = new Aviso();
 
+  error_log("Exec 3", 0); //testando c daniel
+
   if (isset($_POST['submit'])){
     if (!empty($_POST['titulo_aviso']) && !empty($_POST['descricao_aviso']) && $_POST['importancia'] != 'Escolha a importancia conforme o aviso'){
       $aviso->setTitulo($_POST['titulo_aviso']);
@@ -20,10 +22,11 @@
       $stmt->execute();
       $dados = $stmt->fetch(PDO::FETCH_BOTH);
       $codigo_importancia = $dados[0];
-      $aviso->setFKimportanciaCodigoimportancia($codigo_importancia);
+      $aviso->setFKImportanciaCodigoImportancia($codigo_importancia);
       
       if(empty($_POST['file'])){
         try{
+          error_log("Exec 1", 0);
           $aviso->insert();
           header('Location: avisos.php');
         } catch(PDOException $e) {
@@ -118,32 +121,32 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
 
-              <!-- Body do modal-->
-              <div class="modal-body">
-                <!-- Formulário de criar aviso-->
-                <form>
-                  <div class="mb-3">
-                    <input type="text" class="form-control" id="titulo_aviso" placeholder="Título">
-                  </div>
+              <form action="" method="POST">
+                <!-- Body do modal-->
+                <div class="modal-body">
+                  <!-- Formulário de criar aviso-->
+                  
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="titulo_aviso" name="titulo_aviso" placeholder="Título">
+                    </div>
 
-                  <div class="mb-3">
-                      <textarea class="form-control form-customiza" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
-                  </div>
+                    <div class="mb-3">
+                        <textarea class="form-control form-customiza" id="descricao_aviso" name="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
+                    </div>
 
-                  <select class="color-subtitulo form-select select-modal mb-3">
-                    <option selected class="color-subtitulo"> Escolha conforme a importância</option>
-                    <option value="critico" id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
-                    <option value="urgente" id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
-                    <option value="importante" id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
-                  </select>
+                    <select name="importancia" class="form-select select-modal mb-3">
+                      <option selected class="color-subtitulo"> Escolha a importancia conforme o aviso</option>
+                      <option id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
+                      <option id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
+                      <option id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
+                    </select>
+                <!-- Footer do modal-->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
+                  <input type="submit" name="submit" value="Publicar" class="btn btn-publicar">
+                </div>
               </form>
-              <!-- Footer do modal-->
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
-                <a href="avisos.php"><button type="button" class="btn btn-publicar">Publicar</button></a>
-              </div>
-
             </div>
           </div>
         </div>

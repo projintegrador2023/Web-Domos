@@ -25,7 +25,7 @@
         $this->FK_USUARIO_cpf = $FK_USUARIO_cpf;
     }
 
-    public function setFKTagCodigoImportancia($FK_IMPORTANCIA_codigo_importancia) {
+    public function setFKImportanciaCodigoImportancia($FK_IMPORTANCIA_codigo_importancia) {
         $this->FK_IMPORTANCIA_codigo_importancia = $FK_IMPORTANCIA_codigo_importancia;
     }
 
@@ -46,7 +46,7 @@
         return $this->FK_USUARIO_cpf;
     }
 
-    public function getFKTagCodigoImportancia() {
+    public function getFKImportanciaCodigoImportancia() {
         return $this->FK_IMPORTANCIA_codigo_importancia;
     }
 
