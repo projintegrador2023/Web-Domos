@@ -1,7 +1,7 @@
 <?php 
 //recebe o usuario meio preenchido da ultima pagina
-    require_once("db/30_DB_Usuario.php");
-    require_once("db/DB_Condominio.php");
+    require_once("../html/db/30_DB_Usuario.php");
+    require_once("../html/db/DB_Condominio.php");
     if(!isset($_SESSION)){
         session_start();
     }
