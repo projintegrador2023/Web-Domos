@@ -1,6 +1,6 @@
 <?php 
     include("iniciar_sessao.php");
-    require_once("db/30_DB_Usuario.php");
+    require_once("../html/db/30_DB_Usuario.php");
     $usuario = new Usuario();
     $dados = $usuario->find($_SESSION['id']);// puxa os dados do banco onde o cpf é igual ao cpf id da sessão
     // salva os dados em variaveis
