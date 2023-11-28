@@ -1,6 +1,6 @@
 <?php 
-    require_once('db/DB_Condominio.php');
-    require_once('db/DB_Endereco.php');
+    require_once('../html/db/DB_Condominio.php');
+    require_once('../html/db/DB_Endereco.php');
     $condominio = new Condominio();
     $endereco = new Endereco();
     $codigo_endereco = null;
