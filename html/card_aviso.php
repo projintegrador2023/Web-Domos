@@ -25,6 +25,6 @@
       <div class="card-body text-success pt-2">
         <p class="card-text fs-9 text-justify color-descricao">' . $_DESC_AVISO . '</p>
       </div>
-      <div class="card-footer btn-critico"></div>
+      <div class="card-footer '. $_IMPORTANCIA . '"></div>
   </div>'
 ?>

@@ -113,7 +113,27 @@
           $sql = "SELECT * FROM AVISO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
           $stmt = Database::prepare($sql);
           $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
-          include("card_aviso.php");
+          $stmt->execute();
+          $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+          for ($i = 0; $i < $stmt->rowCount(); $i++){
+            //echo $dados[$i][0]; // codigo
+            $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
+            $_DESC_AVISO = $dados[$i][2]; // descricao
+            $_TITULO_AVISO = $dados[$i][3]; // titulo
+            //echo $dados[$i][4]; // cpf
+            $codigo_importancia = $dados[$i][5]; // importancia
+
+            $sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
+            $stmt_importancia = Database::prepare($sql_importancia);
+            $stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
+            $stmt_importancia->execute();
+            $dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
+            $_IMPORTANCIA = strtolower($dados_importancia[0]);
+            
+            //echo $dados[$i][6]; // codigo condominio
+            include("card_aviso.php");
+          }
+          
         ?>
         <!-- FIM DO CARD -->
         

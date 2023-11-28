@@ -67,7 +67,7 @@
     }
 
     public function insert(){
-      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_IMPORTANCIA_codigo_importancia) 
+      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_IMPORTANCIA_codigo_importancia, FK_CONDOMINIO_codigo_condominio) 
                   VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_IMPORTANCIA_codigo_importancia, :FK_CONDOMINIO_codigo_condominio)";
       $stmt = Database::prepare($sql);
       $stmt->bindParam(':data_hora_postagem', $this->data_hora_postagem);
