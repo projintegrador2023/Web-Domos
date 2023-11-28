@@ -1,6 +1,6 @@
 <?php
 	//Classe de usuario
-	include_once 'db/30_DB_usuario.php';
+	include_once '../db/30_DB_usuario.php';
 	$usuario = new Usuario();
 	//verifica se o botao de trocar formulario foi acionado
 	if (isset($_POST['submit1'])){
