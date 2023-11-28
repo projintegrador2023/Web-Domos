@@ -79,83 +79,9 @@
 
         <div class = "col-12 d-flex row justify-content-center my-5"> <!-- Div postagens -->
 
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
-                    <div class="p-1">
-                        <!-- Modal Excluir Anuncio-->
-                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash color-005661"></i></button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5 color-005661" id="exampleModalLabel">Deseja excluir esse anúncio?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-confirmar">Confirmar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-pen color-005661"></i></button>
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title color-0491a3" id="staticBackdropLabel">Editar Anúncio</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <input type="text" class="form-control" id="titulo_aviso" placeholder="Título">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <textarea class="form-control" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
-                                            </div>
-
-                                            <select class="form-select mb-3">
-                                                <option selected class= "select-modal">Escolha a tag do anúncio</option>
-                                                <option value="1" class="select-modal">Alimentação</option>
-                                                <option value="2" class="select-modal">Vestuário</option>
-                                                <option value="3" class="select-modal">Eletrônicos</option>
-                                                <option value="4" class="select-modal">Decoração</option>
-                                                <option value="5" class="select-modal">Petshop</option>
-                                                <option value="6" class="select-modal">Serviços</option>
-                                            </select>
-                                            <input type="file" class="btn col-5"> 
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Voltar</button>
-                                        <a href="anuncios.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button id="salvo" class="btn"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-                    </div>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Pipoca doce</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
-                nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
-                Ligue 30660633 para pedir!</p> 
-              <img src="css/img/pipoca_doce.png" class="img-fluid card-img">      
-            </div>
-            <div class="card-footer tag-alimentacao"></div>
-          </div>
+          <?php 
+            
+          ?>
 
         </main>
     </div>

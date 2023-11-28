@@ -5,9 +5,9 @@
   $anuncio = new Anuncio();
 
   if (isset($_POST['submit'])){
-    if (!empty($_POST['titulo_aviso']) && !empty($_POST['descricao_aviso']) && $_POST['tag'] != 'Escolha a tag conforme o anúncio'){
-      $anuncio->setTitulo($_POST['titulo_aviso']);
-      $anuncio->setDescricao($_POST['descricao_aviso']);
+    if (!empty($_POST['titulo_ANUNCIO']) && !empty($_POST['descricao_ANUNCIO']) && $_POST['tag'] != 'Escolha a tag conforme o anúncio'){
+      $anuncio->setTitulo($_POST['titulo_ANUNCIO']);
+      $anuncio->setDescricao($_POST['descricao_ANUNCIO']);
       $timezone = new DateTimeZone('America/Sao_Paulo');
       $data_hora = new DateTime('now', $timezone);
       $data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
@@ -101,153 +101,69 @@
         <div class="row justify-content-center col-12">
           <!-- Cards --> 
           <?php
-            include("card_anuncios.php");
-          ?>
-        
-          <!-- <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
-              </div>
-            </div>
-  
-            <div class="card-body d-flex row text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Pipoca doce</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
-                nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
-                Ligue 30660633 para pedir!</p> 
-              <img src="css/img/pipoca_doce.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">      
-            </div>
-            <div class="card-footer btn-alimentacao"></div>
-          </div>
-  
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Letícia Teixeira</p></div>
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 105 - Bloco Azul</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Revendedora Natura</h6>
-              <p class="card-text fs-9 text-justify color-descricao"> Encontre os melhores produtos da marca com a nossa revendedora autorizada. 
-                Cuidados com a pele, perfumes, maquiagem e muito mais. Agende agora mesmo uma demonstração e experimente a qualidade Natura.</p>             
-              <img src="css/img/natura.png" class="w-100 h-50 col-lg-5 col-xl-3 col-8">  
-            </div>
-            <div class="card-footer btn-beleza"></div>
-          </div>
-  
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Raynan Silva</p></div>
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 107 - Bloco Azul</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Iphone XR</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Vendo iPhone XR vermelho, usado por 1 ano. Excelente estado, sem arranhões. 
-                Desbloqueado e pronto para uso. Inclui carregador original. Preço negociável. Entre em contato para mais informações.
-              </p> 
-              <img src="css/img/iphoneXR.png" class="img-fluid w-100 h-50 card-img">               
-            </div>
-            <div class="card-footer btn-eletronicos"></div>
-          </div>
-  
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Lorena Torres</p></div>
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 105 - Bloco Roxo</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Penteado</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Destaque-se em qualquer ocasião com penteados criativos como esse! 
-                Combinando tranças e coques, esse estilo é perfeito para o carnaval ou festas temáticas. Experimente e surpreenda! Agende já seu horário: 27999663344.
-              </p> 
-              <img src="css/img/penteado.png" class="img-fluid w-100 h-50 card-img"> 
-            </div>
-            <div class="card-footer btn-servicos"></div>
-          </div>
+          if (!isset($_SESSION)){
+            session_start();
+          }
+          $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
+          $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+          $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
+          $stmt_cod_condominio->execute();
+          $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+          $codigo_condominio = $dados[0];
 
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8" style="max-width: 25rem;">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Camila Egydio</p></div>
-                <div class="dropdown">
-                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical text-dark"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-                <button id="salvo" class="btn mb-2"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 304 - Bloco Roxo</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Vendo almofada</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Renove sua decoração com o Kit de 4 capas para almofadas folhas branco.
-                  Confeccionadas em tecido macio e resistente, combinam com diversos estilos de ambientes. Aproveite a promoção e adquira já o seu!
-              </p>
-              <img src="css/img/almofada.png" class="img-fluid w-100 h-50 card-img">
-            </div>
-            <div class="card-footer btn-decoracao"></div>
-          </div>
-        </div> -->
+          $sql = "SELECT * FROM ANUNCIO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+          $stmt = Database::prepare($sql);
+          $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+          $stmt->execute();
+          $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+          $_TAG = 'background-color: #ff6da7';
+          for ($i = 0; $i < $stmt->rowCount(); $i++){
+            //echo $dados[$i][0]; // codigo
+            //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
+            $_DESC_ANUNCIO = $dados[$i][2]; // descricao
+            $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
+            $cpf = $dados[$i][4]; // cpf
+            $codigo_tag = $dados[$i][5]; // tag
+           
+            
+            $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
+            $stmt_morador = Database::prepare($sql_morador);
+            $stmt_morador->bindParam(':cpf', $cpf);
+            $stmt_morador->execute();
+            $dados_morador = $stmt_morador->fetch(PDO::FETCH_BOTH);
+            $_NOME_MORADOR = $dados_morador[1]; // nome
+            $codigo_moradia = $dados_morador[7];
+
+            $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
+                              INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
+                                WHERE codigo_moradia = :codigo_moradia";
+            $stmt_moradia = Database::prepare($sql_moradia);
+            $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
+            $stmt_moradia->execute();
+            $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
+            $_DIVISAO = $dados_moradia[1];
+            $_NUM_MORADIA = $dados_moradia[0]; 
+
+            if ($codigo_tag == 1){
+              $_TAG = 'background-color: #ff6da7'; // alimentação
+            } else if ($codigo_tag == 2){
+              $_TAG = 'background-color: #ff6d6d'; // vestuario
+            } else if ($codigo_tag == 3){
+              $_TAG = 'background-color: #76E3CE'; // eletronicos
+            } else if ($codigo_tag == 4){
+              $_TAG = 'background-color: #66b73e'; // beleza
+            } else if ($codigo_tag == 5){
+              $_TAG = 'background-color: #e6a545'; // decoração
+            } else if ($codigo_tag == 6){
+              $_TAG = 'background-color: #9f35cc'; // pet-shop
+            } else if ($codigo_tag == 7){
+              $_TAG = 'background-color: #86AFEA'; // serviços
+            } 
+            
+            //echo $dados[$i][6]; // codigo condominio
+            include("card_anuncios.php");
+          }
+        ?>
 
         <!-- Modal (pop up)-->
         <div class="d-flex justify-content-end m-5">
@@ -269,11 +185,11 @@
                   <!-- - Body do modal  -->
                   <div class="modal-body">  
                       <div class="mb-3">
-                        <input type="text" class="form-control" id="titulo_aviso" name="titulo_aviso" placeholder="Título">
+                        <input type="text" class="form-control" id="titulo_ANUNCIO" name="titulo_ANUNCIO" placeholder="Título">
                       </div>
 
                       <div class="mb-3">
-                          <textarea class="form-control" id="descricao_aviso" name="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
+                          <textarea class="form-control" id="descricao_ANUNCIO" name="descricao_ANUNCIO" placeholder="Descrição" rows="10"></textarea>
                       </div>
 
                       <select name="tag" class="form-select select-modal mb-3">
@@ -283,7 +199,7 @@
                         <option style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
                         <option style="font-weight: bold;" class="color-beleza">Beleza</option>
                         <option style="font-weight: bold;" class="color-decoracao">Decoração</option>
-                        <option style="font-weight: bold;" class="color-petshop">Petshop</option>
+                        <option style="font-weight: bold;" class="color-petshop">Pet-Shop</option>
                         <option style="font-weight: bold;" class="color-servicos">Serviços</option>
                       </select>
                       <input type="file" name="file" class="btn col-5"> 

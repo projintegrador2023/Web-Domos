@@ -79,10 +79,10 @@
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
           <select class="color-subtitulo form-select select-modal mb-3">
             <option selected class="color-subtitulo"> Escolha conforme a importância</option>
-            <option value="critico" id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
-            <option value="urgente" id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
-            <option value="importante" id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
-            <option value="salvos" id="btn_salvos" style="font-weight: bold; color:#0dc0d8;">Salvos</option>
+            <option id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
+            <option id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
+            <option id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
+            <option id="btn_salvos" style="font-weight: bold; color:#0dc0d8;">Salvos</option>
           </select>
         </div>
     </header>
@@ -115,6 +115,7 @@
           $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
           $stmt->execute();
           $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+          $_IMPORTANCIA = 'background-color: #cc0000';
           for ($i = 0; $i < $stmt->rowCount(); $i++){
             //echo $dados[$i][0]; // codigo
             $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
@@ -123,17 +124,22 @@
             //echo $dados[$i][4]; // cpf
             $codigo_importancia = $dados[$i][5]; // importancia
 
-            $sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
-            $stmt_importancia = Database::prepare($sql_importancia);
-            $stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
-            $stmt_importancia->execute();
-            $dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
-            $_IMPORTANCIA = strtolower($dados_importancia[0]);
+            //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
+            //$stmt_importancia = Database::prepare($sql_importancia);
+            //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
+            //$stmt_importancia->execute();
+            //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
+            if ($codigo_importancia == 1){
+              $_IMPORTANCIA = 'background-color: #cc0000';
+            } else if ($codigo_importancia == 2){
+              $_IMPORTANCIA = 'background-color: #F7D74A';
+            } else if ($codigo_importancia == 3){
+              $_IMPORTANCIA = 'background-color: #90ee90';
+            }
             
             //echo $dados[$i][6]; // codigo condominio
             include("card_aviso.php");
           }
-          
         ?>
         <!-- FIM DO CARD -->
         
