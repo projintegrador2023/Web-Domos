@@ -7,10 +7,21 @@
     private $titulo;
     private $FK_USUARIO_cpf;
     private $FK_TAG_codigo_tag;
+    private $FK_CONDOMINIO_codigo_condominio;
 
     // Métodos Set
     public function setDataHoraPostagem($data_hora_postagem) {
         $this->data_hora_postagem = $data_hora_postagem;
+    }
+
+    public function setCodigoCondominio(){
+      $sql = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO WHERE cpf = :cpf";
+      $stmt = Database::prepare($sql);
+      $stmt->bindParam(':cpf', $this->FK_USUARIO_cpf);
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_condominio = $dados[0];
+      $this->FK_CONDOMINIO_codigo_condominio = $codigo_condominio;
     }
 
     public function setDescricao($descricao) {
@@ -23,6 +34,7 @@
 
     public function setFKUsuarioCpf($FK_USUARIO_cpf) {
         $this->FK_USUARIO_cpf = $FK_USUARIO_cpf;
+        $this->setCodigoCondominio();
     }
 
     public function setFKTagCodigoTag($FK_TAG_codigo_tag) {
@@ -50,15 +62,20 @@
         return $this->FK_TAG_codigo_tag;
     }
 
+    public function getCodigoCondominio(){
+      return $this->FK_CONDOMINIO_codigo_condominio;
+    }
+
     public function insert(){
-      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_TAG_codigo_tag) 
-                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_TAG_codigo_tag)";
+      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_TAG_codigo_tag, FK_CONDOMINIO_codigo_condominio) 
+                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_TAG_codigo_tag, :FK_CONDOMINIO_codigo_condominio)";
       $stmt = Database::prepare($sql);
       $stmt->bindParam(':data_hora_postagem', $this->data_hora_postagem);
       $stmt->bindParam(':descricao', $this->descricao);
       $stmt->bindParam(':titulo', $this->titulo);
       $stmt->bindParam(':FK_USUARIO_cpf', $this->FK_USUARIO_cpf);
       $stmt->bindParam(':FK_TAG_codigo_tag', $this->FK_TAG_codigo_tag, PDO::PARAM_INT);
+      $stmt->bindParam('FK_CONDOMINIO_codigo_condominio', $this->FK_CONDOMINIO_codigo_condominio);
       return $stmt->execute();
     }
     

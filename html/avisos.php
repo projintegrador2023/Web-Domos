@@ -100,6 +100,19 @@
         <!-- Cards --> 
         <!-- INICIO DO CARD -->
         <?php
+          if (!isset($_SESSION)){
+            session_start();
+          }
+          $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
+          $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+          $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
+          $stmt_cod_condominio->execute();
+          $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+          $codigo_condominio = $dados[0];
+
+          $sql = "SELECT * FROM AVISO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+          $stmt = Database::prepare($sql);
+          $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
           include("card_aviso.php");
         ?>
         <!-- FIM DO CARD -->
