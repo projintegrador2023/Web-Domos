@@ -1,6 +1,6 @@
 <?php 
-    require_once('db/30_DB_Usuario.php');
-    require_once('db/password.php');
+    require_once('../html/db/30_DB_Usuario.php');
+    require_once('../html/db/password.php');
     
     $_ERRO_LOGIN = 0;
 
