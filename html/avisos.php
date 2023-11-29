@@ -77,7 +77,7 @@
         </div>
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
-          <select class="color-subtitulo form-select select-modal mb-3">
+          <select class="color-subtitulo form-select select-modal mb-3" onChange="filtro()" id="select_filtro">
             <option selected class="color-subtitulo"> Escolha conforme a importância</option>
             <option id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
             <option id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>

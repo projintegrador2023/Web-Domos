@@ -91,7 +91,9 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-confirmar">Confirmar</button>
+                                        <form method="post">
+                                            <button type="submit" class="btn btn-confirmar">Confirmar</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
