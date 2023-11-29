@@ -1,5 +1,14 @@
-<!-- NÃO UTILIZADO NESSE TRABALHO -->
-
+<?php
+    if(isset($_POST['envioPdf'])){
+        $arquivo = $_FILES['file'];
+        $arquivoNovo = explode('.', $arquivo['name']);
+        if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
+            die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
+        }else{
+            move_uploaded_file($arquivo['tmp_name'],'upload/'.$arquivo['name']);
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,15 +87,21 @@
                                 </select>
                             </td>
                         </tr>
-                                               <tr>
-                            <th scope="row"><p class="color-0491a3">Regimento interno</p></th>
-                            <td class="text-black"><input type="file" class="form-control" id="regimento_interno"></td>
-                        </tr>
                         <tr>
+                            <th scope="row"><p class="color-0491a3">Regimento interno</p></th>
+                            <td class="text-black">
+                                <form class="d-flex" action="" method="POST" enctype="multipart/form-data">
+                                    <input name="file" accept="application/pdf" type="file" class="form-control w-100">
+                                    <input type="submit" name="envioPdf" value="Enviar arquivo" class="btn bg-0491a3 hover-0dc0d8 text-white ms-2">
+                                </form>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-end col-12">
-                    <a href="informacoes.php" class="btn bg-0491a3 hover-0dc0d8 col-3 text-white">Salvar Alterações</a>
+                    <input type="submit" name="envio" value="Salvar alterações" class="btn bg-0491a3 hover-0dc0d8 col-3 text-white">
+                    <!-- <a href="informacoes.php" class="btn bg-0491a3 hover-0dc0d8 col-3 text-white">Salvar Alterações</a> -->
+                    <a href="informacoes.php">VOLTANDO TESTE</a>
                 </div>
             </div>
         </main>
