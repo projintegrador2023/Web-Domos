@@ -10,7 +10,8 @@
 	$senha = $dados[3];
 	$codigo_condominio = $dados[4]; 
 	$nivel_permissao = $dados[5];
-	$codigo_moradia = $dados[6];
+    $imagem = $dados[6];
+	$codigo_moradia = $dados[7];
 ?>
 
 <!DOCTYPE html>
@@ -61,13 +62,23 @@
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
                         <?php
+
+                            $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
+                            INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
+                            WHERE codigo_moradia = :codigo_moradia";
+                            $stmt_moradia = Database::prepare($sql_moradia);
+                            $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
+                            $stmt_moradia->execute();
+                            $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
+                            $divisao = $dados_moradia[1];
+                            $numero_moradia = $dados_moradia[0]; 
                         // puxa os dados do banco para facilitar a visualização
                             echo '<input type="text" name="nome" class="form-control mb-1" value="', $nome, '">';
                             echo '<input type="password" name="senha" class="form-control mb-1" placeholder="Senha: ">
                             <input type="password" name="conf_senha" class="form-control mb-1" placeholder="Confirmar senha: ">';
                             echo '<input type="text" name="email" class="form-control mb-1" value="', $email, '">';
-                            echo '<input type="text" class="form-control col-5 mb-1" placeholder="Número do apto: ">
-                            <input type="text" class="form-control col-5" placeholder="Nome do bloco: ">';
+                            echo '<input type="text" name="bloco" class="form-control col-5 mb-1" value="' . $divisao . '">
+                            <input type="text" name="numero" class="form-control col-5" value="'. $numero_moradia .'" >';
                         ?>
                     </div>
                 </div>
@@ -75,83 +86,71 @@
 
         <div class = "col-12 d-flex row justify-content-center my-5"> <!-- Div postagens -->
 
-          <div class="card m-2 p-0 col-lg-5 col-xl-3 col-8">
-            <div class="card-header bg-transparent">
-              <div class="fs-5 color-titulo d-flex">
-                <div class="flex-grow-1"><p class="color-titulo">Zelma Regina</p></div>
-                    <div class="p-1">
-                        <!-- Modal Excluir Anuncio-->
-                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash color-005661"></i></button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5 color-005661" id="exampleModalLabel">Deseja excluir esse anúncio?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-confirmar">Confirmar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <?php
+          if (!isset($_SESSION)){
+            session_start();
+          }
+          $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
+          $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+          $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
+          $stmt_cod_condominio->execute();
+          $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+          $codigo_condominio = $dados[0];
 
-                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-pen color-005661"></i></button>
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title color-0491a3" id="staticBackdropLabel">Editar Anúncio</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <input type="text" class="form-control" id="titulo_aviso" placeholder="Título">
-                                            </div>
+          $sql = "SELECT * FROM ANUNCIO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio AND fk_usuario_cpf = :cpf";
+          $stmt = Database::prepare($sql);
+          $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+          $stmt->bindParam(':cpf', $_SESSION['id']);
+          $stmt->execute();
+          $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+          $_TAG = 'background-color: #ff6da7';
+          for ($i = 0; $i < $stmt->rowCount(); $i++){
+            //echo $dados[$i][0]; // codigo
+            //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
+            $_DESC_ANUNCIO = $dados[$i][2]; // descricao
+            $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
+            $cpf = $dados[$i][4]; // cpf
+            $codigo_tag = $dados[$i][5]; // tag
+           
+            
+            $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
+            $stmt_morador = Database::prepare($sql_morador);
+            $stmt_morador->bindParam(':cpf', $cpf);
+            $stmt_morador->execute();
+            $dados_morador = $stmt_morador->fetch(PDO::FETCH_BOTH);
+            $_NOME_MORADOR = $dados_morador[1]; // nome
+            $codigo_moradia = $dados_morador[7];
 
-                                            <div class="mb-3">
-                                                <textarea class="form-control" id="descricao_aviso" placeholder="Descrição" rows="10"></textarea>
-                                            </div>
+            $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
+                              INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
+                                WHERE codigo_moradia = :codigo_moradia";
+            $stmt_moradia = Database::prepare($sql_moradia);
+            $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
+            $stmt_moradia->execute();
+            $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
+            $_DIVISAO = $dados_moradia[1];
+            $_NUM_MORADIA = $dados_moradia[0]; 
 
-                                            <select class="form-select mb-3">
-                                                <option selected class= "select-modal">Escolha a tag do anúncio</option>
-                                                <option value="1" class="select-modal">Alimentação</option>
-                                                <option value="2" class="select-modal">Vestuário</option>
-                                                <option value="3" class="select-modal">Eletrônicos</option>
-                                                <option value="4" class="select-modal">Decoração</option>
-                                                <option value="5" class="select-modal">Petshop</option>
-                                                <option value="6" class="select-modal">Serviços</option>
-                                            </select>
-                                            <input type="file" class="btn col-5"> 
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-saida" data-bs-dismiss="modal">Voltar</button>
-                                        <a href="anuncios.html"><button type="button" class="btn btn-publicar">Publicar</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button id="salvo" class="btn"><i class="fa-regular fa-bookmark color-0491a3" onclick="salvos()" estado="vazia"></i><i class="fa-solid fa-bookmark color-0491a3"  style="display: none;" estado="cheia"></i></button>
-                    </div>
-              </div>
-              <div>
-              <h5 class="card-subtitle fs-6 color-subtitulo">Apto 203 - Bloco Amarelo</h5>
-              </div>
-            </div>
-  
-            <div class="card-body text-success">
-              <h6 class="card-subtitle fs-5 color-titulo">Pipoca doce</h6>
-              <p class="card-text fs-9 text-justify color-descricao">Crocante, quentinha e coberta com uma deliciosa camada de açúcar caramelizado, 
-                nossa pipoca doce é perfeita para aqueles momentos de prazer. Experimente agora mesmo e sinta o sabor incrível dessa delícia! Peça já a sua. 
-                Ligue 30660633 para pedir!</p> 
-              <img src="css/img/pipoca_doce.png" class="img-fluid card-img">      
-            </div>
-            <div class="card-footer tag-alimentacao"></div>
-          </div>
+            if ($codigo_tag == 1){
+              $_TAG = 'background-color: #ff6da7'; // alimentação
+            } else if ($codigo_tag == 2){
+              $_TAG = 'background-color: #ff6d6d'; // vestuario
+            } else if ($codigo_tag == 3){
+              $_TAG = 'background-color: #76E3CE'; // eletronicos
+            } else if ($codigo_tag == 4){
+              $_TAG = 'background-color: #66b73e'; // beleza
+            } else if ($codigo_tag == 5){
+              $_TAG = 'background-color: #e6a545'; // decoração
+            } else if ($codigo_tag == 6){
+              $_TAG = 'background-color: #9f35cc'; // pet-shop
+            } else if ($codigo_tag == 7){
+              $_TAG = 'background-color: #86AFEA'; // serviços
+            } 
+            
+            //echo $dados[$i][6]; // codigo condominio
+            include("card_anuncios.php");
+          }
+        ?>
 
         </main>
     </div>
