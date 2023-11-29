@@ -16,7 +16,7 @@ $resposta = array();
 if (isset($_GET["codigo_condominio"])) {
     
     // Aqui sao obtidos os parametros
-    $id = $_GET['codigo_condominio'];
+    $id = intval($_GET['codigo_condominio']);
     
     // Obtem do BD os detalhes do produto com id especificado na requisicao GET
     $consulta = $db_con->prepare("SELECT numero_moradia FROM MORADIA WHERE fk_condominio_codigo_condominio = $id");
