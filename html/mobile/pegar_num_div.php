@@ -37,7 +37,7 @@ if (isset($_GET["codigo_condominio"])) {
             }
 
                 // Obtem do BD os detalhes do produto com id especificado na requisicao GET
-            $consulta1 = $db_con->prepare("SELECT desc_divisao FROM divisao WHERE fk_condominio_codigo_condominio = $id");
+            $consulta1 = $db_con->prepare("SELECT desc_divisao FROM divisao WHERE fk_condominio_codigo_condominio = '$id'");
         
             if ($consulta1->execute()) {
                 if ($consulta1->rowCount() > 0) {
