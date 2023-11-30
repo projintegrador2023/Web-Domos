@@ -22,12 +22,12 @@
 	}
 
 	function validacao_nome($nome){
-		if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)){
-			echo "<script> 
-			alert('O nome contém caracteres inválidos');
-			</script>";
-			return false;
-		} 
+		//if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)){
+		//	echo "<script> 
+		//	alert('O nome contém caracteres inválidos');
+		//	</script>";
+		//	return false;
+		//} 
 		return true;
 	}
 	function validaCPF($cpf) {

@@ -21,23 +21,63 @@
       $dados = $stmt->fetch(PDO::FETCH_BOTH);
       $codigo_tag = $dados[0];
       $anuncio->setFKTagCodigoTag($codigo_tag);
-      
-      if(empty($_POST['file'])){
-        try{
-          $anuncio->insert();
-          header('Location: anuncios.php');
-        } catch(PDOException $e) {
-          echo '<script>  
-                      alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
-                  </script>';
-                  echo $e;
+
+      if ($_FILES["file"]["size"] > 0){
+        $client_id = "e3f4c9231b6cf9e";
+        $filename = $_FILES['file']['tmp_name'];
+        
+        $image_data = file_get_contents($filename);
+        $image_data_base64 = base64_encode($image_data);
+        
+        $api_url = 'https://api.imgur.com/3/image.json';
+        
+        $headers = array(
+            'Authorization: Client-ID ' . $client_id,
+            'Content-Type: application/x-www-form-urlencoded'
+        );
+        
+        $postData = http_build_query(array('image' => $image_data_base64));
+        
+        $options = array(
+            'http' => array(
+                'header' => implode("\r\n", $headers),
+                'method' => 'POST',
+                'content' => $postData
+            )
+          );
+        
+        $context = stream_context_create($options);
+        $result = file_get_contents($api_url, false, $context);
+        
+        if ($result === FALSE) {
+            echo "Erro ao enviar arquivo para o Imgur";
+        } else {
+            $response = json_decode($result, true);
+            $foto = $response['data']['link'];
+            
+            $anuncio->setCodigoImagem($foto);
+            try{
+              $anuncio->insert();
+              header('Location: anuncios.php');
+            } catch(PDOException $e) {
+              echo '<script>  
+                          alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
+                      </script>';
+                      echo $e;
+            }
         }
       } else {
-        // codigo pra inserir a imagem no banco e linkar com o anuncio
+          try{
+            $anuncio->insert();
+            header('Location: anuncios.php');
+          } catch(PDOException $e) {
+            echo '<script>  
+                        alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
+                    </script>';
+                    echo $e;
+          }
       }
-      
-    }
-    
+    }  
   }
 ?>
 

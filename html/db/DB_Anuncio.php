@@ -5,6 +5,7 @@
     private $data_hora_postagem;
     private $descricao;
     private $titulo;
+    private $imagem = null;
     private $FK_USUARIO_cpf;
     private $FK_TAG_codigo_tag;
     private $FK_CONDOMINIO_codigo_condominio;
@@ -12,6 +13,17 @@
     // Métodos Set
     public function setDataHoraPostagem($data_hora_postagem) {
         $this->data_hora_postagem = $data_hora_postagem;
+    }
+
+    public function setCodigoImagem($imagem){
+      $sql = "INSERT INTO IMAGEM (endereco_imagem) VALUES (:imagem)
+                RETURNING codigo_imagem";
+      $stmt = Database::prepare($sql);
+      $stmt->bindParam(":imagem", $imagem);
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_imagem = $dados[0];
+      $this->imagem = $codigo_imagem;
     }
 
     public function setCodigoCondominio(){
@@ -66,9 +78,14 @@
       return $this->FK_CONDOMINIO_codigo_condominio;
     }
 
+    public function getImagem(){
+      return $this->imagem;
+    }
+
     public function insert(){
       $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_TAG_codigo_tag, FK_CONDOMINIO_codigo_condominio) 
-                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_TAG_codigo_tag, :FK_CONDOMINIO_codigo_condominio)";
+                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_TAG_codigo_tag, :FK_CONDOMINIO_codigo_condominio)
+                  RETURNING codigo_postagem";
       $stmt = Database::prepare($sql);
       $stmt->bindParam(':data_hora_postagem', $this->data_hora_postagem);
       $stmt->bindParam(':descricao', $this->descricao);
@@ -76,7 +93,18 @@
       $stmt->bindParam(':FK_USUARIO_cpf', $this->FK_USUARIO_cpf);
       $stmt->bindParam(':FK_TAG_codigo_tag', $this->FK_TAG_codigo_tag, PDO::PARAM_INT);
       $stmt->bindParam('FK_CONDOMINIO_codigo_condominio', $this->FK_CONDOMINIO_codigo_condominio);
-      return $stmt->execute();
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_postagem = $dados[0];
+
+      if ($this->imagem != null){
+        $sql_imagem = "INSERT INTO ANUNCIO_IMAGEM (fk_ANUNCIO_codigo_postagem, fk_IMAGEM_codigo_imagem)
+        VALUES (:codigo_postagem, :codigo_imagem)";
+        $stmt_imagem = Database::prepare($sql_imagem);
+        $stmt_imagem->bindParam(":codigo_postagem", $codigo_postagem, PDO::PARAM_INT);
+        $stmt_imagem->bindParam(":codigo_imagem", $this->imagem, PDO::PARAM_INT);
+        $stmt_imagem->execute();
+      }
     }
     
     /***************
