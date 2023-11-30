@@ -25,6 +25,11 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	// um código hash que é gerado a partir da senha.
 	$token = password_hash($senha, PASSWORD_DEFAULT);
 	
+	$sql_bloco = $db_con->prepare("SELECT codigo_divisao FROM DIVISAO WHERE desc_divisao = $divisao");
+	$sql_bloco->execute();
+	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = $numero_apartamento AND fk_divisao_codigo_divisao = $sql_bloco");
+	$sql_moradia->execute();
+	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
 	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuario WHERE cpf='$cpf'");
@@ -39,7 +44,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	else {
 		// se o usuário ainda não existe, inserimos ele no bd.
 		$consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_condominio_codigo_condominio, fk_nivel_permissao_codigo_nivel_permissao, fk_imagem_codigo_imagem, fk_moradia_codigo_moradia) 
-											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, null, '$codigo_moradia')");
+											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, null, '$sql_moradia')");
 	 
 		if ($consulta->execute()) {
 			// se a consulta deu certo, indicamos sucesso na operação.
