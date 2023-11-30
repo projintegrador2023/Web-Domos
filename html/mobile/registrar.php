@@ -27,7 +27,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
-	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuarios WHERE cpf='$cpf'");
+	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuario WHERE cpf='$cpf'");
 	$consulta_usuario_existe->execute();
 	if ($consulta_usuario_existe->rowCount() > 0) { 
 		// se já existe um usuario para login
