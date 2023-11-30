@@ -57,7 +57,6 @@
     <link rel="stylesheet" href="css/avisos.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
-    <script src="js/avisos.js" defer></script>
     <script src="js/pesquisar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Avisos - Domos </title>
@@ -77,12 +76,11 @@
         </div>
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
-          <select class="color-subtitulo form-select select-modal mb-3" onChange="filtro()" id="select_filtro">
+          <select class="color-subtitulo form-select select-modal mb-3" onChange="filtro_aviso()" onfocus="this.selectedIndex = -1;" id="select_filtro">
             <option selected class="color-subtitulo"> Escolha conforme a importância</option>
             <option id="btn_critico" style="font-weight: bold;" class="color-critico">Crítico</option>
             <option id="btn_urgente" style="font-weight: bold;" class="color-urgente">Urgente</option>
             <option id="btn_importante" style="font-weight: bold;"  class="color-importante">Importante</option>
-            <option id="btn_salvos" style="font-weight: bold; color:#0dc0d8;">Salvos</option>
           </select>
         </div>
     </header>

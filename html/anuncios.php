@@ -54,7 +54,6 @@
     <link rel="stylesheet" href="css/anuncios.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/sidebar.js" defer></script>
-    <script src="js/anuncios.js" defer></script>
     <script src="js/pesquisar.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="css/img/logo.png"/>
     <title> Anúncios - Domos</title>
@@ -74,16 +73,15 @@
         </div>
 
         <div class="justify-content-around col-4 mt-2" id="btns_filtro">
-          <select class="color-subtitulo form-select select-modal mb-3">
+        <select class="color-subtitulo form-select select-modal mb-3" onChange="filtro_anuncio()" id="select_filtro">
             <option selected class="color-subtitulo select-modal">Escolha as tags conforme as cores</option>
-            <option value="alimentacao" style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
-            <option value="vestuario" style="font-weight: bold;" class="color-vestuario">Vestuário</option>
-            <option value="eletronicos" style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
-            <option value="beleza" style="font-weight: bold;" class="color-beleza">Beleza</option>
-            <option value="decoracao" style="font-weight: bold;" class="color-decoracao">Decoração</option>
-            <option value="petshop" style="font-weight: bold;" class="color-petshop">Petshop</option>
-            <option value="servicos" style="font-weight: bold;" class="color-servicos">Serviços</option>
-            <option value="salvos" id="btn-salvos" style="color:#0dc0d8; font-weight: bold;">Salvos</option>
+            <option style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
+            <option style="font-weight: bold;" class="color-vestuario">Vestuário</option>
+            <option style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
+            <option style="font-weight: bold;" class="color-beleza">Beleza</option>
+            <option style="font-weight: bold;" class="color-decoracao">Decoração</option>
+            <option style="font-weight: bold;" class="color-petshop">Petshop</option>
+            <option style="font-weight: bold;" class="color-servicos">Serviços</option>
           </select>
         </div> 
 
