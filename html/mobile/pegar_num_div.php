@@ -11,6 +11,8 @@ require_once('conexao_db.php');
 
 // array de resposta
 $resposta = array();
+$resposta["numeros"] = array();
+$resposta["divs"] = array();
  
 // Verifica se o parametro id foi enviado na requisicao
 if (isset($_GET["codigo_condominio"])) {
