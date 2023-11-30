@@ -27,7 +27,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
-	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuarios WHERE cpf='$cpf'");
+	$consulta_usuario_existe = $db_con->prepare("SELECT cpf FROM usuario WHERE cpf='$cpf'");
 	$consulta_usuario_existe->execute();
 	if ($consulta_usuario_existe->rowCount() > 0) { 
 		// se já existe um usuario para login
@@ -38,8 +38,8 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	}
 	else {
 		// se o usuário ainda não existe, inserimos ele no bd.
-		$consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, codigo_condominio, FK_MORADIA_codigo_moradia, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_IMAGEM_codigo_imagem) 
-																			VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio', '$codigo_moradia', 3, null)");
+		$consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_condominio_codigo_condominio, fk_nivel_permissao_codigo_nivel_permissao, fk_imagem_codigo_imagem, fk_moradia_codigo_moradia) 
+											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, null, '$codigo_moradia')");
 	 
 		if ($consulta->execute()) {
 			// se a consulta deu certo, indicamos sucesso na operação.
