@@ -44,7 +44,7 @@
                 'method' => 'POST',
                 'content' => $postData
             )
-          );
+        );
         
         $context = stream_context_create($options);
         $result = file_get_contents($api_url, false, $context);
