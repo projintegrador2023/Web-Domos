@@ -27,7 +27,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	
 	$sql_bloco = $db_con->prepare("SELECT codigo_divisao FROM DIVISAO WHERE desc_divisao = '$divisao' AND fk_condominio_codigo_condominio = '$codigo_condominio'");
 	$sql_bloco->execute();
-	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = '$numero_apartamento' AND fk_divisao_codigo_divisao = '$sql_bloco'");
+	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = '$numero_apartamento' AND fk_divisao_codigo_divisao = '$sql_bloco[0]'");
 	$sql_moradia->execute();
 	
 	// antes de registrar o novo usuário, verificamos se ele já
