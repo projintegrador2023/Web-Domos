@@ -6,10 +6,11 @@
           <h4 class="flex-grow-1 sticky-top color-titulo card-title">' . $_NOME_MORADOR . '</h4>
           <!--Menu dropdown com funcionalidades que serão adicionadas posteriormente-->
             <div class="d-flex sticky-top">
-              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical text-dark"></i></button>
-              <div class="dropdown">
+              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical text-dark"></i></button>'?>
+              <?php echo 
+              '<div class="dropdown">
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
+                  <li><input type="submit" value="Excluir" name="delete" class="dropdown-item"/></li>
                 </ul>
               </div>
             </div>
