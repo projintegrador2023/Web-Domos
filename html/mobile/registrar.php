@@ -27,8 +27,11 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	
 	$sql_bloco = $db_con->prepare("SELECT codigo_divisao FROM DIVISAO WHERE desc_divisao = '$divisao' AND fk_condominio_codigo_condominio = '$codigo_condominio'");
 	$sql_bloco->execute();
-	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = '$numero_apartamento' AND fk_divisao_codigo_divisao = '$sql_bloco[0]'");
+	$bloco = $sql_bloco->fetch(PDO::FETCH_ASSOC);
+	$codigo_divisao = $bloco['codigo_divisao'];
+	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = '$numero_apartamento' AND fk_divisao_codigo_divisao = '$codigo_divisao'");
 	$sql_moradia->execute();
+	$moradia = $sql_moradia->fetch(PDO::FETCH_ASSOC);
 	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
