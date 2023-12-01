@@ -17,14 +17,18 @@ $resposta = array();
 // verifica se o usuário conseguiu autenticar
 if(autenticar($db_con)) {
 	
-	if (isset($_POST['titulo']) && isset($_POST['importancia']) && isset($_POST['descricao']) && isset($_POST['cpf']) && isset($_POST['data_hora'])) {
+	if (isset($_POST['titulo']) && isset($_POST['importancia']) && isset($_POST['descricao']) && isset($_POST['cpf'])) {
 		
 		// Aqui sao obtidos os parametros
 		$titulo = $_POST['titulo'];
 		$importancia = $_POST['importancia'];
 		$descricao = $_POST['descricao'];
 		$cpf = $_POST['cpf'];
-		$data_hora = $_POST['data_hora'];
+
+		$timezone = new DateTimeZone('America/Sao_Paulo');
+      		$data_hora = new DateTime('now', $timezone);
+      		$data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
+		$data_hora_postagem = $_POST['$data_hora_formatada'];
 
 		$sql_importancia = $db_con->prepare("SELECT codigo_importancia FROM importancia WHERE desc_importancia = '$importancia'");
 		$sql_importancia->execute();
@@ -39,7 +43,7 @@ if(autenticar($db_con)) {
 		// A proxima linha insere um novo produto no BD.
 		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
 		
-		$consulta = $db_con->prepare("INSERT INTO aviso(data_hora_postagem, descricao, titulo, fk_usuario_cpf, fk_importancia_codigo_importancia, fk_condominio_codigo_condominio) VALUES('$data_hora', '$descricao', '$titulo', 'cpf','importancia', '$codigo_condominio')");
+		$consulta = $db_con->prepare("INSERT INTO aviso(data_hora_postagem, descricao, titulo, fk_usuario_cpf, fk_importancia_codigo_importancia, fk_condominio_codigo_condominio) VALUES('$data_hora_postagem', '$descricao', '$titulo', 'cpf','importancia', '$codigo_condominio')");
 		if ($consulta->execute()) {
 			// Se o produto foi inserido corretamente no servidor, o cliente 
 			// recebe a chave "sucesso" com valor 1
