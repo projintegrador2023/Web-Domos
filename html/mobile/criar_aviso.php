@@ -34,7 +34,7 @@ if(autenticar($db_con)) {
 		$sql_condominio = $db_con->prepare("SELECT codigo_condominio FROM usuario WHERE cpf = '$cpf'");
 		$sql_condominio->execute();
 		$condominio = $sql_condominio->fetch(PDO::FETCH_ASSOC);
-		$codigo_condominio = 
+		$codigo_condominio = $condominio['codigo_condominio'];
 
 		// A proxima linha insere um novo produto no BD.
 		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
