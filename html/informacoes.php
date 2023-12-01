@@ -108,6 +108,9 @@
                     </tbody>
                 </table>
             </div>
+            <?php 
+                echo "<a href='logout.php' class='btn btn-saida text-white'><i class='fa-solid fa-right-from-bracket flex-grow-1'></i> Encerrar sessão</a>";
+            ?>
         </main>
     </div>
 </body>
