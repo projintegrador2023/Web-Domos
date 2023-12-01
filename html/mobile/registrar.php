@@ -32,6 +32,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	$sql_moradia = $db_con->prepare("SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = '$numero_apartamento' AND fk_divisao_codigo_divisao = '$codigo_divisao'");
 	$sql_moradia->execute();
 	$moradia = $sql_moradia->fetch(PDO::FETCH_ASSOC);
+	$codigo_moradia = $moradia['codigo_moradia'];
 	
 	// antes de registrar o novo usuário, verificamos se ele já
 	// não existe.
@@ -47,7 +48,7 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
 	else {
 		// se o usuário ainda não existe, inserimos ele no bd.
 		$consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_condominio_codigo_condominio, fk_nivel_permissao_codigo_nivel_permissao, fk_imagem_codigo_imagem, fk_moradia_codigo_moradia) 
-											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, null, '$sql_moradia')");
+											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, null, '$codigo_moradia')");
 	 
 		if ($consulta->execute()) {
 			// se a consulta deu certo, indicamos sucesso na operação.
