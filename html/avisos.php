@@ -101,52 +101,130 @@
           if (!isset($_SESSION)){
             session_start();
           }
-          $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
-          $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
-          $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
-          $stmt_cod_condominio->execute();
-          $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
-          $codigo_condominio = $dados[0];
-
-          $sql = "SELECT * FROM AVISO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
-          $stmt = Database::prepare($sql);
-          $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
-          $stmt->execute();
-          $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
-          $_IMPORTANCIA = 'background-color: #cc0000';
-          for ($i = 0; $i < $stmt->rowCount(); $i++){
-            //echo $dados[$i][0]; // codigo
-            $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
-            $_DESC_AVISO = $dados[$i][2]; // descricao
-            $_TITULO_AVISO = $dados[$i][3]; // titulo
-            //echo $dados[$i][4]; // cpf
-            $codigo_importancia = $dados[$i][5]; // importancia
-
-            //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
-            //$stmt_importancia = Database::prepare($sql_importancia);
-            //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
-            //$stmt_importancia->execute();
-            //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
-            if ($codigo_importancia == 1){
-              $_IMPORTANCIA = 'background-color: #cc0000';
-            } else if ($codigo_importancia == 2){
-              $_IMPORTANCIA = 'background-color: #F7D74A';
-            } else if ($codigo_importancia == 3){
-              $_IMPORTANCIA = 'background-color: #90ee90';
-            }
+          if ($_SESSION['tipo_usuario'] == 1){
+            $sql = 'SELECT fk_nivel_permissao_codigo_nivel_permissao FROM USUARIO WHERE cpf = :cpf';
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':cpf', $_SESSION['id']);
+            $stmt->execute();
+            $dados = $stmt->fetch(PDO::FETCH_BOTH);
+            $nivel_permissao = $dados[0];
             
-            //echo $dados[$i][6]; // codigo condominio
-            include("card_aviso.php");
+            if ($nivel_permissao != 3){
+              $tipo_usuario = 'adm';
+            } else {
+              $tipo_usuario = 'morador';
+            }
+
+            $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
+            $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+            $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
+            $stmt_cod_condominio->execute();
+            $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+            $codigo_condominio = $dados[0];
+  
+            $sql = "SELECT * FROM AVISO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $_IMPORTANCIA = 'background-color: #cc0000';
+            for ($i = $stmt->rowCount() - 1; $i >= 0 ; $i--){
+              //echo $dados[$i][0]; // codigo
+              $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
+              $_DESC_AVISO = $dados[$i][2]; // descricao
+              $_TITULO_AVISO = $dados[$i][3]; // titulo
+              //echo $dados[$i][4]; // cpf
+              $codigo_importancia = $dados[$i][5]; // importancia
+  
+              //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
+              //$stmt_importancia = Database::prepare($sql_importancia);
+              //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
+              //$stmt_importancia->execute();
+              //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
+              if ($codigo_importancia == 1){
+                $_IMPORTANCIA = 'background-color: #cc0000';
+              } else if ($codigo_importancia == 2){
+                $_IMPORTANCIA = 'background-color: #F7D74A';
+              } else if ($codigo_importancia == 3){
+                $_IMPORTANCIA = 'background-color: #90ee90';
+              }
+              
+              //echo $dados[$i][6]; // codigo condominio
+              include("card_aviso.php");
+            }
+          } else {
+            $sql_cod_condominio = "SELECT codigo_condominio from CONDOMINIO where cnpj = :cnpj";
+            $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+            $stmt_cod_condominio->bindParam(':cnpj', $_SESSION['id']);
+            $stmt_cod_condominio->execute();
+            $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+            $codigo_condominio = $dados[0];
+
+            $sql = "SELECT * FROM AVISO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $_IMPORTANCIA = 'background-color: #cc0000';
+
+            $tipo_usuario = 'adm';
+
+            for ($i = $stmt->rowCount() - 1; $i >= 0 ; $i--){
+              //echo $dados[$i][0]; // codigo
+              $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
+              $_DESC_AVISO = $dados[$i][2]; // descricao
+              $_TITULO_AVISO = $dados[$i][3]; // titulo
+              //echo $dados[$i][4]; // cpf
+              $codigo_importancia = $dados[$i][5]; // importancia
+  
+              //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
+              //$stmt_importancia = Database::prepare($sql_importancia);
+              //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
+              //$stmt_importancia->execute();
+              //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
+              if ($codigo_importancia == 1){
+                $_IMPORTANCIA = 'background-color: #cc0000';
+              } else if ($codigo_importancia == 2){
+                $_IMPORTANCIA = 'background-color: #F7D74A';
+              } else if ($codigo_importancia == 3){
+                $_IMPORTANCIA = 'background-color: #90ee90';
+              }
+              
+              
+              //echo $dados[$i][6]; // codigo condominio
+              include("card_aviso.php");
           }
+        }
+          
         ?>
         <!-- FIM DO CARD -->
         
         
       <!-- Modal (pop up)-->
       <div class="d-flex justify-content-end m-5">
-        <div class="absolute" style="overflow-y: auto;">
-          <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
-        </div>
+        <?php 
+          if ($_SESSION['tipo_usuario'] == 1){
+            $sql = 'SELECT fk_nivel_permissao_codigo_nivel_permissao FROM USUARIO WHERE cpf = :cpf';
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':cpf', $_SESSION['id']);
+            $stmt->execute();
+            $dados = $stmt->fetch(PDO::FETCH_BOTH);
+            $nivel_permissao = $dados[0];
+            
+            if ($nivel_permissao != 3){
+              echo '<div class="absolute" style="overflow-y: auto;">
+              <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
+            </div>';
+            }
+          } else {
+            echo '<div class="absolute" style="overflow-y: auto;">
+              <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
+            </div>';
+          }
+          
+        ?>
+
+        
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           
           <div class="modal-dialog modal-dialog-centered">

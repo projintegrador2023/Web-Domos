@@ -1,4 +1,8 @@
 <!-- NÃO UTILIZADO NESSE TRABALHO -->
+<?php
+    include ("protect.php");
+    require_once('db/DB_Condominio.php');
+?>
 
 
 <!DOCTYPE html>
@@ -36,12 +40,42 @@
         <main container class="main-container">
             <div class="table-responsive">
                 <table class="table table-striped-columns align-middle">
-                    <thead>
+                    <?php
+                        if (!isset($_SESSION)){
+                            session_start();
+                        }
+                        $condominio = new Condominio();
+                        $dados = $condominio->find($_SESSION['id']);
+
+                        $sql_tipo_moradia = 'SELECT nome FROM TIPO_MORADIA WHERE codigo_tipo_moradia = :codigo_tipo_moradia';
+                        $stmt = Database::prepare($sql_tipo_moradia);
+                        $stmt->bindParam(':codigo_tipo_moradia', $dados[6], PDO::PARAM_INT);
+                        $stmt->execute();
+                        $rows = $stmt->fetch(PDO::FETCH_BOTH);
+                        $tipo_moradia = $rows[0];
+
+                        $sql_sindico = 'SELECT nome, email FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio AND fk_nivel_permissao_codigo_nivel_permissao = 1';
+                        $stmt = Database::prepare($sql_sindico);
+                        $stmt->bindParam('codigo_condominio', $dados[2]);
+                        $stmt->execute();
+                        $rows_sindico = $stmt->fetch(PDO::FETCH_BOTH);
+                        $nome_sindico = $rows_sindico[0];
+                        $email_sindico = $rows_sindico[1];
+
+                        $sql_adm = 'SELECT nome, email FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio AND fk_nivel_permissao_codigo_nivel_permissao = 2';
+                        $stmt = Database::prepare($sql_adm);
+                        $stmt->bindParam('codigo_condominio', $dados[2]);
+                        $stmt->execute();
+                        $rows_adm = $stmt->fetch(PDO::FETCH_BOTH);
+                        $nome_adm = $rows_adm[0];
+                        $email_adm = $rows_adm[1];
+
+                        echo '<thead>
                         <tr>
                             <th scope="col" class="w-25"><i class="fa-solid fa-city color-005661 fs-1"></i></th>
                             <th scope="col">
                                 <div clsss="d-flex">
-                                    <p class="fs-3 color-005661">Condomínio Residencial Vila Serena
+                                    <p class="fs-3 color-005661">' . $dados[1] .'
                                     <a href="editar_informacoes.php"><button class="btn bg-005661  rounded-circle"><i class="fa-solid fa-pen white fs-4 mt-1"></i></button></p></a>
                                 </div>
                             </th>
@@ -50,36 +84,27 @@
                     <tbody>
                         <tr>
                             <th scope="row"><p class="color-0491a3">Cnpj</p></th>
-                            <td class="text-black">37.647.184/0001-59</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><p class="color-0491a3">Endereço</p></th>
-                            <td class="text-black">12345-678, Serra - Avenida das Flores, 123</td>
+                            <td class="text-black">' . $_SESSION['id'] . '</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-0491a3">Email</p></th>
-                            <td class="text-black">condominioficticio@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><p class="color-0491a3">Tipo de divisões</p></th>
-                            <td class="text-black">Blocos</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><p class="color-0491a3">Nome das divisões</p></th>
-                            <td class="text-black">Cores</td>
+                            <td class="text-black">' . $dados[3] . '</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-0491a3">Tipo de moradia</p></th>
-                            <td class="text-black">Apartamentos</td>
+                            <td class="text-black">'. $tipo_moradia . '</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-sindico">Síndico(a)</p></th>
-                            <td class="text-black">Zelma Regina - zelmaregina@gmail.com</td>
+                            <td class="text-black">'. $nome_sindico .  ' - '. $email_sindico . '</td>
                         </tr>
                         <tr>
                             <th scope="row"><p class="color-administrador">Administrador(a)</p></th>
-                            <td class="text-black">Camila Egydio - camilaegydio@gmail.com</td>
-                        </tr>
+                            <td class="text-black">' . $nome_adm . ' - ' . $email_adm . '</td>
+                        </tr>';
+                        
+                    ?>
+                    
                     </tbody>
                 </table>
             </div>

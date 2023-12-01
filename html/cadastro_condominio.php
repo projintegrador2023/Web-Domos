@@ -5,13 +5,12 @@
     $endereco = new Endereco();
     $codigo_endereco = null;
 
-    //$codigo_condominio = rand(100000, 999999);
-    $codigo_condominio = 835409;
+    $codigo_condominio = rand(100000, 999999);
     $sql = "SELECT * FROM CONDOMINIO WHERE codigo_condominio = '$codigo_condominio'";
     $stmt = Database::prepare($sql);
     $stmt->execute();
     while ($stmt->rowCount() > 0){
-        $codigo_condominio = random_int(100000, 999999);
+        $codigo_condominio = rand(100000, 999999);
         $stmt->execute();
     }
     $condominio->setCodigo_condominio($codigo_condominio);

@@ -142,72 +142,140 @@
           if (!isset($_SESSION)){
             session_start();
           }
-          $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
-          $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
-          $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
-          $stmt_cod_condominio->execute();
-          $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
-          $codigo_condominio = $dados[0];
 
-          $sql = "SELECT * FROM ANUNCIO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
-          $stmt = Database::prepare($sql);
-          $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
-          $stmt->execute();
-          $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
-          $_TAG = 'background-color: #ff6da7';
-          for ($i = 0; $i < $stmt->rowCount(); $i++){
-            //echo $dados[$i][0]; // codigo
-            //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
-            $_DESC_ANUNCIO = $dados[$i][2]; // descricao
-            $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
-            $cpf = $dados[$i][4]; // cpf
-            $codigo_tag = $dados[$i][5]; // tag
-           
-            
-            $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
-            $stmt_morador = Database::prepare($sql_morador);
-            $stmt_morador->bindParam(':cpf', $cpf);
-            $stmt_morador->execute();
-            $dados_morador = $stmt_morador->fetch(PDO::FETCH_BOTH);
-            $_NOME_MORADOR = $dados_morador[1]; // nome
-            $codigo_moradia = $dados_morador[7];
-
-            $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
-                              INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
-                                WHERE codigo_moradia = :codigo_moradia";
-            $stmt_moradia = Database::prepare($sql_moradia);
-            $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
-            $stmt_moradia->execute();
-            $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
-            $_DIVISAO = $dados_moradia[1];
-            $_NUM_MORADIA = $dados_moradia[0]; 
-
-            if ($codigo_tag == 1){
-              $_TAG = 'background-color: #ff6da7'; // alimentação
-            } else if ($codigo_tag == 2){
-              $_TAG = 'background-color: #ff6d6d'; // vestuario
-            } else if ($codigo_tag == 3){
-              $_TAG = 'background-color: #76E3CE'; // eletronicos
-            } else if ($codigo_tag == 4){
-              $_TAG = 'background-color: #66b73e'; // beleza
-            } else if ($codigo_tag == 5){
-              $_TAG = 'background-color: #e6a545'; // decoração
-            } else if ($codigo_tag == 6){
-              $_TAG = 'background-color: #9f35cc'; // pet-shop
-            } else if ($codigo_tag == 7){
-              $_TAG = 'background-color: #86AFEA'; // serviços
-            } 
-            
-            //echo $dados[$i][6]; // codigo condominio
-            include("card_anuncios.php");
+          if ($_SESSION['tipo_usuario'] == 1){
+            $sql_cod_condominio = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO where cpf = :cpf";
+            $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+            $stmt_cod_condominio->bindParam(':cpf', $_SESSION['id']);
+            $stmt_cod_condominio->execute();
+            $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+            $codigo_condominio = $dados[0];
+  
+            $sql = "SELECT * FROM ANUNCIO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $_TAG = 'background-color: #ff6da7';
+            for ($i = 0; $i < $stmt->rowCount(); $i++){
+              //echo $dados[$i][0]; // codigo
+              //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
+              $_DESC_ANUNCIO = $dados[$i][2]; // descricao
+              $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
+              $cpf = $dados[$i][4]; // cpf
+              $codigo_tag = $dados[$i][5]; // tag
+             
+              
+              $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
+              $stmt_morador = Database::prepare($sql_morador);
+              $stmt_morador->bindParam(':cpf', $cpf);
+              $stmt_morador->execute();
+              $dados_morador = $stmt_morador->fetch(PDO::FETCH_BOTH);
+              $_NOME_MORADOR = $dados_morador[1]; // nome
+              $codigo_moradia = $dados_morador[7];
+  
+              $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
+                                INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
+                                  WHERE codigo_moradia = :codigo_moradia";
+              $stmt_moradia = Database::prepare($sql_moradia);
+              $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
+              $stmt_moradia->execute();
+              $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
+              $_DIVISAO = $dados_moradia[1];
+              $_NUM_MORADIA = $dados_moradia[0]; 
+  
+              if ($codigo_tag == 1){
+                $_TAG = 'background-color: #ff6da7'; // alimentação
+              } else if ($codigo_tag == 2){
+                $_TAG = 'background-color: #ff6d6d'; // vestuario
+              } else if ($codigo_tag == 3){
+                $_TAG = 'background-color: #76E3CE'; // eletronicos
+              } else if ($codigo_tag == 4){
+                $_TAG = 'background-color: #66b73e'; // beleza
+              } else if ($codigo_tag == 5){
+                $_TAG = 'background-color: #e6a545'; // decoração
+              } else if ($codigo_tag == 6){
+                $_TAG = 'background-color: #9f35cc'; // pet-shop
+              } else if ($codigo_tag == 7){
+                $_TAG = 'background-color: #86AFEA'; // serviços
+              } 
+              
+              //echo $dados[$i][6]; // codigo condominio
+              include("card_anuncios.php");
+            }
+          } else {
+            $sql_cod_condominio = "SELECT codigo_condominio from CONDOMINIO where cnpj = :cnpj";
+            $stmt_cod_condominio = Database::prepare($sql_cod_condominio);
+            $stmt_cod_condominio->bindParam(':cnpj', $_SESSION['id']);
+            $stmt_cod_condominio->execute();
+            $dados = $stmt_cod_condominio->fetch(PDO::FETCH_BOTH);
+            $codigo_condominio = $dados[0];
+  
+            $sql = "SELECT * FROM ANUNCIO WHERE FK_CONDOMINIO_codigo_condominio = :FK_CONDOMINIO_codigo_condominio";
+            $stmt = Database::prepare($sql);
+            $stmt->bindParam(':FK_CONDOMINIO_codigo_condominio', $codigo_condominio);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $_TAG = 'background-color: #ff6da7';
+            for ($i = $stmt->rowCount() - 1; $i >= 0 ; $i--){
+              //echo $dados[$i][0]; // codigo
+              //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
+              $_DESC_ANUNCIO = $dados[$i][2]; // descricao
+              $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
+              $cpf = $dados[$i][4]; // cpf
+              $codigo_tag = $dados[$i][5]; // tag
+             
+              
+              $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
+              $stmt_morador = Database::prepare($sql_morador);
+              $stmt_morador->bindParam(':cpf', $cpf);
+              $stmt_morador->execute();
+              $dados_morador = $stmt_morador->fetch(PDO::FETCH_BOTH);
+              $_NOME_MORADOR = $dados_morador[1]; // nome
+              $codigo_moradia = $dados_morador[7];
+  
+              $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
+                                INNER JOIN DIVISAO ON fk_divisao_codigo_divisao = codigo_divisao
+                                  WHERE codigo_moradia = :codigo_moradia";
+              $stmt_moradia = Database::prepare($sql_moradia);
+              $stmt_moradia->bindParam(':codigo_moradia', $codigo_moradia, PDO::PARAM_INT);
+              $stmt_moradia->execute();
+              $dados_moradia = $stmt_moradia->fetch(PDO::FETCH_BOTH);
+              $_DIVISAO = $dados_moradia[1];
+              $_NUM_MORADIA = $dados_moradia[0]; 
+  
+              if ($codigo_tag == 1){
+                $_TAG = 'background-color: #ff6da7'; // alimentação
+              } else if ($codigo_tag == 2){
+                $_TAG = 'background-color: #ff6d6d'; // vestuario
+              } else if ($codigo_tag == 3){
+                $_TAG = 'background-color: #76E3CE'; // eletronicos
+              } else if ($codigo_tag == 4){
+                $_TAG = 'background-color: #66b73e'; // beleza
+              } else if ($codigo_tag == 5){
+                $_TAG = 'background-color: #e6a545'; // decoração
+              } else if ($codigo_tag == 6){
+                $_TAG = 'background-color: #9f35cc'; // pet-shop
+              } else if ($codigo_tag == 7){
+                $_TAG = 'background-color: #86AFEA'; // serviços
+              } 
+              
+              //echo $dados[$i][6]; // codigo condominio
+              include("card_anuncios.php");
           }
+        }
         ?>
 
         <!-- Modal (pop up)-->
         <div class="d-flex justify-content-end m-5">
-          <div class="absolute" style="overflow-y: auto;">
-            <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
-          </div>
+          <?php 
+            if ($_SESSION['tipo_usuario'] == 1){
+              echo '<div class="absolute" style="overflow-y: auto;">
+              <button type="button" class="btn btn-criar rounded-circle justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus p-1 icons-white"></i></button>
+            </div>';
+            }
+          ?>
+          
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             
             <div class="modal-dialog modal-dialog-centered">

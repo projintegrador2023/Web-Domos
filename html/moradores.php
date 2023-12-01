@@ -1,3 +1,8 @@
+<?php
+    include('protect.php');
+    require_once('db/DB_Condominio.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,52 +46,42 @@
             <div class="row justify-content-center col-12">
 
                 <div class="col-lg-10 col-xl-5 col-11 px-0 m-1"> 
-                    <div class="rounded col-12 d-flex flex-column my-2">
-                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
-                            <p class="m-2"> Nome: </p>
-                            <div class="dropdown">
-                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                </ul>
-                            </div>  
-                        </div>
-                        <div id="lista" class="bg-ffffff accordion-conteudo">
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
-                        </div>
-                    </div>
+                    <?php
+                        $condominio = new Condominio();
+                        $dados = $condominio->find($_SESSION['id']);
+                        $codigo_condominio = $dados[2];
+                        $sql = 'SELECT * FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio';
+                        $stmt = Database::prepare($sql);
+                        $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                        $stmt->execute();
+                        $moradores = $stmt->fetchAll(PDO::FETCH_BOTH);
 
-                    <div class="rounded col-12 d-flex flex-column my-2">
-                        <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
-                            <p class="m-2"> Nome: </p>
-                            <div class="dropdown">
-                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Excluir morador</a></li>
-                                <li><a class="dropdown-item" href="#">Tornar administrador</a></li>
-                                <li><a class="dropdown-item" href="#">Tornar síndico</a></li>
-                                </ul>
-                            </div>  
-                        </div>
-                        <div id="lista" class="bg-ffffff accordion-conteudo">
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Bloco: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Número: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> Cpf: </p>
-                            <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
-                        </div>
-                    </div>
+                        for ($i = 0; $i < $stmt->rowCount(); $i++){
+                            $cpf = $moradores[$i][0];
+                            $nome_morador = $moradores[$i][1];
+                            $email_usuario = $moradores[$i][2];
+                            $sql_numero = 'SELECT numero_moradia, fk_divisao_codigo_divisao FROM MORADIA WHERE codigo_moradia = :codigo_moradia';
+                            $stmt_numero = Database::prepare($sql_numero);
+                            $stmt_numero->bindParam(':codigo_moradia', $moradores[$i][7], PDO::PARAM_INT);
+                            $stmt_numero->execute();
+                            $dados_numero = $stmt_numero->fetch(PDO::FETCH_BOTH);
+                            $numero = $dados_numero[0];
+                            $codigo_divisao = $dados_numero[1];
+
+                            $sql_divisao = 'SELECT desc_divisao FROM DIVISAO WHERE codigo_divisao = :codigo_divisao';
+                            $stmt_divisao = Database::prepare($sql_divisao);
+                            $stmt_divisao->bindParam(':codigo_divisao', $codigo_divisao, PDO::PARAM_INT);
+                            $stmt_divisao->execute();
+                            $dados_divisao = $stmt_divisao->fetch(PDO::FETCH_BOTH);
+                            $bloco = $dados_divisao[0];
+
+                            include('card_morador.php');
+                        }
+
+                    ?>
                 </div>
 
-                <div class="col-lg-10 col-xl-5 col-11 px-0 m-1"> 
+                <!--div class="col-lg-10 col-xl-5 col-11 px-0 m-1"> 
                     <div class="rounded col-12 d-flex flex-column my-2">
                         <div class="bg-0491a3 d-flex justify-content-between accordion-cabecalho"> 
                             <p class="m-2"> Nome: </p>
@@ -130,7 +125,7 @@
                             <p class="p-2 mb-0 color-0491a3 border-bottom"> E-mail: </p>
                         </div>
                     </div>
-                </div>
+                </div-->
                 </div>
 
             </div>
@@ -164,3 +159,5 @@
 
 </body>
 </html>
+
+
