@@ -34,7 +34,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             } else if ($_SESSION['tipo_usuario'] == 2){
@@ -76,7 +76,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -115,7 +115,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -158,7 +158,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -199,7 +199,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item bg-customiza'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -241,7 +241,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -284,7 +284,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }
@@ -327,7 +327,7 @@
             if ($_SESSION['tipo_usuario'] == 1){
                 echo "<li class='sidebar-list-item'>
                 <a href='perfil_morador.php'>
-                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i>Perfil</div>
+                    <div> <i class='fa-solid fa-user col-2' style='color: #ffffff;'></i> Perfil </div>
                 </a>
                 </li>";
             }

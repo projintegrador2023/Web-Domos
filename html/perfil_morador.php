@@ -75,12 +75,12 @@
                             $divisao = $dados_moradia[1];
                             $numero_moradia = $dados_moradia[0]; 
 
-                            echo '<p class="caixa-texto">', $nome, '</p>';
-                            echo '<p class="caixa-texto">', $cpf, '</p>';
-                            echo '<p class="caixa-texto">', $email, '</p>';
+                            echo '<input type="submit" name="nome" class="form-control mb-1" value="', $nome, '">';
+                            echo '<input type="submit" name="nome" class="form-control mb-1" value="', $cpf, '">';
+                            echo '<input type="submit" name="nome" class="form-control mb-1" value="', $email, '">';
                             echo '<div class="d-flex justify-content-between">
-                            <p class="caixa-texto col-5">' . $divisao .' </p>
-                            <p class="caixa-texto col-5"> ' . $numero_moradia . '</p>
+                            <input type="submit" name="nome" class="form-control mb-1" value="', $divisao, '">
+                            <input type="submit" name="nome" class="form-control mb-1" value="', $numero_moradia, '">
                         </div>';
 
                         ?>
