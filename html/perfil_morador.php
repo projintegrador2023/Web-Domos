@@ -1,6 +1,7 @@
 <?php 
     include("iniciar_sessao.php");
     require_once("db/30_DB_Usuario.php");
+    $tela_morador = true;
     $usuario = new Usuario();
     $dados = $usuario->find($_SESSION['id']);// puxa os dados do banco onde o cpf é igual ao cpf id da sessão
     // salva os dados em variaveis
@@ -23,6 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer></script>
+    <script src="js/anuncio.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/anuncios.css">
     <link rel="stylesheet" href="css/sidebar.css">
@@ -109,7 +111,7 @@
           $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
           $_TAG = 'background-color: #ff6da7';
           for ($i = 0; $i < $stmt->rowCount(); $i++){
-            //echo $dados[$i][0]; // codigo
+            $codigo_anuncio = $dados[$i][0]; // codigo
             //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
             $_DESC_ANUNCIO = $dados[$i][2]; // descricao
             $_TITULO_ANUNCIO = $dados[$i][3]; // titulo

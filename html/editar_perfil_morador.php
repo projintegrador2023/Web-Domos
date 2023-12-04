@@ -1,6 +1,7 @@
 <?php 
     require_once("db/30_DB_Usuario.php");
     include("iniciar_sessao.php");
+    $tela_morador = true;
     $usuario = new Usuario();
     $dados = $usuario->find($_SESSION['id']); // puxa os dados do banco onde o cpf é igual ao cpf id da sessão
     // salva os dados em variaveis
@@ -105,7 +106,7 @@
           $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
           $_TAG = 'background-color: #ff6da7';
           for ($i = 0; $i < $stmt->rowCount(); $i++){
-            //echo $dados[$i][0]; // codigo
+            $codigo_anuncio = $dados[$i][0]; // codigo
             //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
             $_DESC_ANUNCIO = $dados[$i][2]; // descricao
             $_TITULO_ANUNCIO = $dados[$i][3]; // titulo

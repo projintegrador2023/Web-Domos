@@ -11,7 +11,6 @@
             <div class="d-flex sticky-top">';
               echo '<div class="dropdown">
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
                   <li><input type="submit" value="Excluir" name="delete" class="dropdown-item"/></li>
                 </ul>
               </div>
@@ -38,8 +37,7 @@
             <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical text-dark"></i></button>';
               echo '<div class="dropdown">
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><input type="submit" value="Excluir" name="delete" class="dropdown-item"/></li>
+                  <li><button type="button" id="'. $codigo_aviso .'" class="dropdown-item botao-excluir"/>Excluir</button></li>
                 </ul>
               </div>
             </div>

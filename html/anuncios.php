@@ -3,6 +3,7 @@
   require_once('db/DB_Anuncio.php');
   $cpf = $_SESSION['id'];
   $anuncio = new Anuncio();
+  $tela_morador = false;
 
   if (isset($_POST['submit'])){
     if (!empty($_POST['titulo_ANUNCIO']) && !empty($_POST['descricao_ANUNCIO']) && $_POST['tag'] != 'Escolha a tag conforme o anúncio'){

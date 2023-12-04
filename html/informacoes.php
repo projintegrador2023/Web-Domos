@@ -1,4 +1,3 @@
-<!-- NÃO UTILIZADO NESSE TRABALHO -->
 <?php
     include ("protect.php");
     require_once('db/DB_Condominio.php');
@@ -82,6 +81,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <th scope="row"><p class="color-0491a3">Código de condomínio</p></th>
+                            <td class="text-black">' . $dados[2] . '</td>
+                        </tr>
                         <tr>
                             <th scope="row"><p class="color-0491a3">Cnpj</p></th>
                             <td class="text-black">' . $_SESSION['id'] . '</td>

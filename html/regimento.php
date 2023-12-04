@@ -1,5 +1,32 @@
 <?php 
-  include("iniciar_sessao.php");
+  include("protect.php");
+  require_once('db/DB_Condominio.php');
+  require_once('db/30_DB_Usuario.php');
+    
+  if ($_SESSION['tipo_usuario'] == 1){
+    $usuario = new Usuario();
+    $dados_usuario = $usuario->find($_SESSION['id']);
+    $codigo_condominio = $dados_usuario[4];
+
+    $sql = "SELECT regimento FROM CONDOMINIO WHERE codigo_condominio = :codigo_condominio";
+    $stmt = Database::prepare($sql);
+    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+    $stmt->execute();
+    $dados = $stmt->fetch(PDO::FETCH_BOTH);
+    $regimento = $dados[0];
+
+  } else {
+    $condominio = new Condominio();
+    $dados_condominio = $condominio->find($_SESSION['id']);
+    $codigo_condominio = $dados_condominio[2];
+
+    $sql = "SELECT regimento FROM CONDOMINIO WHERE codigo_condominio = :codigo_condominio";
+    $stmt = Database::prepare($sql);
+    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+    $stmt->execute();
+    $dados = $stmt->fetch(PDO::FETCH_BOTH);
+    $regimento = $dados[0];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +54,10 @@
               <span class=""><i class="fa-solid fa-bars titulo-sub"></i></span>
             </div>
             <div class="d-flex w-25">
-              <button class="btn baixar-btn rounded-5 w-75 m-2 fs-6" type="button">Baixar PDF</button>
+              <?php
+                echo '<a href="'. $regimento .'" class="btn baixar-btn rounded-5 w-75 m-2 fs-6" download>Baixar PDF</a>'
+              ?>
+              
             </div>
         </header>
 
@@ -40,7 +70,10 @@
         <main class="main-container"> 
             <div class="card m-2 h-100 shadow-black">
                 <div class="h-100">
-                    <embed src="teste.pdf" class="col-12 h-100" type='application/pdf'>
+                  <?php
+                    echo '<embed src="' . $regimento . '" class="col-12 h-100" type="application/pdf">';
+                  ?>
+                    
                 </div>
             </div>       
         </main>

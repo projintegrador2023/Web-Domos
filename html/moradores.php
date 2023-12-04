@@ -50,7 +50,8 @@
                         $condominio = new Condominio();
                         $dados = $condominio->find($_SESSION['id']);
                         $codigo_condominio = $dados[2];
-                        $sql = 'SELECT * FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio';
+                        $sql = 'SELECT * FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio
+                                ORDER BY nome asc';
                         $stmt = Database::prepare($sql);
                         $stmt->bindParam(':codigo_condominio', $codigo_condominio);
                         $stmt->execute();
