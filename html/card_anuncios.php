@@ -12,6 +12,7 @@
               '<div class="dropdown">
                 <ul class="dropdown-menu">
                   <li><button type="button" id="' . $codigo_anuncio . '" class="dropdown-item botao-excluir"/>Excluir</button></li>
+                  <li><button type="button" class="dropdown-item"/>Editar</button></li>
                 </ul>
               </div>
             </div>

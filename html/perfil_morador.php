@@ -158,6 +158,56 @@
           }
         ?>
 
+        <!-- Modal de editar anúncio -->
+        <div class="d-flex justify-content-end m-5">
+          
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+
+                <!-- - Header do modal -->
+                <div class="modal-header">
+                  <h5 class="modal-title color-subtitulo" id="staticBackdropLabel">Editar anúncio</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- - Formulário de criar anúncio  -->
+                <form action="" method="POST">
+                  <!-- - Body do modal  -->
+                  <div class="modal-body">  
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="titulo_ANUNCIO" name="titulo_ANUNCIO" placeholder="Título">
+                      </div>
+
+                      <div class="mb-3">
+                          <textarea class="form-control" id="descricao_ANUNCIO" name="descricao_ANUNCIO" placeholder="Descrição" rows="10"></textarea>
+                      </div>
+
+                      <select name="tag" class="form-select select-modal mb-3">
+                        <option class="color-subtitulo select-modal">Escolha a tag conforme o anúncio</option>
+                        <option style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
+                        <option style="font-weight: bold;" class="color-vestuario">Vestuário</option>
+                        <option style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
+                        <option style="font-weight: bold;" class="color-beleza">Beleza</option>
+                        <option style="font-weight: bold;" class="color-decoracao">Decoração</option>
+                        <option style="font-weight: bold;" class="color-petshop">Pet-Shop</option>
+                        <option style="font-weight: bold;" class="color-servicos">Serviços</option>
+                      </select>
+                      <input type="file" name="file" class="btn col-5"> 
+
+                  </div>
+                  
+                  <!-- - Footer do modal  -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
+                    <input type="submit" name="submit" value="Publicar" class="btn btn-publicar">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
 
         </main>
     </div>

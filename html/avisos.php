@@ -130,7 +130,7 @@
             $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
             $_IMPORTANCIA = 'background-color: #cc0000';
             for ($i = $stmt->rowCount() - 1; $i >= 0 ; $i--){
-              // $dados[$i][0]; // codigo
+              $codigo_aviso = $dados[$i][0]; // codigo
               $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
               $_DESC_AVISO = $dados[$i][2]; // descricao
               $_TITULO_AVISO = $dados[$i][3]; // titulo
