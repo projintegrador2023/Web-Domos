@@ -8,10 +8,20 @@
 
 // conexão com bd
 require_once('conexao_db.php');
+require_once('autenticacao.php');
 
 // array de resposta
 $resposta = array();
 $resposta["avisos"] = array();
+
+// verifica se o usuário conseguiu autenticar
+if(autenticar($db_con)) {
+ if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['codigo_condominio']) && isset($_GET['importancia'])) {
+	 
+		$limit = $_GET['limit'];
+		$offset = $_GET['offset'];
+  $codigo_condominio = $_GET['codigo_condominio'];
+  $importancia = $_GET['importancia'];
 
 $consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$codigo_condominio'");
 
