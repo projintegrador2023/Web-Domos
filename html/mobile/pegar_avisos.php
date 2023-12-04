@@ -20,7 +20,7 @@ if ($consulta->execute()) {
     $aviso = array();
     $aviso["data_hora_postagem"] = $linha["data_hora_postagem"];
     $aviso["titulo"] = $linha["titulo"];
-    
+    $aviso["descricao"] = $linha["descricao"];
     $aviso["cpf"] = $linha["fk_usuario_cpf"];
     
     $consulta1 = $db_con->prepare("SELECT desc_importancia FROM importancia where codigo_importancia = '$linha["fk_importancia_codigo_importancia"]'");
