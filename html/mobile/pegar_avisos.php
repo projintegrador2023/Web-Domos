@@ -18,6 +18,7 @@ $consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_con
 if ($consulta->execute()) {
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     $aviso = array();
+    $aviso["codigo_postagem"] = $linha["codigo_postagem"];
     $aviso["data_hora_postagem"] = $linha["data_hora_postagem"];
     $aviso["titulo"] = $linha["titulo"];
     $aviso["descricao"] = $linha["descricao"];
