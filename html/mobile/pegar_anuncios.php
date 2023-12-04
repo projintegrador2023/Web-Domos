@@ -11,32 +11,26 @@ require_once('conexao_db.php');
 
 // array de resposta
 $resposta = array();
-$resposta["perfil"] = array();
+$resposta["anuncios"] = array();
 
-$consulta = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
+$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio'");
 
 if ($consulta->execute()) {
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-    $perfil = array();
-    $perfil["cpf"] = $linha["cpf"];
-    $perfil["nome"] = $linha["nome"];
-    $perfil["email"] = $linha["email"];
-    $perfil["cpf"] = $linha["fk_nivel_permissao_codigo_nivel_permissao"];
+    $anuncio = array();
+    $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
+    $anuncio["titulo"] = $linha["titulo"];
+    $anuncio["descricao"] = $linha["descricao"];
+    $anuncio["cpf"] = $linha["fk_usuario_cpf"];
     
-    $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$linha["fk_moradia_codigo_moradia"]'");
+    $consulta1 = $db_con->prepare("SELECT desc_tag FROM tag where codigo_tag = '$linha["fk_tag_codigo_tag"]'");
     $consulta1->execute();
     $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
     
-    $perfil["num_moradia"] = $linha1["numero_moradia"];
-
-    $consulta2 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$linha1["fk_divisao_codigo_divisao"]'");
-    $consulta2->execute();
-    $linha2 = $consulta->fetch(PDO::FETCH_ASSOC);
-    
-    $perfil["divisao"] = $linha2["desc_divisao"];
+    $anuncio["tag"] = $linha1["desc_tag"];
    
     // Adiciona o produto no array de produtos.
-    array_push($resposta["perfil"], $perfil);
+    array_push($resposta["anuncios"], $anuncio);
   }
   
   $resposta["sucesso"] = 1;
