@@ -13,11 +13,12 @@ require_once('conexao_db.php');
 $resposta = array();
 $resposta["importancias"] = array();
 
-$consulta = $db_con->prepare("SELECT desc_importancia FROM importancia");
+$consulta = $db_con->prepare("SELECT * FROM importancia");
 
 if ($consulta->execute()) {
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     $importancia = array();
+    $importancia["importancia"] = $linha["codigo_importancia"];
     $importancia["importancia"] = $linha["desc_importancia"];
    
     // Adiciona o produto no array de produtos.
