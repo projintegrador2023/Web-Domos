@@ -42,7 +42,7 @@ if(autenticar($db_con)) {
 		// A proxima linha insere um novo produto no BD.
 		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
 		
-		$consulta = $db_con->prepare("INSERT INTO anuncio(data_hora_postagem, descricao, titulo, fk_usuario_cpf, fk_tag_codigo_tag, fk_condominio_codigo_condominio) VALUES('$data_hora_formatada', '$descricao', '$titulo', '$cpf','$importancia', '$codigo_condominio')");
+		$consulta = $db_con->prepare("INSERT INTO anuncio(data_hora_postagem, descricao, titulo, fk_usuario_cpf, fk_tag_codigo_tag, fk_condominio_codigo_condominio) VALUES('$data_hora_formatada', '$descricao', '$titulo', '$cpf','$tag', '$codigo_condominio')");
 		if ($consulta->execute()) {
 			// Se o produto foi inserido corretamente no servidor, o cliente 
 			// recebe a chave "sucesso" com valor 1
