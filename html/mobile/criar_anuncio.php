@@ -26,10 +26,10 @@ if(autenticar($db_con)) {
 		$cpf = $_POST['cpf'];
 
 		$timezone = new DateTimeZone('America/Sao_Paulo');
-    $data_hora = new DateTime('now', $timezone);
-    $data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
+    		$data_hora = new DateTime('now', $timezone);
+    		$data_hora_formatada = $data_hora->format('Y-m-d H:i:s');
 
-		$sql_tag = $db_con->prepare("SELECT codigo_tag FROM importancia WHERE desc_tag = '$tag'");
+		$sql_tag = $db_con->prepare("SELECT codigo_tag FROM tag WHERE desc_tag = '$tag'");
 		$sql_tag->execute();
 		$codigo_tag = $sql_tag->fetch(PDO::FETCH_ASSOC);
 		$tag = $codigo_tag['codigo_tag'];
