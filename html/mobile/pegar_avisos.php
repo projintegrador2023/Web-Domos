@@ -25,7 +25,7 @@ if(autenticar($db_con)) {
 	 
   $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$_GET['cpf']'");
   $consulta1->execute();
-  $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
+  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
 
 $consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$linha1['codigo_condominio']'");
 
