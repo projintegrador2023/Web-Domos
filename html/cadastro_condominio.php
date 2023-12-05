@@ -17,21 +17,21 @@
 
     if (isset($_POST['submit'])){
         $email = filter_var($_POST['email_condominio'], FILTER_SANITIZE_EMAIL);
-        if (validar_cnpj($_POST['cnpj_condominio']) /*&& validacao_nome($_POST['nome_condominio'])*/ && filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if (validar_cnpj($_POST['cnpj_condominio']) && !empty($_POST['nome_condominio']) && filter_var($email, FILTER_VALIDATE_EMAIL)){
             $condominio->setCNPJ(preg_replace('/[^0-9]/', '', $_POST['cnpj_condominio']));
             $condominio->setNome($_POST['nome_condominio']);
             $condominio->setEmail($email);
             if ($_POST['senha_condominio'] == $_POST['conf_senha_condominio']){
                 $condominio->setSenha($_POST['senha_condominio']);
                 $numero = filter_var($_POST['numero'], FILTER_SANITIZE_NUMBER_INT);
-                if (validacao_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio'])) /*&& validacao_nome($_POST['cidade_condominio']) && validacao_nome($_POST['bairro_condominio']) && validacao_nome($_POST['rua_condominio'])*/ && filter_var($numero, FILTER_VALIDATE_INT) && $_POST['estado_condominio'] != 'Escolha uma opção'){
+                if (validacao_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio'])) && !empty($_POST['cidade_condominio']) && !empty($_POST['bairro_condominio']) && validacao_nome($_POST['rua_condominio']) && filter_var($numero, FILTER_VALIDATE_INT) && $_POST['estado_condominio'] != 'Escolha uma opção'){
                     $endereco->set_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio']));
                     $endereco->set_estado($_POST['estado_condominio']);
                     $endereco->set_cidade($_POST['cidade_condominio']);
                     $endereco->set_bairro($_POST['bairro_condominio']);
                     $endereco->set_rua($_POST['rua_condominio']);
                     $endereco->set_numero($numero);
-                    if ("" == trim($_POST['complemento']) /*|| validacao_nome($_POST['complemento'])*/){
+                    if ("" == trim($_POST['complemento']) || !empty($_POST['complemento'])){
                         $endereco->set_complemento($_POST['complemento']);
                         $codigo_endereco = $endereco->insert();
                         $condominio->setEndereco($codigo_endereco);

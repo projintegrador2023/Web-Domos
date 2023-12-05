@@ -1,34 +1,36 @@
 <?php
 	//Classe de usuario
-	include_once 'db/30_DB_usuario.php';
+	require_once 'db/30_DB_usuario.php';
 	$usuario = new Usuario();
 	//verifica se o botao de trocar formulario foi acionado
 	if (isset($_POST['submit1'])){
 		//valida os dados do primeiro formulario
-		if (validacao_nome($_POST['nome_usuario']) && validaCPF(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario'])) && $_POST['senha_usuario'] == $_POST['conf_senha_usuario'] && valida_codigo_condominio($_POST['input_codigo_condominio'])){
+		if (!empty($_POST['nome_usuario']) && validaCPF(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario'])) && !empty($_POST['senha_usuario']) && !empty($_POST['conf_senha_usuario']) && valida_codigo_condominio($_POST['input_codigo_condominio'])){
 			// setando os dados no objeto de usuario
             $usuario->setNome($_POST['nome_usuario']); 
 			$usuario->setCpf(preg_replace( '/[^0-9]/', '', $_POST['cpf_usuario']));
 			$usuario->setEmail($_POST['email_usuario']);
-			$usuario->setSenha($_POST['senha_usuario']);
-			$usuario->setCodigoCondominio($_POST['input_codigo_condominio']);
-			$usuario->setNivelPermissao(3);
-            if (!isset($_SESSION)){
-                session_start(); // inicia sessao para enviar o usuario semi preenchido pra proxima pagina
-                $_SESSION['usuario'] = $usuario;
-                header('Location: cadastrar_usuario2.php');
-            } 
-		}
-	}
+            $usuario->setCodigoCondominio($_POST['input_codigo_condominio']);
+            $usuario->setNivelPermissao(3);
 
-	function validacao_nome($nome){
-		//if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)){
-		//	echo "<script> 
-		//	alert('O nome contém caracteres inválidos');
-		//	</script>";
-		//	return false;
-		//} 
-		return true;
+            if (strlen($_POST['senha_usuario']) >= 8 && $_POST['senha_usuario'] == $_POST['conf_senha_usuario']){
+                $usuario->setSenha($_POST['senha_usuario']);
+                if (!isset($_SESSION)){
+                    session_start(); // inicia sessao para enviar o usuario semi preenchido pra proxima pagina
+                    $_SESSION['usuario'] = $usuario;
+                    header('Location: cadastrar_usuario2.php');
+                }
+            } else if (strlen($_POST['senha_usuario']) < 8){
+                echo '<script>
+                    alert("A senha deve ter mais de 8 caracteres.");
+                </script>';
+            } else {
+                echo '<script>
+                    alert("As senhas não coincidem.");
+                </script>';
+            }
+			 
+		}
 	}
 	function validaCPF($cpf) {
         
@@ -57,7 +59,11 @@
     }
 
 	function valida_codigo_condominio($codigo_condominio){
-		return true;
+		$sql = 'SELECT * FROM CONDOMINIO WHERE codigo_condominio = :codigo_condominio';
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+        $stmt->execute();
+        return $stmt->rowCount() > 0;
 	}
 ?>
 

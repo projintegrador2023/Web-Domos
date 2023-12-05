@@ -21,21 +21,47 @@
             $senha = $_POST['senha'];
             $conf_senha = $_POST['conf_senha'];
             $email = $_POST['email'];
-            echo $_FILES['file']['name'];
+            
+            $sql_bloco = "SELECT codigo_divisao FROM DIVISAO WHERE desc_divisao = :divisao";
+            $stmt = Database::prepare($sql_bloco);
+            $stmt->bindParam(':divisao', $_POST['bloco']);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $codigo_divisao = $dados[0][0];
+
+            $sql_moradia = "SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = :numero AND fk_divisao_codigo_divisao = :codigo_divisao";
+            $stmt = Database::prepare($sql_moradia);
+            $stmt->bindParam(":numero", $_POST["numero"]);
+            $stmt->bindParam(':codigo_divisao', $codigo_divisao, PDO::PARAM_INT);
+            $stmt->execute();
+            $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
+            $codigo_moradia = $dados[0][0];
+
+            $usuario->setCodigoMoradia($codigo_moradia);
+
             if (empty($valErr)){
                 $usuario->setImagem($imglink);
+            } else {
+              $sql_imagem = 'SELECT fk_imagem_codigo_imagem FROM USUARIO WHERE cpf = :cpf';
+              $stmt = Database::prepare($sql_imagem);
+              $stmt->bindParam(':cpf', $_SESSION['id']);
+              $stmt->execute();
+              $dados = $stmt->fetch(PDO::FETCH_BOTH);
+              $usuario->setCodigoImagem($dados[0]);
             }
+
             if ($senha == $conf_senha){
-                $usuario->setCpf($_SESSION['id']);
-                $usuario->setNome($nome);
-                $usuario->setSenha($senha);
-                $usuario->setEmail($email);
-                $usuario->setCodigoCondominio($dados[4]);
-                $usuario->setNivelPermissao(3);
-                
-                $usuario->update($_SESSION['id']);
-                header('Location: ./perfil_morador.php');
-            }
+              $usuario->setCpf($_SESSION['id']);
+              $usuario->setNome($nome);
+              $usuario->setSenha($senha);
+              $usuario->setEmail($email);
+              $usuario->setCodigoCondominio($dados[4]);
+              $usuario->setNivelPermissao(3);
+              
+              $usuario->update($_SESSION['id']);
+              header('Location: ./perfil_morador.php');
+          }
+            
         } else {
             echo '<script>
                 alert("Insira todos os dados.");
@@ -119,9 +145,47 @@
                             echo '<input type="password" name="senha" class="form-control mb-1" placeholder="Senha: ">
                             <input type="password" name="conf_senha" class="form-control mb-1" placeholder="Confirmar senha: ">';
                             echo '<input type="text" name="email" class="form-control mb-1" value="', $email, '">';
-                            echo '<input type="text" name="bloco" class="form-control col-5 mb-1" value="' . $divisao . '">
-                            <input type="text" name="numero" class="form-control col-5" value="'. $numero_moradia .'" >';
                         ?>
+                        <select name="bloco" id="" class="select-customiza form-control mb-1">
+                          <?php 
+                            $sql = "SELECT desc_divisao FROM DIVISAO where fk_condominio_codigo_condominio = :codigo_condominio";
+                            $stmt = Database::prepare($sql);
+                            $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                            $stmt->execute();
+                            $nome = $stmt->fetchAll(PDO::FETCH_BOTH);
+                            for ($i = 0; $i < $stmt->rowCount(); $i++){
+                              if ($nome[$i][0] == $divisao){
+                                echo "<option selected class='text-black'>" . $nome[$i][0] . "</option>"; 
+                              } else{
+                                echo "<option class='text-black'>" . $nome[$i][0] . "</option>"; 
+                              }
+                                
+                            }
+                          ?>
+                        </select>
+                        <select name="numero" id="" class="select-customiza form-control">
+                          <?php 
+                            $sql = "SELECT numero_moradia FROM MORADIA where fk_condominio_codigo_condominio = :codigo_condominio";
+                            $stmt = Database::prepare($sql);
+                            $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                            $stmt->execute();
+                            $nome = $stmt->fetchAll(PDO::FETCH_BOTH);
+                            $i = 1;
+                            if ($nome[0][0] == $numero_moradia){
+                              echo "<option selected class='text-black'>" . $nome[0][0] . "</option>"; 
+                            } else{
+                              echo "<option class='text-black'>" . $nome[0][0] . "</option>"; 
+                            }
+                            while ($nome[$i][0] != $nome[0][0]){
+                              if ($nome[$i][0] == $numero_moradia){
+                                echo "<option selected class='text-black'>" . $nome[$i][0] . "</option>"; 
+                              } else{
+                                echo "<option class='text-black'>" . $nome[$i][0] . "</option>"; 
+                              }
+                              $i++;
+                            }
+                          ?>
+                        </select>
                     </div>
                 </div>
             </form>
@@ -201,6 +265,57 @@
             include("card_anuncios.php");
           }
         ?>
+        <!-- Modal de editar anúncio -->
+        <div class="d-flex justify-content-end m-5">
+          
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
 
+                <!-- - Header do modal -->
+                <div class="modal-header">
+                  <h5 class="modal-title color-subtitulo" id="staticBackdropLabel">Editar anúncio</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- - Formulário de criar anúncio  -->
+                <form action="editar_anuncio.php" method="POST" enctype="multipart/form-data">
+                  <!-- - Body do modal  -->
+                  <div class="modal-body">
+
+                      <input type="hidden" id="idAnuncio" name="idAnuncio">
+
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="titulo_ANUNCIO" name="titulo_ANUNCIO" placeholder="Título">
+                      </div>
+
+                      <div class="mb-3">
+                          <textarea class="form-control" id="descricao_ANUNCIO" name="descricao_ANUNCIO" placeholder="Descrição" rows="10"></textarea>
+                      </div>
+
+                      <select name="tag" class="form-select select-modal mb-3">
+                        <option class="color-subtitulo select-modal" value="0">Escolha a tag conforme o anúncio</option>
+                        <option style="font-weight: bold;" class="color-alimentacao" value="1">Alimentação</option>
+                        <option style="font-weight: bold;" class="color-vestuario" value="2">Vestuário</option>
+                        <option style="font-weight: bold;" class="color-eletronicos" value="3">Eletrônicos</option>
+                        <option style="font-weight: bold;" class="color-beleza" value="4">Beleza</option>
+                        <option style="font-weight: bold;" class="color-decoracao" value="5">Decoração</option>
+                        <option style="font-weight: bold;" class="color-petshop" value="6">Pet-Shop</option>
+                        <option style="font-weight: bold;" class="color-servicos" value="7">Serviços</option>
+                      </select>
+                      <input type="file" name="file" class="btn col-5" accept=".png, .jpg, .jpeg, .gif"> 
+
+                  </div>
+                  
+                  <!-- - Footer do modal  -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Voltar</button>
+                    <input type="submit" name="submit" value="Publicar" class="btn btn-publicar">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </main>
     </div>

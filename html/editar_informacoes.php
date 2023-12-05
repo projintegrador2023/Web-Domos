@@ -6,6 +6,7 @@
     $nome = $dados_condominio[1];
     $codigo_condominio = $dados_condominio[2];
     $email = $dados_condominio[3];
+    $tipo_moradia = $dados_condominio[6];
 
     
     if(isset($_POST['envioPdf'])){
@@ -43,42 +44,47 @@
             $dados = $stmt->fetch(PDO::FETCH_BOTH);
             $condominio->setTipo_moradia($dados[0]);
             $condominio->update($codigo_condominio);
+            
+            if ($_POST['sindico'] != 'Escolha o síndico'){
+                $sql = "SELECT * FROM USUARIO WHERE fk_nivel_permissao_codigo_nivel_permissao = 1 AND fk_condominio_codigo_condominio = :codigo_condominio";
+                $stmt = Database::prepare($sql);
+                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                $stmt->execute();
+                if ($stmt->rowCount() > 0){
+                    $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 3 WHERE fk_nivel_permissao_codigo_nivel_permissao = 1 AND fk_condominio_codigo_condominio = :codigo_condominio";
+                    $stmt = Database::prepare($sql);
+                    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                    $stmt->execute();
+                }
+                
+                $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 1 WHERE cpf = :cpf";
+                $stmt = Database::prepare($sql);
+                $stmt->bindParam(':cpf' ,$_POST['sindico']);
+                $stmt->execute();
+                
+            }
+            if ($_POST['adm'] != 'Escolha o administrador'){
+                $sql = "SELECT * FROM USUARIO WHERE fk_nivel_permissao_codigo_nivel_permissao = 2 AND fk_condominio_codigo_condominio = :codigo_condominio";
+                $stmt = Database::prepare($sql);
+                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                $stmt->execute();
+                if ($stmt->rowCount() > 0){
+                    $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 3 WHERE fk_nivel_permissao_codigo_nivel_permissao = 2 AND fk_condominio_codigo_condominio = :codigo_condominio";
+                    $stmt = Database::prepare($sql);
+                    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                    $stmt->execute();
+                }
+    
+                $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 2 WHERE cpf = :cpf";
+                $stmt = Database::prepare($sql);
+                $stmt->bindParam(':cpf' ,$_POST['adm']);
+                $stmt->execute();
+                
+            }
             header('Location: ./informacoes.php');
         }
-        if ($_POST['sindico'] != 'Escolha o síndico'){
-            $sql = "SELECT * FROM USUARIO WHERE fk_nivel_permissao_codigo_nivel_permissao = 1 AND fk_condominio_codigo_condominio = :codigo_condominio";
-            $stmt = Database::prepare($sql);
-            $stmt->bindParam(':codigo_condominio', $codigo_condominio);
-            $stmt->execute();
-            if ($stmt->rowCount() > 0){
-                $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 3 WHERE fk_nivel_permissao_codigo_nivel_permissao = 1 AND fk_condominio_codigo_condominio = :codigo_condominio";
-                $stmt = Database::prepare($sql);
-                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
-                $stmt->execute();
-            }
-            
-            $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 1 WHERE cpf = :cpf";
-            $stmt = Database::prepare($sql);
-            $stmt->bindParam(':cpf' ,$_POST['sindico']);
-            $stmt->execute();
-        }
-        if ($_POST['adm'] != 'Escolha o administrador'){
-            $sql = "SELECT * FROM USUARIO WHERE fk_nivel_permissao_codigo_nivel_permissao = 2 AND fk_condominio_codigo_condominio = :codigo_condominio";
-            $stmt = Database::prepare($sql);
-            $stmt->bindParam(':codigo_condominio', $codigo_condominio);
-            $stmt->execute();
-            if ($stmt->rowCount() > 0){
-                $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 3 WHERE fk_nivel_permissao_codigo_nivel_permissao = 2 AND fk_condominio_codigo_condominio = :codigo_condominio";
-                $stmt = Database::prepare($sql);
-                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
-                $stmt->execute();
-            }
-
-            $sql = "UPDATE USUARIO SET fk_nivel_permissao_codigo_nivel_permissao = 2 WHERE cpf = :cpf";
-            $stmt = Database::prepare($sql);
-            $stmt->bindParam(':cpf' ,$_POST['adm']);
-            $stmt->execute();
-        }
+        
+        
     }
 ?>
 
@@ -148,24 +154,21 @@
                                     <th scope="row"><p class="color-0491a3">Confirmar Senha</p></th>
                                     <td class="text-black"><input type="password" name="conf_senha" class="form-control" placeholder=""></td>
                                 </tr>
-                                <!--tr>
-                                    <th scope="row"><p class="color-0491a3">Nome das divisões</p></th>
-                                    <td class="text-black"><input type="text" class="form-control" placeholder="Nome das divisões: "></td>
-                                </tr-->
                                 <tr>
                                     <th scope="row"><p class="color-0491a3">Tipo de moradia</p></th>
                                     <td class="text-black">                                
                                         <select name="moradia" id="" class="select-customiza form-control">
-                                            <option selected class="">Escolha o tipo de moradia</option>
                                             <?php 
-                                                $sql = "SELECT nome FROM TIPO_MORADIA";
+                                                $sql = "SELECT codigo_tipo_moradia, nome FROM TIPO_MORADIA";
                                                 $stmt = Database::prepare($sql);
                                                 $stmt->execute();
                                                 $nome = $stmt->fetchAll(PDO::FETCH_BOTH);
                                                 for ($i = 0; $i < $stmt->rowCount(); $i++){
-                                                    echo "<option class='text-black'>"; 
-                                                    echo $nome[$i][0];
-                                                    echo "</option>";
+                                                    if ($nome[$i][0] == $tipo_moradia){
+                                                        echo "<option selected class='text-black'>". $nome[$i][1] ."</option>";
+                                                    } else {
+                                                        echo "<option class='text-black'>". $nome[$i][1] ."</option>";
+                                                    }
                                                 }
                                             ?>
                                         </select>
@@ -175,16 +178,28 @@
                                     <th scope="row"><p class="color-0491a3">Síndico</p></th>
                                     <td class="text-black">
                                         <select name="sindico" class="select-customiza form-control"> 
-                                            <option class="text-black">Escolha o síndico</option>
                                             <?php
+                                                $sql = "SELECT cpf, nome FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio AND fk_nivel_permissao_codigo_nivel_permissao = 1
+                                                ORDER BY nome ASC";
+                                                $stmt = Database::prepare($sql);
+                                                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                                                $stmt->execute();
+                                                $sindico = $stmt->fetch(PDO::FETCH_BOTH);
+
                                                 $sql = "SELECT cpf, nome FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio
                                                         ORDER BY nome ASC";
                                                 $stmt = Database::prepare($sql);
                                                 $stmt->bindParam(':codigo_condominio', $codigo_condominio);
                                                 $stmt->execute();
                                                 $usuarios = $stmt->fetchAll(PDO::FETCH_BOTH);
+
                                                 for ($i = 0; $i < $stmt->rowCount(); $i++){
-                                                    echo "<option class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    if ($usuarios[$i][0] == $sindico[0]){
+                                                        echo "<option selected class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    } else {
+                                                        echo "<option class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    }
+                                                    
                                                 }
                                             ?>
 
@@ -195,10 +210,27 @@
                                     <th scope="row"><p class="color-0491a3">Administrador</p></th>
                                     <td class="text-black">
                                         <select name="adm" class="select-customiza form-control"> 
-                                            <option class="text-black">Escolha o administrador</option>
                                             <?php
+                                                $sql = "SELECT cpf, nome FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio AND fk_nivel_permissao_codigo_nivel_permissao = 2
+                                                ORDER BY nome ASC";
+                                                $stmt = Database::prepare($sql);
+                                                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                                                $stmt->execute();
+                                                $adm = $stmt->fetch(PDO::FETCH_BOTH);
+
+                                                $sql = "SELECT cpf, nome FROM USUARIO WHERE fk_condominio_codigo_condominio = :codigo_condominio
+                                                        ORDER BY nome ASC";
+                                                $stmt = Database::prepare($sql);
+                                                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                                                $stmt->execute();
+                                                $usuarios = $stmt->fetchAll(PDO::FETCH_BOTH);
                                                 for ($i = 0; $i < $stmt->rowCount(); $i++){
-                                                    echo "<option class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    if ($usuarios[$i][0] == $adm[0]){
+                                                        echo "<option selected class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    } else {
+                                                        echo "<option class='text-black' value='". $usuarios[$i][0] ."'>" . $usuarios[$i][0] . " - " . $usuarios[$i][1] . "</option>";
+                                                    }
+                                                    
                                                 }
                                             ?>
 

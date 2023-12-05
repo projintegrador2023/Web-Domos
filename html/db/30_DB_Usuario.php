@@ -29,6 +29,13 @@ class Usuario extends CRUD{
 		return $this->imagem;
 	}
 
+	public function setCodigoImagem($imagem){
+		$this->imagem = $imagem;
+	}
+	public function getCodigoImagem($imagem){
+		return $this->imagem;
+	}
+
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
@@ -107,7 +114,7 @@ class Usuario extends CRUD{
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	***************/
 	public function update($id){
-		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha, fk_imagem_codigo_imagem = :codigo_imagem  WHERE cpf = :cpf ";
+		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha, fk_imagem_codigo_imagem = :codigo_imagem, fk_moradia_codigo_moradia = :codigo_moradia  WHERE cpf = :cpf ";
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':cpf', $this->cpf);
@@ -116,7 +123,7 @@ class Usuario extends CRUD{
 		$stmt->bindParam(':codigo_imagem', $this->imagem);
 		//$stmt->bindParam(':codigo_condominio', $this->codigo_condominio);
 		//$stmt->bindParam(':nivel_permissao', $this->nivel_permissao);
-		//$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);
+		$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);
 		// $stmt->bindParam(':tipocliente', 1, PDO::PARAM_INT);
 		return $stmt->execute();
 	}

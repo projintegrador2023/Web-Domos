@@ -189,7 +189,7 @@
                 </div>
 
                 <!-- - Formulário de criar anúncio  -->
-                <form action="editar_anuncio.php" method="POST">
+                <form action="editar_anuncio.php" method="POST" enctype="multipart/form-data">
                   <!-- - Body do modal  -->
                   <div class="modal-body">
 
@@ -213,7 +213,7 @@
                         <option style="font-weight: bold;" class="color-petshop" value="6">Pet-Shop</option>
                         <option style="font-weight: bold;" class="color-servicos" value="7">Serviços</option>
                       </select>
-                      <input type="file" name="file" class="btn col-5"> 
+                      <input type="file" name="file" class="btn col-5" accept=".png, .jpg, .jpeg, .gif"> 
 
                   </div>
                   

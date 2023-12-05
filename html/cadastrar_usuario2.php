@@ -16,7 +16,6 @@
             $stmt->execute();
             $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
             $codigo_divisao = $dados[0][0];
-            echo $codigo_divisao;
 
             $sql_moradia = "SELECT codigo_moradia FROM MORADIA WHERE numero_moradia = :numero AND fk_divisao_codigo_divisao = :codigo_divisao";
             $stmt = Database::prepare($sql_moradia);
