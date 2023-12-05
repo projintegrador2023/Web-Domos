@@ -53,7 +53,15 @@
             <div class="d-flex row justify-content-center m-lg-1 m-auto col-12">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="css/img/logodeperfil.png" alt="Foto de Perfil" class="rounded-circle col-12">
+                        <?php
+                            $sql = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+                            $stmt = Database::prepare($sql);
+                            $stmt->bindParam(':codigo_imagem', $imagem);
+                            $stmt->execute();
+                            $dados = $stmt->fetch(PDO::FETCH_BOTH);
+                            $imglink = $dados[0];
+                            echo '<img src="'.$imglink.'" alt="Foto de perfil" class="rounded-circle col-12 h-100">'
+                          ?>
                         </div>
                     <a href="editar_perfil_morador.php" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white"><i class="fa-solid fa-user-pen flex-grow-1 me-2"></i> Editar perfil</a>
                     <?php 
@@ -110,13 +118,21 @@
           $stmt->execute();
           $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
           $_TAG = 'background-color: #ff6da7';
-          for ($i = 0; $i < $stmt->rowCount(); $i++){
+          for ($i = $stmt->rowCount()-1; $i >= 0; $i--){
             $codigo_anuncio = $dados[$i][0]; // codigo
             //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
             $_DESC_ANUNCIO = $dados[$i][2]; // descricao
             $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
             $cpf = $dados[$i][4]; // cpf
             $codigo_tag = $dados[$i][5]; // tag
+            $codigo_imagem = $dados[$i][7]; // codigo imagem
+
+            $sql_imagem = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+            $stmt_imagem = Database::prepare($sql_imagem);
+            $stmt_imagem->bindParam(':codigo_imagem', $codigo_imagem);
+            $stmt_imagem->execute();
+            $dados_imagem = $stmt_imagem->fetch(PDO::FETCH_BOTH);
+            $imagem_anuncio = $dados_imagem[0];
             
             
             $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";

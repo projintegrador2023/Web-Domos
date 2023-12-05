@@ -12,8 +12,23 @@ class Usuario extends CRUD{
 	private $codigo_condominio; 
 	private $nivel_permissao;
 	private $codigo_moradia;
+	private $imagem = 3;
 	
 	/********Início dos métodos sets e gets*********/
+	public function setImagem($imagem){
+		$sql = "INSERT INTO IMAGEM (endereco_imagem) VALUES (:imagem)
+                RETURNING codigo_imagem";
+      $stmt = Database::prepare($sql);
+      $stmt->bindParam(":imagem", $imagem);
+      $stmt->execute();
+      $dados = $stmt->fetch(PDO::FETCH_BOTH);
+      $codigo_imagem = $dados[0];
+      $this->imagem = $codigo_imagem;
+	}
+	public function getImagem(){
+		return $this->imagem;
+	}
+
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
@@ -71,7 +86,8 @@ class Usuario extends CRUD{
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	***************/
 	public function insert(){
-		$sql="INSERT INTO $this->table (nome,cpf,email,senha,FK_CONDOMINIO_codigo_condominio, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_MORADIA_codigo_moradia) VALUES (:nome,:cpf,:email,:senha,:codigo_condominio,:nivel_permissao,:codigo_moradia)";
+		$sql="INSERT INTO $this->table (nome,cpf,email,senha,FK_CONDOMINIO_codigo_condominio, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_MORADIA_codigo_moradiafk_imagem_codigo_imagem)
+		 VALUES (:nome,:cpf,:email,:senha,:codigo_condominio,:nivel_permissao,:codigo_moradia, :codigo_imagem)";
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':cpf', $this->cpf);
@@ -80,6 +96,7 @@ class Usuario extends CRUD{
 		$stmt->bindParam(':codigo_condominio', $this->codigo_condominio);
 		$stmt->bindParam(':nivel_permissao', $this->nivel_permissao);
 		$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);
+		$stmt->bindParam(':codigo_imagem', $this->imagem);
 		
 		return $stmt->execute();
 	}
@@ -90,12 +107,13 @@ class Usuario extends CRUD{
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	***************/
 	public function update($id){
-		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha  WHERE cpf = :cpf ";
+		$sql="UPDATE $this->table SET nome = :nome, email = :email , senha = :senha, fk_imagem_codigo_imagem = :codigo_imagem  WHERE cpf = :cpf ";
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':cpf', $this->cpf);
 		$stmt->bindParam(':email', $this->email);
 		$stmt->bindParam(':senha', $this->senha);
+		$stmt->bindParam(':codigo_imagem', $this->imagem);
 		//$stmt->bindParam(':codigo_condominio', $this->codigo_condominio);
 		//$stmt->bindParam(':nivel_permissao', $this->nivel_permissao);
 		//$stmt->bindParam(':codigo_moradia', $this->codigo_moradia);

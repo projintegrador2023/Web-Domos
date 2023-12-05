@@ -1,5 +1,6 @@
 <?php 
     require_once("db/30_DB_Usuario.php");
+    include_once('./upload.php');
     include("iniciar_sessao.php");
     $tela_morador = true;
     $usuario = new Usuario();
@@ -13,6 +14,35 @@
     $nivel_permissao = $dados[5];
     $imagem = $dados[6];
     $codigo_moradia = $dados[7];
+
+    if (isset($_POST['submit'])){
+        if(!empty($_POST['nome']) && !empty($_POST['senha']) && !empty($_POST['conf_senha']) && !empty($_POST['email'])){
+            $nome = $_POST['nome'];
+            $senha = $_POST['senha'];
+            $conf_senha = $_POST['conf_senha'];
+            $email = $_POST['email'];
+            echo $_FILES['file']['name'];
+            if (empty($valErr)){
+                $usuario->setImagem($imglink);
+            }
+            if ($senha == $conf_senha){
+                $usuario->setCpf($_SESSION['id']);
+                $usuario->setNome($nome);
+                $usuario->setSenha($senha);
+                $usuario->setEmail($email);
+                $usuario->setCodigoCondominio($dados[4]);
+                $usuario->setNivelPermissao(3);
+                
+                $usuario->update($_SESSION['id']);
+                header('Location: ./perfil_morador.php');
+            }
+        } else {
+            echo '<script>
+                alert("Insira todos os dados.");
+            </script>';
+            header('Location: ./editar_perfil_morador.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +78,23 @@
         ?>
 
         <main container class="main-container">
-            <form action="db/DB_update_usuario.php" method="POST" class="d-flex row justify-content-center m-lg-1 m-auto col-12">
+            <form action="" method="POST" class="d-flex row justify-content-center m-lg-1 m-auto col-12" enctype="multipart/form-data">
                 <div class="col-lg-4 col-6 d-flex flex-column align-items-center my-4">
                         <div class="col-sm-7 col-lg-5 col-10 d-flex justify-content-center h-50">
-                            <img src="css/img/logodeperfil.png" alt="Foto de perfil" class="rounded-circle col-12 h-100">
+                          <?php
+                            $sql = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+                            $stmt = Database::prepare($sql);
+                            $stmt->bindParam(':codigo_imagem', $imagem);
+                            $stmt->execute();
+                            $dados = $stmt->fetch(PDO::FETCH_BOTH);
+                            $imglink = $dados[0];
+                            echo '<img src="'.$imglink.'" alt="Foto de perfil" class="rounded-circle col-12 h-100">'
+                          ?>
+                            
                         </div>
-                    <button type="submit" name="salvar" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
+                    <label for="file" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white">Alterar Foto</label>
+                    <input type="file" id="file" name="file" class="d-none" accept=".png, .jpg, .jpeg, .gif"> 
+                    <button type="submit" name="submit" class="btn bg-0491a3 hover-0dc0d8 mt-3 mx-2 col-sm-7 col-12 text-white" ><i class="fa-solid fa-floppy-disk me-2"></i>Salvar edição </button>
                     <?php 
                         echo "<a href='db/DB_Delete_usuario.php' class='btn btn-saida mt-3 mx-2 col-sm-7 col-12 text-white'><i class='fa-solid fa-trash flex-grow-1'></i> Excluir conta</a>";
                     ?>
@@ -105,13 +146,21 @@
           $stmt->execute();
           $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
           $_TAG = 'background-color: #ff6da7';
-          for ($i = 0; $i < $stmt->rowCount(); $i++){
+          for ($i = $stmt->rowCount()-1; $i >= 0; $i--){
             $codigo_anuncio = $dados[$i][0]; // codigo
             //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
             $_DESC_ANUNCIO = $dados[$i][2]; // descricao
             $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
             $cpf = $dados[$i][4]; // cpf
             $codigo_tag = $dados[$i][5]; // tag
+            $codigo_imagem = $dados[$i][7]; // codigo imagem
+
+            $sql_imagem = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+            $stmt_imagem = Database::prepare($sql_imagem);
+            $stmt_imagem->bindParam(':codigo_imagem', $codigo_imagem);
+            $stmt_imagem->execute();
+            $dados_imagem = $stmt_imagem->fetch(PDO::FETCH_BOTH);
+            $imagem_anuncio = $dados_imagem[0];
            
             
             $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";

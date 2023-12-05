@@ -1,5 +1,6 @@
 <?php 
   include("iniciar_sessao.php");
+  include_once('upload.php');
   require_once('db/DB_Anuncio.php');
   $cpf = $_SESSION['id'];
   $anuncio = new Anuncio();
@@ -23,60 +24,11 @@
       $codigo_tag = $dados[0];
       $anuncio->setFKTagCodigoTag($codigo_tag);
 
-      if ($_FILES["file"]["size"] > 0){
-        $client_id = "e3f4c9231b6cf9e";
-        $filename = $_FILES['file']['tmp_name'];
-        
-        $image_data = file_get_contents($filename);
-        $image_data_base64 = base64_encode($image_data);
-        
-        $api_url = 'https://api.imgur.com/3/image.json';
-        
-        $headers = array(
-            'Authorization: Client-ID ' . $client_id,
-            'Content-Type: application/x-www-form-urlencoded'
-        );
-        
-        $postData = http_build_query(array('image' => $image_data_base64));
-        
-        $options = array(
-            'http' => array(
-                'header' => implode("\r\n", $headers),
-                'method' => 'POST',
-                'content' => $postData
-            )
-        );
-        
-        $context = stream_context_create($options);
-        $result = file_get_contents($api_url, false, $context);
-        
-        if ($result === FALSE) {
-            echo "Erro ao enviar arquivo para o Imgur";
-        } else {
-            $response = json_decode($result, true);
-            $foto = $response['data']['link'];
-            
-            $anuncio->setCodigoImagem($foto);
-            try{
-              $anuncio->insert();
-              header('Location: anuncios.php');
-            } catch(PDOException $e) {
-              echo '<script>  
-                          alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
-                      </script>';
-                      echo $e;
-            }
-        }
-      } else {
-          try{
-            $anuncio->insert();
-            header('Location: anuncios.php');
-          } catch(PDOException $e) {
-            echo '<script>  
-                        alert("Algo deu errado, verifique as informações do anúncio e tente novamente.");
-                    </script>';
-                    echo $e;
-          }
+      if (empty($valErr)){
+        $anuncio->setCodigoImagem($imglink);
+        $anuncio->insert();
+      } else{
+        $anuncio->insert();
       }
     }  
   }
@@ -158,13 +110,21 @@
             $stmt->execute();
             $dados = $stmt->fetchAll(PDO::FETCH_BOTH);
             $_TAG = 'background-color: #ff6da7';
-            for ($i = 0; $i < $stmt->rowCount(); $i++){
+            for ($i = $stmt->rowCount()-1; $i >= 0; $i--){
               //echo $dados[$i][0]; // codigo
               //$_DATA_HORA_ANUNCIO = $dados[$i][1]; // data hora
               $_DESC_ANUNCIO = $dados[$i][2]; // descricao
               $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
               $cpf = $dados[$i][4]; // cpf
               $codigo_tag = $dados[$i][5]; // tag
+              $codigo_imagem = $dados[$i][7]; // codigo imagem
+
+              $sql_imagem = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+              $stmt_imagem = Database::prepare($sql_imagem);
+              $stmt_imagem->bindParam(':codigo_imagem', $codigo_imagem);
+              $stmt_imagem->execute();
+              $dados_imagem = $stmt_imagem->fetch(PDO::FETCH_BOTH);
+              $imagem_anuncio = $dados_imagem[0];
              
               
               $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
@@ -225,6 +185,14 @@
               $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
               $cpf = $dados[$i][4]; // cpf
               $codigo_tag = $dados[$i][5]; // tag
+              $codigo_imagem = $dados[$i][7]; // codigo imagem
+
+              $sql_imagem = "SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = :codigo_imagem";
+              $stmt_imagem = Database::prepare($sql_imagem);
+              $stmt_imagem->bindParam(':codigo_imagem', $codigo_imagem);
+              $stmt_imagem->execute();
+              $dados_imagem = $stmt_imagem->fetch(PDO::FETCH_BOTH);
+              $imagem_anuncio = $dados_imagem[0];
              
               
               $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
@@ -288,7 +256,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- - Formulário de criar anúncio  -->
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                   <!-- - Body do modal  -->
                   <div class="modal-body">  
                       <div class="mb-3">
@@ -309,7 +277,7 @@
                         <option style="font-weight: bold;" class="color-petshop">Pet-Shop</option>
                         <option style="font-weight: bold;" class="color-servicos">Serviços</option>
                       </select>
-                      <input type="file" name="file" class="btn col-5"> 
+                      <input type="file" name="file" class="btn col-5" accept=".png, .jpg, .jpeg, .gif"> 
 
                     
                   </div>
