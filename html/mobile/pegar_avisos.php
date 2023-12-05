@@ -16,14 +16,18 @@ $resposta["avisos"] = array();
 
 // verifica se o usuário conseguiu autenticar
 if(autenticar($db_con)) {
- if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['codigo_condominio']) && isset($_GET['importancia'])) {
+ if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['cpf']) && isset($_GET['importancia'])) {
 	 
-		$limit = $_GET['limit'];
-		$offset = $_GET['offset'];
+  $limit = $_GET['limit'];
+  $offset = $_GET['offset'];
   $codigo_condominio = $_GET['codigo_condominio'];
   $importancia = $_GET['importancia'];
+	 
+  $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$_GET['cpf']'");
+  $consulta1->execute();
+  $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
 
-$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$codigo_condominio'");
+$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$linha1['codigo_condominio']'");
 
 if ($consulta->execute()) {
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -34,11 +38,11 @@ if ($consulta->execute()) {
     $aviso["descricao"] = $linha["descricao"];
     $aviso["cpf"] = $linha["fk_usuario_cpf"];
     
-    $consulta1 = $db_con->prepare("SELECT desc_importancia FROM importancia where codigo_importancia = '$linha["fk_importancia_codigo_importancia"]'");
-    $consulta1->execute();
-    $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
+    $consulta2 = $db_con->prepare("SELECT desc_importancia FROM importancia where codigo_importancia = '$linha["fk_importancia_codigo_importancia"]'");
+    $consulta2->execute();
+    $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
     
-    $aviso["importancia"] = $linha1["desc_importancia"];
+    $aviso["importancia"] = $linha2["desc_importancia"];
    
     // Adiciona o produto no array de produtos.
     array_push($resposta["avisos"], $aviso);
