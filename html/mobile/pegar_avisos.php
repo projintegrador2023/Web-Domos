@@ -41,10 +41,7 @@ if ($consulta->execute()) {
     $aviso["titulo"] = $linha["titulo"];
     $aviso["descricao"] = $linha["descricao"];
     $aviso["cpf"] = $linha["fk_usuario_cpf"];
-    
-    
-    
-    $aviso["importancia"] = $linha2["desc_importancia"];
+    $aviso["importancia"] = $importancia;
    
     // Adiciona o produto no array de produtos.
     array_push($resposta["avisos"], $aviso);
