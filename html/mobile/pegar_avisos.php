@@ -20,10 +20,10 @@ if(autenticar($db_con)) {
 	 
   $limit = $_GET['limit'];
   $offset = $_GET['offset'];
-  $codigo_condominio = $_GET['codigo_condominio'];
+  $cpf = $_GET['cpf'];
   $importancia = $_GET['importancia'];
 	 
-  $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$_GET['cpf']'");
+  $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$cpf'");
   $consulta1->execute();
   $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
 
