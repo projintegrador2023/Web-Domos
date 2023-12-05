@@ -27,7 +27,11 @@ if(autenticar($db_con)) {
   $consulta1->execute();
   $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
 
-$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$linha1['codigo_condominio']'");
+  $consulta2 = $db_con->prepare("SELECT codigo_importancia FROM importancia where desc_importancia = '$importancia'");
+  $consulta2->execute();
+  $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+
+$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$linha1['codigo_condominio']' AND fk_importancia_codigo_importancia = '$linha2['codigo_importancia']'");
 
 if ($consulta->execute()) {
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -38,9 +42,7 @@ if ($consulta->execute()) {
     $aviso["descricao"] = $linha["descricao"];
     $aviso["cpf"] = $linha["fk_usuario_cpf"];
     
-    $consulta2 = $db_con->prepare("SELECT desc_importancia FROM importancia where codigo_importancia = '$linha["fk_importancia_codigo_importancia"]'");
-    $consulta2->execute();
-    $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+    
     
     $aviso["importancia"] = $linha2["desc_importancia"];
    
