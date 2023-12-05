@@ -7,12 +7,12 @@
     // salva os dados em variaveis
     $cpf = $dados[0];
     $nome = $dados[1];
-	$email = $dados[2];
-	$senha = $dados[3];
-	$codigo_condominio = $dados[4]; 
-	$nivel_permissao = $dados[5];
+    $email = $dados[2];
+    $senha = $dados[3];
+    $codigo_condominio = $dados[4]; 
+    $nivel_permissao = $dados[5];
     $imagem = $dados[6];
-	$codigo_moradia = $dados[7];
+    $codigo_moradia = $dados[7];
 ?>
 
 <!DOCTYPE html>

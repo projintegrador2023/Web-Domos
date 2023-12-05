@@ -22,6 +22,8 @@ function filtro_aviso() {
       importancia = 'background-color: #f7d74a';
     } else if (filtro == "Importante"){
       importancia = 'background-color: #90ee90';
+    } else {
+      importancia = '';
     }
     
     let avisos = document.getElementsByClassName('cards-pesquisa');
@@ -53,6 +55,8 @@ function filtro_aviso() {
       tag = 'background-color: #9f35cc'; // pet-shop
     } else if (filtro == "Serviços"){
       tag = 'background-color: #86afea'; // serviços
+    } else {
+      tag = '';
     }
     
     let anuncios = document.getElementsByClassName('cards-pesquisa');

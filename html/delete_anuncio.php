@@ -8,5 +8,4 @@
         $stmt->execute();
         header('Location: ./perfil_morador.php');
     }
-
 ?>

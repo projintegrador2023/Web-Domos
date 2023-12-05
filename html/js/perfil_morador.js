@@ -19,4 +19,26 @@ function salvos() {
         `;
       }
     });
-  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const editarButtons = document.querySelectorAll('.botao-editar-anuncio');
+  const idAnuncioInput = document.querySelector('#idAnuncio');
+  const tituloAnuncioInput = document.querySelector('#titulo_ANUNCIO');
+  const descricaoAnuncioInput = document.querySelector('#descricao_ANUNCIO');
+  
+  editarButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const anuncioId = this.getAttribute('data-anuncio-id');
+      const anuncioTitulo = this.getAttribute('data-anuncio-titulo');
+      const anuncioDescricao = this.getAttribute('data-anuncio-descricao');
+      idAnuncioInput.value = anuncioId;
+      tituloAnuncioInput.value = anuncioTitulo;
+      descricaoAnuncioInput.value = anuncioDescricao;
+    });
+  });
+});
+
+
+

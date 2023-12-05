@@ -117,7 +117,7 @@
             $_TITULO_ANUNCIO = $dados[$i][3]; // titulo
             $cpf = $dados[$i][4]; // cpf
             $codigo_tag = $dados[$i][5]; // tag
-           
+            
             
             $sql_morador = "SELECT * FROM USUARIO WHERE cpf = :cpf";
             $stmt_morador = Database::prepare($sql_morador);
@@ -162,7 +162,7 @@
         <div class="d-flex justify-content-end m-5">
           
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            
+          
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
 
@@ -173,9 +173,12 @@
                 </div>
 
                 <!-- - Formulário de criar anúncio  -->
-                <form action="" method="POST">
+                <form action="editar_anuncio.php" method="POST">
                   <!-- - Body do modal  -->
-                  <div class="modal-body">  
+                  <div class="modal-body">
+
+                      <input type="hidden" id="idAnuncio" name="idAnuncio">
+
                       <div class="mb-3">
                         <input type="text" class="form-control" id="titulo_ANUNCIO" name="titulo_ANUNCIO" placeholder="Título">
                       </div>
@@ -185,14 +188,14 @@
                       </div>
 
                       <select name="tag" class="form-select select-modal mb-3">
-                        <option class="color-subtitulo select-modal">Escolha a tag conforme o anúncio</option>
-                        <option style="font-weight: bold;" class="color-alimentacao" >Alimentação</option>
-                        <option style="font-weight: bold;" class="color-vestuario">Vestuário</option>
-                        <option style="font-weight: bold;" class="color-eletronicos">Eletrônicos</option>
-                        <option style="font-weight: bold;" class="color-beleza">Beleza</option>
-                        <option style="font-weight: bold;" class="color-decoracao">Decoração</option>
-                        <option style="font-weight: bold;" class="color-petshop">Pet-Shop</option>
-                        <option style="font-weight: bold;" class="color-servicos">Serviços</option>
+                        <option class="color-subtitulo select-modal" value="0">Escolha a tag conforme o anúncio</option>
+                        <option style="font-weight: bold;" class="color-alimentacao" value="1">Alimentação</option>
+                        <option style="font-weight: bold;" class="color-vestuario" value="2">Vestuário</option>
+                        <option style="font-weight: bold;" class="color-eletronicos" value="3">Eletrônicos</option>
+                        <option style="font-weight: bold;" class="color-beleza" value="4">Beleza</option>
+                        <option style="font-weight: bold;" class="color-decoracao" value="5">Decoração</option>
+                        <option style="font-weight: bold;" class="color-petshop" value="6">Pet-Shop</option>
+                        <option style="font-weight: bold;" class="color-servicos" value="7">Serviços</option>
                       </select>
                       <input type="file" name="file" class="btn col-5"> 
 

@@ -38,9 +38,7 @@
       } else {
         // codigo pra inserir a imagem no banco e linkar com o aviso
       }
-      
     }
-    
   }
 ?>
 
