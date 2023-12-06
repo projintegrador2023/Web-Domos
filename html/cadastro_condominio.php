@@ -54,8 +54,20 @@
                             $stmt->execute();
                             $tipo_moradia = $stmt->fetch(PDO::FETCH_BOTH);
                             $condominio->setTipo_moradia($tipo_moradia[0]);
-                            $condominio->setRegimento(null);
-
+                            if (!empty($_FILES['file']['name'])){
+                                $arquivo = $_FILES['file'];
+                                $arquivoNovo = explode('.', $arquivo['name']);
+                                if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
+                                    die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
+                                }else{
+                                    $arquivo['name'] = 'Regimento' . $codigo_condominio . '.pdf';
+                                    $nome_arquivo = './upload/' . $arquivo['name'];
+                                    move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
+                                    $condominio->setRegimento($nome_arquivo);
+                                }
+                            } else {
+                                $condominio->setRegimento(null);
+                            }
                             $condominio->insert();
                             header('Location: index.php');
                         } else{
