@@ -8,29 +8,41 @@
 
 // conexão com bd
 require_once('conexao_db.php');
+require_once('autenticacao.php');
 
 // array de resposta
 $resposta = array();
 $resposta["anuncios"] = array();
 
 $consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio'");
-
-if ($consulta->execute()) {
-  while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-    $anuncio = array();
-    $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
-    $anuncio["titulo"] = $linha["titulo"];
-    $anuncio["descricao"] = $linha["descricao"];
-    $anuncio["cpf"] = $linha["fk_usuario_cpf"];
-    
-    $consulta1 = $db_con->prepare("SELECT desc_tag FROM tag where codigo_tag = '$linha["fk_tag_codigo_tag"]'");
-    $consulta1->execute();
-    $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
-    
-    $anuncio["tag"] = $linha1["desc_tag"];
-   
-    // Adiciona o produto no array de produtos.
-    array_push($resposta["anuncios"], $anuncio);
+if(autenticar($db_con)) {
+ if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['cpf']) && isset($_GET['tag'])) {
+    $limit = $_GET['limit'];
+		  $offset = $_GET['offset'];
+		  $cpf = $_GET['cpf'];
+		  $tag = $_GET['tag'];
+		
+		  $consulta1 = $db_con->prepare("SELECT fk_condominio_codigo_condominio FROM usuario where cpf = '$cpf'");
+		  $consulta1->execute();
+		  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
+		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
+		
+		  $consulta2 = $db_con->prepare("SELECT codigo_tag FROM tag where desc_tag = '$tag'");
+		  $consulta2->execute();
+		  $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+		  $codigo_tag = $linha2['codigo_tag'];
+	
+		  $consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_tag_codigo_tag = '$codigo_tag'");
+     if ($consulta->execute()) {
+      while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+       $anuncio = array();
+       $anuncio["codigo_postagem"] = $linha["codigo_postagem"];
+       $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
+       $anuncio["titulo"] = $linha["titulo"];
+       $anuncio["descricao"] = $linha["descricao"];
+       $anuncio["cpf"] = $linha["fk_usuario_cpf"];
+       $anuncio["tag"] = $tag;
+       array_push($resposta["anuncios"], $anuncio);
   }
   
   $resposta["sucesso"] = 1;
@@ -40,6 +52,8 @@ if ($consulta->execute()) {
     // motivo da falha.
     $resposta["sucesso"] = 0;
     $resposta["erro"] = "Erro no BD: " . $consulta->error;
+}
+ }
 }
 
 // Fecha a conexao com o BD

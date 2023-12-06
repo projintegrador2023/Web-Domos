@@ -8,6 +8,7 @@
 
 // conexão com bd
 require_once('conexao_db.php');
+require_once('autenticacao.php');
 
 // array de resposta
 $resposta = array();
@@ -21,9 +22,12 @@ if ($consulta->execute()) {
     $perfil["cpf"] = $linha["cpf"];
     $perfil["nome"] = $linha["nome"];
     $perfil["email"] = $linha["email"];
-    $perfil["cpf"] = $linha["fk_nivel_permissao_codigo_nivel_permissao"];
+    $perfil["codigo_nivel_permissao"] = $linha["fk_nivel_permissao_codigo_nivel_permissao"];
+    $perfil["codigo_condominio"] = $linha["fk_condominio_codigo_condominio"];
+    $perfil["senha"] = $linha["senha"];
+   $codigo_moradia = $linha["fk_moradia_codigo_moradia"];
     
-    $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$linha["fk_moradia_codigo_moradia"]'");
+    $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
     $consulta1->execute();
     $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
     

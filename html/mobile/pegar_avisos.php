@@ -22,17 +22,26 @@ if(autenticar($db_con)) {
 		  $cpf = $_GET['cpf'];
 		  $importancia = $_GET['importancia'];
 		
-		  $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$cpf'");
+		  $consulta1 = $db_con->prepare("SELECT fk_condominio_codigo_condominio FROM usuario where cpf = '$cpf'");
 		  $consulta1->execute();
 		  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
-		  $codigo_condominio = $linha1['codigo_condominio'];
-		
-		  $consulta2 = $db_con->prepare("SELECT codigo_importancia FROM importancia where desc_importancia = '$importancia'");
-		  $consulta2->execute();
-		  $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
-		  $codigo_importancia = $linha2['codigo_importancia'];
+		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
+		 
+
+  		  
+
+		 $consulta = null;
+		 if ($importancia === "Todos") {
+			$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$codigo_condominio'");
+		} else {
+			$consulta2 = $db_con->prepare("SELECT codigo_importancia FROM importancia where desc_importancia = '$importancia'");
+		  	$consulta2->execute();
+		  	$linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+		 	$codigo_importancia = $linha2['codigo_importancia'];
+			$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_importancia_codigo_importancia = '$codigo_importancia'");
+		}
 	
-		$consulta = $db_con->prepare("SELECT * FROM aviso where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_importancia_codigo_importancia = '$codigo_importancia'");
+		
 	
 		if ($consulta->execute()) {
 	  		while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -42,11 +51,7 @@ if(autenticar($db_con)) {
 			    $aviso["titulo"] = $linha["titulo"];
 			    $aviso["descricao"] = $linha["descricao"];
 			    $aviso["cpf"] = $linha["fk_usuario_cpf"];
-			    $aviso["importancia"] = $importancia;
-				error_log($aviso);
-				error_log($codigo_condominio);
-				error_log($linha);
-				error_log($codigo_importancia);
+			    $aviso["importancia"] = $linha["fk_importancia_codigo_importancia"];
 			    array_push($resposta["avisos"], $aviso);
 	  		}
 	  
