@@ -93,7 +93,7 @@ class Usuario extends CRUD{
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	***************/
 	public function insert(){
-		$sql="INSERT INTO $this->table (nome,cpf,email,senha,FK_CONDOMINIO_codigo_condominio, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_MORADIA_codigo_moradiafk_imagem_codigo_imagem)
+		$sql="INSERT INTO $this->table (nome,cpf,email,senha,FK_CONDOMINIO_codigo_condominio, FK_NIVEL_PERMISSAO_codigo_nivel_permissao, FK_MORADIA_codigo_moradia, fk_imagem_codigo_imagem)
 		 VALUES (:nome,:cpf,:email,:senha,:codigo_condominio,:nivel_permissao,:codigo_moradia, :codigo_imagem)";
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
