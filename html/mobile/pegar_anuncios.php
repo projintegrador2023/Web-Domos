@@ -28,7 +28,7 @@ if(autenticar($db_con)) {
 		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
 		
 	 $consulta = null;
-		 if (tag === "Todos") {
+		 if ($tag === "Todos") {
 			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio'");
 		} else {
 			 $consulta2 = $db_con->prepare("SELECT codigo_tag FROM tag where desc_tag = '$tag'");
