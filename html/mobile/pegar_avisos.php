@@ -43,10 +43,6 @@ if(autenticar($db_con)) {
 			    $aviso["descricao"] = $linha["descricao"];
 			    $aviso["cpf"] = $linha["fk_usuario_cpf"];
 			    $aviso["importancia"] = $importancia;
-				error_log($aviso);
-				error_log($codigo_condominio);
-				error_log($linha);
-				error_log($codigo_importancia);
 			    array_push($resposta["avisos"], $aviso);
 	  		}
 	  
