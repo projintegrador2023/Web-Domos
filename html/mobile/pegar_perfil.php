@@ -41,7 +41,6 @@ if ($consulta->execute()) {
    
     // Adiciona o produto no array de produtos.
    
-  }
   
   $perfil["sucesso"] = 1;
 } else {
