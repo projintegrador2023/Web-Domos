@@ -52,6 +52,8 @@ if(autenticar($db_con)) {
     $resposta["sucesso"] = 0;
     $resposta["erro"] = "Erro no BD: " . $consulta->error;
 }
+ }}
+}
 
 // Fecha a conexao com o BD
 $db_con = null;
