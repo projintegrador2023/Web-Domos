@@ -22,10 +22,10 @@ if(autenticar($db_con)) {
 		  $cpf = $_GET['cpf'];
 		  $importancia = $_GET['importancia'];
 		
-		  $consulta1 = $db_con->prepare("SELECT codigo_condominio FROM usuario where cpf = '$cpf'");
+		  $consulta1 = $db_con->prepare("SELECT fk_condominio_codigo_condominio FROM usuario where cpf = '$cpf'");
 		  $consulta1->execute();
 		  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
-		  $codigo_condominio = $linha1['codigo_condominio'];
+		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
 		
 		  $consulta2 = $db_con->prepare("SELECT codigo_importancia FROM importancia where desc_importancia = '$importancia'");
 		  $consulta2->execute();
