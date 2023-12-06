@@ -27,12 +27,19 @@ if(autenticar($db_con)) {
 		  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
 		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
 		
-		  $consulta2 = $db_con->prepare("SELECT codigo_tag FROM tag where desc_tag = '$tag'");
-		  $consulta2->execute();
-		  $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
-		  $codigo_tag = $linha2['codigo_tag'];
-	
-		  $consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_tag_codigo_tag = '$codigo_tag'");
+	 $consulta = null;
+		 if (tag === "Todos") {
+			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio'");
+		} else {
+			 $consulta2 = $db_con->prepare("SELECT codigo_tag FROM tag where desc_tag = '$tag'");
+		 	 $consulta2->execute();
+		  	$linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+		  	$codigo_tag = $linha2['codigo_tag'];
+			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_tag_codigo_tag = '$codigo_tag'");
+		}
+	 
+		
+		  
      if ($consulta->execute()) {
       while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
        $anuncio = array();
