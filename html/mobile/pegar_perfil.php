@@ -28,6 +28,7 @@ if ($consulta->execute()) {
     
     $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$linha["fk_moradia_codigo_moradia"]'");
     $consulta1->execute();
+   error_log(var_dump($linha["fk_moradia_codigo_moradia"]);
     $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
     
     $perfil["num_moradia"] = $linha1["numero_moradia"];
