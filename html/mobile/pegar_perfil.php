@@ -14,6 +14,9 @@ require_once('autenticacao.php');
 $resposta = array();
 $resposta["perfil"] = array();
 
+if(autenticar($db_con)) {
+  if (isset($_GET['cpf'])) {
+    $cpf = $_GET['cpf'];
 $consulta = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
 
 if ($consulta->execute()) {
@@ -53,7 +56,7 @@ if ($consulta->execute()) {
     $resposta["sucesso"] = 0;
     $resposta["erro"] = "Erro no BD: " . $consulta->error;
 }
-
+  }}
 // Fecha a conexao com o BD
 $db_con = null;
 
