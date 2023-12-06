@@ -47,7 +47,8 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
-       $anuncio["cpf"] = $linha["fk_usuario_cpf"];
+       
+	      error_log(var_dump($anuncio["cpf"] = $linha["fk_usuario_cpf"]));
 	      
 	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$linha["fk_usuario_cpf"]'");
 	$consulta3->execute();
