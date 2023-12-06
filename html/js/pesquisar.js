@@ -33,7 +33,7 @@ function filtro_aviso() {
             avisos[i].style.display="none";
         }
         else {
-            avisos[i].style.display="list-item";                 
+            avisos[i].style.display="flex";                 
         }
     }
   }
@@ -66,7 +66,7 @@ function filtro_aviso() {
             anuncios[i].style.display="none";
         }
         else {
-            anuncios[i].style.display="list-item";                 
+            anuncios[i].style.display="flex";                 
         }
     }
   }

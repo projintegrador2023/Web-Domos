@@ -11,19 +11,20 @@ require_once('conexao_db.php');
 require_once('autenticacao.php');
 
 // array de resposta
-$perfil = array();
+$resposta = array();
+$resposta["perfil"] = array();
 
-if(autenticar($db_con)) {
-  if (isset($_GET['cpf'])) {
-    $cpf = $_GET['cpf'];
 $consulta = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
 
 if ($consulta->execute()) {
-  $linha = $consulta->fetch(PDO::FETCH_ASSOC);
+  while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+    $perfil = array();
     $perfil["cpf"] = $linha["cpf"];
     $perfil["nome"] = $linha["nome"];
     $perfil["email"] = $linha["email"];
- 
+    $perfil["codigo_nivel_permissao"] = $linha["fk_nivel_permissao_codigo_nivel_permissao"];
+    $perfil["codigo_condominio"] = $linha["fk_condominio_codigo_condominio"];
+    $perfil["senha"] = $linha["senha"];
    $codigo_moradia = $linha["fk_moradia_codigo_moradia"];
     
     $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
@@ -39,18 +40,23 @@ if ($consulta->execute()) {
     $linha2 = $consulta->fetch(PDO::FETCH_ASSOC);
     
     $perfil["divisao"] = $linha2["desc_divisao"];
-  $perfil["sucesso"] = 1;
+   
+    // Adiciona o produto no array de produtos.
+    array_push($resposta["perfil"], $perfil);
+  }
+  
+  $resposta["sucesso"] = 1;
 } else {
     // Caso ocorra falha no BD, o cliente 
     // recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
     // motivo da falha.
-    $perfil["sucesso"] = 0;
-    $perfil["erro"] = "Erro no BD: " . $consulta->error;
+    $resposta["sucesso"] = 0;
+    $resposta["erro"] = "Erro no BD: " . $consulta->error;
 }
-  }}
+
 // Fecha a conexao com o BD
 $db_con = null;
 
 // Converte a resposta para o formato JSON.
-echo json_encode($perfil);
+echo json_encode($resposta);
 ?>
