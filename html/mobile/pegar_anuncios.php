@@ -50,7 +50,7 @@ if(autenticar($db_con)) {
        $anuncio["cpf"] = $linha["fk_usuario_cpf"];
 	      
 	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
-	$consulta3->execute()) {
+	$consulta3->execute();
         $linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
 
 	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$linha3["codigo_moradia"]'");
