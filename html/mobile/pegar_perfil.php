@@ -38,7 +38,7 @@ if ($consulta->execute()) {
 
    $codigo_divisao = $linha1["fk_divisao_codigo_divisao"];
 
-    $consulta2 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$codigo_divisao'");
+    $consulta2 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = $codigo_divisao");
     $consulta2->execute();
     $linha2 = $consulta->fetch(PDO::FETCH_ASSOC);
     
