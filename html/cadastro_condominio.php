@@ -24,7 +24,7 @@
             if ($_POST['senha_condominio'] == $_POST['conf_senha_condominio']){
                 $condominio->setSenha($_POST['senha_condominio']);
                 $numero = filter_var($_POST['numero'], FILTER_SANITIZE_NUMBER_INT);
-                if (validacao_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio'])) && !empty($_POST['cidade_condominio']) && !empty($_POST['bairro_condominio']) && validacao_nome($_POST['rua_condominio']) && filter_var($numero, FILTER_VALIDATE_INT) && $_POST['estado_condominio'] != 'Escolha uma opção'){
+                if (validacao_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio'])) && !empty($_POST['cidade_condominio']) && !empty($_POST['bairro_condominio']) && !empty($_POST['rua_condominio']) && filter_var($numero, FILTER_VALIDATE_INT) && $_POST['estado_condominio'] != 'Escolha uma opção'){
                     $endereco->set_cep(preg_replace('/[^0-9]/', '', $_POST['cep_condominio']));
                     $endereco->set_estado($_POST['estado_condominio']);
                     $endereco->set_cidade($_POST['cidade_condominio']);
@@ -90,16 +90,6 @@
         }
         return false;
     }
-   
-    function validacao_nome($nome){
-		if (!preg_match("/^[a-zA-ZÀ-ú-' ]*$/", $nome)){
-			echo "<script> 
-			alert('O nome contém caracteres inválidos');
-			</script>";
-			return false;
-		} 
-		return true;
-	}
     function validacao_cep($cep){
         if(!preg_match('/^[0-9]{5,5}([- ]?[0-9]{3,3})?$/', $cep)) {
             echo "<script> 
@@ -164,7 +154,7 @@
     <?php include('header.php'); ?>
     
         <div class="col-12">
-            <form class="" action="" method="POST">
+            <form class="" action="" method="POST" enctype="multipart/form-data">
             <div class="">
                 <div class="formulario m-auto col-9 col-md-7 col-lg-5 col-xl-5 px-5 py-4 mt-4 d-block" id="div_cadastro_condominio">
 
@@ -314,7 +304,7 @@
                     </div>
                     <div class="mb-5">
                       <label for="" class="form-label color-0491a3 fs-6">Insira o pdf de regimento interno (opcional):</label>
-                      <input name="regimento_interno" accept="application/pdf" type="file" class="form-control" id="regimento_interno">
+                      <input name="file" accept="application/pdf" type="file" class="form-control" id="regimento_interno">
                     </div>
                     <div class="text-end col-12">
                         <input type="submit" name="submit" value="Cadastrar" class="bg-005661 color-fff p-2 rounded border-0 col-12 col-md-6 col-xxl-3 hover-0491a3"></input>
