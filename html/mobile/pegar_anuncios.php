@@ -48,6 +48,27 @@ if(autenticar($db_con)) {
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
        $anuncio["cpf"] = $linha["fk_usuario_cpf"];
+	      
+	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
+	$consulta3->execute()) {
+        $linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
+
+	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$linha3["codigo_moradia"]'");
+    	$consulta4->execute();
+    	$linha4 = $consulta4->fetch(PDO::FETCH_ASSOC);
+    
+   	 $anuncio["num_moradia"] = $linha4["numero_moradia"];
+
+   $codigo_divisao = $linha4["fk_divisao_codigo_divisao"];
+
+    $consulta5 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$codigo_divisao'");
+    $consulta5->execute();
+    $linha5 = $consulta5->fetch(PDO::FETCH_ASSOC);
+    
+    $anuncio["divisao"] = $linha5["desc_divisao"];
+
+
+	      
        $anuncio["tag"] = $tag;
        array_push($resposta["anuncios"], $anuncio);
   }
