@@ -203,7 +203,7 @@
                           <textarea class="form-control" id="descricao_ANUNCIO" name="descricao_ANUNCIO" placeholder="Descrição" rows="10"></textarea>
                       </div>
 
-                      <select name="tag" class="form-select select-modal mb-3">
+                      <select name="tag" class="form-select select-modal mb-3" id="id_select_tag">
                         <option class="color-subtitulo select-modal" value="0">Escolha a tag conforme o anúncio</option>
                         <option style="font-weight: bold;" class="color-alimentacao" value="1">Alimentação</option>
                         <option style="font-weight: bold;" class="color-vestuario" value="2">Vestuário</option>

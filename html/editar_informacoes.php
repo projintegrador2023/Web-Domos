@@ -9,7 +9,7 @@
     $tipo_moradia = $dados_condominio[6];
 
     
-    if(isset($_POST['envioPdf'])){
+    if(isset($_FILES['file'])){
         $arquivo = $_FILES['file'];
         $arquivoNovo = explode('.', $arquivo['name']);
         if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
@@ -242,7 +242,7 @@
                                     <td class="text-black d-flex">
                                         <form class="" action="" method="POST" enctype="multipart/form-data">
                                             <input name="file" accept="application/pdf" type="file" class="w-75 form-control">
-                                            <input type="submit" name="envioPdf" value="Confirmar" class="w-25 ms-2 btn bg-0491a3 hover-0dc0d8 text-white">
+                                            <!-- <input type="submit" name="envioPdf" value="Confirmar" class="w-25 ms-2 btn bg-0491a3 hover-0dc0d8 text-white"> -->
                                         </form>
                                     </td>
                                 </tr>

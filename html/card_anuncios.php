@@ -13,7 +13,7 @@
                 '<div class="dropdown">
                   <ul class="dropdown-menu">
                     <li><button type="button" id="' . $codigo_anuncio . '" class="dropdown-item botao-excluir"/>Excluir</button></li>
-                    <li><button type="button" class="dropdown-item botao-editar-anuncio" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-anuncio-id="'.$codigo_anuncio.'" data-anuncio-titulo="'.$_TITULO_ANUNCIO.'" data-anuncio-descricao="'.$_DESC_ANUNCIO.'"/>Editar</button></li>
+                    <li><button type="button" class="dropdown-item botao-editar-anuncio" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-anuncio-id="'.$codigo_anuncio.'" data-anuncio-titulo="'.$_TITULO_ANUNCIO.'" data-anuncio-descricao="'.$_DESC_ANUNCIO.'" data-anuncio-tag="'. $codigo_tag .'"/>Editar</button></li>
                   </ul>
                 </div>
               </div>
@@ -44,7 +44,7 @@
                 '<div class="dropdown">
                   <ul class="dropdown-menu">
                     <li><button type="button" id="' . $codigo_anuncio . '" class="dropdown-item botao-excluir"/>Excluir</button></li>
-                    <li><button type="button" class="dropdown-item botao-editar-anuncio" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-anuncio-id="'.$codigo_anuncio.'" data-anuncio-titulo="'.$_TITULO_ANUNCIO.'" data-anuncio-descricao="'.$_DESC_ANUNCIO.'"/>Editar</button></li>
+                    <li><button type="button" class="dropdown-item botao-editar-anuncio" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-anuncio-id="'.$codigo_anuncio.'" data-anuncio-titulo="'.$_TITULO_ANUNCIO.'" data-anuncio-descricao="'.$_DESC_ANUNCIO.'" data-anuncio-tag="'. $codigo_tag .'"/>Editar</button></li>
                   </ul>
                 </div>
               </div>
