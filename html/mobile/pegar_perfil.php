@@ -27,6 +27,8 @@ if ($consulta->execute()) {
     $perfil["senha"] = $linha["senha"];
    $codigo_moradia = $linha["fk_moradia_codigo_moradia"];
    echo var_dump($linha);
+   error_log(var_dump($linha));
+   error_log(var_dump($linha["fk_moradia_codigo_moradia"]));
     
     $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = $codigo_moradia");
     $consulta1->execute();
