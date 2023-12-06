@@ -36,6 +36,7 @@ if(autenticar($db_con)) {
      if ($consulta->execute()) {
       while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
        $anuncio = array();
+       $anuncio["codigo_postagem"] = $linha["codigo_postagem"];
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
