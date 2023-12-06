@@ -27,7 +27,7 @@ if ($consulta->execute()) {
     
     $consulta1 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
     $consulta1->execute();
-    $linha1 = $consulta->fetch(PDO::FETCH_ASSOC);
+    $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
     
     $perfil["num_moradia"] = $linha1["numero_moradia"];
 
@@ -35,7 +35,7 @@ if ($consulta->execute()) {
 
     $consulta2 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$codigo_divisao'");
     $consulta2->execute();
-    $linha2 = $consulta->fetch(PDO::FETCH_ASSOC);
+    $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
     
     $perfil["divisao"] = $linha2["desc_divisao"];
    
