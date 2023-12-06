@@ -51,7 +51,7 @@ if(autenticar($db_con)) {
 			    $aviso["titulo"] = $linha["titulo"];
 			    $aviso["descricao"] = $linha["descricao"];
 			    $aviso["cpf"] = $linha["fk_usuario_cpf"];
-			    $aviso["importancia"] = $importancia;
+			    $aviso["importancia"] = $linha["fk_importancia_codigo_importancia"];
 			    array_push($resposta["avisos"], $aviso);
 	  		}
 	  
