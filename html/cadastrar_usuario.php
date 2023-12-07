@@ -1,6 +1,6 @@
 <?php
 	//Classe de usuario
-	require_once './db/30_DB_usuario.php';
+	require_once './db/30_DB_Usuario.php';
 	$usuario = new Usuario();
 	//verifica se o botao de trocar formulario foi acionado
 	if (isset($_POST['submit1'])){
