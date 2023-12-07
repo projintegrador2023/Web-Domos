@@ -43,6 +43,7 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
+	      $anuncio["tag"] = $linha["fk_tag_codigo_tag"];
 
 	      $cpf = $linha["fk_usuario_cpf"];
 	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
@@ -74,7 +75,7 @@ if(autenticar($db_con)) {
     //$consulta6->execute();
     //$linha6 = $consulta6->fetch(PDO::FETCH_ASSOC);
 	      //$anuncio["endereco_imagem"] = $linha6["endereco_imagem"];
-       $anuncio["tag"] = $tag;
+       
        array_push($resposta["anuncios"], $anuncio);
   }
   
