@@ -59,7 +59,6 @@
               $usuario->setNivelPermissao(3);
               
               $usuario->update($_SESSION['id']);
-              header('Location: ./perfil_morador.php');
           }
             
         } else {
