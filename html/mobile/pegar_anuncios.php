@@ -45,13 +45,14 @@ if(autenticar($db_con)) {
        $anuncio["descricao"] = $linha["descricao"];
        $anuncio["cpf"] = $linha["fk_usuario_cpf"];
 
-	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$linha["fk_usuario_cpf"]'");
+	      $cpf = $linha["fk_usuario_cpf"];
+	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
 	$consulta3->execute();
         $linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
 	      
 	      $codigo_moradia = $linha3["codigo_moradia"];
 
-	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia');
+	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
     	$consulta4->execute();
     	$linha4 = $consulta4->fetch(PDO::FETCH_ASSOC);
 
