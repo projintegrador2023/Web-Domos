@@ -136,8 +136,7 @@
               $_DATA_HORA_AVISO = $dados[$i][1]; // data hora
               $_DESC_AVISO = $dados[$i][2]; // descricao
               $_TITULO_AVISO = $dados[$i][3]; // titulo
-              //echo $dados[$i][4]; // cpf
-              $codigo_importancia = $dados[$i][5]; // importancia
+              $codigo_importancia = $dados[$i][4]; // importancia
   
               //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
               //$stmt_importancia = Database::prepare($sql_importancia);
