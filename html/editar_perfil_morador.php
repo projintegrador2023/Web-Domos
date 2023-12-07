@@ -1,7 +1,7 @@
 <?php 
-    require_once("db/30_DB_Usuario.php");
+    require_once("./db/30_DB_Usuario.php");
     include_once('./upload.php');
-    include("iniciar_sessao.php");
+    include("./iniciar_sessao.php");
     $tela_morador = true;
     $usuario = new Usuario();
     $dados = $usuario->find($_SESSION['id']); // puxa os dados do banco onde o cpf é igual ao cpf id da sessão
@@ -40,7 +40,9 @@
             $usuario->setCodigoMoradia($codigo_moradia);
 
             if (empty($valErr)){
+              if ($status == 'success'){
                 $usuario->setImagem($imglink);
+              }
             } else {
               $sql_imagem = 'SELECT fk_imagem_codigo_imagem FROM USUARIO WHERE cpf = :cpf';
               $stmt = Database::prepare($sql_imagem);
@@ -55,10 +57,11 @@
               $usuario->setNome($nome);
               $usuario->setSenha($senha);
               $usuario->setEmail($email);
-              $usuario->setCodigoCondominio($dados[4]);
+              $usuario->setCodigoCondominio($codigo_condominio);
               $usuario->setNivelPermissao(3);
               
               $usuario->update($_SESSION['id']);
+              header('Location: ./perfil_morador.php');
           }
             
         } else {

@@ -9,7 +9,7 @@
     $tipo_moradia = $dados_condominio[6];
 
     if (isset($_POST['envioPdf'])){
-        if(isset($_FILES['file'])){
+        if(isset($_FILES['file']['name'])){
             $arquivo = $_FILES['file'];
             $arquivoNovo = explode('.', $arquivo['name']);
             if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){

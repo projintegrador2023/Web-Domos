@@ -8,7 +8,7 @@ function search() {
           cards[i].style.display="none";
       }
       else {
-          cards[i].style.display="list-item";                 
+          cards[i].style.display="flex";                 
       }
   }
 }

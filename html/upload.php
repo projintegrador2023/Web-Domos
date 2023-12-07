@@ -26,6 +26,7 @@
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Client-ID '. $client_id));
             curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
             $response = curl_exec($ch);
+            echo $response;
             if ($response === false) {
                 echo 'Erro cURL: ' . curl_error($ch);
             }
