@@ -29,9 +29,9 @@
         
         <!-- Botões da página --> 
         <section class = "d-flex justify-content-center align-items-center m-auto mb-5">
-            <a class="text-center" href="cadastrar_usuario.php"><button class="bg-005661 color-fff p-3 rounded border-0 fs-4 col-10 col-sm-8 col-lg-10 hover-0491a3"> Cadastro do Morador </button></a>
+            <a class="text-center" href="./cadastrar_usuario.php"><button class="bg-005661 color-fff p-3 rounded border-0 fs-4 col-10 col-sm-8 col-lg-10 hover-0491a3"> Cadastro do Morador </button></a>
             <p class="fs-4 col-1 p-0 text-center ms-0 ps-1 ps-sm-3 ps-lg-3 me-sm-0"> OU </p> 
-            <a class="text-center" href="cadastro_condominio.php"> <button class=" bg-005661 color-fff p-3 rounded border-0 col-10 col-sm-8 col-lg-10 hover-0491a3 fs-4"> Cadastro do Condomínio </button> </a>
+            <a class="text-center" href="./cadastro_condominio.php"> <button class=" bg-005661 color-fff p-3 rounded border-0 col-10 col-sm-8 col-lg-10 hover-0491a3 fs-4"> Cadastro do Condomínio </button> </a>
         </section>
         
         <!-- Texto (conteúdo) da página --> 
