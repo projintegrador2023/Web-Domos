@@ -75,7 +75,7 @@
                             <th scope="col">
                                 <div clsss="d-flex">
                                     <p class="fs-3 color-005661">' . $dados[1] .'
-                                    <a href="editar_informacoes.php"><button class="btn bg-005661  rounded-circle"><i class="fa-solid fa-pen white fs-4 mt-1"></i></button></p></a>
+                                    <a href="editar_informacoes.php"><button class="btn bg-005661 hover-0491a3 rounded-circle"><i class="fa-solid fa-pen white fs-4 mt-1"></i></button></p></a>
                                 </div>
                             </th>
                         </tr>

@@ -15,12 +15,27 @@ $resposta = array();
 $resposta["anuncios"] = array();
 
 if(autenticar($db_con)) {
- if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['cpf'])) {
+ if (isset($_GET['limit']) && isset($_GET['offset']) && isset($_GET['cpf']) && isset($_GET['tag'])) {
     $limit = $_GET['limit'];
     $offset = $_GET['offset'];
     $cpf = $_GET['cpf'];
+    $tag = $_GET['tag'];
 		
-			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_usuario_cpf = '$cpf'");
+		  $consulta1 = $db_con->prepare("SELECT fk_condominio_codigo_condominio FROM usuario where cpf = '$cpf'");
+		  $consulta1->execute();
+		  $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
+		  $codigo_condominio = $linha1['fk_condominio_codigo_condominio'];
+	 
+	 $consulta = null;
+		 if ($tag === "Todos") {
+			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_usuario_cpf = '$cpf'");
+		} else {
+			 $consulta2 = $db_con->prepare("SELECT codigo_tag FROM tag where desc_tag = '$tag'");
+		 	 $consulta2->execute();
+		  	$linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
+		  	$codigo_tag = $linha2['codigo_tag'];
+			$consulta = $db_con->prepare("SELECT * FROM anuncio where fk_condominio_codigo_condominio = '$codigo_condominio' AND fk_tag_codigo_tag = '$codigo_tag' AND fk_usuario_cpf = '$cpf'");
+		}
      if ($consulta->execute()) {
       while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
        $anuncio = array();
@@ -28,35 +43,31 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
-        $codigo_tag = $linha["fk_tag_codigo_tag"];
-        
-          $consulta1 = $db_con->prepare("SELECT * FROM tag where codigo_tag = '$codigo_tag'");
-	$consulta1->execute();
-        $linha1 = $consulta1->fetch(PDO::FETCH_ASSOC);
-          $anuncio["tag"] = $linha1["desc_tag"};
 
-	$consulta2 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
-	$consulta2->execute();
-        $linha2 = $consulta2->fetch(PDO::FETCH_ASSOC);
-	      $anuncio["nome"] = $linha2["nome"];
-        
-	      $codigo_moradia = $linha2["fk_moradia_codigo_moradia"];
+	      $cpf = $linha["fk_usuario_cpf"];
+	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
+	$consulta3->execute();
+        $linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
 	      
-	$consulta3 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
-    	$consulta3->execute();
-    	$linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
-
-   	 $anuncio["num_moradia"] = $linha3["numero_moradia"];
-
-   	$codigo_divisao = $linha3["fk_divisao_codigo_divisao"];
-
-    $consulta4 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$codigo_divisao'");
-    $consulta4>execute();
-    $linha4 = $consulta4->fetch(PDO::FETCH_ASSOC);
-
-    $anuncio["divisao"] = $linha4["desc_divisao"];
+	      $codigo_moradia = $linha3["fk_moradia_codigo_moradia"];
+	      $anuncio["nome"] = $linha3["nome"];
 	      
-       
+
+	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
+    	$consulta4->execute();
+    	$linha4 = $consulta4->fetch(PDO::FETCH_ASSOC);
+
+   	 $anuncio["num_moradia"] = $linha4["numero_moradia"];
+
+   	$codigo_divisao = $linha4["fk_divisao_codigo_divisao"];
+
+    $consulta5 = $db_con->prepare("SELECT * FROM divisao where codigo_divisao = '$codigo_divisao'");
+    $consulta5->execute();
+    $linha5 = $consulta5->fetch(PDO::FETCH_ASSOC);
+
+    $anuncio["divisao"] = $linha5["desc_divisao"];
+	      
+       $anuncio["tag"] = $tag;
        array_push($resposta["anuncios"], $anuncio);
   }
   

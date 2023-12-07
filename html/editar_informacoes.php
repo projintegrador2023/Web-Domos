@@ -124,6 +124,7 @@
             
         <main container class="main-container">
             <div class="table-responsive">
+            <p class="text-danger">* Favor inserir senha para alterar dados.</p>
                 <form action="" method="POST" enctype="multipart/form-data">
                     <table class="table table-striped-columns align-middle">
                             <thead>

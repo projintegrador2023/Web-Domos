@@ -129,6 +129,7 @@
                 <div class="col-10 col-lg-7 my-auto d-flex row align-items-center justify-content-lg-start justify-content-center">
 
                     <div class="col-lg-10 col-12 bg-e8e8e8 p-4 rborder3">
+                      <p class="text-danger">* Favor inserir senha para alterar dados.</p>
                         <?php
 
                             $sql_moradia = "SELECT numero_moradia, desc_divisao FROM MORADIA 
