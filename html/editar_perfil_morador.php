@@ -66,11 +66,9 @@
             echo '<script>
                 alert("Insira todos os dados.");
             </script>';
-            header('Location: ./editar_perfil_morador.php');
         }
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
