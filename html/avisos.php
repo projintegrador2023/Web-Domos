@@ -32,7 +32,6 @@
         try{
           error_log("Exec 1", 0);
           $aviso->insert();
-          header('Location: avisos.php');
         } catch(PDOException $e) {
           echo '<script>  
                       alert("Algo deu errado, verifique as informações do aviso e tente novamente.");
