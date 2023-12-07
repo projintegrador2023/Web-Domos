@@ -71,7 +71,7 @@ if(autenticar($db_con)) {
 	      $consulta6 = $db_con->prepare("SELECT endereco_imagem FROM imagem where codigo_imagem = '$codigo_imagem'");
     $consulta6->execute();
     $linha6 = $consulta6->fetch(PDO::FETCH_ASSOC);
-	      $anuncio["endereco_imagem"] = $linha6["endereco_imagem"]
+	      $anuncio["endereco_imagem"] = $linha6["endereco_imagem"];
        $anuncio["tag"] = $tag;
        array_push($resposta["anuncios"], $anuncio);
   }
