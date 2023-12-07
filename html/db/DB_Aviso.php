@@ -5,7 +5,6 @@
     private $data_hora_postagem;
     private $descricao;
     private $titulo;
-    private $FK_USUARIO_cpf;
     private $FK_IMPORTANCIA_codigo_importancia;
     private $FK_CONDOMINIO_codigo_condominio;
 
@@ -14,11 +13,18 @@
         $this->data_hora_postagem = $data_hora_postagem;
     }
 
-    public function setCodigoCondominio(){
-      $sql = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO WHERE cpf = :cpf";
-      $stmt = Database::prepare($sql);
-      $stmt->bindParam(':cpf', $this->FK_USUARIO_cpf);
-      $stmt->execute();
+    public function setCodigoCondominio($cpf, $cnpj){
+      if (empty($cnpj)){
+        $sql = "SELECT FK_CONDOMINIO_codigo_condominio from USUARIO WHERE cpf = :cpf";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->execute();
+      } else{
+        $sql = "SELECT codigo_condominio from CONDOMINIO WHERE cnpj = :cnpj";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':cnpj', $cnpj);
+        $stmt->execute();
+      } 
       $dados = $stmt->fetch(PDO::FETCH_BOTH);
       $codigo_condominio = $dados[0];
       $this->FK_CONDOMINIO_codigo_condominio = $codigo_condominio;
@@ -30,11 +36,6 @@
 
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
-    }
-
-    public function setFKUsuarioCpf($FK_USUARIO_cpf) {
-        $this->FK_USUARIO_cpf = $FK_USUARIO_cpf;
-        $this->setCodigoCondominio();
     }
 
     public function setFKImportanciaCodigoImportancia($FK_IMPORTANCIA_codigo_importancia) {
@@ -54,10 +55,6 @@
         return $this->titulo;
     }
 
-    public function getFKUsuarioCpf() {
-        return $this->FK_USUARIO_cpf;
-    }
-
     public function getFKImportanciaCodigoImportancia() {
         return $this->FK_IMPORTANCIA_codigo_importancia;
     }
@@ -67,13 +64,12 @@
     }
 
     public function insert(){
-      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_USUARIO_cpf, FK_IMPORTANCIA_codigo_importancia, FK_CONDOMINIO_codigo_condominio) 
-                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_USUARIO_cpf, :FK_IMPORTANCIA_codigo_importancia, :FK_CONDOMINIO_codigo_condominio)";
+      $sql="INSERT INTO $this->table (data_hora_postagem, descricao, titulo, FK_IMPORTANCIA_codigo_importancia, FK_CONDOMINIO_codigo_condominio) 
+                  VALUES (:data_hora_postagem, :descricao, :titulo, :FK_IMPORTANCIA_codigo_importancia, :FK_CONDOMINIO_codigo_condominio)";
       $stmt = Database::prepare($sql);
       $stmt->bindParam(':data_hora_postagem', $this->data_hora_postagem);
       $stmt->bindParam(':descricao', $this->descricao);
       $stmt->bindParam(':titulo', $this->titulo);
-      $stmt->bindParam(':FK_USUARIO_cpf', $this->FK_USUARIO_cpf);
       $stmt->bindParam(':FK_IMPORTANCIA_codigo_importancia', $this->FK_IMPORTANCIA_codigo_importancia, PDO::PARAM_INT);
       $stmt->bindParam('FK_CONDOMINIO_codigo_condominio', $this->FK_CONDOMINIO_codigo_condominio);
       return $stmt->execute();

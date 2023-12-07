@@ -8,28 +8,30 @@
     $email = $dados_condominio[3];
     $tipo_moradia = $dados_condominio[6];
 
-    
-    if(isset($_FILES['file'])){
-        $arquivo = $_FILES['file'];
-        $arquivoNovo = explode('.', $arquivo['name']);
-        if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
-            die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
-        }else{
-            $arquivo['name'] = 'Regimento' . $codigo_condominio . '.pdf';
-            $nome_arquivo = './upload/' . $arquivo['name'];
-            if (file_exists($nome_arquivo)){
-                unlink($nome_arquivo);
-                echo move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
-            } else {
-                move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
-                $sql = "UPDATE CONDOMINIO SET regimento = :arquivo WHERE codigo_condominio = :codigo_condominio";
-                $stmt = Database::prepare($sql);
-                $stmt->bindParam(':arquivo', $nome_arquivo);
-                $stmt->bindParam(':codigo_condominio', $codigo_condominio);
-                $stmt->execute();
+    if (isset($_POST['envioPdf'])){
+        if(isset($_FILES['file'])){
+            $arquivo = $_FILES['file'];
+            $arquivoNovo = explode('.', $arquivo['name']);
+            if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
+                die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
+            }else{
+                $arquivo['name'] = 'Regimento' . $codigo_condominio . '.pdf';
+                $nome_arquivo = './upload/' . $arquivo['name'];
+                if (file_exists($nome_arquivo)){
+                    unlink($nome_arquivo);
+                    move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
+                } else {
+                    move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
+                    $sql = "UPDATE CONDOMINIO SET regimento = :arquivo WHERE codigo_condominio = :codigo_condominio";
+                    $stmt = Database::prepare($sql);
+                    $stmt->bindParam(':arquivo', $nome_arquivo);
+                    $stmt->bindParam(':codigo_condominio', $codigo_condominio);
+                    $stmt->execute();
+                }
             }
         }
     }
+    
 
     if (isset($_POST['envio'])){
         $condominio->setCodigo_condominio($codigo_condominio);
@@ -122,7 +124,7 @@
             
         <main container class="main-container">
             <div class="table-responsive">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <table class="table table-striped-columns align-middle">
                             <thead>
                                 <tr>
@@ -240,10 +242,10 @@
                                 <tr>
                                     <th scope="row"><p class="color-0491a3">Regimento interno</p></th>
                                     <td class="text-black d-flex">
-                                        <form class="" action="" method="POST" enctype="multipart/form-data">
+                                        <!-- <form class="" action="" method="POST" enctype="multipart/form-data"> -->
                                             <input name="file" accept="application/pdf" type="file" class="w-75 form-control">
-                                            <!-- <input type="submit" name="envioPdf" value="Confirmar" class="w-25 ms-2 btn bg-0491a3 hover-0dc0d8 text-white"> -->
-                                        </form>
+                                            <input type="submit" name="envioPdf" value="Confirmar" class="w-25 ms-2 btn bg-0491a3 hover-0dc0d8 text-white">
+                                        <!-- </form> -->
                                     </td>
                                 </tr>
                             </tbody>

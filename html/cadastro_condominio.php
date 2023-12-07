@@ -31,54 +31,48 @@
                     $endereco->set_bairro($_POST['bairro_condominio']);
                     $endereco->set_rua($_POST['rua_condominio']);
                     $endereco->set_numero($numero);
-                    if ("" == trim($_POST['complemento']) || !empty($_POST['complemento'])){
-                        $endereco->set_complemento($_POST['complemento']);
-                        $codigo_endereco = $endereco->insert();
-                        $condominio->setEndereco($codigo_endereco);
-                        $divisoes = $_POST['divisao'];
-                        $numeros = $_POST['num'];
-                        if ($_POST['faixa_qtd_moradores'] != 'Escolha uma opção' && $_POST['tipo_moradia'] != 'Escolha uma opção' && !validacao_vazio($divisoes) && !validacao_vazio($numeros)){
-                            $condominio->set_divisoes($divisoes);
-                            $condominio->set_numeros($numeros);
+                    $endereco->set_complemento($_POST['complemento']);
+                    $codigo_endereco = $endereco->insert();
+                    $condominio->setEndereco($codigo_endereco);
+                    $divisoes = $_POST['divisao'];
+                    $numeros = $_POST['num'];
+                    if ($_POST['faixa_qtd_moradores'] != 'Escolha uma opção' && $_POST['tipo_moradia'] != 'Escolha uma opção' && !validacao_vazio($divisoes) && !validacao_vazio($numeros)){
+                        $condominio->set_divisoes($divisoes);
+                        $condominio->set_numeros($numeros);
 
-                            $sql = "SELECT codigo_faixa FROM FAIXA_QTD_MORADORES WHERE faixa_qtd = :faixa";
-                            $stmt = Database::prepare($sql);
-                            $stmt->bindParam(":faixa", $_POST['faixa_qtd_moradores']);
-                            $stmt->execute();
-                            $faixa_qtd = $stmt->fetch(PDO::FETCH_BOTH);
-                            $condominio->setFaixa_qtd_moradores($faixa_qtd[0]);
+                        $sql = "SELECT codigo_faixa FROM FAIXA_QTD_MORADORES WHERE faixa_qtd = :faixa";
+                        $stmt = Database::prepare($sql);
+                        $stmt->bindParam(":faixa", $_POST['faixa_qtd_moradores']);
+                        $stmt->execute();
+                        $faixa_qtd = $stmt->fetch(PDO::FETCH_BOTH);
+                        $condominio->setFaixa_qtd_moradores($faixa_qtd[0]);
 
-                            $sql = "SELECT codigo_tipo_moradia  FROM TIPO_MORADIA  WHERE nome  = :nome ";
-                            $stmt = Database::prepare($sql);
-                            $stmt->bindParam(":nome", $_POST['tipo_moradia']);
-                            $stmt->execute();
-                            $tipo_moradia = $stmt->fetch(PDO::FETCH_BOTH);
-                            $condominio->setTipo_moradia($tipo_moradia[0]);
-                            if (!empty($_FILES['file']['name'])){
-                                $arquivo = $_FILES['file'];
-                                $arquivoNovo = explode('.', $arquivo['name']);
-                                if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
-                                    die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
-                                }else{
-                                    $arquivo['name'] = 'Regimento' . $codigo_condominio . '.pdf';
-                                    $nome_arquivo = './upload/' . $arquivo['name'];
-                                    move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
-                                    $condominio->setRegimento($nome_arquivo);
-                                }
-                            } else {
-                                $condominio->setRegimento(null);
+                        $sql = "SELECT codigo_tipo_moradia  FROM TIPO_MORADIA  WHERE nome  = :nome ";
+                        $stmt = Database::prepare($sql);
+                        $stmt->bindParam(":nome", $_POST['tipo_moradia']);
+                        $stmt->execute();
+                        $tipo_moradia = $stmt->fetch(PDO::FETCH_BOTH);
+                        $condominio->setTipo_moradia($tipo_moradia[0]);
+                        if (!empty($_FILES['file']['name'])){
+                            $arquivo = $_FILES['file'];
+                            $arquivoNovo = explode('.', $arquivo['name']);
+                            if($arquivoNovo[sizeof($arquivoNovo)-1] != 'pdf'){
+                                die('Você não pode fazer upload desse tipo de arquivo. Faça upload de um PDF.');
+                            }else{
+                                $arquivo['name'] = 'Regimento' . $codigo_condominio . '.pdf';
+                                $nome_arquivo = './upload/' . $arquivo['name'];
+                                move_uploaded_file($arquivo['tmp_name'],'./upload/'.$arquivo['name']);
+                                $condominio->setRegimento($nome_arquivo);
                             }
-                            $condominio->insert();
-                            header('Location: index.php');
-                        } else{
-                            echo "  <script> 
-                                    alert('Verifique as informações do condomínio.');
-                                </script>";
+                        } else {
+                            $condominio->setRegimento(null);
                         }
+                        $condominio->insert();
+                        header('Location: ./informacoes.php');
                     } else{
                         echo "  <script> 
-                                    alert('Complemento inválido.');
-                                </script>";
+                                alert('Verifique as informações do condomínio.');
+                            </script>";
                     }
                 }
             }
