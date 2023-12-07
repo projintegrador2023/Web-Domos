@@ -56,5 +56,5 @@ if(autenticar($db_con)) {
 $db_con = null;
 
 // Converte a resposta para o formato JSON.
-echo json_encode($resposta);
+echo json_encode($perfil);
 ?>
