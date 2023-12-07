@@ -50,7 +50,7 @@ if(autenticar($db_con)) {
 	$consulta3->execute();
         $linha3 = $consulta3->fetch(PDO::FETCH_ASSOC);
 	      
-	      $codigo_moradia = $linha3["codigo_moradia"];
+	      $codigo_moradia = $linha3["fk_moradia_codigo_moradia"];
 
 	$consulta4 = $db_con->prepare("SELECT * FROM moradia where codigo_moradia = '$codigo_moradia'");
     	$consulta4->execute();
