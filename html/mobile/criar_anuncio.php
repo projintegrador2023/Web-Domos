@@ -42,7 +42,7 @@ if(autenticar($db_con)) {
 		// A proxima linha insere um novo produto no BD.
 		// A variavel consulta indica se a insercao foi feita corretamente ou nao.
 		$codigo_img = '';
-		if (isset($_FILES['file'])){
+		if (isset($_FILES['file']['name'])){
 			$client_id = "b8c02929102d33d";
 			$statusMsg = $valErr = '';
 			$status = 'danger';

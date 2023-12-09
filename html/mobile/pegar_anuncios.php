@@ -43,6 +43,13 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
+       $codigo_imagem = $linha["fk_imagem_codigo_imagem"];
+
+       $consulta_imagem = $db_con->prepare("SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = $codigo_imagem");
+       $consulta_imagem->execute();
+       $linhaimg = $consulta_imagem->fetch(PDO::FETCH_ASSOC);
+       $linkimg = $linhaimg["endereco_imagem"];
+       $anuncio['imagem'] = $linkimg;
 
 	      $cpf = $linha["fk_usuario_cpf"];
 	$consulta3 = $db_con->prepare("SELECT * FROM usuario where cpf = '$cpf'");
