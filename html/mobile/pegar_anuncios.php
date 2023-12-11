@@ -43,6 +43,7 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
+	      $anuncio["tag"] =  $linha["fk_tag_codigo_tag"];
        $codigo_imagem = $linha["fk_imagem_codigo_imagem"];
       if (!empty($codigo_imagem)){
 	      	$consulta_imagem = $db_con->prepare("SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = '$codigo_imagem'");
@@ -77,7 +78,7 @@ if(autenticar($db_con)) {
 
     $anuncio["divisao"] = $linha5["desc_divisao"];
 	      
-       $anuncio["tag"] = $tag;
+
        array_push($resposta["anuncios"], $anuncio);
   }
   
