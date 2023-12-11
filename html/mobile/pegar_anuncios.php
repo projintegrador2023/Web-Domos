@@ -43,7 +43,6 @@ if(autenticar($db_con)) {
        $anuncio["data_hora_postagem"] = $linha["data_hora_postagem"];
        $anuncio["titulo"] = $linha["titulo"];
        $anuncio["descricao"] = $linha["descricao"];
-      $anuncio["imagem"] = '';
 	      $anuncio["tag"] =  $linha["fk_tag_codigo_tag"];
        $codigo_imagem = $linha["fk_imagem_codigo_imagem"];
       if (!empty($codigo_imagem)){
@@ -52,6 +51,8 @@ if(autenticar($db_con)) {
 	 	$linhaimg = $consulta_imagem->fetch(PDO::FETCH_ASSOC);
  		$linkimg = $linhaimg["endereco_imagem"];
 		$anuncio['imagem'] = $linkimg;
+      } else {
+	      $anuncio['imagem'] = 'https://imgur.com/a/FXfFGrn.png';
       }
 
        
