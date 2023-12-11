@@ -137,11 +137,6 @@
               $_TITULO_AVISO = $dados[$i][3]; // titulo
               $codigo_importancia = $dados[$i][4]; // importancia
   
-              //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
-              //$stmt_importancia = Database::prepare($sql_importancia);
-              //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
-              //$stmt_importancia->execute();
-              //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
               if ($codigo_importancia == 1){
                 $_IMPORTANCIA = 'background-color: #cc0000';
               } else if ($codigo_importancia == 2){
@@ -177,11 +172,6 @@
               $_TITULO_AVISO = $dados[$i][3]; // titulo
               $codigo_importancia = $dados[$i][4]; // importancia
   
-              //$sql_importancia = "SELECT desc_importancia FROM IMPORTANCIA WHERE codigo_importancia = :codigo_importancia";
-              //$stmt_importancia = Database::prepare($sql_importancia);
-              //$stmt_importancia->bindParam(':codigo_importancia', $codigo_importancia, PDO::PARAM_INT);
-              //$stmt_importancia->execute();
-              //$dados_importancia = $stmt_importancia->fetch(PDO::FETCH_BOTH);
               if ($codigo_importancia == 1){
                 $_IMPORTANCIA = 'background-color: #cc0000';
               } else if ($codigo_importancia == 2){
