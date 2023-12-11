@@ -45,7 +45,7 @@ if(autenticar($db_con)) {
        $anuncio["descricao"] = $linha["descricao"];
        $codigo_imagem = $linha["fk_imagem_codigo_imagem"];
 
-       $consulta_imagem = $db_con->prepare("SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = $codigo_imagem");
+       $consulta_imagem = $db_con->prepare("SELECT endereco_imagem FROM IMAGEM WHERE codigo_imagem = '$codigo_imagem'");
        $consulta_imagem->execute();
        $linhaimg = $consulta_imagem->fetch(PDO::FETCH_ASSOC);
        $linkimg = $linhaimg["endereco_imagem"];
