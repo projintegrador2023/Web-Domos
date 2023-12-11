@@ -7,6 +7,7 @@
 
 // conexão com bd
 require_once('conexao_db.php');
+require_once('../db/DB_Anuncio.php');
 
 // autenticação
 require_once('autenticacao.php');
