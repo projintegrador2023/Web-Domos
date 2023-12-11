@@ -69,11 +69,9 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
             }
 		}
   if (!empty($codigo_img)){
-    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_imagem_codigo_imagem) 
-											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_img')");
+    $consulta = $db_con->prepare("UPDATE USUARIO SET nome = '$nome', email = '$email', senha = '$token', fk_imagem_codigo_imagem = '$codigo_img' WHERE cpf = '$cpf'");
   } else {
-    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha) 
-											VALUES('$cpf', '$nome', '$email', '$token')");
+     $consulta = $db_con->prepare("UPDATE USUARIO SET nome = '$nome', email = '$email', senha = '$token' WHERE cpf = '$cpf'");
   }
 		
 	 
