@@ -69,11 +69,11 @@ if (isset($_POST['cpf']) && isset($_POST['nome']) && isset($_POST['email']) && i
             }
 		}
   if (!empty($codigo_img)){
-    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_condominio_codigo_condominio, fk_nivel_permissao_codigo_nivel_permissao, fk_imagem_codigo_imagem, fk_moradia_codigo_moradia) 
-											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, '$codigo_img', '$codigo_moradia')");
+    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_imagem_codigo_imagem) 
+											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_img')");
   } else {
-    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha, fk_condominio_codigo_condominio, fk_nivel_permissao_codigo_nivel_permissao, fk_moradia_codigo_moradia) 
-											VALUES('$cpf', '$nome', '$email', '$token', '$codigo_condominio',  3, '$codigo_moradia')");
+    $consulta = $db_con->prepare("INSERT INTO usuario(cpf, nome, email, senha) 
+											VALUES('$cpf', '$nome', '$email', '$token')");
   }
 		
 	 
